@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" ng-app="guestRunnerListApp">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+
+	<link rel="stylesheet" href="custom.css" type="text/css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- Document Title
+	============================================= -->
+	<title>JustRace</title>
+
+</head>
+
+<body class="stretched" >
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo" class="divcenter">
+					<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img class="divcenter" src="images/logo.png" alt="Logo"></a>
+					<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img class="divcenter" src="images/logo@2x.png" alt="Logo"></a>
+				</div><!-- #logo end -->
+
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2 center">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+						<ul>
+							<li><a href="index.html"><div>Strona główna</div></a></li>
+							<li class="current"><a href="guestCompetitions.html"><div>Zawody</div></a></li>
+							<li><a href="how.html"><div>Jak to działa</div></a></li>
+							<li><a href="application.html"><div>Aplikacja</div></a></li>
+							<li><a href="contact.html"><div>Kontakt</div></a></li>
+							<li><a href="login.html"><span class="login-menulink">Zaloguj się</span> </a></li>
+							<li><a href="registration.html"><span class="login-menulink">Zarejestruj się</span></a></li>
+						</ul>
+
+						<!-- Top Search
+						============================================= -->
+						<!-- <div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Szukaj na stronie">
+							</form>
+						</div>#top-search end -->
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+
+			</div>
+
+		</header><!-- #header end -->
+
+<section id="content" ng-controller="guestRunnerListController" ng-init="init()">
+
+			<div class="content-wrap">
+
+
+					<div class="container clearfix">	
+	
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">							
+						
+							<div class="sidebar-widgets-wrap">
+
+							<ul class="sidenav">
+								<li ><a href="guestCompetitionDetails.html">Opis<i class="icon-chevron-right"></i></a></li>
+								<li class="ui-tabs-active"><a href="#">Lista startowa<i class="icon-chevron-right"></i></a></li>				
+								<li ><a href ng-click="showGuestResultList()" >Wyniki<i class="icon-chevron-right"></i></a></li>		
+							</ul>
+
+								<div class="widget clearfix">
+
+									<div class="search-short">
+										<form action="#" role="form" class="notopmargin nobottommargin">
+											
+											<div class="input-group divcenter">
+												<span>Płeć:</span>
+												<select type="text" id="type" name="type" class="form-control" ng-model="sex" ng-options="plec.nazwa for plec in plci">
+		
+		                        				<option value=""> Wybierz płeć </option>
+		                						</select>    
+		                					</div>
+											<br>
+		                					<div class="input-group divcenter">
+		                						<span>Fraza:</span>
+												 <input type="text"
+			                        					id="name" 
+			                        					name="name" 
+			                        					class="form-control" 
+			                        					placeholder="Fraza" 
+			                        					ng-model="phrase" 
+			                        					ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">					
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<span>Wiek:</span>
+												<input type="text"
+			                        					id="name" 
+			                        					name="name" 
+			                        					class="form-control" 
+			                        					placeholder="Wiek" 
+			                       					 	ng-model="age" 
+			                        					ng-pattern ="/^[1-9]\d{0,8}$/">
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<span>Kategoria:</span>
+												<select type="text"
+			                        					id="type" 
+			                        					name="type" 
+			                        					class="form-control" 
+			                        					ng-model="cat"
+			                        					ng-options="category.NAME for category in categories">
+			                        
+			                        					<option value=""> Wybierz kategorię </option>
+		                						</select>       
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<button type="text" class="form-control" ng-click="s()">Szukaj </button>
+												<button type="text" class="form-control" ng-click="w()"> Wyczyść </button>
+											</div>	 	 
+
+
+										</form>
+									</div>
+
+							</div>
+							</div>
+														
+						</div>
+						<!--content -->
+						<div class="postcontent nobottommargin col_last">
+
+							<div class="container" ng-show="runners == 0"><h4> Nikt się jeszcze nie zapisał</h4></div>
+							<div ng-hide="runners == 0">
+								<table class="table" width="400" >
+  								<tr>
+								    <th width="100" class="tg-zcxc">Imię</th>
+								    <th width="100" class="tg-zcxc">Nazwisko</th>
+								    <th width="100" class="tg-4qgn">Kategoria</th>
+								    <th width="100" class="tg-4qgn">Klub</th>
+								    
+  								</tr>
+								  <tr ng-repeat="runner in runners">
+								    <td width="100" class="tg-yw4l">{{ runner.IMIE }}</td>
+								    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+  								</tr>
+								</table>
+								</div>
+						</div>
+					</div>
+
+			</div>
+</section>
+
+<!-- FOOTER -->
+		<footer id="footer" class="dark">
+
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<img src="images/footer-logo.png" alt="" class="footer-logo">
+
+						<span class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by JustRace.</span>
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="copyrights-menu copyright-links clearfix">
+							<a href="aboutUs.html">O nas</a> <a href="#">Regulamin</a> <a href="contact.html">Kontakt</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</footer><!-- #footer end -->
+		
+		
+		
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script src="js/main.js"></script> 
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/ngStorage.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+	<script src="js/guestRunnerListController.js"></script> 
+
+       <script>
+           
+           var app = angular.module('guestRunnerListApp', ['guestRunnerListController']); 
+
+       </script>
+
+</body>
+</html>

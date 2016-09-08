@@ -1,0 +1,58 @@
+<section id="content" ng-controller="profileController">
+
+			<div class="content-wrap">
+
+
+					<!-- Challenge main nav + description container -->
+					<div class="container clearfix">
+						
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">
+						
+
+							<ul class="sidenav">
+								<li class="ui-tabs-active"><a href>Dane osobowe<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="edit()">Edytuj dane<i class="icon-chevron-right"></i></a></li>
+							</ul>
+						</div>
+
+
+<div <div class="postcontent nobottommargin col_last">
+
+<div class="well">
+	
+		<div class="container"><h4>Imię: <u>{{ user.IMIE }}</u></h4></div>	
+	
+		<div class="container"><h4>Nazwisko: <u>{{ user.NAZWISKO }}</u></h4></div>
+	
+		<div class="container"><h4>E-mail: <u>{{ user.EMAIL }}</u></h4></div>
+	
+		<div class="container" ng-hide="user.WIEK == 'null'">
+			<h4>Wiek: <u>{{ user.WIEK }}</u></h4>
+		</div>
+		
+		<div class="container"ng-hide="user.PLEC == 'null'">
+			<h4>Płeć: <u>{{ user.PLEC }}</u></h4>
+		</div>
+		
+		<div class="container" ng-hide="user.KLUB == 'null'">
+			<h4>Klub: <u>{{ user.KLUB }}</u></h4>
+		</div>
+		
+		<div class="container" ng-hide="user.OBYWATELSTWO == 'null'">
+			<h4>Obywatelstwo: <u>{{ user.OBYWATELSTWO }}</u></h4>
+		</div>
+		
+		<div class="container" ng-hide="user.NR_TEL == 'null'">
+			<h4>Numer telefonu <u>{{ user.NR_TEL }}</u></h4>
+		</div>
+		
+		<div class="container" ng-hide="user.ICE == 'null'">
+			<h4>Numer ICE: <u>{{ user.ICE }}</u></h4>
+		</div>
+	
+</div>
+</div>
+</div>
+</div>
+</section>

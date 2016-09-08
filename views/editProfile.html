@@ -1,0 +1,309 @@
+<section id="content" ng-controller="editProfileController">
+
+      <div class="content-wrap">
+
+
+          <!-- Challenge main nav + description container -->
+          <div class="container clearfix">
+            
+            <!-- Sidebar -->
+            <div class="sidebar nobottommargin">
+            
+
+              <ul class="sidenav">
+                <li><a href="home/profile">Dane osobowe<i class="icon-chevron-right"></i></a></li>
+                <li class="ui-tabs-active"><a href>Edytuj dane<i class="icon-chevron-right"></i></a></li>
+              </ul>
+            </div>
+
+
+<div <div class="postcontent nobottommargin col_last">
+ 
+ 	<form name="changePasswordForm" class="form-horizontal"  novalidate>
+ 		<div class="container" ng-show="editProfileForm.$submitted">
+            <div class="alert alert-danger">
+                <strong>{{retInfo}}</strong>
+            </div>
+       </div> 
+ 	
+ 		<div class="container">
+            <label class="col-lg-2 ">Stare hasło*</label>
+                        
+            <div class="col-lg-6">
+                <input type="password"
+                        id="old_password" 
+                        name="password" 
+                        class="form-control" 
+                        placeholder="Hasło"
+                        ng-model="user.old_password" 
+                        required
+                        ng-pattern ="/^[a-żA-Ż0-9]*$/">
+            </div>
+        </div>
+ 	
+ 		<div class="container">
+            <label class="col-lg-2 ">Nowe hasło*</label>
+                        
+            <div class="col-lg-6">
+                <input type="password"
+                        id="password" 
+                        name="password" 
+                        class="form-control" 
+                        placeholder="Hasło"
+                        ng-model="user.password" 
+                        required
+                        ng-pattern ="/^[a-żA-Ż0-9]*$/"
+                        ng-minlength="8"
+                        ng-maxlength="20">
+                      
+               <div ng-messages="changePasswordForm.password.$error" ng-show="changePasswordForm.$submitted || changePasswordForm.password.$touched">
+                    <span ng-message="required" class="help-block">Pole hasło jest wymagane</span>
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko litery i cyfry! </span>
+                    <span ng-message="maxlength" class="help-block">Hasło nie może być dłuższy niż 20 znaków</span>
+                    <span ng-message="minlength" class="help-block">Hasło nie może być krótszy niż 8 znaków</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <label class="col-lg-2">Powtórz nowe hasło*</label>
+                        
+            <div class="col-lg-6">
+                <input type="password" 
+                        id="passwordRepeat" 
+                        name="passwordRepeat" 
+                        class="form-control" 
+                        placeholder="Powtórz hasło" 
+                        ng-model="userif.passwordRepeat"
+                        required
+                        pw-check="password">
+                      
+               <div ng-messages="changePasswordForm.passwordRepeat.$error" ng-show="changePasswordForm.$submitted || changePasswordForm.passwordRepeat.$touched">
+                    <span ng-message="pwmatch" class="help-block">Hasła muszą być takie same</span>
+                    <span ng-message="required" class="help-block">To pole jest wymagane</span>
+                </div>
+            </div>
+        </div>
+        <br>        
+        <div class="container">
+        	<div class=" text-center">
+            	 <button class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!changePasswordForm.$valid" ng-click="changePasswordClick()"> Zmień hasło </button>
+             </div>
+        </div> 
+        
+ 	</form>
+ 
+    <form name="editProfileForm" class="form-horizontal" ng-controller="editProfileController" novalidate>
+        
+        <div class="container" ng-show="editProfileForm.$submitted">
+            <div class="alert alert-danger">
+                <strong>{{retInfo2}}</strong>
+            </div>
+       </div> 
+       
+       <br>
+		
+		<div class="container"> 
+           <label class="col-lg-2">Imię*</label>     
+            <div class="col-lg-6">
+                <input type="text"
+                        id="name" 
+                        name="name" 
+                        class="form-control" 
+                        placeholder="Imię" 
+                        ng-model="user.name" 
+                        required 
+                        ng-pattern ="/^[a-żA-Ż\s]*$/">
+                    
+                <div ng-messages="editProfileForm.name.$error" ng-show="editProfileForm.$submitted || editProfileForm.name.$touched">
+                    <span ng-message="required" class="help-block"> Pole imię jest wymagane! </span>
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko litery! </span>
+                </div>
+             </div>
+        </div> 
+    
+        <div class="container">
+            <label class="col-lg-2">Nazwisko*</label>
+                        
+            <div class="col-lg-6 ">
+                <input type="text"
+                    id="surname"
+                    name="surname"
+                    class="form-control"
+                    placeholder="Nazwisko"
+                    ng-model="user.surname"
+                    required
+                    ng-pattern ="/^[a-żA-Ż\s]*$/">
+                     
+                <div ng-messages="editProfileForm.surname.$error" ng-show="editProfileForm.$submitted || editProfileForm.surname.$touched">
+                    <span ng-message="required" class="help-block"> Pole nazwisko jest wymagane! </span>
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko litery! </span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <label class="col-lg-2">E-mail*</label>
+                        
+            <div class="col-lg-6">
+                <input type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-control" 
+                        ng-model="user.email"
+                        placeholder="E-mail" 
+                        required >
+                      
+                <div ng-show="editProfileForm.$submitted || editProfileForm.email.$touched">
+                    <div ng-messages="editProfileForm.email.$error">
+                      <span ng-message="required" class="help-block">Pole e-mail jest wymagane</span>   
+                    </div>           
+                    <span ng-hide="editProfileForm.email.$valid" class="help-block"> E-mail nie jest poprawny </span>
+                </div>
+            </div>
+        </div>
+		
+        <div class="container">
+            <label class="col-lg-2">Wiek*</label>
+                        
+            <div class="col-lg-6">
+                <input type="number" 
+                            id="age" 
+                            name="age" 
+                            class="form-control" 
+                            ng-model="user.age"
+                            placeholder="Wiek"
+                            required
+                            ng-min="0">                       
+
+                <div ng-messages="editProfileForm.age.$error" ng-show="editProfileForm.$submitted || editProfileForm.age.$touched">
+                     <span ng-hide="editProfileForm.age.$valid" class="help-block"> Niepoprawne dane </span>
+                     <span ng-message="required" class="help-block"> Pole wiek jest wymagane </span>                
+                </div>
+            </div>
+        </div>
+
+         <div class="container">
+            <label class="col-lg-2">Klub</label>
+                        
+            <div class="col-lg-6">
+                <input  type="text"
+                         id="club" 
+                         name="club" 
+                         class="form-control" 
+                         placeholder="Klub"
+                         ng-model="user.club">
+            </div>                       
+        </div>
+
+        <div class="container">
+            <label class="col-lg-2">Obywatelstwo</label>
+                        
+            <div class="col-lg-6">
+                <input  type="text"
+                         id="citizenship" 
+                         name="citizenship" 
+                         class="form-control" 
+                         placeholder="Obywatelstwo"
+                         ng-model="user.obywatelstwo"
+                         ng-pattern ="/^[a-żA-Ż\s]*$/">
+
+                <div ng-messages="editProfileForm.citizenship.$error" ng-show="editProfileForm.$submitted || editProfileForm.citizenship.$touched">
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko litery! </span>
+                </div>
+            </div>                       
+        </div>
+        <div class="container">
+            <label class="col-lg-2">Telefon</label>
+                        
+            <div class="col-lg-6">
+                <input  type="tel"
+                         id="phone" 
+                         name="phone" 
+                         class="form-control" 
+                         placeholder="Telefon"
+                         ng-model="user.nr_tel">
+
+                <div ng-show="editProfileForm.$submitted || editProfileForm.phone.$touched">
+                    <span ng-hide="editProfileForm.phone.$valid" class="help-block"> Numer telefonu jest niepoprawny </span>
+                </div>
+            </div>                       
+        </div>
+
+        <div class="container">
+            <label class="col-lg-2">Telefon ICE</label>
+                        
+            <div class="col-lg-6">
+                <input  type="tel"
+                         id="phoneICE" 
+                         name="phoneICE" 
+                         class="form-control" 
+                         placeholder="Telefon ICE"
+                         ng-model="user.ice">
+
+                <div ng-show="editProfileForm.$submitted || editProfileForm.phoneICE.$touched">
+                    <span ng-hide="editProfileForm.phoneICE.$valid" class="help-block"> Numer telefonu jest niepoprawny </span>
+                </div>
+            </div>                       
+        </div>
+        <br>        
+        <div class="container">
+        	<div class=" text-center">
+             	<button class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!editProfileForm.$valid" ng-click="editProfileClick()"> Zmień dane </button>
+             </div>
+        </div>     
+    </form>
+    
+    <form name="deleteAccountForm" class="form-horizontal" ng-controller="editProfileController" novalidate>
+    	<div class="container">
+    		<br>
+    		<h5>W związku z likwidacją konta zostaną usunięte wszystkie dane użytkownika z wyłączeniem imienia, nazwiska oraz nazwy klubu, które będą
+    		prezentowane jedynie na listach wyników zawodów, w których zawodnik brał udział.</h5>
+    	</div>
+    	
+    	<div class="container">
+            <label class="col-lg-2">Potwierdź decyzję hasłem*</label>
+                        
+            <div class="col-lg-6">
+                <input type="password"
+                        id="delete_password" 
+                        name="password" 
+                        class="form-control" 
+                        placeholder="Hasło"
+                        ng-model="user.delete_password" 
+                        required
+                        ng-pattern ="/^[a-żA-Ż0-9]*$/">
+            </div>
+        </div>
+    	
+    	<div class="container">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-8">
+            <label class="col-lg-11">
+                <input  type="checkbox"
+                         id="confirmRules" 
+                         name="confirmRules" 
+                         ng-model="userIf.rules"
+                         required="required">
+                         Zgadzam się z powyższymi warunkami oraz regulaminem serwisu*</label>
+
+                 <div ng-messages="deleteAccountForm.confirmRules.$error" ng-show="deleteAccountForm.$submitted || deleteAccountForm.confirmRules.$touched">
+                    <span ng-message="required" class="help-block">Potwierdź regulamin </span>
+                </div>
+            </div>                       
+        </div>
+         <div class="container"><h5>Pola zaznaczone gwiazdką* są wymagane.</h5></div>
+        <br>    	
+    	<div class="container">
+        	<div class=" text-center">
+             	<button class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!deleteAccountForm.$valid" ng-click="deleteAccountClick()"> Usuń konto </button>
+             </div>
+        </div>
+        
+        
+    </form>
+
+    </div>
+    </div>
+    </div>
+    </section>

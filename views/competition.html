@@ -1,0 +1,179 @@
+<section id="content" ng-controller="competitionController">
+
+			<div class="content-wrap">
+
+
+					<!-- Challenge main nav + description container -->
+					<div class="container clearfix">
+						
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">
+						
+
+							<ul class="sidenav">
+								<li class="ui-tabs-active"><a href="#">Opis<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="showCompRunnersList()">Lista startowa<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
+								<br>
+								<div ng-controller="signController" ng-init="init()">
+									<div class="col-lg-10" ng-hide="check6 == 1 || check5 == 1">
+						                <select type="text"
+						                        id="type" 
+						                        name="type" 
+						                        class="form-control" 
+						                        ng-model="cat"
+						                        ng-options="category.NAME for category in categories" 
+						                        required>
+						
+						                        <option value=""> Wybierz kategorię </option>
+						                </select>       
+					            	</div>
+									<br><br>
+									<li><a href ng-click="sign(competition.COMPETITION_ID)" ng-hide="check == 1">{{text}}</a></li>
+									
+								</div>
+							</ul>
+							<div class="side-box">
+								<div class="portfolio-desc-meta">
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-calendar2 inline-block fright"></i>
+										<span class="text ng-binding">{{competition.DATA_ROZP}}</span>
+									</div>
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-clock inline-block fright"></i>
+										<span class="text ng-binding">{{competition.CZAS_ROZP}}</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-pointer inline-block"></i>
+										<span class="text ng-binding"> {{competition.MIEJSCOWOSC}}</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-money inline-block"></i>
+										<span ng-show="competition.OPLATA!=''" class="text ng-binding"> {{competition.OPLATA}}</span>
+										<span ng-show="competition.OPLATA==''" class="text ng-binding"> Bezpłatne</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-users inline-block"></i>
+										<span ng-show="competition.LIMIT_UCZ==''" class="text ng-binding"> Brak limitu osób</span>
+										<span ng-show="competition.LIMIT_UCZ!=''" class="text ng-binding"> Limit osób: {{competition.LIMIT_UCZ}}</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>											
+							</div>
+		
+		
+						</div><!-- .sidebar end -->
+	
+						<!-- Post -->
+						<div class="postcontent nobottommargin col_last">
+							
+								<div class="center"><h1 ng-show="check7 == 1">Odwołane!</h1></div>
+								<h2>"{{competition.NAME}}"</h2>
+								<h5>{{competition.TYP}}</h5>							
+												
+							<p ng-hide="competition.OPIS == ''">
+							<textarea class="editor" ng-hide="!competition.OPIS" name="editor" ckeditor="options" ng-model="competition.OPIS" ready="onReady()"></textarea>
+							</p>
+										
+						</div><!-- .postcontent end -->
+						
+				</div>
+			
+
+							
+			</div>
+			
+			
+			
+			
+
+		</section><!-- #content end -->
+
+<!-- <div class="container" ng-controller="competitionController">
+	<div class="text-center">
+		<div class="well">
+			Strona zawodów "{{ response.NAME }}"
+		</div>
+	</div>
+	
+	<div class="text-center" ng-show="response.DEACTIVATED">
+		<strong style="color: red;">ODWOŁANE</strong>
+	</div>
+	
+	<div class="container" style="background-color: #222933;">Nazwa
+		<div class="well" style="background-color: #006666;"> {{ response.NAME }}</div>
+	</div>
+	
+	<div class="container" style="background-color: #222933;">Miejscowość
+		<div class="well" style="background-color: #006666;"> {{ response.MIEJSCOWOSC }}</div>
+	</div>
+	
+	<div class="container" style="background-color: #222933;">Data rozpoczęcia
+		<div class="well" style="background-color: #006666;"> {{ response.DATA_ROZP }}</div>
+	</div>
+
+	<div class="container" style="background-color: #222933;">Data zakończenia
+		<div class="well" style="background-color: #006666;"> {{ response.DATA_ZAK }}</div>
+	</div>
+	
+	<div class="container" ng-hide="check == 1">
+		<div class="container" style="background-color: #222933;" ng-hide="!response.TYP">Typ
+			<div class="well" style="background-color: #006666;"> {{ response.TYP }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.CZAS_ROZP">Godzina rozpoczęcia
+			<div class="well" style="background-color: #006666;"> {{ response.CZAS_ROZP }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.CZAS_ZAK">Godzina zakończenia
+			<div class="well" style="background-color: #006666;"> {{ response.CZAS_ZAK }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.LIMIT_UCZ">Limit uczestników
+			<div class="well" style="background-color: #006666;"> {{ response.LIMIT_UCZ }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.OPLATA">Opłata
+			<div class="well" style="background-color: #006666;"> {{ response.OPLATA }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.OPIS">Opis
+				<textarea class="editor" name="editor" ckeditor="options" ng-model="response.OPIS" ready="onReady()"></textarea>
+				<br/>
+		</div>
+	</div>
+	
+	<button class="btn btn-primary" ng-click="print()"> {{ btnText }} </button>
+	
+	
+</div>
+	
+<div class="container">
+	<div class="text-center" ng-controller="signController">
+		<strong>{{ retInfo }}</strong>
+		<div class="container" ng-hide="check3 == 1">
+			<strong>Czy na pewno chcesz się wypisać z zawodów?</strong>
+			<br/>
+			<button class="btn btn-primary btn-lg" ng-click="signOut(response.COMPETITION_ID)"> Tak </button>
+		</div>
+		
+		<div class="container" ng-init="init()" ng-hide="check5 == 1 || check == 1 || check6 == 1">
+            <label class="col-lg-3 text-right ">Wybierz swoją kategorię</label>
+                        
+            <div class="col-lg-8">
+                <select type="text"
+                        id="type" 
+                        name="type" 
+                        class="form-control" 
+                        ng-model="cat"
+                        ng-options="category.NAME for category in categories" 
+                        required>
+                </select>       
+
+            </div>
+    </div>
+		
+		<br>
+		<button class="btn btn-primary btn-lg" ng-click="sign(response.COMPETITION_ID)" ng-hide="check == 1 || response.DEACTIVATED"> {{ text }} </button>
+	</div>
+</div> -->

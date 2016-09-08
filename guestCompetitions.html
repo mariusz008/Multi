@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" ng-app="guestCompetitionsApp">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="css/ui-bootstrap-1.3.2-csp.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+
+	<link rel="stylesheet" href="custom.css" type="text/css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- Document Title
+	============================================= -->
+	<title>JustRace</title>
+
+</head>
+
+<body class="stretched">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+		<!-- Header
+		============================================= -->
+		<header id="header" class="sticky-style-2">
+
+			<div class="container clearfix">
+
+				<!-- Logo
+				============================================= -->
+				<div id="logo" class="divcenter">
+					<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img class="divcenter" src="images/logo.png" alt="Logo"></a>
+					<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img class="divcenter" src="images/logo@2x.png" alt="Logo"></a>
+				</div><!-- #logo end -->
+
+			</div>
+
+			<div id="header-wrap">
+
+				<!-- Primary Navigation
+				============================================= -->
+				<nav id="primary-menu" class="style-2 center">
+
+					<div class="container clearfix">
+
+						<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+						<ul>
+							<li><a href="index.html"><div>Strona główna</div></a></li>
+							<li class="current"><a href="guestCompetitions.html"><div>Zawody</div></a></li>
+							<li><a href="how.html"><div>Jak to działa</div></a></li>
+							<li><a href="application.html"><div>Aplikacja</div></a></li>
+							<li><a href="contact.html"><div>Kontakt</div></a></li>
+							<li><a href="login.html"><span class="login-menulink">Zaloguj się</span> </a></li>
+							<li><a href="registration.html"><span class="login-menulink">Zarejestruj się</span></a></li>
+						</ul>
+
+						<!-- Top Search
+						=============================================
+						<div id="top-search">
+							<a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+							<form action="search.html" method="get">
+								<input type="text" name="q" class="form-control" value="" placeholder="Szukaj na stronie">
+							</form>
+						</div>#top-search end -->
+
+					</div>
+
+				</nav><!-- #primary-menu end -->
+
+			</div>
+
+		</header><!-- #header end -->
+
+
+		<!-- Content
+		============================================= -->
+		<section id="content" ng-controller="guestCompetitionsController" ng-init="init()">
+		
+
+			
+			<div class="content-wrap">
+
+
+					<div class="container clearfix">
+	
+	
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">
+
+							
+						
+							<div class="sidebar-widgets-wrap">
+
+								<div class="widget clearfix">
+
+									<h4><span class="amount-found">{{countFinded}}</span> zawodów znaleziono <br> <span class="amount-found">{{countActive}}</span> dopiero się odbędzie</h4>
+									<div class="search-short">
+										<form role="form" class="notopmargin nobottommargin">
+											
+											<div class="input-group divcenter">
+												<span>Typ:</span>
+												<select type="text" class="form-control" ng-model="t" ng-options="type.name group by type.type for type in types">
+		
+		                        				<option value=""> Wybierz typ </option>
+		                						</select>    
+		                					</div>
+											<br>
+		                					<div class="input-group divcenter">
+		                						<span>Nazwa:</span>
+												<input type="text" class="form-control" ng-model="name" placeholder="Nazwa">
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<span>Miejscowość:</span>
+												<input type="text" class="form-control" ng-model="place" placeholder="Miejscowość">
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<button type="text" class="form-control" ng-click="s()">Szukaj </button>
+												<button type="text" class="form-control" ng-click="w()">Wyczyść </button>
+											</div>	 	 
+
+
+										</form>
+									</div>
+
+							</div>
+							</div>
+														
+						</div>
+	
+					<!-- .sidebar end -->
+<div class="postcontent nobottommargin col_last">
+	<div id="portfolio" class="portfolio-3 clearfix">
+		<div ng-repeat="page in pages" ng-show="show[{{$index}}] == 1">
+			<article class="portfolio-item pf-active pf-featured" ng-repeat="competition in page">
+									<div class="portfolio-image">
+										<a href ng-click="showGuestCompetitionDetails(competition.COMPETITION_ID)">
+											
+											<img ng-show="competition.TYP == 'Bieg przełajowy' ||
+														  competition.TYP == 'Bieg maratoński' ||
+														  competition.TYP == 'Bieg uliczny' ||
+														  competition.TYP == 'Bieg górski' ||
+														  competition.TYP == 'Chód'" 
+														  style='width:280px;height:230px;' src="images/bieg.png" />
+
+											<img ng-show="competition.TYP == 'Kolarstwo szosowe' ||
+														  competition.TYP == 'Kolarstwo górskie'" 
+														  style='width:280px;height:230px;' src="images/rowerowe.png" />
+
+											<img ng-show="competition.TYP == 'Bieg narciarski' ||
+														  competition.TYP == 'Narciarstwo alpejskie'" 
+														  style='width:280px;height:230px;' src="images/zimowe.png" />
+
+											<img ng-show="competition.TYP == 'Wyścig samolotów' ||
+														  competition.TYP == 'Wyścig balonów'" 
+														  style='width:280px;height:230px;' src="images/powietrzne.png" />
+
+											<img ng-show="competition.TYP == 'Wyścig off-road' ||
+														  competition.TYP == 'Karting' ||
+														  competition.TYP == 'Wyścig motocykli' ||
+														  competition.TYP == 'Wyścig quadów' || 
+														  competition.TYP == 'Wyścig samochodowy' ||
+														  competition.TYP == 'Wyścig skuterów śnieżnych'" 
+														  style='width:280px;height:230px;' src="images/motorowe.png" />
+
+											<img ng-show="competition.TYP == 'Kajakarstwo' ||
+														  competition.TYP == 'Wioślarstwo'" 
+														  style='width:280px;height:230px;' src="images/wodne.png" />
+
+											<img ng-show="competition.TYP == 'Inne'" 
+														  style='width:280px;height:230px;' src="images/czas.png" />
+
+
+
+
+										</a>
+										<div class="portfolio-overlay">
+											<a href ng-click="showGuestCompetitionDetails(competition.COMPETITION_ID)" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+										</div>
+									</div>
+									<div class="portfolio-desc">
+										<h3><a href ng-click="showGuestCompetitionDetails(competition.COMPETITION_ID)">{{competition.NAME}}</a></h3>
+										<div class="portfolio-desc-meta">
+											<div class="col-sm-6 portfolio-desc-meta-text">
+												<i class="color icon-calendar2 inline-block fright"></i>
+												<span ng-show="competition.DIFF == 0" class="text ng-binding">Dzisiaj</span>
+												<span ng-show="!competition.DIFF == 0 &&  competition.DIFF < 15 &&  competition.DIFF > -1" class="text ng-binding">za {{competition.DIFF}} dni
+												</span>
+												<span ng-show="competition.DIFF > 14" class="text ng-binding">{{competition.DATA_ROZP}}</span>
+												<span ng-show="competition.DIFF == -1" style="color: red" class="text ng-binding">Zakończone</span>
+
+											</div>											
+											<div class="col-sm-6 portfolio-desc-meta-text left-border">
+												<i class="color icon-line2-clock inline-block"></i>
+												<span class="text ng-binding">{{competition.CZAS_ROZP}}</span>
+											</div>																						
+											<div class="col-sm-12 portfolio-desc-meta-text left-border">
+												<i class="color icon-line2-pointer inline-block"></i>
+												<span class="text ng-binding"> {{competition.MIEJSCOWOSC}}</span>
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</article>
+								</div>
+	
+		<br><br>
+
+		<div class="navbar navbar-default navbar-fixed-bottom text-center" role="navigation">
+			<button class="{{btn[0]}}" style="{{style[0]}}" ng-click="changePage(0)"> Wcześniej </button>
+			<button class="{{btn[1]}}" style="{{style[1]}}" ng-click="changePage(1)"> Styczeń </button>
+			<button class="{{btn[2]}}" style="{{style[2]}}" ng-click="changePage(2)"> Luty </button>
+			<button class="{{btn[3]}}" style="{{style[3]}}" ng-click="changePage(3)"> Marzec </button>
+			<button class="{{btn[4]}}" style="{{style[4]}}" ng-click="changePage(4)"> Kwiecień </button>
+			<button class="{{btn[5]}}" style="{{style[5]}}" ng-click="changePage(5)"> Maj </button>
+			<button class="{{btn[6]}}" style="{{style[6]}}" ng-click="changePage(6)"> Czerwiec </button>
+			<button class="{{btn[7]}}" style="{{style[7]}}" ng-click="changePage(7)"> Lipiec </button>
+			<button class="{{btn[8]}}" style="{{style[8]}}" ng-click="changePage(8)"> Sierpień </button>
+			<button class="{{btn[9]}}" style="{{style[9]}}" ng-click="changePage(9)"> Wrzesień </button>
+			<button class="{{btn[10]}}" style="{{style[10]}}" ng-click="changePage(10)"> Październik </button>
+			<button class="{{btn[11]}}" style="{{style[11]}}" ng-click="changePage(11)"> Listopad </button>
+			<button class="{{btn[12]}}" style="{{style[12]}}" ng-click="changePage(12)"> Grudzień </button>
+			<button class="{{btn[13]}}" style="{{style[13]}}" ng-click="changePage(13)"> Później </button>
+		</div>
+</div>
+</div>
+</div>
+</div>		
+			
+			
+
+		</section><!-- #content end -->
+
+		
+		<!-- FOOTER -->
+		<footer id="footer" class="dark">
+
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<img src="images/footer-logo.png" alt="" class="footer-logo">
+
+						<span class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by JustRace.</span>
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="copyrights-menu copyright-links clearfix">
+							<a href="aboutUs.html">O nas</a> <a href="#">Regulamin</a> <a href="contact.html">Kontakt</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</footer><!-- #footer end -->
+		
+		
+		
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/plugins.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script type="text/javascript" src="js/functions.js"></script>
+	<script src="js/main.js"></script> 
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-base64-upload.js"></script>
+
+    <script src="js/angular-route.min.js"></script>
+    <script type="text/javascript" src="js/ngStorage.min.js"></script>
+    <script src="js/moment.js"></script>
+	<script src="js/guestCompetitionsController.js"></script> 
+
+       <script>
+           
+           var app = angular.module('guestCompetitionsApp', ['guestCompetitionsController']); 
+
+       </script>
+
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<section id="content" ng-controller="myCompetitionController">
+
+			<div class="content-wrap">
+
+
+					<!-- Challenge main nav + description container -->
+					<div class="container clearfix">
+						
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">
+						
+
+							<ul class="sidenav">
+								<li class="ui-tabs-active"><a href="#">Opis<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="showRunnersList()">Lista zawodników<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
+								<li><a ng-show="editActive" href ng-click="editCompetition()">Edytuj<i class="icon-chevron-right"></i></a></li>
+						
+								<li ng-hide="check7 == 1"><a href="#drop" id="openBtn" data-toggle="modal">Odwołaj zawody</a></li>
+								
+								<div class="modal fade" id="drop">
+									<div class="modal-dialog">
+									      <div class="modal-content">
+									        <div class="modal-header">
+									          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									          <h3 class="modal-title">Odwoływanie zawodów</h3>
+									        </div>
+									      
+									        <div class="modal-body">
+									          <div class="center">
+										          <br/>
+										          <input ng-model="reason" placeholder="Powód odwołania"></input><br/><br/>
+										          <button type="button" class="btn btn-default " ng-click="dropCompetition2()" data-dismiss="modal">Odwołaj</button>
+										          <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+									          </div>
+											</div>
+									        
+									      </div><!-- /.modal-content -->
+									    </div><!-- /.modal-dialog -->
+  										</div><!-- /.modal -->
+							</ul>
+							<div class="side-box">
+								<div class="portfolio-desc-meta">
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-calendar2 inline-block fright"></i>
+										<span class="text ng-binding">{{competition.DATA_ROZP}}</span>
+									</div>
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-clock inline-block fright"></i>
+										<span class="text ng-binding">{{competition.CZAS_ROZP}}</span>
+									</div>										
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-pointer inline-block"></i>
+										<span class="text ng-binding"> {{competition.MIEJSCOWOSC}}</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-money inline-block"></i>
+										<span ng-show="competition.OPLATA!=''" class="text ng-binding"> {{competition.OPLATA}}</span>
+										<span ng-show="competition.OPLATA==''" class="text ng-binding"> Bezpłatne</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-users inline-block"></i>
+										<span ng-show="competition.LIMIT_UCZ==''" class="text ng-binding"> Brak limitu osób</span>
+										<span ng-show="competition.LIMIT_UCZ!=''" class="text ng-binding"> Limit osób: {{competition.LIMIT_UCZ}}</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>											
+							</div>
+		
+		
+						</div><!-- .sidebar end -->
+						
+						<!-- Post -->
+						<div class="postcontent nobottommargin col_last">
+								
+								<h1 ng-show="check7 == 1"> Odwołane! </h1>
+								<h2>"{{competition.NAME}}"</h2>
+								<h5>{{competition.TYP}}</h5>							
+												
+							<p ng-hide="competition.OPIS == ''">
+							<textarea class="editor" ng-hide="!competition.OPIS" name="editor" ckeditor="options" ng-model="competition.OPIS" ready="onReady()"></textarea>
+							</p>
+											
+						</div><!-- .postcontent end -->
+						
+				</div>
+			
+
+							
+			</div>
+			
+			
+			
+			
+
+		</section><!-- #content end -->
+
+<!-- <div class="container" ng-controller="myCompetitionController">
+	<div class="text-center">
+		<div class="well">Strona zawodów "{{ response.NAME }}"</div>
+	</div>
+	
+	<div class="text-center" ng-show="response.DEACTIVATED">
+		<strong style="color: red;">ODWOŁANE</strong>
+	</div>
+	
+	<div class="container" style="background-color: #222933;">Nazwa
+		<div class="well" style="background-color: #006666;"> {{ response.NAME }}</div>
+	</div>
+	
+	<div class="container" style="background-color: #222933;">Miejscowość
+		<div class="well" style="background-color: #006666;"> {{ response.MIEJSCOWOSC }}</div>
+	</div>
+	
+	<div class="container" style="background-color: #222933;">Data rozpoczęcia
+		<div class="well" style="background-color: #006666;"> {{ response.DATA_ROZP }}</div>
+	</div>
+
+	<div class="container" style="background-color: #222933;">Data zakończenia
+		<div class="well" style="background-color: #006666;"> {{ response.DATA_ZAK }}</div>
+	</div>
+	
+	<div class="container" ng-hide="check == 1">
+		<div class="container" style="background-color: #222933;" ng-hide="!response.TYP">Typ
+			<div class="well" style="background-color: #006666;"> {{ response.TYP }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.CZAS_ROZP">Godzina rozpoczęcia
+			<div class="well" style="background-color: #006666;"> {{ response.CZAS_ROZP }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.CZAS_ZAK">Godzina zakończenia
+			<div class="well" style="background-color: #006666;"> {{ response.CZAS_ZAK }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.LIMIT_UCZ">Limit uczestników
+			<div class="well" style="background-color: #006666;"> {{ response.LIMIT_UCZ }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.OPLATA">Opłata
+			<div class="well" style="background-color: #006666;"> {{ response.OPLATA }}</div>
+		</div>
+		
+		<div class="container" style="background-color: #222933;" ng-hide="!response.OPIS">Opis
+				<textarea class="editor" name="editor" ckeditor="options" ng-model="response.OPIS" ready="onReady()"></textarea>
+		</div>
+	</div>
+
+	<button class="btn btn-primary" ng-click="print()"> {{ btnText }} </button>
+	
+	<br/>
+
+	<div class="container" ng-show="check2 == 1">
+
+		<form name="dropCompetitionForm" class="form-horizontal"  novalidate>
+			<div class="container">
+	            <label class="col-lg-3 text-right">Podaj powód odwołania zawodów</label>
+	                        
+	            <div class="col-lg-8">
+	                <input type="text" 
+	                            id="reason" 
+	                            name="reason" 
+	                            class="form-control" 
+	                            ng-model="reason"
+	                            placeholder="Powód"
+	                            required
+	                            ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">                       
+	
+	                <div ng-messages="dropCompetitionForm.city.$error" ng-show="dropCompetitionForm.$submitted || dropCompetitionForm.city.$touched">
+	                     <span ng-message="pattern" class="help-block">  Pole może zawierać tylko litery </span>
+	                     <span ng-message="required" class="help-block"> Pole jest wymagane </span>                
+	                </div>
+	            </div>
+	        </div>
+	        
+	        <br/>
+	        
+			<div class="text-center"><button class="btn btn-primary" ng-click="dropCompetition2()">Odwołaj zawody</button></div>
+		</form>
+	</div>
+
+	<div class="container" ng-show="check3 == 1">
+		<strong>{{retInfo}}</strong>
+	</div>
+
+	<div class="text-right">
+		<button class="btn btn-primary" ng-click="showRunnersList()">Lista Zawodników</button>
+		<button class="btn btn-primary" ng-click="editCompetition()">Edytuj</button>
+		<button class="btn btn-primary" ng-click="dropCompetition()" ng-hide="response.DEACTIVATED">Odwołaj</button>
+	</div>
+</div>
+	
+
+ -->

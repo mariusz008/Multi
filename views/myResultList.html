@@ -1,0 +1,111 @@
+<section id="content" ng-controller="myResultListController">
+
+			<div class="content-wrap">
+					<div class="container clearfix">	
+	
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">							
+						
+							<div class="sidebar-widgets-wrap">
+
+							<ul class="sidenav">
+								<li ><a href ng-click="showDescription()">Opis<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="showRunnersList()">Lista zawodników<i class="icon-chevron-right"></i></a></li>
+								<li class="ui-tabs-active"><a href="#">Wyniki<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-show="editActive" ng-click="editCompetition()">Edytuj<i class="icon-chevron-right"></i></a></li>
+															
+							</ul>
+
+								
+							</div>
+														
+						</div>
+						<!--content -->
+						<div class="postcontent nobottommargin col_last">
+
+
+							<div class="well text-center" ng-hide="retInfo==''"> {{$scope.retInfo}} </div>
+							<div class="container" ng-show="runners[0] == null && banned[0] == null"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
+							<div ng-show="details.OFFICIAL == 'false'">
+								<div ng-hide="runners[0] == null " style="overflow-x:auto" >
+									<table class="table">
+									<thead>
+	  								<tr>
+	  									<th width="100" class="tg-zcxc">DSQ</th>
+	  									<th width="100" class="tg-zcxc">Miejsce</th>
+									    <th width="100" class="tg-zcxc">Imię</th>
+									    <th width="100" class="tg-zcxc">Nazwisko</th>
+									    <th width="100" class="tg-zcxc">Kategoria</th>
+									    <th width="100" class="tg-zcxc">Klub</th>
+									    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
+	  								</tr>
+	  								</thead>
+	  								<tbody ng-sortable="{animation:150}">
+									  <tr class="item" style="cursor: move;" ng-repeat="runner in runners" >
+									    <td width="100" class="tg-yw4l" ><button ng-click="DSQ($index)" ><i class="icon-remove inline-block fright" ></i></button></td>
+									  	<td width="100" class="tg-yw4l" >{{$index+1 }}</td>
+									    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
+									    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+									    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
+									    <td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+									    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+	  								</tr>
+	  								</tbody>
+									</table>
+								</div>
+								<div>
+									<br>
+									<div ng-show="banned[0] != null">
+									<h4> Dyskwalifikacja </h4>				
+									<div  style="overflow-x:auto" >
+									<table class="table">
+									<tr>  									
+									    <th width="100" class="tg-zcxc">Imię</th>
+									    <th width="100" class="tg-zcxc">Nazwisko</th>
+									    <th width="100" class="tg-zcxc">Kategoria</th>
+									    <th width="100" class="tg-zcxc">Klub</th>
+									    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
+	  								</tr> 								
+									  <tr class="item" ng-repeat="ban in banned" >							  	
+									    <td width="100" class="tg-yw4l">{{ban.IMIE}}</td>
+									    <td width="100" class="tg-yw4l">{{ban.NAZWISKO}}</td>
+									    <td width="100" class="tg-yw4l">{{ban.CATEGORY}}</td>
+									    <td width="100" class="tg-yw4l">{{ban.KLUB}}</td>
+									    <td ng-repeat="t in ban.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+	  								</tr>
+									</table>
+								</div>
+								</div>
+									
+							</div>
+
+						<div class="text-center">
+						<button ng-show="banned[0] != null || runners[0] != null" class="btn btn-lg" ng-click="confirmResultList()">Opublikuj wyniki</button>
+						</div>
+						</div>
+						<div ng-show="details.OFFICIAL == 'true'">
+						<h4 class="text-center">  Lista wyników została opublikowana</h4>
+								<table class="table" width="400"  >
+  								<tr>
+  									<th width="100" class="tg-zcxc">Miejsce</th>
+								    <th width="100" class="tg-zcxc">Imię</th>
+								    <th width="100" class="tg-zcxc">Nazwisko</th>
+								    <th width="100" class="tg-zcxc">Kategoria</th>
+								    <th width="100" class="tg-zcxc">Klub</th>
+								    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
+  								</tr>
+								  <tr ng-repeat="runner in runners" >
+								  	<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+								    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+								    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+  								</tr>
+								</table>
+						</div>
+						</div>
+					</div>
+
+			</div>
+</section>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pl" ng-app="loginApp">
+   <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <!-- Stylesheets
+    ============================================= -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/swiper.css" type="text/css" />
+    <link rel="stylesheet" href="css/dark.css" type="text/css" />
+    <link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.css" type="text/css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+    <link rel="stylesheet" href="css/responsive.css" type="text/css" />
+
+    <link rel="stylesheet" href="custom.css" type="text/css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lt IE 9]>
+        <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <!-- Document Title
+    ============================================= -->
+    <title>JustRace</title>
+
+</head>
+
+<body class="stretched">
+
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+
+        <!-- Header
+        ============================================= -->
+        <header id="header" class="sticky-style-2">
+
+            <div class="container clearfix">
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo" class="divcenter">
+                    <a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img class="divcenter" src="images/logo.png" alt="Logo"></a>
+                    <a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img class="divcenter" src="images/logo@2x.png" alt="Logo"></a>
+                </div><!-- #logo end -->
+
+            </div>
+
+            <div id="header-wrap">
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu" class="style-2 center">
+
+                    <div class="container clearfix">
+
+                        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                        <ul>
+                            <li><a href="index.html"><div>Strona główna</div></a></li>
+                            <li><a href="guestCompetitions.html"><div>Zawody</div></a></li>
+                            <li><a href="how.html"><div>Jak to działa</div></a></li>
+                            <li><a href="application.html"><div>Aplikacja</div></a></li>
+                            <li><a href="contact.html"><div>Kontakt</div></a></li>
+                            <li class="current"><a href="login.html"><span class="login-menulink">Zaloguj się</span> </a></li>
+                            <li><a href="registration.html"><span class="login-menulink">Zarejestruj się</span></a></li>
+                        </ul>
+
+                        <!-- Top Search
+                        ============================================= -->
+                        <!-- <div id="top-search">
+                            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" class="form-control" value="" placeholder="Szukaj na stronie">
+                            </form>
+                        </div>#top-search end -->
+
+                    </div>
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </header><!-- #header end -->
+
+<!-- Content
+        ============================================= -->
+ <form name="loginForm" class="form-horizontal" ng-controller="loginController" novalidate>
+    <section id="content">
+         <br><br><br><br><br><br>    
+        <div class="container" ng-show="retInfo">
+            <div class="alert alert-danger">
+                <strong>{{retInfo}}</strong>
+            </div>
+       </div> 
+        
+         <div class="container">
+            <label class="col-lg-3 text-right">Login</label>                        
+            <div class="col-lg-8">
+                <input type="text"
+                        id="login"
+                        name="login"
+                        class="form-control"
+                        placeholder="Login"
+                        ng-model="user.login"
+                        required
+                        ng-pattern ="/^[a-żA-Ż0-9]*$/"
+                        ng-minlength="5"
+                        ng-maxlength="20">
+                      
+               <div ng-messages="loginForm.login.$error" ng-show="loginForm.$submitted || loginForm.login.$touched">
+                    <span ng-message="required" class="errormsg">Podaj login</span>
+                    <span ng-message="pattern" class="errormsg">Pole może zawierać tylko litery i cyfry! </span>
+                    <span ng-message="maxlength" class="errormsg">Login nie może być dłuższy niż 20 znaków</span>
+                    <span ng-message="minlength" class="errormsg">Login nie może być krótszy niż 5 znaków</span>
+                
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-3 text-right ">Hasło</label>                        
+            <div class="col-lg-8">
+                <input type="password"
+                        id="password" 
+                        name="password" 
+                        class="form-control" 
+                        placeholder="Hasło"
+                        ng-model="user.password" 
+                        required
+                        ng-pattern ="/^[a-żA-Ż0-9]*$/"
+                        ng-minlength="8"
+                        ng-maxlength="20">
+                      
+               <div ng-messages="loginForm.password.$error" ng-show="loginForm.$submitted || loginForm.password.$touched">
+                    <span ng-message="required" class="errormsg">Podaj hasło</span>
+                    <span ng-message="pattern" class="errormsg">Pole może zawierać tylko litery i cyfry! </span>
+                    <span ng-message="maxlength" class="errormsg">Hasło nie może być dłuższe niż 20 znaków</span>
+                    <span ng-message="minlength" class="errormsg">Hasło nie może być krótsze niż 8 znaków</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-8">
+            <label class="col-lg-11">
+                <input  type="checkbox"
+                         id="remenberMe" 
+                         name="rememberMe" 
+                         ng-model="rememberMe"
+                         ng-init="rememberMe=false">
+                         Zapamiętaj mnie</label>
+            </div>                       
+        </div>
+        
+       
+
+        <div class="container">
+             <div class=" text-right">
+                 <button class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!loginForm.$valid" ng-click="loginClick()"> Zaloguj </button>
+             </div>
+        </div>
+        
+    </section> 
+    </form>
+
+         <br>
+
+ <form name="remindForm" class="form-horizontal" ng-controller="remindController" novalidate>
+    <section id="content" >
+    
+        <div class="container" ng-show="remindForm.$submitted">
+            <div class="alert alert-danger">
+                <strong>{{remindInfo}}</strong>
+            </div>
+       </div>
+
+        <div class="container">
+             <div class="text-center">
+                <h4><a href ng-click="remindPass=true" style="text-decoration: none" class="logo"> Nie pamiętam hasła</a></h4>
+             </div>
+        </div>
+
+        
+        <div ng-show="remindPass" class="container">
+            <div class="text-center"><h5>Na Twój adres e-mail zostanie wysłana wiadomość z przymomnieniem loginu oraz hasła.</h5></div>
+        
+
+        <div class="container">
+            <label class="col-lg-3 text-right">Login</label>                        
+            <div class="col-lg-8">
+                <input type="text"
+                        id="login"
+                        name="login"
+                        class="form-control"
+                        placeholder="Login"
+                        ng-model="user.login"
+                        required
+                        ng-pattern ="/^[a-żA-Ż0-9]*$/"
+                        ng-minlength="5"
+                        ng-maxlength="20">
+                      
+               <div ng-messages="remindForm.login.$error" ng-show="remindForm.$submitted || remindForm.login.$touched">
+                    <span ng-message="required" class="errormsg">Podaj login</span>
+                    <span ng-message="pattern" class="errormsg">Pole może zawierać tylko litery i cyfry! </span>
+                    <span ng-message="maxlength" class="errormsg">Login nie może być dłuższy niż 20 znaków</span>
+                    <span ng-message="minlength" class="errormsg">Login nie może być krótszy niż 5 znaków</span>
+                
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-3 text-right">E-mail</label>
+                        
+            <div class="col-lg-8">
+                <input type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-control" 
+                        ng-model="user.email"
+                        placeholder="E-mail" 
+                        required >
+                      
+                <div ng-show="remindForm.$submitted || remindForm.email.$touched">
+                    <div ng-messages="remindForm.email.$error">
+                      <span ng-message="required" class="errormsg">Pole e-mail jest wymagane</span>   
+                    </div>           
+                    <span ng-hide="remindForm.email.$valid" class="errormsg"> E-mail nie jest poprawny </span>
+                </div>
+            </div>
+        </div>
+        <br>
+            <div class="container">
+                 <div class=" text-right">
+                      <button class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!remindForm.$valid" ng-click="remindClick()"> Wyślij przypomnienie </button>
+                 </div>
+            </div> 
+        
+    </div>
+    </section>
+    </form>
+
+<!-- FOOTER -->
+        <footer id="footer" class="dark">
+
+            <div id="copyrights">
+
+                <div class="container clearfix">
+
+                    <div class="col_half">
+                        <img src="images/footer-logo.png" alt="" class="footer-logo">
+
+                        <span class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by JustRace.</span>
+                    </div>
+
+                    <div class="col_half col_last tright">
+                        <div class="copyrights-menu copyright-links clearfix">
+                            <a href="aboutUs.html">O nas</a> <a href="#">Regulamin</a> <a href="contact.html">Kontakt</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer><!-- #footer end -->
+        
+        
+        
+    </div><!-- #wrapper end -->
+<!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- External JavaScripts
+    ============================================= -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+
+    <!-- Footer Scripts
+    ============================================= -->
+    <script type="text/javascript" src="js/functions.js"></script>
+    
+       <script src="js/bootstrap.min.js"></script>
+       <script src="js/main.js"></script> 
+       <script src="js/angular.min.js"></script>
+       <script type="text/javascript" src="js/ngStorage.min.js"></script>
+       <script src="js/angular-messages.min.js"></script>
+       <script src="js/loginController.js"></script> 
+
+       <script>
+           
+           var app = angular.module('loginApp', ['ngMessages', 'loginController']); 
+
+       </script>
+       
+    </body>
+</html>
+
+
+
+
+

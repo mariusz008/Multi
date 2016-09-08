@@ -1,0 +1,200 @@
+<section id="content" ng-controller="runnersListController" ng-init="init()">
+
+	<div class="well" ng-show="error">{{error}}</div>
+			<div class="content-wrap">
+
+
+					<!-- Challenge main nav + description container -->
+					<div class="container clearfix">
+						
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">
+						
+
+							<ul class="sidenav">
+								<li><a href="home/myCompetition" >Opis<i class="icon-chevron-right"></i></a></li>
+								<li class="ui-tabs-active"><a href>Lista zawodników<i class="icon-chevron-right"></i></a></li>
+								<li ><a href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
+								<li ng-show="editActive=='true'"><a href="/home/myCompetition/edit">Edytuj<i class="icon-chevron-right"></i></a></li>
+								<br ng-show="editActive=='true'">
+								<li ng-show="editActive=='true'"><a href="#register" id="openBtn" data-toggle="modal">Nadaj numery startowe</a></li>
+								<li ng-show="editActive=='true'"><a href="#cat" id="openBtn" data-toggle="modal">Stwórz kategorie</a></li>
+
+									<div class="modal fade" id="register">
+									<div class="modal-dialog">
+									      <div class="modal-content">
+									        <div class="modal-header">
+									          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									          <h3 class="modal-title">Rejestracja zawodników</h3>
+									        </div>
+									      
+									        <div class="modal-body">
+											  <div class="center">Szukaj: <input ng-model="runner.NAZWISKO" placeholder="Nazwisko"> </input></div>
+									          <table class="table table-striped" id="tblGrid">
+									            <thead id="tblHead">
+									              <tr>
+									                <th>Numer startowy</th>
+									                <th>Imię</th>
+									                <th>Nazwisko</th>
+									                <th>E-mail</th>
+									                <th>Zatwierdź</th>
+									              </tr>
+									            </thead>
+									            <tbody ng-repeat="runner in runners | filter: runner">
+									              <tr>
+									              	<td class="right">
+									              		<p ng-show="runner.EVENT_NR!=brak">{{runner.EVENT_NR}}</p>
+									              		<input ng-hide="runner.EVENT_NR!=brak" type="text" ng-model="runner.startNumber"> </input>
+
+									              	</td>
+									              	<td>{{runner.IMIE}}</td>
+									              	<td>{{runner.NAZWISKO}}</td>
+									              	<td>{{runner.EMAIL}}</td>
+									              	<td><a href ng-click="confirmStartNumber(runner.USER_ID, runner.COMPETITION_ID, runner.startNumber)"><i class="icon-ok"></i></i></td>
+									              </tr>
+									            </tbody>
+									          </table>			
+											</div>
+									        <div class="modal-footer">
+									          <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+									        </div>
+													
+									      </div><!-- /.modal-content -->
+									    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+  
+  									<div class="modal fade" id="cat">
+									<div class="modal-dialog">
+									      <div class="modal-content">
+									        <div class="modal-header">
+									          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+									          <h3 class="modal-title">Tworzenie kategorii</h3>
+									        </div>
+									      
+									        <div class="modal-body">
+									          <table class="table table-striped" id="tblGrid">
+									            <thead id="tblHead">
+									              <tr>
+									                <th>Kategoria</th>
+									              </tr>
+									            </thead>
+									            <tbody ng-repeat="category in categories | orderBy : ['NAME','DESCRIPTION']">
+									              <tr>
+									              	<td>{{category.NAME}}</td>
+									              	<!--  <td><a href ng-click="confirmStartNumber(runner.USER_ID, runner.COMPETITION_ID, runner.startNumber)"><i class="icon-ok"></i></i></td>-->
+									              	
+									              </tr>
+									            </tbody>
+									          </table>			
+											</div>
+									        <div class="modal-footer">
+									          <div class="center"> Wprowadź dane <br/><input ng-model="nazwaCat" placeholder="Nazwa kategorii"> </input><input ng-model="desc" placeholder="Opis kategorii"> </input><br/><br/></div>
+									          <button type="button" class="btn btn-default " ng-click="addCat()">Dodaj</button>
+									          <button type="button" class="btn btn-default " data-dismiss="modal">Close</button>
+									        </div>
+													
+									      </div><!-- /.modal-content -->
+									    </div><!-- /.modal-dialog -->
+  										</div><!-- /.modal -->
+							</ul>
+							<div class="widget clearfix">
+
+									<div class="search-short">
+										<form action="#" role="form" class="notopmargin nobottommargin">
+											
+											<div class="input-group divcenter">
+												<span>Płeć:</span>
+												<select type="text" id="type" name="type" class="form-control" ng-model="sex" ng-options="plec.nazwa for plec in plci">
+		
+		                        				<option value=""> Wybierz płeć </option>
+		                						</select>    
+		                					</div>
+											<br>
+		                					<div class="input-group divcenter">
+		                						<span>Fraza:</span>
+												 <input type="text"
+			                        					id="name" 
+			                        					name="name" 
+			                        					class="form-control" 
+			                        					placeholder="Fraza" 
+			                        					ng-model="phrase" 
+			                        					ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">					
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<span>Wiek:</span>
+												<input type="text"
+			                        					id="name" 
+			                        					name="name" 
+			                        					class="form-control" 
+			                        					placeholder="Wiek" 
+			                       					 	ng-model="age" 
+			                        					ng-pattern ="/^[1-9]\d{0,8}$/">
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<span>Kategoria:</span>
+												<select type="text"
+			                        					id="type" 
+			                        					name="type" 
+			                        					class="form-control" 
+			                        					ng-model="cat"
+			                        					ng-options="category.NAME for category in categories">
+			                        
+			                        					<option value=""> Wybierz kategorię </option>
+		                						</select>       
+											</div>
+											<br>
+											<div class="input-group divcenter">
+												<button type="text" class="form-control" ng-click="s()">Szukaj </button>
+												<button type="text" class="form-control" ng-click="w()"> Wyczyść </button>
+											</div>	 	 
+
+
+										</form>
+									</div>
+
+							</div>
+						</div>
+
+
+<div class="postcontent nobottommargin col_last">
+
+	
+	<div class="container" ng-show="runners == 0"><h4> Nikt się jeszcze nie zapisał</h4></div>
+	
+		<div ng-hide="runners == 0">
+							
+			<table width="400" class="table">
+  				<tr>
+					<th width="100" class="tg-zcxc">Numer startowy</th>
+					<th width="100" class="tg-zcxc">Imię</th>
+					<th width="100" class="tg-zcxc">Nazwisko</th>
+					<th width="100" class="tg-zcxc">Kategoria</th>
+					<th width="100" class="tg-zcxc">Klub</th>
+					<th ng-show="compPay != ''" width="100" class="tg-zcxc">Opłacono</th>
+					<th width="100" class="tg-zcxc">Usuń</th>
+  				</tr>
+				<tr ng-repeat="runner in runners">
+					<td width="100" class="tg-yw4l">{{runner.EVENT_NR}}</td>
+					<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
+					<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+					<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
+					<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+					<td ng-show="compPay != ''" width="100" class="tg-yw4l">
+						<button type="button" class="btn btn-sm btn-info" ng-show="runner.OPLACONE == 'nie'" ng-click="runnerPaid(runner.COMPETITION_ID, runner.USER_ID)" >Zapłacił</button>
+						<label ng-show="runner.OPLACONE == 'tak'"> Zapłacono </label>						
+					</td>
+					<td width="100" class="tg-yw4l">
+						<button type="button" class="btn btn-sm	btn-danger" ng-click="deleteRunner(runner.COMPETITION_ID, runner.USER_ID)">
+							<i class="icon-remove"></i>
+						</button>
+					</td>
+  				</tr>
+			</table>
+		</div>	
+
+</div>
+</div>
+</div>
+</section>

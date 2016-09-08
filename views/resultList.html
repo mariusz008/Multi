@@ -1,0 +1,51 @@
+<section id="content" ng-controller="resultListController">
+
+			<div class="content-wrap">
+					<div class="container clearfix">	
+	
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">							
+						
+							<div class="sidebar-widgets-wrap">
+
+							<ul class="sidenav">
+								<li ><a href ng-click="showDescription()">Opis<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-click="showRunnersList()">Lista startowa<i class="icon-chevron-right"></i></a></li>
+								<li class="ui-tabs-active"><a href="#">Wyniki<i class="icon-chevron-right"></i></a></li>							
+							</ul>
+
+								
+							</div>
+														
+						</div>
+						<!--content -->
+						<div class="postcontent nobottommargin col_last">
+
+							<div class="container" ng-show="runners[1] == null"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
+							<div ng-hide="runners[1] == null" style="overflow-x:auto">
+								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>
+								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'true'">  Oficjalna lista wyników</h4>
+								<table class="table" width="400"  >
+  								<tr>
+  									<th width="100" class="tg-zcxc">Miejsce</th>
+								    <th width="100" class="tg-zcxc">Imię</th>
+								    <th width="100" class="tg-zcxc">Nazwisko</th>
+								    <th width="100" class="tg-zcxc">Kategoria</th>
+								    <th width="100" class="tg-zcxc">Klub</th>
+								    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
+  								</tr>
+								  <tr ng-repeat="runner in runners" ng-if="$index >0">
+								  	<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+								    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
+								    <td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+								    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+  								</tr>
+								</table>
+								</div>
+						</div>
+					</div>
+
+			</div>
+</section>

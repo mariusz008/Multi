@@ -1,0 +1,292 @@
+<section id="content"  ng-controller="addCompetitionController">
+
+            <div class="content-wrap">
+
+
+                    <div class="container clearfix">
+    
+    
+                        <!-- Sidebar -->
+                        <div class="sidebar nobottommargin">
+
+                            
+                        
+                            <div class="sidebar-widgets-wrap">
+
+                            <ul class="sidenav">
+                                <li><a href="/home/myCompetitions">Moje zawody<i class="icon-chevron-right"></i></a></li>
+                                <li  class="ui-tabs-active"><a href="#">Nowe zawody<i class="icon-chevron-right"></i></a></li>                          
+                            </ul>
+                            </div>
+
+                        </div>
+
+                            
+
+
+ <div class="postcontent nobottommargin col_last">
+    <form name="addCompetitionForm" novalidate>
+ 
+        <div id="requestResult" class="well text-center" ng-show="requestResult">{{requestResult}}</div> 
+
+        <div class="container"> 
+           <label class="col-lg-2">Nazwa*</label>     
+            <div class="col-lg-6">
+                <input type="text"
+                        id="name" 
+                        name="name" 
+                        class="form-control" 
+                        placeholder="Nazwa" 
+                        ng-model="competition.name" 
+                        required 
+                        ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">
+                    
+                <div ng-messages="addCompetitionForm.name.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.name.$touched">
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko litery i cyfry! </span>
+                </div>
+             </div>
+        </div> 
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Data rozpoczęcia*</label>
+                        
+            <div class="col-lg-6">
+
+            <p class="input-group">
+                <input type="text"
+                        id="startDate"
+                        name="startDate"
+                        class="form-control" 
+                        uib-datepicker-popup="dd.MM.yyyy" 
+                        ng-model="competition.startDate" 
+                        is-open="popup1.opened" 
+                        datepicker-options="dateOptions"
+                        placeholder="dd.mm.rrrr"
+                        date-validator
+                        required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open1()"><i class="color icon-calendar2 inline-block fright"></i></button>
+                </span>
+            </p>
+
+                <div ng-messages="addCompetitionForm.startDate.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.startDate.$touched">
+                    <span ng-show="!addCompetitionForm.startDate.$valid" class="help-block"> Niepoprawnie uzupełnione pole </span>
+                </div> 
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Czas rozpoczęcia*</label>                        
+            <div class="col-lg-6">
+            <uib-timepicker
+                        id="startTime"
+                        name="startTime" 
+                        ng-model="competition.startTime" 
+                        show-meridian="ismeridian" 
+                        required>
+            </uib-timepicker>                     
+                      
+               <div ng-messages="addCompetitionForm.startTime.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.startTime.$touched">
+                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
+               </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Data zakończenia*</label>
+            
+            <div class="col-lg-6 ">
+
+            <p class="input-group">
+                <input type="text"
+                        id="endDate"
+                        name="endDate"
+                        class="form-control" 
+                        uib-datepicker-popup="dd.MM.yyyy" 
+                        ng-model="competition.endDate" 
+                        is-open="popup2.opened" 
+                        datepicker-options="dateOptions"
+                        placeholder="dd.mm.rrrr"
+                        date-validator 
+                        required/>
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" ng-click="open2()"><i class="color icon-calendar2 inline-block fright"></i></button>
+                </span>
+            </p>
+
+                     
+                <div ng-messages="addCompetitionForm.endDate.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.endDate.$touched">
+                    <span ng-show="!addCompetitionForm.endDate.$valid" class="help-block"> Niepoprawnie uzupełnione pole </span>
+                </div>
+            </div>
+        </div>
+        <br>       
+         <div class="container">
+            <label class="col-lg-2">Czas zakończenia*</label>                        
+            <div class="col-lg-6">
+             <uib-timepicker
+                        id="endTime"
+                        name="endTime" 
+                        ng-model="competition.endTime" 
+                        show-meridian="ismeridian" 
+                        required>
+            </uib-timepicker>  
+                      
+               <div ng-messages="addCompetitionForm.endTime.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.endTime.$touched">
+                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
+               </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Miejscowość*</label>
+                        
+            <div class="col-lg-6">
+                <input type="text" 
+                            id="city" 
+                            name="city" 
+                            class="form-control" 
+                            ng-model="competition.city"
+                            placeholder="Miejscowość"
+                            required
+                            ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">                       
+
+                <div ng-messages="addCompetitionForm.city.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.city.$touched">
+                     <span ng-message="pattern" class="help-block">  Pole może zawierać tylko litery </span>
+                     <span ng-message="required" class="help-block"> Pole jest wymagane </span>                
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Typ*</label>
+                        
+            <div class="col-lg-6">
+                <select type="text"
+                        id="type" 
+                        name="type" 
+                        class="form-control" 
+                        ng-model="competition.type"
+                        ng-options="type.name group by type.type for type in types" 
+                        required>
+
+                        <option value=""> Wybierz typ </option>
+                </select>       
+                      
+               <div ng-messages="addCompetitionForm.type.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.type.$touched">
+                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Zawody płatne</label>
+            <div class="col-lg-6">
+                <input  type="checkbox"
+                        id="payCheck" 
+                        name="payCheck" 
+                        ng-model="competition.payCheck"
+                        ng-focus="competition.pay=''"
+                        ng-init="competition.payCheck=false">    
+
+                        <input type="text"
+                        id="pay" 
+                        name="pay" 
+                        class="form-control"
+                        style="width:100px; display:inline-block" 
+                        ng-disabled="!competition.payCheck"
+                        placeholder="Kwota"
+                        ng-model="competition.pay"
+                        ng-pattern="/^[1-9]\d{0,8}$/" 
+                        ng-required="competition.payCheck"
+                        >  
+
+                        <div ng-messages="addCompetitionForm.pay.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.pay.$touched">
+                            <span ng-message="pattern" class="help-block">  Pole może zawierać tylko liczby(większe od 0)</span>
+                            <span ng-message="min" class="help-block">Minimalna kwota to 1</span>
+                            <span ng-message="required" class="help-block"> Podaj kwotę! </span>                          
+                        </div>                                      
+            </div>                       
+        </div>
+        <br>
+
+
+         <div class="container">
+            <label class="col-lg-2">Limit uczestników</label>
+            <div class="col-lg-6">            
+                <input  
+                        type="checkbox"
+                        ng-model="competition.memberLimitCheck"
+                        id="memberLimitCheck" 
+                        name="memberLimitCheck"
+                        ng-focus="competition.memberLimit=''" 
+                        ng-init="competition.memberLimitCheck=false">
+                         
+                <input type="text"
+                        id="memberLimit" 
+                        name="memberLimit" 
+                        class="form-control"
+                        style="width:100px; display:inline-block" 
+                        ng-disabled="!competition.memberLimitCheck"
+                        placeholder="Limit"
+                        ng-model="competition.memberLimit"
+                        ng-pattern="/^[1-9]\d{0,8}$/" 
+                        ng-maxlength="4"
+                        ng-required="competition.memberLimitCheck"
+                        >  
+
+                        <div ng-messages="addCompetitionForm.memberLimit.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.memberLimit.$touched">
+                            <span ng-message="pattern" class="help-block">  Pole może zawierać tylko liczby(większe od 0)</span>
+                            <span ng-message="maxlength" class="help-block">Maksymalna liczba uczestników to 9999</span>
+                            <span ng-message="min" class="help-block">Minimalna liczba uczestników to 1</span>
+                            <span ng-message="required" class="help-block"> Podaj limit zawodników! </span>                          
+                        </div>          
+            </div>                       
+        </div>   
+        <br>
+        <div class="container">
+            <label class="col-lg-1">Logo</label>
+            <div class="col-lg-4">
+                <input  type="file"
+                        id="logo" 
+                        name="logo"
+                        class="btn btn-primary"
+                        ng-model="logo" 
+                        maxsize="5"
+                        accept="image/jpeg" 
+                        base-sixty-four-input> 
+
+                         <div ng-messages="addCompetitionForm.logo.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.logo.$touched">
+                            <span ng-message="accept" class="help-block"> Zły typ pliku(wymagane rozszerzenie to .jpg)</span>
+                            <span ng-message="maxsize" class="help-block">Plik jest za duży (max. 5 KB)</span>                         
+                        </div>      
+
+            </div>                       
+        </div> 
+
+        <br>
+        <div class="container">
+            <label class="col-lg-1">Opis</label>
+            <div class="col-lg-8">
+                <textarea class="form-control"
+                        ckeditor="options" 
+                        ng-model="competition.description" 
+                        ready="onReady()">
+                </textarea>               
+
+            </div>                       
+        </div> 
+        <br>
+        <div class="container"><h4>Pola zaznaczone gwiazdką* są wymagane.</h4></div>
+        
+        <div class="container">
+        <div class=" text-center">
+             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addCompetitionForm.$valid" ng-click="addCompetitionClick()"> Utwórz zawody </button>
+             </div>
+        </div>            
+    </form>
+    </div>
+    </div>
+    </div>
+    </section>

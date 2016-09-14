@@ -1,6 +1,6 @@
 (function(){
 
-   var app = angular.module('JustRaceDirectives', []);
+   var app = angular.module('MultiJustRaceDirectives', []);
 
    app.directive('pwCheck', [function () {
             return {

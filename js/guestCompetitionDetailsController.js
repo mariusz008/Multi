@@ -32,7 +32,7 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
         $scope.id = sessionStorage.getItem('compID');
         
         
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?id=' + $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.competition = data;
             })            
@@ -40,7 +40,7 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
                 $scope.retInfo = 'Błąd!'+ data;
             });
 
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/gps/all?competition_id=' + $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/gps/all?competition_id=' + $scope.id)
             .success(function(data){
                 $scope.map = data;
             })            

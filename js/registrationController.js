@@ -36,7 +36,7 @@
                     		sex = 'K';
                     	}
                     	
-                        $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/user?name='+ $scope.user.name+
+                        $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user?name='+ $scope.user.name+
                                                                             '&surname=' +$scope.user.surname+
                                                                             '&login='+$scope.user.login+
                                                                             '&password='+$scope.user.password+
@@ -51,7 +51,7 @@
                                 
                                 if(data.content=="User added")
                                 {
-                                $scope.requestResult = "Gratulacje! Zostałeś zarejestrowany w systemie JustRace! Na Twój adres e-mail została wysłana wiadomośc z linkiem aktywacyjnym. Kliknij w niego aby aktywować swoje konto.";
+                                $scope.requestResult = "Gratulacje! Zostałeś zarejestrowany w systemie MultiJustRace! Na Twój adres e-mail została wysłana wiadomośc z linkiem aktywacyjnym. Kliknij w niego aby aktywować swoje konto.";
                                 $window.scrollTo(0, 0);
                                /* $scope.user.name = "";
                                 $scope.user.surname = "";

@@ -90,10 +90,10 @@
                         $scope.sex = $scope.plci[1];
                     }
                     
-                    /*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + 
+                    /*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                             '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME);*/
                     
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + 
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                                                                                                         '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME)
                     .success(function(data){
                         $scope.runners = data;
@@ -132,7 +132,7 @@
             $scope.init2 = function() {
                 $scope.check = 0;
                 
-                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category/list?competition_id=' + id)
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id)
                 .success(function(data){
                     $scope.categories = data;
                     if($scope.categories == "") {

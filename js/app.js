@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module('justRaceApp', ['ngRoute', 'ngMessages','ng-sortable', 'justRaceControllers']); 
+    var app = angular.module('MultiJustRaceApp', ['ngRoute', 'ngMessages','ng-sortable', 'MultiJustRaceControllers']);
 
     app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
@@ -8,82 +8,82 @@
             .when('/runnerInfo', {    
               //controller: 'runnerController',
               templateUrl: 'views/runnerInfo.html',   
-              label: 'JustRace - Strona zawodnika'   
+              label: 'MultiJustRace - Strona zawodnika'
             })
             .when('/home/competitions', {
               controller: 'competitionsController',
               templateUrl: 'views/competitions.html',   
-              label: 'JustRace - Lista zawodów'   
+              label: 'MultiJustRace - Lista zawodów'
             })
             .when('/home/competition', {
               controller: 'competitionController',
               templateUrl: 'views/competition.html',   
-              label: 'JustRace - Lista zawodów'   
+              label: 'MultiJustRace - Lista zawodów'
             })
             .when('/home/myCompetition', {
               controller: 'myCompetitionController',
               templateUrl: 'views/myCompetition.html',   
-              label: 'JustRace - Lista zawodów'   
+              label: 'MultiJustRace - Lista zawodów'
             })
             .when('/home/runnerCompetition', {
               controller: 'runnerCompetitionController',
               templateUrl: 'views/runnerCompetition.html',   
-              label: 'JustRace - Lista zawodów'   
+              label: 'MultiJustRace - Lista zawodów'
             })
             .when('/home/profile', {
               controller: 'profileController',
               templateUrl: 'views/profile.html',   
-              label: 'JustRace - Profil użytkownika'   
+              label: 'MultiJustRace - Profil użytkownika'
             })
             .when('/home/editProfile', {
               controller: 'editProfileController',
               templateUrl: 'views/editProfile.html',   
-              label: 'JustRace - Edycja profilu użytkownika'   
+              label: 'MultiJustRace - Edycja profilu użytkownika'
             })
             .when('/home/addCompetition', {
               controller: 'addCompetitionController',
               templateUrl: 'views/addCompetition.html',   
-              label: 'JustRace - Dodaj zawody'   
+              label: 'MultiJustRace - Dodaj zawody'
             })
             .when('/home/myCompetitions', {
               controller: 'myCompetitionsController',
               templateUrl: 'views/myCompetitions.html',   
-              label: 'JustRace - Lista Twoich zawodów'   
+              label: 'MultiJustRace - Lista Twoich zawodów'
             })
             .when('/home/runnerCompetitions', {
               controller: 'runnerCompetitionsController',
               templateUrl: 'views/runnerCompetitions.html',   
-              label: 'JustRace - Lista Twoich zawodów'   
+              label: 'MultiJustRace - Lista Twoich zawodów'
             })
              .when('/home/myCompetition/runnersList', {
               controller: 'runnersListController',
               templateUrl: 'views/runnersList.html',   
-              label: 'JustRace - Lista Twoich zawodów'   
+              label: 'MultiJustRace - Lista Twoich zawodów'
             })
             .when('/home/myCompetition/edit', {
               controller: 'editCompetitionController',
               templateUrl: 'views/editCompetition.html',   
-              label: 'JustRace - Edycja zawodów'   
+              label: 'MultiJustRace - Edycja zawodów'
             })
             .when('/home/main', {
               controller: 'mainController',
               templateUrl: 'views/main.html',   
-              label: 'JustRace - Edycja zawodów'   
+              label: 'MultiJustRace - Edycja zawodów'
             })
             .when('/home/competition/compRunnersList', {
               controller: 'compRunnersListController',
               templateUrl: 'views/compRunnerList.html',   
-              label: 'JustRace - Edycja zawodów'   
+              label: 'MultiJustRace - Edycja zawodów'
             })
             .when('/home/competition/results', {
               controller: 'resultListController',
               templateUrl: 'views/resultList.html',   
-              label: 'JustRace - Wyniki'   
+              label: 'MultiJustRace - Wyniki'
             })
             .when('/home/myCompetition/results', {
               controller: 'myResultListController',
               templateUrl: 'views/myResultList.html',   
-              label: 'JustRace - Wyniki'   
+              label: 'MultiJustRace - Wyniki'
             })
             .when('/home/aboutUs', {
               templateUrl: 'views/aboutUs.html',   

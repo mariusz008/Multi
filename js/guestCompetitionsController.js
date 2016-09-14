@@ -70,7 +70,7 @@
             if($scope.place == null)
                 $scope.place = '';
             
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/all?type=' + temp + 
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=' + temp +
                     '&name=' + $scope.name +
                     '&place=' + $scope.place)
             .success(function(data){

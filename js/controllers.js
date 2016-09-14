@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module('justRaceControllers', ["ngStorage" , 'ckeditor', 'ui.bootstrap' , 'naif.base64',  'justRaceControllers', 'JustRaceDirectives' ]);
+    var app = angular.module('MultiJustRaceControllers', ["ngStorage" , 'ckeditor', 'ui.bootstrap' , 'naif.base64',  'MultiJustRaceControllers', 'MultiJustRaceDirectives' ]);
      
 
     app.controller('mainController', ['$scope', '$http', '$log', '$sessionStorage','$location', function($scope, $http, $log, $sessionStorage, $location){
@@ -10,7 +10,7 @@
         $scope.diffDate =[];
 
 
-        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/all?type=&name=&place=')
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=')
             .success(function(data){
             competitionsFilter = data;
 
@@ -65,7 +65,7 @@
     	$scope.imie = sessionStorage.getItem('IMIE');
     	
         $scope.logoutClick = function(){
-            //sessionStorage.removeItem('justrace');
+            //sessionStorage.removeItem('MultiJustRace');
         	
         	sessionStorage.removeItem('IMIE');
             sessionStorage.removeItem('ICE');
@@ -92,7 +92,7 @@
         
         $scope.user = [];
         
-        //$scope.user = sessionStorage.getItem('justrace');
+        //$scope.user = sessionStorage.getItem('MultiJustRace');
         
         $scope.user.IMIE = sessionStorage.getItem('IMIE');
         $scope.user.ICE = sessionStorage.getItem('ICE');
@@ -167,7 +167,7 @@
     				$scope.changePasswordClick = function(){
     					var id = sessionStorage.getItem('ID');
       	  
-    					$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/user/password?user_id='+ id +
+    					$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/password?user_id='+ id +
     							'&old_password=' + $scope.user.old_password + 
     							'&new_password=' + $scope.user.password)
 
@@ -194,7 +194,7 @@
                   $scope.editProfileClick = function(){
                       var id = sessionStorage.getItem('ID');
                 	  
-                      $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/user?name=' + $scope.user.name +
+                      $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user?name=' + $scope.user.name +
                     		  											'&surname=' + $scope.user.surname +
                     		  											'&email=' + $scope.user.email +
                     		  											'&user_id=' + id + 
@@ -227,7 +227,7 @@
                   $scope.deleteAccountClick = function(){
                 	  var id = sessionStorage.getItem('ID');
                 	  
-                	  $http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/user/delete?user_id=' + id +
+                	  $http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/delete?user_id=' + id +
                 			  																'&password=' + $scope.user.delete_password)
 								
 						.success(function (data, status, headers) {
@@ -328,7 +328,7 @@
             if($scope.place == null)
             	$scope.place = '';
             
-        	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/all?type=' + temp + 
+        	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=' + temp +
 					'&name=' + $scope.name +
 					'&place=' + $scope.place)
 			.success(function(data){
@@ -582,7 +582,7 @@
 
             var user_id = sessionStorage.getItem('ID');
             
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/my?user_id=' + user_id + 
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/my?user_id=' + user_id +
                     '&type=' + temp + 
                     '&name=' + $scope.name +
                     '&place=' + $scope.place)
@@ -820,7 +820,7 @@
 
             var user_id = sessionStorage.getItem('ID');
             
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/user/list?user_id=' + user_id + 
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/user/list?user_id=' + user_id +
                     '&type=' + temp + 
                     '&name=' + $scope.name +
                     '&place=' + $scope.place)
@@ -1018,7 +1018,7 @@
     	$scope.competition = [];
         $scope.id = sessionStorage.getItem('compID');
         
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?id=' + $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.competition = data;
                 
@@ -1074,7 +1074,7 @@
         $scope.id = sessionStorage.getItem('compID');
         
         
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?id=' + $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.competition = data;
                 
@@ -1125,9 +1125,9 @@
             $scope.dropCompetition2 = function(){
             	var id = sessionStorage.getItem('ID');
             	
-            	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason);
+            	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason);
             	
-            	$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason)
+            	$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason)
                 .success(function(data){
                 	$scope.check2 = 0;
                 	
@@ -1183,7 +1183,7 @@
         $scope.id = sessionStorage.getItem('compID');
         
         
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?id=' + $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.response = data;
 
@@ -1239,7 +1239,7 @@
         $scope.editActive = sessionStorage.getItem('editActive');
     
         $scope.addCat = function() {
-    		$http.put('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category?user_id=' + token + 
+    		$http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category?user_id=' + token +
                     '&competition_id=' + id + '&name=' + $scope.nazwaCat + '&description=' + $scope.desc)
 			.success(function(data){
 				$scope.retInfo = 'Kategoria dodana';
@@ -1316,10 +1316,10 @@
                 		$scope.sex = $scope.plci[1];
                 	}
                 	
-                	/*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + 
+                	/*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                             '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME);*/
                 	
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + 
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                                                                                                         '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME)
                     .success(function(data){
                         $scope.runners = data;
@@ -1333,7 +1333,7 @@
            $scope.deleteRunner = function(compID, runnID) {
              if (confirm('Czy napewno chcesz usunąć zawodnika?')) {
 
-                $http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event?owner_id='+token+'&competition_id=' + compID + 
+                $http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event?owner_id='+token+'&competition_id=' + compID +
                                                                                                 '&user_id='+runnID)
                 .success(function(data){
                     if(data.code==230)
@@ -1354,7 +1354,7 @@
 
            $scope.runnerPaid = function(compID, runnID) {
 
-                $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/payment?owner_id='+token+'&competition_id=' + compID + 
+                $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/payment?owner_id='+token+'&competition_id=' + compID +
                                                                                                 '&user_id='+runnID)
                 .success(function(data){
                     $route.reload();
@@ -1394,9 +1394,9 @@
             $scope.init2 = function() {
             	$scope.check = 0;
             	
-            	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category/list?competition_id=' + id);
+            	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id);
             	
-            	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category/list?competition_id=' + id)
+            	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id)
                 .success(function(data){
                     $scope.categories = data;
                     if($scope.categories == "") {
@@ -1417,7 +1417,7 @@
             };
 
             $scope.confirmStartNumber = function(userID, compID, startNumber) {
-                $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/user/number?user_id=' + token
+                $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/user/number?user_id=' + token
                                                                                         +'&user_to_number_id='+ userID
                                                                                         +'&competition_id='+ compID
                                                                                         +'&number='+startNumber)
@@ -1526,10 +1526,10 @@
                         $scope.sex = $scope.plci[1];
                     }
                     
-                    /*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + 
+                    /*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                             '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME);*/
                     
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + 
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                                                                                                         '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME)
                     .success(function(data){
                         $scope.runners = data;
@@ -1568,7 +1568,7 @@
             $scope.init2 = function() {
                 $scope.check = 0;
                 
-                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category/list?competition_id=' + id)
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id)
                 .success(function(data){
                     $scope.categories = data;
                     if($scope.categories == "") {
@@ -1639,9 +1639,9 @@
         //sessionStorage.removeItem('compData');
         //sessionStorage.removeItem('compGodzina');
 
-        //$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=');
+        //$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=');
         
-        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
         .success(function(data){
         	var users = [];
             users = data;
@@ -1673,7 +1673,7 @@
             		
 	            	var user = sessionStorage.getItem('ID');
 	            	
-	            	$http.put('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event?user_id=' + user + '&competition_id=' + id + '&category_name=' + $scope.cat.NAME)
+	            	$http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event?user_id=' + user + '&competition_id=' + id + '&category_name=' + $scope.cat.NAME)
 	                .success(function(data){
 	                	if(data.content == 'Brak wolnych miejsc'){
 	                		$scope.retInfo = 'Brak wolnych miejsc na te zawody!';
@@ -1702,7 +1702,7 @@
             
             $scope.signOut = function(id) {
             	var user = sessionStorage.getItem('ID');
-            	$http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/event/leave?competition_id=' + id + '&user_id=' + user)
+            	$http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/leave?competition_id=' + id + '&user_id=' + user)
                 .success(function(data){
                     $scope.retInfo = "Wypis z zawodów powiódł się!";
                     $scope.check = 0;
@@ -1720,8 +1720,8 @@
             $scope.init = function() {
             	$scope.check5 = 0;
             	$scope.init2();
-            	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category/list?competition_id=' + $scope.id);
-            	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition/category/list?competition_id=' + $scope.id)
+            	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + $scope.id);
+            	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + $scope.id)
                 .success(function(data){
                     $scope.categories = data;
                     if($scope.categories == "") {
@@ -1735,7 +1735,7 @@
             };
             
             $scope.init2 = function() {
-            	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?id=' + $scope.id)
+            	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
                 .success(function(data){
                     
                     if(data.DEACTIVATED == 'true') {
@@ -1873,7 +1873,7 @@
                             }
                             
                           
-                    $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?user_id='+ user+
+                    $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
                                                                             '&name=' +$scope.competition.name+
                                                                             '&data_rozp='+moment($scope.competition.startDate).format('DD.MM.YYYY')+
                                                                             '&czas_rozp='+moment($scope.competition.startTime).format('HH:mm')+
@@ -2006,7 +2006,7 @@
                     var user_id = sessionStorage.getItem('ID');
                     
                     
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?id=' + id)
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                         .success(function(response){
                             var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
                             var timePattern = /(\d{2}):(\d{2})/;
@@ -2060,7 +2060,7 @@
                                             cost = '';
                                         }
                                      
-                                $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/competition?user_id='+ user_id +
+                                $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user_id +
                                                                                         '&competition_id='+ id+
                                                                                         '&name=' +$scope.competition.name+
                                                                                         '&data_rozp='+moment($scope.competition.startDate).format('DD.MM.YYYY')+
@@ -2109,7 +2109,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              
                     $scope.runners = [];
 
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/result/list?competition_id='+id)
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
                         if($scope.runners[1] != null)
@@ -2164,7 +2164,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
              $scope.banned=[];
              $scope.runners = [];
 
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/result/list?competition_id='+id)
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
                         if($scope.runners[1] != null){
@@ -2233,7 +2233,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
                     }
                     
                     
-                    $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/result/publish?user_id='+user_id+
+                    $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/publish?user_id='+user_id+
                                                                                                 '&competition_id=' + id +
                                                                                                 '&parts='+ lastResult.toString()+
                                                                                                 '&banned='+ lastBanned.toString())

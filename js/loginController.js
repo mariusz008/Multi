@@ -17,14 +17,14 @@
 
         $scope.loginClick = function(){
         
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/user/login?login='+ $scope.user.login +
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/login?login='+ $scope.user.login +
                                                                         '&password='+ $scope.user.password)
 
             .success(function(data){
                 response = data;
                 if(response.ACTIVATE == 'true')
                 {
-                	//sessionStorage.setItem('justrace', response);
+                	//sessionStorage.setItem('MultiJustRace', response);
                 	var sex = '';
                 	
                 	if(response.PLEC == 'M'){
@@ -73,7 +73,7 @@
                     
             $scope.remindClick = function(){
 
-                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/user/password?login='+ $scope.user.login +
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/password?login='+ $scope.user.login +
                                                                         '&email='+ $scope.user.email)
                  .success(function(data){
                     $scope.remindInfo = data.content;

@@ -7,7 +7,7 @@
                     var id = sessionStorage.getItem('compID');
                     $scope.runners = [];
 
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest/rest/result/list?competition_id='+id)
+                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
                         $scope.timesColumn = [];

@@ -52,7 +52,7 @@
 
         $scope.showCompetitionDetails = function(id){
             sessionStorage.setItem('compID', id);
-            $location.path('/home/competition');         
+            $location.path('/Multi/home/competition');
         }
 
 
@@ -80,7 +80,7 @@
             sessionStorage.removeItem('PLEC');
             sessionStorage.removeItem('WIEK');
         	
-            window.location = '/index.html';
+            window.location = '/Multi/index.html';
         };
 
     }])
@@ -127,7 +127,7 @@
         };
         
         $scope.edit = function() {
-            $location.path('/home/editProfile');
+            $location.path('/Multi/home/editProfile');
         };
     }])
     
@@ -182,7 +182,7 @@
     									sessionStorage.setItem('msg', 'Zmiana hasła powiodła się.');
     								}
     									
-    								$location.path('/home/profile');
+    								$location.path('/Multi/home/profile');
     							})
     							.error(function(data,status,headers,config){
     								$scope.retInfo = 'Błąd!'+ data;
@@ -217,7 +217,7 @@
                               sessionStorage.setItem('KLUB', $scope.user.club);
                               sessionStorage.setItem('WIEK', $scope.user.age);
                         	  
-                        	  $location.path('/home/profile');
+                        	  $location.path('/Multi/home/profile');
                           })
                           .error(function (data, status, header, config) {
                               $scope.retInfo2 ='Błąd!' + data;     
@@ -233,7 +233,7 @@
 						.success(function (data, status, headers) {
 							if(data.content == 'Wrong password'){
 								sessionStorage.setItem('msg', 'Usunięcie konta nie powiodło się z powodu podania złego hasła');
-								$location.path('/home/profile');
+								$location.path('/Multi/home/profile');
 							}
 							
 							else{
@@ -252,7 +252,7 @@
 					            sessionStorage.removeItem('PLEC');
 					            sessionStorage.removeItem('WIEK');
 					        	
-					            window.location = '/index.html';
+					            window.location = '/Multi/index.html';
 							}
 						})
 						.error(function (data, status, header, config) {
@@ -476,7 +476,7 @@
             	sessionStorage.setItem('compData', data);
             	sessionStorage.setItem('compGodzina', godzina);
             	
-            	$location.path('/home/competition');
+            	$location.path('/Multi/home/competition');
             };
             
             $scope.print = function() {
@@ -714,7 +714,7 @@
                 sessionStorage.setItem('compData', data);
                 sessionStorage.setItem('compGodzina', godzina);
                 
-                $location.path('/home/myCompetition');
+                $location.path('/Multi/home/myCompetition');
             };
             
             $scope.print = function() {
@@ -953,7 +953,7 @@
                 sessionStorage.setItem('compData', data);
                 sessionStorage.setItem('compGodzina', godzina);
                 
-                $location.path('/home/competition');
+                $location.path('/Multi/home/competition');
             };
             
             $scope.print = function() {
@@ -1035,13 +1035,13 @@
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('compName', $scope.competition.NAME);
                 sessionStorage.setItem('compPay', $scope.competition.OPLATA);
-                $location.path('/home/competition/compRunnersList'); 
+                $location.path('/Multi/home/competition/compRunnersList');
 
             }
             
            $scope.showResultList = function(){
                 sessionStorage.setItem('compID', $scope.id);
-                $location.path('/home/competition/results');
+                $location.path('/Multi/home/competition/results');
             }      
             
     }])
@@ -1108,13 +1108,13 @@
             sessionStorage.setItem('compName', $scope.competition.NAME);
             sessionStorage.setItem('compPay', $scope.competition.OPLATA);
                 
-                $location.path('/home/myCompetition/runnersList'); 
+                $location.path('/Multi/home/myCompetition/runnersList');
 
             }
 
             $scope.editCompetition = function(){
                 
-                $location.path('/home/myCompetition/edit'); 
+                $location.path('/Multi/home/myCompetition/edit');
 
             }
             
@@ -1146,7 +1146,7 @@
 
             $scope.showResultList = function(){
                 sessionStorage.setItem('compID', $scope.id);
-                $location.path('/home/myCompetition/results');
+                $location.path('/Multi/home/myCompetition/results');
             }
     }])
     
@@ -1439,7 +1439,7 @@
 
              $scope.showResultList = function(){
                 sessionStorage.setItem('compID', id);
-                $location.path('/home/myCompetition/results');
+                $location.path('/Multi/home/myCompetition/results');
             }
             
             
@@ -1593,12 +1593,12 @@
                // sessionStorage.setItem('compData', data);
                 //sessionStorage.setItem('compGodzina', godzina);
                 
-                $location.path('/home/competition');
+                $location.path('/Multi/home/competition');
             };
 
             $scope.showResultList = function(){
                 sessionStorage.setItem('compID', id);
-                $location.path('/home/competition/results');
+                $location.path('/Multi/home/competition/results');
             }
             
             
@@ -2084,20 +2084,20 @@
                                 };
 
                         $scope.backClick = function(){
-                            $location.path('/home/myCompetition');
+                            $location.path('/Multi/home/myCompetition');
                         };
 
                         $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
                             sessionStorage.setItem('compName', $scope.competition.name);
                             sessionStorage.setItem('compPay', cost);
-                            $location.path('/home/myCompetition/runnersList'); 
+                            $location.path('/Multi/home/myCompetition/runnersList');
 
                         }
 
             $scope.showResultList = function(){
                 sessionStorage.setItem('compID', id);
-                $location.path('/home/myCompetition/results');
+                $location.path('/Multi/home/myCompetition/results');
             }
                     
                                
@@ -2142,13 +2142,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
-                            $location.path('/home/competition/compRunnersList'); 
+                            $location.path('/Multi/home/competition/compRunnersList');
 
                         } 
 
                     $scope.showDescription = function(){
                             sessionStorage.setItem('compID', id);
-                            $location.path('/home/competition'); 
+                            $location.path('/Multi/home/competition');
 
                         }   
 
@@ -2249,19 +2249,19 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
 
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
-                            $location.path('/home/myCompetition/runnersList'); 
+                            $location.path('/Multi/home/myCompetition/runnersList');
 
                         } 
 
                     $scope.showDescription = function(){
                             sessionStorage.setItem('compID', id);
-                            $location.path('/home/myCompetition'); 
+                            $location.path('/Multi/home/myCompetition');
 
                         }
 
                     $scope.editCompetition = function(){
                             sessionStorage.setItem('compID', id);
-                            $location.path('/home/myCompetition/edit'); 
+                            $location.path('/Multi/home/myCompetition/edit');
 
                         } 
 

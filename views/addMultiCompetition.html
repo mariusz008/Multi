@@ -1,4 +1,4 @@
-<section id="content"  ng-controller="addCompetitionController">
+<section id="content"  ng-controller="addMultiCompetitionController">
 
             <div class="content-wrap">
 
@@ -15,8 +15,10 @@
 
                             <ul class="sidenav">
                                 <li><a href="/Multi/Multi/home/myCompetitions">Moje zawody<i class="icon-chevron-right"></i></a></li>
-                                <li  class="ui-tabs-active"><a href="#">Nowe zawody jednoetapowe<i class="icon-chevron-right"></i></a></li>
-                                <li><a href="/Multi/Multi/home/addMultiCompetition">Nowe zawody wieloetapowe<i class="icon-chevron-right"></i></a></li>
+                                <li><a href="/Multi/Multi/home/addCompetition">Nowe zawody wieloetapowe<i class="icon-chevron-right"></i></a></li>
+                                <li  class="ui-tabs-active"><a href="#">Nowe zawody wieloetapowe<i class="icon-chevron-right"></i></a></li>
+
+
                             </ul>
                             </div>
 
@@ -141,27 +143,7 @@
         </div>
         <br>
         <div class="container">
-            <label class="col-lg-2">Miejscowość*</label>
-                        
-            <div class="col-lg-6">
-                <input type="text" 
-                            id="city" 
-                            name="city" 
-                            class="form-control" 
-                            ng-model="competition.city"
-                            placeholder="Miejscowość"
-                            required
-                            ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">                       
-
-                <div ng-messages="addCompetitionForm.city.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.city.$touched">
-                     <span ng-message="pattern" class="help-block">  Pole może zawierać tylko litery </span>
-                     <span ng-message="required" class="help-block"> Pole jest wymagane </span>                
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="container">
-            <label class="col-lg-2">Typ*</label>
+            <label class="col-lg-2">Typ ogólny*</label>
                         
             <div class="col-lg-6">
                 <select type="text"
@@ -283,7 +265,7 @@
         
         <div class="container">
         <div class=" text-center">
-             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addCompetitionForm.$valid" ng-click="addCompetitionClick()"> Utwórz zawody </button>
+             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addCompetitionForm.$valid" ng-click="addMultiCompetitionClick()"> Utwórz zawody </button>
              </div>
         </div>            
     </form>

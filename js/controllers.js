@@ -1884,7 +1884,8 @@
                                                                             '&miejscowosc=' + $scope.competition.city +
                                                                             '&oplata=' + cost + 
                                                                             '&opis=' + $scope.competition.description +
-                                                                            '&image='+ $scope.logo.base64)
+                                                                            '&image='+ $scope.logo.base64 +
+                                                                            '&wieloetapowe='0)
                             .success(function (data) {
 
                                if(data.content = "Competitions Created")
@@ -1915,6 +1916,172 @@
                     };                
                 
     }]) 
+     app.controller('addMultiCompetitionController', ['$scope', '$http','$location','$window', '$sessionStorage' , function($scope, $http, $location, $window,$sessionStorage, $moment){
+
+                        // Editor options.
+                          $scope.options = {
+                            language: 'pl',
+                            allowedContent: true,
+                            entities: false
+                          };
+
+
+                        $scope.status = 'Dodaj zawody';
+
+                        $scope.types = [
+                        {name:'Bieg przełajowy' ,type:'Biegi'},
+                        {name:'Bieg maratoński' ,type:'Biegi'},
+                        {name:'Bieg uliczny' ,type:'Biegi'},
+                        {name:'Bieg górski' ,type:'Biegi'},
+                        {name:'Chód' ,type:'Biegi'},
+                        {name:'Kolarstwo szosowe' ,type:'Rowerowe'},
+                        {name:'Kolarstwo górskie' ,type:'Rowerowe'},
+                        {name:'Bieg narciarski' ,type:'Narciarskie'},
+                        {name:'Narciarstwo alpejskie' ,type:'Narciarskie'},
+                        {name:'Wyścig samolotów' ,type:'Powietrzne'},
+                        {name:'Wyścig balonów' ,type:'Powietrzne'},
+                        {name:'Wyścig samochodowy' ,type:'Motorowe'},
+                        {name:'Wyścig off-road' ,type:'Motorowe'},
+                        {name:'Karting' ,type:'Motorowe'},
+                        {name:'Wyścig motocykli' ,type:'Motorowe'},
+                        {name:'Wyścig quadów' ,type:'Motorowe'},
+                        {name:'Wyścig skuterów śnieżnych' ,type:'Motorowe'},
+                        {name:'Kajakarstwo' ,type:'Wyścigi łodzi'},
+                        {name:'Wioślarstwo' ,type:'Wyścigi łodzi'},
+                        {name:'Inne' ,type:'Inne'}
+                        ];
+
+                        $scope.competition = {
+                        memberLimitCheck : 'false'
+                        };
+
+                        $scope.logo = {
+                        "filesize": 54836, /* bytes */
+                        "filetype": "",
+                        "filename": "",
+                        "base64":   ""
+                        }
+            ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
+
+                 $scope.today = function() {
+                    $scope.dt = new Date();
+                  };
+                  $scope.today();
+
+                  $scope.dateOptions = {
+                    formatYear: 'yy',
+                    minDate: new Date(),
+                    startingDay: 1
+                  };
+
+                  $scope.open1 = function() {
+                    $scope.popup1.opened = true;
+                  };
+
+                  $scope.open2 = function() {
+                    $scope.popup2.opened = true;
+                  };
+
+                  $scope.popup1 = {
+                    opened: false
+                  };
+
+                  $scope.popup2 = {
+                    opened: false
+                  };
+
+                  function getDayClass(data) {
+                    var date = data.date,
+                      mode = data.mode;
+                    if (mode === 'day') {
+                      var dayToCheck = new Date(date).setHours(0,0,0,0);
+
+                      for (var i = 0; i < $scope.events.length; i++) {
+                        var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
+
+                        if (dayToCheck === currentDay) {
+                          return $scope.events[i].status;
+                        }
+                      }
+                    }
+
+                    return '';
+                  }
+
+            /////////////////////////////////////////////TIMEPICKER/////////////////////////////////////////////////////////////////////
+
+            $scope.ismeridian = false;
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                        var limit;  //limit uczestnikow przesylany w zapytaniu
+                        var cost;
+                        var user = sessionStorage.getItem('ID');
+
+                        $scope.addMultiCompetitionClick = function(){
+
+
+                             if($scope.competition.memberLimitCheck)
+                                {
+                                    limit = $scope.competition.memberLimit;
+                                }
+                             else
+                                {
+                                    limit = '';
+                                }
+
+                             if($scope.competition.payCheck)
+                                {
+                                    cost = $scope.competition.pay;
+                                }
+                             else
+                                {
+                                    cost = '';
+                                }
+
+
+                        $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
+                                                                                '&name=' +$scope.competition.name+
+                                                                                '&data_rozp='+moment($scope.competition.startDate).format('DD.MM.YYYY')+
+                                                                                '&czas_rozp='+moment($scope.competition.startTime).format('HH:mm')+
+                                                                                '&data_zak='+moment($scope.competition.endDate).format('DD.MM.YYYY')+
+                                                                                '&czas_zak=' + moment($scope.competition.endTime).format('HH:mm')+
+                                                                                '&typ=' + $scope.competition.type.name+
+                                                                                '&limit_ucz=' + limit +
+                                                                                '&miejscowosc=' + $scope.competition.city +
+                                                                                '&oplata=' + cost +
+                                                                                '&opis=' + $scope.competition.description +
+                                                                                '&image='+ $scope.logo.base64 +
+                                                                                '&wieloetapowe='1)
+                                .success(function (data) {
+
+                                   if(data.content = "Competitions Created")
+                                   {
+                                    $scope.requestResult = "Zawody zostały utworzone! Pamiętaj, że aby zawodnicy mogli zapisywać się na te zawody musisz jeszcze utworzyć kategorie. Możesz to zrobić w menu zaodów.";
+                                    $window.scrollTo(0, 0);
+                                    $scope.competition.name = "";
+                                    $scope.competition.startDate = "";
+                                    $scope.competition.startTime = "";
+                                    $scope.competition.endDate = "";
+                                    $scope.competition.endTime = "";
+                                    $scope.competition.type.name = "";
+                                    $scope.competition.payCheck = false;
+                                    $scope.competition.pay = "";
+                                    $scope.competition.memberLimitCheck = false;
+                                    $scope.competition.memberLimit = "";
+                                    $scope.competition.city = "";
+                                    $scope.competition.description = "";
+                                    $scope.logo = null;
+                                   }
+
+
+
+                                })
+                                .error(function (data) {
+                                    $scope.requestResult = 'Błąd! Nie udało się dodać zawodów.';
+                                });
+                        };
+
+        }])
 
     app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){ 
 

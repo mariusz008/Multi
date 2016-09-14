@@ -39,7 +39,7 @@
 
                     $scope.showGuestRunnersList = function(){
                         sessionStorage.setItem('compID', id);
-                        window.location = '/guestRunnerList.html'; 
+                        window.location = '/Multi/guestRunnerList.html';
                     }
            
     }])

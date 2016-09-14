@@ -51,7 +51,7 @@
 
 		$scope.showGuestCompetitionDetails = function(id){
 			sessionStorage.setItem('compID', id);
-			window.location = '/guestCompetitionDetails.html';			
+			window.location = '/Multi/guestCompetitionDetails.html';
 		}
 
     }])

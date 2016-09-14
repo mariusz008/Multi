@@ -26,7 +26,7 @@
         $scope.showGuestResultList = function(){
                 sessionStorage.setItem('compID', id);
                 sessionStorage.setItem('compName', $scope.competitionName);
-                window.location = '/guestResultList.html'; 
+                window.location = '/Multi/guestResultList.html';
             }
 
             $scope.init = function() {

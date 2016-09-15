@@ -68,7 +68,8 @@
 														  competition.TYP == 'Bieg maratoński' ||
 														  competition.TYP == 'Bieg uliczny' ||
 														  competition.TYP == 'Bieg górski' ||
-														  competition.TYP == 'Chód'" 
+														  competition.TYP == 'Chód' &&
+															&& competition.WIELOETAPOWE == 0 "
 														  style='width:280px;height:230px;' src="images/bieg.png" />
 											
 											<img ng-show="competition.TYP == 'Kolarstwo szosowe' ||
@@ -80,9 +81,15 @@
 														  style='width:280px;height:230px;' src="images/zimowe.png" />
 											
 											<img ng-show="competition.TYP == 'Wyścig samolotów' ||
-														  competition.TYP == 'Wyścig balonów'" 
-														  style='width:280px;height:230px;' src="images/powietrzne.png" />
-											
+														  competition.TYP == 'Wyścig balonów' &&
+															&& competition.WIELOETAPOWE == 0 "
+												 style='width:280px;height:230px;' src="images/powietrzne.png" />
+
+											<img ng-show="competition.TYP == 'Wyścig samolotów' ||
+														  competition.TYP == 'Wyścig balonów' &&
+															&& competition.WIELOETAPOWE == 1 "
+												 style='width:280px;height:230px;' src="images/powietrzne1.png" />
+
 											<img ng-show="competition.TYP == 'Wyścig off-road' ||
 														  competition.TYP == 'Karting' ||
 														  competition.TYP == 'Wyścig motocykli' ||

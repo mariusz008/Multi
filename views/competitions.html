@@ -64,46 +64,78 @@
 									<div class="portfolio-image">
 										<a href ng-click="openPage(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)">
 
-											<img ng-show="competition.TYP == 'Bieg przełajowy' ||
+											<img ng-show="(competition.TYP == 'Bieg przełajowy' ||
 														  competition.TYP == 'Bieg maratoński' ||
 														  competition.TYP == 'Bieg uliczny' ||
 														  competition.TYP == 'Bieg górski' ||
-														  competition.TYP == 'Chód' &&
+														  competition.TYP == 'Chód')
 															&& competition.WIELOETAPOWE == 0 "
 														  style='width:280px;height:230px;' src="images/bieg.png" />
-											
-											<img ng-show="competition.TYP == 'Kolarstwo szosowe' ||
-														  competition.TYP == 'Kolarstwo górskie'" 
+											<img ng-show="(competition.TYP == 'Bieg przełajowy' ||
+														  competition.TYP == 'Bieg maratoński' ||
+														  competition.TYP == 'Bieg uliczny' ||
+														  competition.TYP == 'Bieg górski' ||
+														  competition.TYP == 'Chód')
+															&& competition.WIELOETAPOWE == 1 "
+												 style='width:280px;height:230px;' src="images/bieg1.png" />
+
+											<img ng-show="(competition.TYP == 'Kolarstwo szosowe' ||
+														  competition.TYP == 'Kolarstwo górskie')
+														&& competition.WIELOETAPOWE == 0 "
 														  style='width:280px;height:230px;' src="images/rowerowe.png" />
-											
-											<img ng-show="competition.TYP == 'Bieg narciarski' ||
-														  competition.TYP == 'Narciarstwo alpejskie'" 
+											<img ng-show="(competition.TYP == 'Kolarstwo szosowe' ||
+														  competition.TYP == 'Kolarstwo górskie')
+														&& competition.WIELOETAPOWE == 1 "
+												 style='width:280px;height:230px;' src="images/rowerowe1.png" />
+
+											<img ng-show="(competition.TYP == 'Bieg narciarski' ||
+														  competition.TYP == 'Narciarstwo alpejskie')
+														&& competition.WIELOETAPOWE == 0 "
 														  style='width:280px;height:230px;' src="images/zimowe.png" />
-											
-											<img ng-show="competition.TYP == 'Wyścig samolotów' ||
-														  competition.TYP == 'Wyścig balonów' &&
+											<img ng-show="(competition.TYP == 'Bieg narciarski' ||
+														  competition.TYP == 'Narciarstwo alpejskie')
+														&& competition.WIELOETAPOWE == 1 "
+												 style='width:280px;height:230px;' src="images/zimowe1.png" />
+
+											<img ng-show="(competition.TYP == 'Wyścig samolotów' ||
+														  competition.TYP == 'Wyścig balonów')
 															&& competition.WIELOETAPOWE == 0 "
 												 style='width:280px;height:230px;' src="images/powietrzne.png" />
-
-											<img ng-show="competition.TYP == 'Wyścig samolotów' ||
-														  competition.TYP == 'Wyścig balonów' &&
+											<img ng-show="(competition.TYP == 'Wyścig samolotów' ||
+														  competition.TYP == 'Wyścig balonów')
 															&& competition.WIELOETAPOWE == 1 "
 												 style='width:280px;height:230px;' src="images/powietrzne1.png" />
 
-											<img ng-show="competition.TYP == 'Wyścig off-road' ||
+											<img ng-show="(competition.TYP == 'Wyścig off-road' ||
 														  competition.TYP == 'Karting' ||
 														  competition.TYP == 'Wyścig motocykli' ||
 														  competition.TYP == 'Wyścig quadów' || 
 														  competition.TYP == 'Wyścig samochodowy' ||
-														  competition.TYP == 'Wyścig skuterów śnieżnych'" 
+														  competition.TYP == 'Wyścig skuterów śnieżnych')
+														  && competition.WIELOETAPOWE == 0 "
 														  style='width:280px;height:230px;' src="images/motorowe.png" />
-											
-											<img ng-show="competition.TYP == 'Kajakarstwo' ||
-														  competition.TYP == 'Wioślarstwo'" 
+											<img ng-show="(competition.TYP == 'Wyścig off-road' ||
+														  competition.TYP == 'Karting' ||
+														  competition.TYP == 'Wyścig motocykli' ||
+														  competition.TYP == 'Wyścig quadów' ||
+														  competition.TYP == 'Wyścig samochodowy' ||
+														  competition.TYP == 'Wyścig skuterów śnieżnych')
+														  && competition.WIELOETAPOWE == 1 "
+												 style='width:280px;height:230px;' src="images/motorowe1.png" />
+
+											<img ng-show="(competition.TYP == 'Kajakarstwo' ||
+														  competition.TYP == 'Wioślarstwo')
+														 && competition.WIELOETAPOWE == 0 "
 														  style='width:280px;height:230px;' src="images/wodne.png" />
-											
-											<img ng-show="competition.TYP == 'Inne'" 
+											<img ng-show="(competition.TYP == 'Kajakarstwo' ||
+														  competition.TYP == 'Wioślarstwo')
+														 && competition.WIELOETAPOWE == 1 "
+												 style='width:280px;height:230px;' src="images/wodne1.png" />
+
+											<img ng-show="competition.TYP == 'Inne' && competition.WIELOETAPOWE == 0"
 														  style='width:280px;height:230px;' src="images/czas.png" />
+											<img ng-show="competition.TYP == 'Inne' && competition.WIELOETAPOWE == 1"
+												 style='width:280px;height:230px;' src="images/czas1.png" />
 										</a>
 										<div class="portfolio-overlay">
 											<a href ng-click="openPage(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)" class="center-icon"><i class="icon-line-ellipsis"></i></a>

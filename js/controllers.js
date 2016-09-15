@@ -1885,7 +1885,7 @@
                                                                             '&oplata=' + cost + 
                                                                             '&opis=' + $scope.competition.description +
                                                                             '&image='+ $scope.logo.base64 +
-                                                                            '&wieloetapowe='0)
+                                                                            '&wieloetapowe=' + 0)
                             .success(function (data) {
 
                                if(data.content = "Competitions Created")
@@ -2051,7 +2051,7 @@
                                                                                 '&oplata=' + cost +
                                                                                 '&opis=' + $scope.competition.description +
                                                                                 '&image='+ $scope.logo.base64 +
-                                                                                '&wieloetapowe='1)
+                                                                                '&wieloetapowe=' + 1)
                                 .success(function (data) {
 
                                    if(data.content = "Competitions Created")

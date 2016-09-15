@@ -45,6 +45,11 @@
               templateUrl: 'views/addCompetition.html',   
               label: 'MultiJustRace - Dodaj zawody'
             })
+            .when('/Multi/home/addMultiCompetition', {
+             controller: 'addMultiCompetitionController',
+              templateUrl: 'views/addMultiCompetition.html',
+              label: 'MultiJustRace - Dodaj zawody'
+              })
             .when('/Multi/home/myCompetitions', {
               controller: 'myCompetitionsController',
               templateUrl: 'views/myCompetitions.html',   

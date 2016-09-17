@@ -15,7 +15,7 @@
 
                             <ul class="sidenav">
                                 <li><a href="/Multi/Multi/home/myCompetitions">Moje zawody<i class="icon-chevron-right"></i></a></li>
-                                <li><a href="/Multi/Multi/home/addCompetition">Nowe zawody wieloetapowe<i class="icon-chevron-right"></i></a></li>
+                                <li><a href="/Multi/Multi/home/addCompetition">Nowe zawody jednoetapowe<i class="icon-chevron-right"></i></a></li>
                                 <li  class="ui-tabs-active"><a href="#">Nowe zawody wieloetapowe<i class="icon-chevron-right"></i></a></li>
 
 
@@ -139,6 +139,26 @@
                <div ng-messages="addMultiCompetitionForm.endTime.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.endTime.$touched">
                     <span ng-message="required" class="help-block">Pole jest wymagane</span>
                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Miejscowość*</label>
+
+            <div class="col-lg-6">
+                <input type="text"
+                       id="city"
+                       name="city"
+                       class="form-control"
+                       ng-model="competition.city"
+                       placeholder="Miejscowość"
+                       required
+                       ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">
+
+                <div ng-messages="addCompetitionForm.city.$error" ng-show="addCompetitionForm.$submitted || addCompetitionForm.city.$touched">
+                    <span ng-message="pattern" class="help-block">  Pole może zawierać tylko litery </span>
+                    <span ng-message="required" class="help-block"> Pole jest wymagane </span>
+                </div>
             </div>
         </div>
         <br>

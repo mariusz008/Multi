@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guestCompetitionDetails.html" afterPath="$PROJECT_DIR$/guestCompetitionDetails.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guestCompetitions.html" afterPath="$PROJECT_DIR$/guestCompetitions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/competition.html" afterPath="$PROJECT_DIR$/views/competition.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/competitions.html" afterPath="$PROJECT_DIR$/views/competitions.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myCompetition.html" afterPath="$PROJECT_DIR$/views/myCompetition.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myCompetitions.html" afterPath="$PROJECT_DIR$/views/myCompetitions.html" />
     </list>
     <ignored path="web.iws" />
@@ -38,8 +34,8 @@
       <file leaf-file-name="competitions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/competitions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="171" selection-end-column="112" />
+            <state relative-caret-position="629">
+              <caret line="151" column="108" selection-start-line="151" selection-start-column="108" selection-end-line="151" selection-end-column="108" />
               <folding>
                 <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -47,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guestCompetitions.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="guestCompetitions.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/guestCompetitions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="263" column="108" selection-start-line="263" selection-start-column="108" selection-end-line="263" selection-end-column="108" />
+            <state relative-caret-position="306">
+              <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -59,7 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="guestCompetitionDetails.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="guestCompetitionDetails.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/guestCompetitionDetails.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -82,7 +78,7 @@
       <file leaf-file-name="competition.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/competition.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="629">
               <caret line="73" column="120" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="120" />
               <folding />
             </state>
@@ -92,8 +88,8 @@
       <file leaf-file-name="myCompetitions.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="172" selection-end-column="108" />
+            <state relative-caret-position="289">
+              <caret line="152" column="104" selection-start-line="152" selection-start-column="104" selection-end-line="152" selection-end-column="104" />
               <folding>
                 <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -370,12 +366,12 @@
         <option value="$PROJECT_DIR$/views/runnersList.html" />
         <option value="$PROJECT_DIR$/views/makeStage.html" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
-        <option value="$PROJECT_DIR$/views/myCompetitions.html" />
-        <option value="$PROJECT_DIR$/views/competitions.html" />
         <option value="$PROJECT_DIR$/views/competition.html" />
         <option value="$PROJECT_DIR$/views/myCompetition.html" />
-        <option value="$PROJECT_DIR$/guestCompetitions.html" />
         <option value="$PROJECT_DIR$/guestCompetitionDetails.html" />
+        <option value="$PROJECT_DIR$/views/myCompetitions.html" />
+        <option value="$PROJECT_DIR$/views/competitions.html" />
+        <option value="$PROJECT_DIR$/guestCompetitions.html" />
       </list>
     </option>
   </component>
@@ -1202,24 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="66" column="40" selection-start-line="66" selection-start-column="40" selection-end-line="172" selection-end-column="108" />
-          <folding>
-            <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/competition.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="73" column="120" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1343">
@@ -1228,10 +1206,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/guestCompetitionDetails.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="130" column="84" selection-start-line="130" selection-start-column="84" selection-end-line="130" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/competition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="73" column="120" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="120" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="152" column="104" selection-start-line="152" selection-start-column="104" selection-end-line="152" selection-end-column="104" />
+          <folding>
+            <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/competitions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="66" column="48" selection-start-line="66" selection-start-column="48" selection-end-line="171" selection-end-column="112" />
+        <state relative-caret-position="629">
+          <caret line="151" column="108" selection-start-line="151" selection-start-column="108" selection-end-line="151" selection-end-column="108" />
           <folding>
             <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
@@ -1240,19 +1244,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/guestCompetitions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="263" column="108" selection-start-line="263" selection-start-column="108" selection-end-line="263" selection-end-column="108" />
+        <state relative-caret-position="306">
+          <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guestCompetitionDetails.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="130" column="84" selection-start-line="130" selection-start-column="84" selection-end-line="130" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -70,6 +70,11 @@
               templateUrl: 'views/editCompetition.html',   
               label: 'MultiJustRace - Edycja zawodów'
             })
+            .when('/Multi/home/myCompetition/stage', {
+                          controller: 'makeStageController',
+                          templateUrl: 'views/makeStage.html',
+                          label: 'MultiJustRace - Definiowanie etapów'
+                        })
             .when('/Multi/home/main', {
               controller: 'mainController',
               templateUrl: 'views/main.html',   

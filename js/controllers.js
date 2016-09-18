@@ -1117,6 +1117,12 @@
                 $location.path('/Multi/home/myCompetition/edit');
 
             }
+            $scope.makeStage = function(){
+
+                   $location.path('/Multi/home/myCompetition/stage');
+
+             }
+
             
             $scope.dropCompetition = function(){           
                 $scope.check2 = 1; 

@@ -2189,7 +2189,6 @@
                     var limit;  //limit uczestnikow przesylany w zapytaniu
                     var cost;
                     var user = sessionStorage.getItem('ID');
-                    var idZaw = sessionStorage.getItem('COMPETITION_ID');
 
                     $scope.makeStageClick = function(){
 
@@ -2208,7 +2207,7 @@
                                                                             '&oplata=' + '' +
                                                                             '&opis=' + $scope.competition.description +
                                                                             '&image='+ $scope.logo.base64 +
-                                                                            '&wieloetapowe=' + idZaw)
+                                                                            '&wieloetapowe=' + $scope.competition.id)
                             .success(function (data) {
 
                                if(data.content = "Competitions Created")
@@ -2237,7 +2236,22 @@
                                 $scope.requestResult = 'Błąd! Nie udało się dodać etapu.';
                             });
                     };
+    $scope.backClick = function(){
+                            $location.path('/Multi/home/myCompetition');
+                        };
 
+                        $scope.showRunnersList = function(){
+                            sessionStorage.setItem('compID', id);
+                            sessionStorage.setItem('compName', $scope.competition.name);
+                            sessionStorage.setItem('compPay', cost);
+                            $location.path('/Multi/home/myCompetition/runnersList');
+
+                        }
+
+            $scope.showResultList = function(){
+                sessionStorage.setItem('compID', id);
+                $location.path('/Multi/home/myCompetition/results');
+            }
     }])
     app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){ 
 
@@ -2422,7 +2436,16 @@
                 sessionStorage.setItem('compID', id);
                 $location.path('/Multi/home/myCompetition/results');
             }
-                    
+            $scope.showDescription = function(){
+                                        sessionStorage.setItem('compID', id);
+                                        $location.path('/Multi/home/competition');
+
+                                    }
+                     $scope.editCompetition = function(){
+                                                sessionStorage.setItem('compID', id);
+                                                $location.path('/Multi/home/myCompetition/edit');
+
+                                            }
                                
     }])
 

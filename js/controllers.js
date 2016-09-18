@@ -588,7 +588,7 @@
                     '&place=' + $scope.place)
             .success(function(data){
             $scope.response = data;
-$scope.dlugosc =  $scope.competition.WIELOETAPOWE.length;
+
             var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
             $scope.countFinded = $scope.response.length;
             $scope.countActive = 0;
@@ -602,7 +602,7 @@ $scope.dlugosc =  $scope.competition.WIELOETAPOWE.length;
                 compDate.setHours(compTime[0]);
                 compDate.setMinutes(compTime[1]);
                 $scope.competitions.push($scope.response[i]);
-
+                $scope.dlugosc =  $scope.response[i].WIELOETAPOWE.length;
                 if(today <= compDate)
                 {
                     

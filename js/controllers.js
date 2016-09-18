@@ -1413,8 +1413,8 @@
                     
                     var ind = sessionStorage.getItem('ind');
 
-
-                    sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
+                    $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
+                   // sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
 
 
                     if(ind != null)
@@ -2110,7 +2110,7 @@
                         entities: false
                       };
 
-
+                    $scope.nazwa =  $scope.competition.name;
                     $scope.status = 'Dodaj etap';
 
                     $scope.types = [

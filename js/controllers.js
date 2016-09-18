@@ -1235,7 +1235,7 @@
     	$scope.cat = [{NAME: ''}, {DESCRIPTION : ''}];
     	$scope.nazwaCat = '';
     	$scope.desc = '';
-    	
+    	  $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
     	
     	
     	var id = sessionStorage.getItem('compID');
@@ -1266,7 +1266,7 @@
             $scope.init = function() {
             	
             	$scope.init2();
-            	
+            	  $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
                 var sex = '';
                 
                 $scope.search = 0;
@@ -1413,8 +1413,8 @@
                     
                     var ind = sessionStorage.getItem('ind');
 
-                    $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
-                   // sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
+                   $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
+                    sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
 
 
                     if(ind != null)

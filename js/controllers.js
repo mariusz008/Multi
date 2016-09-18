@@ -1072,12 +1072,12 @@
                 
         $scope.competition = [];
         $scope.id = sessionStorage.getItem('compID');
-        
-        
+
+
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.competition = data;
-                
+                $scope.dlugosc =  $scope.competition.WIELOETAPOWE.length;
                 if(data.DEACTIVATED == 'true') {
                 	$scope.check7 = 1;
                 }
@@ -1243,7 +1243,9 @@
         sessionStorage.removeItem('competitionName');
         $scope.compPay = sessionStorage.getItem('compPay');
         $scope.editActive = sessionStorage.getItem('editActive');
-    
+
+
+
         $scope.addCat = function() {
     		$http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category?user_id=' + token +
                     '&competition_id=' + id + '&name=' + $scope.nazwaCat + '&description=' + $scope.desc)
@@ -1410,7 +1412,11 @@
                     }
                     
                     var ind = sessionStorage.getItem('ind');
-                    
+
+
+                    sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
+
+
                     if(ind != null)
                     	$scope.cat = $scope.categories[ind];
                     
@@ -2244,16 +2250,13 @@
                             $location.path('/Multi/home/myCompetition');
                         };
 
-                        $scope.showRunnersList = function(){
-                            sessionStorage.setItem('compID', id);
-                            sessionStorage.setItem('compName', $scope.competition.name);
-                            sessionStorage.setItem('compPay', cost);
-                            $location.path('/Multi/home/myCompetition/runnersList');
 
-                        }
+                                              $scope.showResultList = function(){
+                                                    sessionStorage.setItem('compID', id);
+                                                    $location.path('/Multi/home/myCompetition/results');
+                                                }
 
-
-                                             $scope.showRunnersList = function(){
+                                                $scope.showRunnersList = function(){
                                                                         sessionStorage.setItem('compID', id);
                                                                         $location.path('/Multi/home/myCompetition/runnersList');
 
@@ -2456,6 +2459,7 @@
                 sessionStorage.setItem('compID', id);
                 $location.path('/Multi/home/myCompetition/results');
             }
+
             $scope.showDescription = function(){
                                         sessionStorage.setItem('compID', id);
                                         $location.path('/Multi/home/competition');

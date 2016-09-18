@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/makeStage.html" afterPath="$PROJECT_DIR$/views/makeStage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myCompetition.html" afterPath="$PROJECT_DIR$/views/myCompetition.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/runnersList.html" afterPath="$PROJECT_DIR$/views/runnersList.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,13 +42,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makeStage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/makeStage.html">
+      <file leaf-file-name="myCompetition.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+              <caret line="66" column="64" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="myCompetitions.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="80" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="makeStage.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/makeStage.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-612">
+              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
               <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#button#0;n#div#0;n#div#11;n#form#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,8 +77,8 @@
       <file leaf-file-name="runnersList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/runnersList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="0">
+              <caret line="0" column="58" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -64,8 +87,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="2254" column="0" selection-start-line="2254" selection-start-column="0" selection-end-line="2254" selection-end-column="0" />
+            <state relative-caret-position="390">
+              <caret line="1081" column="38" selection-start-line="1081" selection-start-column="38" selection-end-line="1081" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -74,8 +97,8 @@
       <file leaf-file-name="myResultList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/myResultList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="59" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="59" />
+            <state relative-caret-position="187">
+              <caret line="11" column="70" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -308,11 +331,11 @@
         <option value="$PROJECT_DIR$/views/compRunnerList.html" />
         <option value="$PROJECT_DIR$/views/resultList.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/views/myCompetition.html" />
         <option value="$PROJECT_DIR$/views/myResultList.html" />
-        <option value="$PROJECT_DIR$/views/makeStage.html" />
         <option value="$PROJECT_DIR$/views/runnersList.html" />
+        <option value="$PROJECT_DIR$/views/makeStage.html" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/views/myCompetition.html" />
       </list>
     </option>
   </component>
@@ -1128,10 +1151,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
+    <entry file="file://$PROJECT_DIR$/views/runnersList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="14" column="69" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="69" />
+        <state relative-caret-position="0">
+          <caret line="0" column="58" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="58" />
           <folding />
         </state>
       </provider>
@@ -1144,45 +1167,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
+    <entry file="file://$PROJECT_DIR$/views/makeStage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="54" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
-          <folding />
+        <state relative-caret-position="-612">
+          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#button#0;n#div#0;n#div#11;n#form#0;n#div#2;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/runnersList.html">
+    <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="595">
+          <caret line="74" column="44" selection-start-line="74" selection-start-column="44" selection-end-line="80" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/myResultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="59" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="59" />
+        <state relative-caret-position="187">
+          <caret line="11" column="70" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="70" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="2254" column="0" selection-start-line="2254" selection-start-column="0" selection-end-line="2254" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="1081" column="38" selection-start-line="1081" selection-start-column="38" selection-end-line="1081" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/makeStage.html">
+    <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="21" column="58" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#11;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="66" column="64" selection-start-line="66" selection-start-column="64" selection-end-line="66" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>

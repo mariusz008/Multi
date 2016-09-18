@@ -1447,7 +1447,13 @@
                 sessionStorage.setItem('compID', id);
                 $location.path('/Multi/home/myCompetition/results');
             }
-            
+
+
+                                $scope.editCompetition = function(){
+                                        sessionStorage.setItem('compID', id);
+                                        $location.path('/Multi/home/myCompetition/edit');
+
+                                    }
             
     }])
     
@@ -2189,11 +2195,9 @@
                     var limit;  //limit uczestnikow przesylany w zapytaniu
                     var cost;
                     var user = sessionStorage.getItem('ID');
+                    var id = sessionStorage.getItem('compID');
 
                     $scope.makeStageClick = function(){
-
-
-
 
                     $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
                                                                             '&name=' +$scope.competition.name+
@@ -2207,7 +2211,7 @@
                                                                             '&oplata=' + '' +
                                                                             '&opis=' + $scope.competition.description +
                                                                             '&image='+ $scope.logo.base64 +
-                                                                            '&wieloetapowe=' + $scope.competition.id)
+                                                                            '&wieloetapowe=' + id)
                             .success(function (data) {
 
                                if(data.content = "Competitions Created")
@@ -2236,7 +2240,7 @@
                                 $scope.requestResult = 'Błąd! Nie udało się dodać etapu.';
                             });
                     };
-    $scope.backClick = function(){
+                        $scope.backClick = function(){
                             $location.path('/Multi/home/myCompetition');
                         };
 
@@ -2248,11 +2252,27 @@
 
                         }
 
-            $scope.showResultList = function(){
-                sessionStorage.setItem('compID', id);
-                $location.path('/Multi/home/myCompetition/results');
-            }
+
+                                             $scope.showRunnersList = function(){
+                                                                        sessionStorage.setItem('compID', id);
+                                                                        $location.path('/Multi/home/myCompetition/runnersList');
+
+                                                                    }
+
+                                                                $scope.showDescription = function(){
+                                                                        sessionStorage.setItem('compID', id);
+                                                                        $location.path('/Multi/home/myCompetition');
+
+                                                                    }
+
+                                                                $scope.editCompetition = function(){
+                                                                        sessionStorage.setItem('compID', id);
+                                                                        $location.path('/Multi/home/myCompetition/edit');
+
+                                                                    }
     }])
+
+
     app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){ 
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////

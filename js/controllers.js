@@ -518,7 +518,7 @@
         $scope.btnText = 'Rozwiń filtry wyszukiwania';
         
         $scope.response = [];
-        
+
         $scope.types = [
                         {name:'Bieg przełajowy' ,type:'Biegi'},
                         {name:'Bieg maratoński' ,type:'Biegi'},
@@ -588,7 +588,7 @@
                     '&place=' + $scope.place)
             .success(function(data){
             $scope.response = data;
-
+$scope.dlugosc =  $scope.competition.WIELOETAPOWE.length;
             var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
             $scope.countFinded = $scope.response.length;
             $scope.countActive = 0;

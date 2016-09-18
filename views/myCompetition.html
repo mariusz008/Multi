@@ -75,8 +75,9 @@
 						<div class="postcontent nobottommargin col_last">
 								
 								<h1 ng-show="check7 == 1"> Odwołane! </h1>
-								<h2 ng-show="competition.WIELOETAPOWE==1">"{{competition.NAME}}" - Zawody wieloetapowe  {{competition.dlugosc}}</h2>
+								<h2 ng-show="competition.WIELOETAPOWE==1">"{{competition.NAME}}" - Zawody wieloetapowe  </h2>
 							    <h2 ng-show="competition.WIELOETAPOWE==0">"{{competition.NAME}}" - Zawody jednoetapowe  </h2>
+						    	<h2 ng-show="dlugosc>1">"{{competition.NAME}}" - Etap zawodów  </h2>
 								<h5>{{competition.TYP}}</h5>
 												
 							<p ng-hide="competition.OPIS == ''">

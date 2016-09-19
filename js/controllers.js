@@ -1077,11 +1077,12 @@
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.competition = data;
-                $scope.dlugosc =  $scope.competition.WIELOETAPOWE.length;
+
                 if(data.DEACTIVATED == 'true') {
                 	$scope.check7 = 1;
                 }
-
+		
+                $scope.name = $scope.competition.NAME;
                 var today = new Date();
                 var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
                 var compDate = new Date($scope.competition.DATA_ROZP.replace(datePattern, '$3, $2, $1'));
@@ -1107,7 +1108,8 @@
             sessionStorage.setItem('compID', $scope.id);
             sessionStorage.setItem('compName', $scope.competition.NAME);
             sessionStorage.setItem('compPay', $scope.competition.OPLATA);
-                
+                sessionStorage.setItem('wielo', $scope.competition.WIELOETAPOWE);
+
                 $location.path('/Multi/home/myCompetition/runnersList');
 
             }
@@ -1118,7 +1120,7 @@
 
             }
             $scope.makeStage = function(){
-
+                   sessionStorage.setItem('name', $scope.name);
                    $location.path('/Multi/home/myCompetition/stage');
 
              }
@@ -1413,8 +1415,8 @@
                     
                     var ind = sessionStorage.getItem('ind');
 
-                   $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
-                    sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
+//                   $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
+  //                  sessionStorage.setItem('WIELOETAPOWE', $scope.competition.WIELOETAPOWE);
 
 
                     if(ind != null)
@@ -2110,9 +2112,9 @@
                         entities: false
                       };
 
-                    $scope.nazwa =  $scope.competition.name;
+                     $scope.name = sessionStorage.getItem('name');
                     $scope.status = 'Dodaj etap';
-
+$scope.editActive = sessionStorage.getItem('editActive');
                     $scope.types = [
                     {name:'Bieg przełajowy' ,type:'Biegi'},
                     {name:'Bieg maratoński' ,type:'Biegi'},
@@ -2370,7 +2372,7 @@
                         .success(function(response){
                             var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
                             var timePattern = /(\d{2}):(\d{2})/;
-
+			                $scope.competition.wieloetapowe = response.WIELOETAPOWE;
                             $scope.competition.name = response.NAME;
                             $scope.competition.startDate = new Date(response.DATA_ROZP.replace(datePattern, '$3-$2-$1'));
                             $scope.competition.startTime = new Date().setHours(response.CZAS_ROZP.replace(timePattern, '$1'),response.CZAS_ROZP.replace(timePattern, '$2'));
@@ -2455,10 +2457,10 @@
 
                         }
 
-            $scope.showResultList = function(){
+                $scope.showResultList = function(){
                 sessionStorage.setItem('compID', id);
                 $location.path('/Multi/home/myCompetition/results');
-            }
+                }
 
             $scope.showDescription = function(){
                                         sessionStorage.setItem('compID', id);
@@ -2470,6 +2472,12 @@
                                                 $location.path('/Multi/home/myCompetition/edit');
 
                                             }
+$scope.makeStage = function(){
+sessionStorage.setItem('name', $scope.competition.name);
+                   $location.path('/Multi/home/myCompetition/stage');
+
+             }
+
                                
     }])
 
@@ -2533,6 +2541,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
              $scope.retInfo = '';
              $scope.banned=[];
              $scope.runners = [];
+ $scope.x = sessionStorage.getItem('wielo');
 
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){

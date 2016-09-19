@@ -1238,9 +1238,9 @@
     	$scope.cat = [{NAME: ''}, {DESCRIPTION : ''}];
     	$scope.nazwaCat = '';
     	$scope.desc = '';
-    	  $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
-    	
-    	
+    	$scope.x = sessionStorage.getItem('wielo');
+    	$scope.name = sessionStorage.getItem('compName');
+
     	var id = sessionStorage.getItem('compID');
     	$scope.competitionName = sessionStorage.getItem('compName');
         sessionStorage.removeItem('competitionName');
@@ -1457,7 +1457,11 @@
                 $location.path('/Multi/home/myCompetition/results');
             }
 
-
+$scope.makeStage = function(){
+sessionStorage.setItem('name', $scope.name);
+ //sessionStorage.setItem('compName', $scope.competition.NAME);
+                   $location.path('/Multi/home/myCompetition/stage');
+                   }
                                 $scope.editCompetition = function(){
                                         sessionStorage.setItem('compID', id);
                                         $location.path('/Multi/home/myCompetition/edit');

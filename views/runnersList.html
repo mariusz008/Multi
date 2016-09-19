@@ -16,7 +16,7 @@
 								<li class="ui-tabs-active"><a href>Lista zawodników<i class="icon-chevron-right"></i></a></li>
 								<li ><a href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
 								<li><a href ng-show="editActive" ng-click="editCompetition()">Edytuj<i class="icon-chevron-right"></i></a></li>
-								<li><a ng-show="competition.wieloetapowe == 1" ng-click="makeStage()">Definiuj etapy<i class="icon-chevron-right"></i></a></li>
+								<li><a href ng-show="{{x}} == 1" ng-click="makeStage()">Definiuj etapy<i class="icon-chevron-right"></i></a></li>
 								
 								<br ng-show="editActive=='true'">
 								<li ng-show="editActive=='true'"><a href="#register" id="openBtn" data-toggle="modal">Nadaj numery startowe</a></li>

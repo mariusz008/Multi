@@ -2542,7 +2542,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
              $scope.banned=[];
              $scope.runners = [];
  $scope.x = sessionStorage.getItem('wielo');
-
+$scope.name = sessionStorage.getItem('name');
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
@@ -2643,7 +2643,11 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
                             $location.path('/Multi/home/myCompetition/edit');
 
                         } 
+$scope.makeStage = function(){
+sessionStorage.setItem('name', $scope.competition.name);
+                   $location.path('/Multi/home/myCompetition/stage');
 
+             }
                 
     }])
     

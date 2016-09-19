@@ -1154,6 +1154,7 @@
 
             $scope.showResultList = function(){
                 sessionStorage.setItem('compID', $scope.id);
+                sessionStorage.setItem('name', $scope.name);
                 $location.path('/Multi/home/myCompetition/results');
             }
     }])
@@ -2644,7 +2645,8 @@ $scope.name = sessionStorage.getItem('name');
 
                         } 
 $scope.makeStage = function(){
-sessionStorage.setItem('name', $scope.competition.name);
+sessionStorage.setItem('name', $scope.name);
+ //sessionStorage.setItem('compName', $scope.competition.NAME);
                    $location.path('/Multi/home/myCompetition/stage');
 
              }

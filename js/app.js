@@ -10,7 +10,7 @@
               templateUrl: 'views/runnerInfo.html',   
               label: 'MultiJustRace - Strona zawodnika'
             })
-            .when('/Multi/home/competitions', {
+            .when('/home/competitions', {
               controller: 'competitionsController',
               templateUrl: 'views/competitions.html',   
               label: 'MultiJustRace - Lista zawodów'
@@ -30,7 +30,7 @@
               templateUrl: 'views/runnerCompetition.html',   
               label: 'MultiJustRace - Lista zawodów'
             })
-            .when('/Multi/home/profile', {
+            .when('/home/profile', {
               controller: 'profileController',
               templateUrl: 'views/profile.html',   
               label: 'MultiJustRace - Profil użytkownika'
@@ -50,7 +50,7 @@
               templateUrl: 'views/addMultiCompetition.html',
               label: 'MultiJustRace - Dodaj zawody'
               })
-            .when('/Multi/home/myCompetitions', {
+            .when('/home/myCompetitions', {
               controller: 'myCompetitionsController',
               templateUrl: 'views/myCompetitions.html',   
               label: 'MultiJustRace - Lista Twoich zawodów'
@@ -71,9 +71,9 @@
               label: 'MultiJustRace - Edycja zawodów'
             })
             .when('/Multi/home/myCompetition/stage', {
-                          controller: 'makeStageController',
-                          templateUrl: 'views/makeStage.html',
-                          label: 'MultiJustRace - Definiowanie etapów'
+             controller: 'makeStageController',
+              templateUrl: 'views/makeStage.html',
+               label: 'MultiJustRace - Definiowanie etapów'
                         })
             .when('/Multi/home/main', {
               controller: 'mainController',

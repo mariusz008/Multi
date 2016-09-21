@@ -15,7 +15,6 @@
               templateUrl: 'views/competitions.html',   
               label: 'MultiJustRace - Lista zawodów'
             })
-            
             .when('/Multi/home/competition', {
               controller: 'competitionController',
               templateUrl: 'views/competition.html',   

@@ -587,7 +587,7 @@
                     '&type=' + temp + 
                     '&name=' + $scope.name +
                     '&place=' + $scope.place +
-                    '&wieloetapowe=')
+                    '&wieloetapowe=0')
             .success(function(data){
             $scope.response = data;
 

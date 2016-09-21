@@ -9,7 +9,7 @@
         $scope.diffDate =[];
 
 
-        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=')
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=0')
 			.success(function(data){
 			competitionsFilter = data;
 

@@ -10,7 +10,7 @@
         $scope.diffDate =[];
 
 
-        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=')
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=0')
             .success(function(data){
             competitionsFilter = data;
 
@@ -330,7 +330,8 @@
             
         	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=' + temp +
 					'&name=' + $scope.name +
-					'&place=' + $scope.place)
+					'&place=' + $scope.place +
+                    '&wieloetapowe=' + 0))
 			.success(function(data){
 			$scope.response = data;
             
@@ -585,7 +586,8 @@
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/my?user_id=' + user_id +
                     '&type=' + temp + 
                     '&name=' + $scope.name +
-                    '&place=' + $scope.place)
+                    '&place=' + $scope.place +
+                    '&wieloetapowe=' + 0)
             .success(function(data){
             $scope.response = data;
 

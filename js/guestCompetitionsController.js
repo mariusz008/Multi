@@ -72,7 +72,8 @@
             
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=' + temp +
                     '&name=' + $scope.name +
-                    '&place=' + $scope.place)
+                    '&place=' + $scope.place +
+                    '&wieloetapowe='+0)
             .success(function(data){
             $scope.response = data;            
             

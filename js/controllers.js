@@ -2663,7 +2663,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
             var stageX = sessionStorage.getItem('stage');
-            var hasStage = stageX.length;
+            $scope.hasStage = stageX.length;
             $scope.today = function() {
               $scope.dt = new Date();
               };

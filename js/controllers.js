@@ -1365,7 +1365,7 @@
             }
 
             $scope.editCompetition = function(){
-                sessionStorage.setItem('stage', $scope.competition1.length);
+                sessionStorage.setItem('stage', $scope.competition1);
                 $location.path('/Multi/home/myCompetition/edit');
 
             }
@@ -2662,7 +2662,8 @@ $scope.editActive = sessionStorage.getItem('editActive');
     app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){ 
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
-            $scope.hasStage = sessionStorage.getItem('stage');
+            var stageX = sessionStorage.getItem('stage');
+            var hasStage = stageX.length;
             $scope.today = function() {
               $scope.dt = new Date();
               };

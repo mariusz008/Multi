@@ -2662,8 +2662,8 @@ $scope.editActive = sessionStorage.getItem('editActive');
     app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){ 
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
-            var stageX = sessionStorage.getItem('stage');
-            $scope.hasStage = stageX.length;
+
+            $scope.hasStage = sessionStorage.getItem('stage');
             $scope.today = function() {
               $scope.dt = new Date();
               };

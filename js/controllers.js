@@ -758,7 +758,7 @@
             $scope.btnText = 'Rozwiń filtry wyszukiwania';
             $scope.compID = sessionStorage.getItem('compID1');
             $scope.response = [];
-
+            sessionStorage.removeItem('NAME');
             $scope.types = [
                             {name:'Bieg przełajowy' ,type:'Biegi'},
                             {name:'Bieg maratoński' ,type:'Biegi'},
@@ -2503,7 +2503,7 @@
                      $scope.name = sessionStorage.getItem('name');
                     $scope.status = 'Dodaj etap';
                      $scope.editActive = sessionStorage.getItem('editActive');
-                     sessionStorage.removeItem('NAME');
+
                     $scope.types = [
                     {name:'Bieg przełajowy' ,type:'Biegi'},
                     {name:'Bieg maratoński' ,type:'Biegi'},

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
     </list>
     <ignored path="web.iws" />
@@ -53,8 +52,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="458">
-              <caret line="2506" column="36" selection-start-line="2506" selection-start-column="36" selection-end-line="2506" selection-end-column="36" />
+            <state relative-caret-position="271">
+              <caret line="801" column="25" selection-start-line="801" selection-start-column="25" selection-end-line="801" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -73,7 +72,7 @@
       <file leaf-file-name="myStages.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/myStages.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2373">
+            <state relative-caret-position="595">
               <caret line="35" column="122" selection-start-line="35" selection-start-column="117" selection-end-line="35" selection-end-column="122" />
               <folding />
             </state>
@@ -1211,7 +1210,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/myStages.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2373">
+        <state relative-caret-position="595">
           <caret line="35" column="122" selection-start-line="35" selection-start-column="117" selection-end-line="35" selection-end-column="122" />
           <folding />
         </state>
@@ -1219,8 +1218,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="2506" column="36" selection-start-line="2506" selection-start-column="36" selection-end-line="2506" selection-end-column="36" />
+        <state relative-caret-position="271">
+          <caret line="801" column="25" selection-start-line="801" selection-start-column="25" selection-end-line="801" selection-end-column="25" />
           <folding />
         </state>
       </provider>

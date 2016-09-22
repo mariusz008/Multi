@@ -331,7 +331,7 @@
         	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=' + temp +
 					'&name=' + $scope.name +
 					'&place=' + $scope.place +
-                    '&wieloetapowe='))
+                    '&wieloetapowe=0')
 			.success(function(data){
 			$scope.response = data;
             
@@ -1105,6 +1105,16 @@
             .error(function(data,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data;
             });
+
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe='+ $scope.id)
+                        .success(function(data1){
+                        $scope.competition1 = data1;
+                        }
+                        })
+            .error(function(data,status,headers,config){
+                            $scope.retInfo = 'Błąd!'+ data;
+                        });
+
 
             $scope.showRunnersList = function(){
             sessionStorage.setItem('compID', $scope.id);

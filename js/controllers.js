@@ -2946,8 +2946,8 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
              $scope.retInfo = '';
              $scope.banned=[];
              $scope.runners = [];
- $scope.x = sessionStorage.getItem('wielo');
-$scope.name = sessionStorage.getItem('name');
+             $scope.x = sessionStorage.getItem('wielo');
+             $scope.name = sessionStorage.getItem('name');
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
@@ -3052,7 +3052,7 @@ $scope.name = sessionStorage.getItem('name');
                     sessionStorage.setItem('name', $scope.name);
                      //sessionStorage.setItem('compName', $scope.competition.NAME);
                    $location.path('/Multi/home/myCompetition/stage');
-
+}
                    $scope.showStage = function(){
                     sessionStorage.setItem('compID1', id);
                      $location.path('/Multi/home/myCompetitions/myStages');

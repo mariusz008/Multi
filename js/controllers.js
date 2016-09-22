@@ -1412,128 +1412,128 @@
             }
     }])
 
-//    app.controller('myCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){
-//
-//            // Editor options.
-//            $scope.options = {
-//              language: 'pl',
-//              allowedContent: true,
-//              entities: false
-//            };
-//
-//            // Called when the editor is completely ready.
-//            $scope.onReady = function () {
-//                CKEDITOR.instances['editor'].setReadOnly(true);
-//
-//                var temp = CKEDITOR.instances['editor'].id + "_top";
-//
-//                var bar = document.getElementById(temp);
-//                bar.style.display = "none";
-//
-//                temp = CKEDITOR.instances['editor'].id + "_bottom";
-//
-//                bar = document.getElementById(temp);
-//                bar.style.display = "none";
-//            }
-//
-//            $scope.competition = [];
-//            $scope.id = sessionStorage.getItem('compID');
-//
-//
-//                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
-//                .success(function(data){
-//                    $scope.competition = data;
-//
-//                    if(data.DEACTIVATED == 'true') {
-//                    	$scope.check7 = 1;
-//                    }
-//
-//                    $scope.name = $scope.competition.NAME;
-//                    var today = new Date();
-//                    var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
-//                    var compDate = new Date($scope.competition.DATA_ROZP.replace(datePattern, '$3, $2, $1'));
-//                    var compTime = $scope.competition.CZAS_ROZP.split(":");
-//                    compDate.setHours(compTime[0]);
-//                    compDate.setMinutes(compTime[1]);
-//                    if(today < compDate)
-//                    {
-//                        $scope.editActive = true;
-//                        sessionStorage.setItem('editActive', $scope.editActive);
-//                    }
-//                    else
-//                    {
-//                        $scope.editActive = false;
-//                        sessionStorage.setItem('editActive', $scope.editActive);
-//                    }
-//                })
-//                .error(function(data,status,headers,config){
-//                    $scope.retInfo = 'Błąd!'+ data;
-//                });
-//
-//                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe='+ $scope.id)
-//                            .success(function(data1){
-//                            $scope.competition1 = data1;
-//
-//                            })
-//                .error(function(data,status,headers,config){
-//                                $scope.retInfo = 'Błąd!'+ data;
-//                            });
-//
-//
-//                $scope.showRunnersList = function(){
-//                sessionStorage.setItem('compID', $scope.id);
-//                sessionStorage.setItem('compName', $scope.competition.NAME);
-//                sessionStorage.setItem('compPay', $scope.competition.OPLATA);
-//                    sessionStorage.setItem('wielo', $scope.competition.WIELOETAPOWE);
-//
-//                    $location.path('/Multi/home/myCompetition/runnersList');
-//
-//                }
-//
-//                $scope.editCompetition = function(){
-//
-//                    $location.path('/Multi/home/myCompetition/edit');
-//
-//                }
-//                $scope.makeStage = function(){
-//                       sessionStorage.setItem('name', $scope.name);
-//                       $location.path('/Multi/home/myCompetition/stage');
-//
-//                 }
-//
-//
-//                $scope.dropCompetition = function(){
-//                    $scope.check2 = 1;
-//                }
-//
-//                $scope.dropCompetition2 = function(){
-//                	var id = sessionStorage.getItem('ID');
-//
-//                	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason);
-//
-//                	$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason)
-//                    .success(function(data){
-//                    	$scope.check2 = 0;
-//
-//                    	$scope.retInfo = 'Zawody odwołane! Użytkownicy zostali o tym poinformowani przez wiadomość email z powodem.';
-//
-//                    	$scope.check3 = 1;
-//                    	$scope.check7 = 1;
-//                    	$scope.reason = '';
-//
-//                    })
-//
-//                    .error(function(data,status,headers,config){
-//                        $scope.retInfo = 'Błąd!'+ data;
-//                    });
-//                }
-//
-//                $scope.showResultList = function(){
-//                    sessionStorage.setItem('compID', $scope.id);
-//                    sessionStorage.setItem('name', $scope.name);
-//                    $location.path('/Multi/home/myCompetition/results');
-//                }
-//        }])
+    app.controller('showStagesController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){
+
+            // Editor options.
+            $scope.options = {
+              language: 'pl',
+              allowedContent: true,
+              entities: false
+            };
+
+            // Called when the editor is completely ready.
+            $scope.onReady = function () {
+                CKEDITOR.instances['editor'].setReadOnly(true);
+
+                var temp = CKEDITOR.instances['editor'].id + "_top";
+
+                var bar = document.getElementById(temp);
+                bar.style.display = "none";
+
+                temp = CKEDITOR.instances['editor'].id + "_bottom";
+
+                bar = document.getElementById(temp);
+                bar.style.display = "none";
+            }
+
+            $scope.competition = [];
+            $scope.id = sessionStorage.getItem('compID');
+
+
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
+                .success(function(data){
+                    $scope.competition = data;
+
+                    if(data.DEACTIVATED == 'true') {
+                    	$scope.check7 = 1;
+                    }
+
+                    $scope.name = $scope.competition.NAME;
+                    var today = new Date();
+                    var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
+                    var compDate = new Date($scope.competition.DATA_ROZP.replace(datePattern, '$3, $2, $1'));
+                    var compTime = $scope.competition.CZAS_ROZP.split(":");
+                    compDate.setHours(compTime[0]);
+                    compDate.setMinutes(compTime[1]);
+                    if(today < compDate)
+                    {
+                        $scope.editActive = true;
+                        sessionStorage.setItem('editActive', $scope.editActive);
+                    }
+                    else
+                    {
+                        $scope.editActive = false;
+                        sessionStorage.setItem('editActive', $scope.editActive);
+                    }
+                })
+                .error(function(data,status,headers,config){
+                    $scope.retInfo = 'Błąd!'+ data;
+                });
+
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe='+ $scope.id)
+                            .success(function(data1){
+                            $scope.competition1 = data1;
+
+                            })
+                .error(function(data,status,headers,config){
+                                $scope.retInfo = 'Błąd!'+ data;
+                            });
+
+
+                $scope.showRunnersList = function(){
+                sessionStorage.setItem('compID', $scope.id);
+                sessionStorage.setItem('compName', $scope.competition.NAME);
+                sessionStorage.setItem('compPay', $scope.competition.OPLATA);
+                    sessionStorage.setItem('wielo', $scope.competition.WIELOETAPOWE);
+
+                    $location.path('/Multi/home/myCompetition/runnersList');
+
+                }
+
+                $scope.editCompetition = function(){
+
+                    $location.path('/Multi/home/myCompetition/edit');
+
+                }
+                $scope.makeStage = function(){
+                       sessionStorage.setItem('name', $scope.name);
+                       $location.path('/Multi/home/myCompetition/stage');
+
+                 }
+
+
+                $scope.dropCompetition = function(){
+                    $scope.check2 = 1;
+                }
+
+                $scope.dropCompetition2 = function(){
+                	var id = sessionStorage.getItem('ID');
+
+                	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason);
+
+                	$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason)
+                    .success(function(data){
+                    	$scope.check2 = 0;
+
+                    	$scope.retInfo = 'Zawody odwołane! Użytkownicy zostali o tym poinformowani przez wiadomość email z powodem.';
+
+                    	$scope.check3 = 1;
+                    	$scope.check7 = 1;
+                    	$scope.reason = '';
+
+                    })
+
+                    .error(function(data,status,headers,config){
+                        $scope.retInfo = 'Błąd!'+ data;
+                    });
+                }
+
+                $scope.showResultList = function(){
+                    sessionStorage.setItem('compID', $scope.id);
+                    sessionStorage.setItem('name', $scope.name);
+                    $location.path('/Multi/home/myCompetition/results');
+                }
+        }])
 
     app.controller('runnerCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){ 
 

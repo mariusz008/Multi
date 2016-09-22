@@ -1,7 +1,7 @@
 (function(){
 
     var app = angular.module('MultiJustRaceControllers', ["ngStorage" , 'ckeditor', 'ui.bootstrap' , 'naif.base64',  'MultiJustRaceControllers', 'MultiJustRaceDirectives' ]);
-     
+
 
     app.controller('mainController', ['$scope', '$http', '$log', '$sessionStorage','$location', function($scope, $http, $log, $sessionStorage, $location){
 
@@ -14,17 +14,17 @@
             .success(function(data){
             competitionsFilter = data;
 
-            var datePattern = /(\d{2}).(\d{2}).(\d{4})/;            
+            var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
             var counter = 0;
 
             for(var i=0; i<competitionsFilter.length; i++)
-            {   
+            {
                 var today = new Date();
                 var compDate = new Date(competitionsFilter[i].DATA_ROZP.replace(datePattern, '$3, $2, $1'));
                 var compTime = competitionsFilter[i].CZAS_ROZP.split(":");
                 compDate.setHours(compTime[0]);
                 compDate.setMinutes(compTime[1]);
-                
+
                 if(today <= compDate)
                 {
                     $scope.competitions.push(competitionsFilter[i]);
@@ -44,7 +44,7 @@
                     break;
             }
 
-            })          
+            })
             .error(function(data,status,headers,config){
             $scope.retInfo = 'Błąd!'+ data;
             })
@@ -59,14 +59,14 @@
 
     }])
 
-     
+
     app.controller('logoutController', ['$scope', '$sessionStorage','$location', function($scope, $sessionStorage, $location){
-         
+
     	$scope.imie = sessionStorage.getItem('IMIE');
-    	
+
         $scope.logoutClick = function(){
             //sessionStorage.removeItem('MultiJustRace');
-        	
+
         	sessionStorage.removeItem('IMIE');
             sessionStorage.removeItem('ICE');
             sessionStorage.removeItem('ACTIVATE');
@@ -79,7 +79,7 @@
             sessionStorage.removeItem('CODE');
             sessionStorage.removeItem('PLEC');
             sessionStorage.removeItem('WIEK');
-        	
+
             window.location = '/Multi/index.html';
         };
 
@@ -89,11 +89,11 @@
         $scope.btnText = 'Rozwiń';
         $scope.btnType = 'btn btn-success';
         $scope.check = 1;
-        
+
         $scope.user = [];
-        
+
         //$scope.user = sessionStorage.getItem('MultiJustRace');
-        
+
         $scope.user.IMIE = sessionStorage.getItem('IMIE');
         $scope.user.ICE = sessionStorage.getItem('ICE');
         $scope.user.ACTIVATE = sessionStorage.getItem('ACTIVATE');
@@ -106,31 +106,31 @@
         $scope.user.CODE = sessionStorage.getItem('CODE');
         $scope.user.PLEC = sessionStorage.getItem('PLEC');
         $scope.user.WIEK = sessionStorage.getItem('WIEK');
-        
+
         if(sessionStorage.getItem('msg') != null){
         	$scope.msg = sessionStorage.getItem('msg');
         	sessionStorage.removeItem('msg');
         }
-        
+
         $scope.print = function() {
             if( $scope.check == 1 ) {
                 $scope.btnText = 'Zwiń';
                 $scope.btnType = 'btn btn-danger';
                 $scope.check = 0;
             }
-            
+
             else {
                 $scope.btnText = 'Rozwiń';
                 $scope.btnType = 'btn btn-success';
                 $scope.check = 1;
             }
         };
-        
+
         $scope.edit = function() {
             $location.path('/Multi/home/editProfile');
         };
     }])
-    
+
     app.controller('editProfileController', ['$scope', '$http', '$sessionStorage', '$location','$log', function($scope, $http, $sessionStorage, $location, $log){
                   $scope.user = {
                       name : null,
@@ -141,16 +141,16 @@
                       old_password : null,
                       delete_password : null,
                       club : null,
-                      obywatelstwo : null,                        
+                      obywatelstwo : null,
                       nr_tel : null,
                       ice : null
                   };
-    	
+
 			    	$scope.user.name = sessionStorage.getItem('IMIE');
 			        $scope.user.ice = sessionStorage.getItem('ICE');
-                    
+
                     if($scope.user.ice == "null")
-                        $scope.user.ice = "";                        
+                        $scope.user.ice = "";
 			        $scope.user.obywatelstwo = sessionStorage.getItem('OBYWATELSTWO');
                     if($scope.user.obywatelstwo == "null")
                         $scope.user.obywatelstwo = "";
@@ -166,48 +166,48 @@
 
     				$scope.changePasswordClick = function(){
     					var id = sessionStorage.getItem('ID');
-      	  
+
     					$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/password?user_id='+ id +
-    							'&old_password=' + $scope.user.old_password + 
+    							'&old_password=' + $scope.user.old_password +
     							'&new_password=' + $scope.user.password)
 
     							.success(function(data){
     								$scope.retInfo = data;
-    								
+
     								if(data.content == 'Wrong password'){
     									sessionStorage.setItem('msg', 'Zmiana nie powiodła się z powodu podania złego hasła');
     								}
-    								
+
     								else{
     									sessionStorage.setItem('msg', 'Zmiana hasła powiodła się.');
     								}
-    									
+
     								$location.path('/Multi/home/profile');
     							})
     							.error(function(data,status,headers,config){
     								$scope.retInfo = 'Błąd!'+ data;
-			
+
     							})
     				};
-    	
+
 
                   $scope.editProfileClick = function(){
                       var id = sessionStorage.getItem('ID');
-                	  
+
                       $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user?name=' + $scope.user.name +
                     		  											'&surname=' + $scope.user.surname +
                     		  											'&email=' + $scope.user.email +
-                    		  											'&user_id=' + id + 
+                    		  											'&user_id=' + id +
                     		  											'&age=' + $scope.user.age +
-                    		  											'&club=' + $scope.user.club + 
+                    		  											'&club=' + $scope.user.club +
                     		  											'&nr_tel=' + $scope.user.nr_tel +
-                    		  											'&ICE=' + $scope.user.ice + 
+                    		  											'&ICE=' + $scope.user.ice +
                     		  											'&nationality=' + $scope.user.obywatelstwo)
-                    		  											
+
                           .success(function (data, status, headers) {
                         	  $scope.retInfo2 = data;
                         	  sessionStorage.setItem('msg', 'Edycja danych powiodła się.');
-                        	  
+
                         	  sessionStorage.setItem('IMIE', $scope.user.name);
                               sessionStorage.setItem('ICE', $scope.user.ice);
                               sessionStorage.setItem('OBYWATELSTWO', $scope.user.obywatelstwo);
@@ -216,29 +216,29 @@
                               sessionStorage.setItem('EMAIL', $scope.user.email);
                               sessionStorage.setItem('KLUB', $scope.user.club);
                               sessionStorage.setItem('WIEK', $scope.user.age);
-                        	  
+
                         	  $location.path('/Multi/home/profile');
                           })
                           .error(function (data, status, header, config) {
-                              $scope.retInfo2 ='Błąd!' + data;     
-                          }); 
+                              $scope.retInfo2 ='Błąd!' + data;
+                          });
                   };
-                  
+
                   $scope.deleteAccountClick = function(){
                 	  var id = sessionStorage.getItem('ID');
-                	  
+
                 	  $http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/delete?user_id=' + id +
                 			  																'&password=' + $scope.user.delete_password)
-								
+
 						.success(function (data, status, headers) {
 							if(data.content == 'Wrong password'){
 								sessionStorage.setItem('msg', 'Usunięcie konta nie powiodło się z powodu podania złego hasła');
 								$location.path('/Multi/home/profile');
 							}
-							
+
 							else{
 								$scope.retInfo2 = data;
-								
+
 								sessionStorage.removeItem('IMIE');
 					            sessionStorage.removeItem('ICE');
 					            sessionStorage.removeItem('ACTIVATE');
@@ -251,24 +251,24 @@
 					            sessionStorage.removeItem('CODE');
 					            sessionStorage.removeItem('PLEC');
 					            sessionStorage.removeItem('WIEK');
-					        	
+
 					            window.location = '/Multi/index.html';
 							}
 						})
 						.error(function (data, status, header, config) {
-							$scope.retInfo2 ='Błąd!' + data;     
-						}); 
-                	  
+							$scope.retInfo2 ='Błąd!' + data;
+						});
+
                   };
     }])
-    
-    app.controller('competitionsController', ['$scope','$http', '$sessionStorage', '$location', '$route', '$log', function($scope, $http, $sessionStorage, $location, $route, $log){ 
+
+    app.controller('competitionsController', ['$scope','$http', '$sessionStorage', '$location', '$route', '$log', function($scope, $http, $sessionStorage, $location, $route, $log){
 
     	$scope.search = 0;
     	$scope.btnText = 'Rozwiń filtry wyszukiwania';
-    	
+
         $scope.response = [];
-        
+
         $scope.types = [
                         {name:'Bieg przełajowy' ,type:'Biegi'},
                         {name:'Bieg maratoński' ,type:'Biegi'},
@@ -294,13 +294,13 @@
 
         $scope.init = function() {
         	$scope.t = [{name: '', type: ''}];
-        	
+
         	$scope.spr = sessionStorage.getItem('hide');
         	var temp = sessionStorage.getItem('type_name');
         	$scope.t = sessionStorage.getItem('type');
             $scope.name = sessionStorage.getItem('name');
             $scope.place = sessionStorage.getItem('place');
-            
+
             sessionStorage.removeItem('type');
             sessionStorage.removeItem('name');
             sessionStorage.removeItem('place');
@@ -309,7 +309,7 @@
 
         	if($scope.spr != null)
         		$scope.print();
-        	
+
             if(!($scope.t == null) && !($scope.t == 'undefined')) {
             	for(i = 0; i < $scope.types.length; i++) {
             		if(temp == $scope.types[i].name) {
@@ -318,30 +318,30 @@
             		}
             	}
             }
-            
+
             if(temp == null || temp == 'undefined')
             	temp = '';
-            
+
             if($scope.name == null)
             	$scope.name = '';
-            
+
             if($scope.place == null)
             	$scope.place = '';
-            
+
         	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=' + temp +
 					'&name=' + $scope.name +
 					'&place=' + $scope.place +
                     '&wieloetapowe=0')
 			.success(function(data){
 			$scope.response = data;
-            
+
             var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
             $scope.countFinded = $scope.response.length;
             $scope.countActive = 0;
             $scope.competitions = [];
 
             for(var i=0; i<$scope.response.length; i++)
-            {   
+            {
 
 
             /*POBIERANIE LOGA*/
@@ -354,7 +354,7 @@
                         $scope.logo = data.image;
                     console.log(data);
                     })
-                     .error(function(data){                    
+                     .error(function(data){
                     })
                 }*/
 
@@ -368,7 +368,7 @@
 
                 if(today <= compDate)
                 {
-                    
+
                     today.setHours(0);
                     today.setMinutes(0);
                     today.setSeconds(0);
@@ -393,46 +393,46 @@
 
             	if(miesiac.charAt(0) == '0')
             		miesiac = miesiac.substr(1, 1);
-            	
+
             	$scope.response[i].MIESIAC = miesiac;
             	$scope.response[i].ROK = rok;
             }
-            
+
             var year = new Date().getFullYear();
-            
+
             var month = 1;
-            
+
             var months = new Array(14);
-            
+
             for(i = 0; i < 14; i++)
             	months[i] = 0;
-            
+
             for(i = 0; i < $scope.response.length; i++) {
             	if(parseInt(year) > parseInt($scope.response[i].ROK))
             		months[0]++;
-            	
+
             	if(parseInt(year) == parseInt($scope.response[i].ROK))
             		months[parseInt($scope.response[i].MIESIAC)]++;
-            	
+
             	if(parseInt(year) < parseInt($scope.response[i].ROK))
             		months[13]++;
             }
 
             $scope.pages = new Array(14);
-            
+
             for (var i = 0; i < 14; i++) {
             	$scope.pages[i] = new Array(months[i]);
             }
-            
+
             var all = $scope.response;
-            
+
             for(i = 0; i < 14; i++)
             	$scope.pages[i] = all.splice(0, months[i]);
-            
+
             $scope.show = new Array(14);
             $scope.btn = new Array(14);
             $scope.style = new Array(14);
-            
+
             for(i = 0; i < 14; i++) {
             	$scope.btn[i] = 'btn btn-primary';
             	$scope.style[i] = 'background-color: #222933;';
@@ -442,57 +442,57 @@
             	month = new Date().getMonth();
             	$scope.changePage(++month);
             }
-            
+
             else
             	$scope.changePage(15);
-            
+
 			})
-			
+
 			.error(function(data,status,headers,config){
 			$scope.retInfo = 'Błąd!'+ data;
 			})
         };
-        
+
         $scope.s = function() {
         	sessionStorage.setItem('type', $scope.t);
-        	
+
         	if($scope.t != null)
         		sessionStorage.setItem('type_name', $scope.t.name);
-        		
+
         	sessionStorage.setItem('name', $scope.name);
         	sessionStorage.setItem('place', $scope.place);
         	sessionStorage.setItem('hide', 1);
-        	
+
         	$route.reload();
         };
-        
+
         $scope.w = function() {
         	$route.reload();
         };
-        	
-            
-                   
+
+
+
             $scope.openPage = function(id, data, godzina) {
             	sessionStorage.setItem('compID', id);
             	sessionStorage.setItem('compData', data);
             	sessionStorage.setItem('compGodzina', godzina);
-            	
+
             	$location.path('/Multi/home/competition');
             };
-            
+
             $scope.print = function() {
             	if( $scope.search == 1 ) {
             		$scope.btnText = 'Rozwiń filtry wyszukiwania';
                     $scope.search = 0;
             	}
-            	
+
             	else {
             		$scope.btnText = 'Zwiń filtry wyszukiwania';
                     $scope.search = 1;
             	}
-            	
+
             };
-            
+
             $scope.changePage = function(nr) {
             	if(nr == 15) {
             		for(i = 0; i < 14; i++) {
@@ -500,24 +500,24 @@
                 		$scope.style[i] = 'background-color: white; color: black;';
             		}
             	}
-            	
+
             	else {
             		for(i = 0; i < 14; i++) {
                 		$scope.show[i] = 0;
                 		$scope.style[i] = 'background-color: white; color: black;';
             		}
-                	
+
                 	$scope.show[nr] = 1;
                 	$scope.style[nr] = 'background-color: #233859';
             	}
             };
     }])
-    
-    app.controller('myCompetitionsController', ['$scope','$http', '$sessionStorage', '$location', '$route', '$log', function($scope, $http, $sessionStorage, $location, $route, $log){ 
+
+    app.controller('myCompetitionsController', ['$scope','$http', '$sessionStorage', '$location', '$route', '$log', function($scope, $http, $sessionStorage, $location, $route, $log){
 
         $scope.search = 0;
         $scope.btnText = 'Rozwiń filtry wyszukiwania';
-        
+
         $scope.response = [];
 
         $scope.types = [
@@ -542,9 +542,9 @@
                         {name:'Wioślarstwo' ,type:'Wyścigi łodzi'},
                         {name:'Inne' ,type:'Inne'}
                         ];
-        
-        
-        
+
+
+
         $scope.init = function() {
             $scope.t = [{name: '', type: ''}];
             $scope.response=[];
@@ -553,7 +553,7 @@
             $scope.t = sessionStorage.getItem('type');
             $scope.name = sessionStorage.getItem('name');
             $scope.place = sessionStorage.getItem('place');
-            
+
             sessionStorage.removeItem('type');
             sessionStorage.removeItem('name');
             sessionStorage.removeItem('place');
@@ -562,7 +562,7 @@
 
             if($scope.spr != null)
                 $scope.print();
-            
+
             if(!($scope.t == null) && !($scope.t == 'undefined')) {
                 for(i = 0; i < $scope.types.length; i++) {
                     if(temp == $scope.types[i].name) {
@@ -571,20 +571,20 @@
                     }
                 }
             }
-            
+
             if(temp == null || temp == 'undefined')
                 temp = '';
-            
+
             if($scope.name == null)
                 $scope.name = '';
-            
+
             if($scope.place == null)
                 $scope.place = '';
 
             var user_id = sessionStorage.getItem('ID');
-            
+
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/my?user_id=' + user_id +
-                    '&type=' + temp + 
+                    '&type=' + temp +
                     '&name=' + $scope.name +
                     '&place=' + $scope.place +
                     '&wieloetapowe=0')
@@ -597,7 +597,7 @@
             $scope.competitions = [];
 
             for(var i=0; i<$scope.response.length; i++)
-            {   
+            {
                 var today = new Date();
                 var compDate = new Date($scope.response[i].DATA_ROZP.replace(datePattern, '$3, $2, $1'));
                 var compTime = $scope.response[i].CZAS_ROZP.split(":");
@@ -607,7 +607,7 @@
                 $scope.dlugosc =  $scope.response[i].WIELOETAPOWE.length;
                 if(today <= compDate)
                 {
-                    
+
                     today.setHours(0);
                     today.setMinutes(0);
                     today.setSeconds(0);
@@ -625,53 +625,53 @@
                 }
             }
 
-            
+
             for(i = 0; i < $scope.response.length; i++) {
                 var miesiac = $scope.response[i].DATA_ROZP.substr(3, 2);
                 var rok = $scope.response[i].DATA_ROZP.substr(6, 4);
 
                 if(miesiac.charAt(0) == '0')
                     miesiac = miesiac.substr(1, 1);
-                
+
                 $scope.response[i].MIESIAC = miesiac;
                 $scope.response[i].ROK = rok;
             }
-            
+
             var year = new Date().getFullYear();
-            
+
             var month = 1;
-            
+
             var months = new Array(14);
-            
+
             for(i = 0; i < 14; i++)
                 months[i] = 0;
-            
+
             for(i = 0; i < $scope.response.length; i++) {
                 if(parseInt(year) > parseInt($scope.response[i].ROK))
                     months[0]++;
-                
+
                 if(parseInt(year) == parseInt($scope.response[i].ROK))
                     months[parseInt($scope.response[i].MIESIAC)]++;
-                
+
                 if(parseInt(year) < parseInt($scope.response[i].ROK))
                     months[13]++;
             }
 
             $scope.pages = new Array(14);
-            
+
             for (var i = 0; i < 14; i++) {    ///////////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Zamiana z i<14 na i<12 !!!!!!!!!!!
-                $scope.pages[i] = new Array(months[i]);  
+                $scope.pages[i] = new Array(months[i]);
             }
-            
+
             var all = $scope.response;
-            
-            for(i = 0; i < 14; i++) 
+
+            for(i = 0; i < 14; i++)
                 $scope.pages[i] = all.splice(0, months[i]);
-            
+
             $scope.show = new Array(14);
             $scope.btn = new Array(14);
             $scope.style = new Array(14);
-            
+
             for(i = 0; i < 14; i++) {
                 $scope.btn[i] = 'btn btn-primary';
                 $scope.style[i] = 'background-color: #222933;';
@@ -681,57 +681,57 @@
                 month = new Date().getMonth();
                 $scope.changePage(++month);
             }
-            
+
             else
                 $scope.changePage(15);
-            
+
             })
-            
+
             .error(function(data,status,headers,config){
             $scope.retInfo = 'Błąd!'+ data;
             })
         };
-        
+
         $scope.s = function() {
             sessionStorage.setItem('type', $scope.t);
-            
+
             if($scope.t != null)
                 sessionStorage.setItem('type_name', $scope.t.name);
-                
+
             sessionStorage.setItem('name', $scope.name);
             sessionStorage.setItem('place', $scope.place);
             sessionStorage.setItem('hide', 1);
-            
+
             $route.reload();
         };
-        
+
         $scope.w = function() {
             $route.reload();
         };
-            
-            
-                   
+
+
+
             $scope.openPage = function(id, data, godzina) {
                 sessionStorage.setItem('compID', id);
                 sessionStorage.setItem('compData', data);
                 sessionStorage.setItem('compGodzina', godzina);
-                
+
                 $location.path('/Multi/home/myCompetition');
             };
-            
+
             $scope.print = function() {
                 if( $scope.search == 1 ) {
                     $scope.btnText = 'Rozwiń filtry wyszukiwania';
                     $scope.search = 0;
                 }
-                
+
                 else {
                     $scope.btnText = 'Zwiń filtry wyszukiwania';
                     $scope.search = 1;
                 }
-                
+
             };
-            
+
             $scope.changePage = function(nr) {
                 if(nr == 15) {
                     for(i = 0; i < 14; i++) {
@@ -739,13 +739,13 @@
                         $scope.style[i] = 'background-color: white; color: black;';
                     }
                 }
-                
+
                 else {
                 	for(i = 0; i < 14; i++) {
                 		$scope.show[i] = 0;
                 		$scope.style[i] = 'background-color: white; color: black;';
             		}
-                	
+
                 	$scope.show[nr] = 1;
                 	$scope.style[nr] = 'background-color: #233859';
                 }
@@ -991,13 +991,13 @@
                 };
         }])
 
-    app.controller('runnerCompetitionsController', ['$scope','$http', '$sessionStorage', '$location', '$route', '$log', function($scope, $http, $sessionStorage, $location, $route, $log){ 
+    app.controller('runnerCompetitionsController', ['$scope','$http', '$sessionStorage', '$location', '$route', '$log', function($scope, $http, $sessionStorage, $location, $route, $log){
 
         $scope.search = 0;
         $scope.btnText = 'Rozwiń filtry wyszukiwania';
-        
+
         $scope.response = [];
-        
+
         $scope.types = [
                         {name:'Bieg przełajowy' ,type:'Biegi'},
                         {name:'Bieg maratoński' ,type:'Biegi'},
@@ -1020,18 +1020,18 @@
                         {name:'Wioślarstwo' ,type:'Wyścigi łodzi'},
                         {name:'Inne' ,type:'Inne'}
                         ];
-        
-        
-        
+
+
+
         $scope.init = function() {
             $scope.t = [{name: '', type: ''}];
-            
+
             $scope.spr = sessionStorage.getItem('hide');
             var temp = sessionStorage.getItem('type_name');
             $scope.t = sessionStorage.getItem('type');
             $scope.name = sessionStorage.getItem('name');
             $scope.place = sessionStorage.getItem('place');
-            
+
             sessionStorage.removeItem('type');
             sessionStorage.removeItem('name');
             sessionStorage.removeItem('place');
@@ -1040,7 +1040,7 @@
 
             if($scope.spr != null)
                 $scope.print();
-            
+
             if(!($scope.t == null) && !($scope.t == 'undefined')) {
                 for(i = 0; i < $scope.types.length; i++) {
                     if(temp == $scope.types[i].name) {
@@ -1049,20 +1049,20 @@
                     }
                 }
             }
-            
+
             if(temp == null || temp == 'undefined')
                 temp = '';
-            
+
             if($scope.name == null)
                 $scope.name = '';
-            
+
             if($scope.place == null)
                 $scope.place = '';
 
             var user_id = sessionStorage.getItem('ID');
-            
+
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/user/list?user_id=' + user_id +
-                    '&type=' + temp + 
+                    '&type=' + temp +
                     '&name=' + $scope.name +
                     '&place=' + $scope.place)
             .success(function(data){
@@ -1076,7 +1076,7 @@
             $scope.competitions = [];
 
             for(var i=0; i<$scope.response.length; i++)
-            {   
+            {
                 var today = new Date();
                 var compDate = new Date($scope.response[i].DATA_ROZP.replace(datePattern, '$3, $2, $1'));
                 var compTime = $scope.response[i].CZAS_ROZP.split(":");
@@ -1086,7 +1086,7 @@
 
                 if(today <= compDate)
                 {
-                    
+
                     today.setHours(0);
                     today.setMinutes(0);
                     today.setSeconds(0);
@@ -1103,53 +1103,53 @@
                     $scope.competitions[i].DIFF = -1;
                 }
             }
-            
+
             for(i = 0; i < $scope.response.length; i++) {
                 var miesiac = $scope.response[i].DATA_ROZP.substr(3, 2);
                 var rok = $scope.response[i].DATA_ROZP.substr(6, 4);
 
                 if(miesiac.charAt(0) == '0')
                     miesiac = miesiac.substr(1, 1);
-                
+
                 $scope.response[i].MIESIAC = miesiac;
                 $scope.response[i].ROK = rok;
             }
-            
+
             var year = new Date().getFullYear();
-            
+
             var month = 1;
-            
+
             var months = new Array(14);
-            
+
             for(i = 0; i < 14; i++)
                 months[i] = 0;
-            
+
             for(i = 0; i < $scope.response.length; i++) {
                 if(parseInt(year) > parseInt($scope.response[i].ROK))
                     months[0]++;
-                
+
                 if(parseInt(year) == parseInt($scope.response[i].ROK))
                     months[parseInt($scope.response[i].MIESIAC)]++;
-                
+
                 if(parseInt(year) < parseInt($scope.response[i].ROK))
                     months[13]++;
             }
 
             $scope.pages = new Array(14);
-            
+
             for (var i = 0; i < 14; i++) {
                 $scope.pages[i] = new Array(months[i]);
             }
-            
+
             var all = $scope.response;
-            
-            for(i = 0; i < 14; i++) 
+
+            for(i = 0; i < 14; i++)
             	$scope.pages[i] = all.splice(0, months[i]);
-            
+
             $scope.show = new Array(14);
             $scope.btn = new Array(14);
             $scope.style = new Array(14);
-            
+
             for(i = 0; i < 14; i++) {
                 $scope.btn[i] = 'btn btn-primary';
                 $scope.style[i] = 'background-color: #222933;';
@@ -1159,57 +1159,57 @@
                 month = new Date().getMonth();
                 $scope.changePage(++month);
             }
-            
+
             else
                 $scope.changePage(15);
-            
+
             })
-            
+
             .error(function(data,status,headers,config){
             $scope.retInfo = 'Błąd!'+ data;
             })
         };
-        
+
         $scope.s = function() {
             sessionStorage.setItem('type', $scope.t);
-            
+
             if($scope.t != null)
                 sessionStorage.setItem('type_name', $scope.t.name);
-                
+
             sessionStorage.setItem('name', $scope.name);
             sessionStorage.setItem('place', $scope.place);
             sessionStorage.setItem('hide', 1);
-            
+
             $route.reload();
         };
-        
+
         $scope.w = function() {
             $route.reload();
         };
-            
-            
-                   
+
+
+
             $scope.openPage = function(id, data, godzina) {
                 sessionStorage.setItem('compID', id);
                 sessionStorage.setItem('compData', data);
                 sessionStorage.setItem('compGodzina', godzina);
-                
+
                 $location.path('/Multi/home/competition');
             };
-            
+
             $scope.print = function() {
                 if( $scope.search == 1 ) {
                     $scope.btnText = 'Rozwiń filtry wyszukiwania';
                     $scope.search = 0;
                 }
-                
+
                 else {
                     $scope.btnText = 'Zwiń filtry wyszukiwania';
                     $scope.search = 1;
                 }
-                
+
             };
-            
+
             $scope.changePage = function(nr) {
                 if(nr == 15) {
                     for(i = 0; i < 14; i++) {
@@ -1217,13 +1217,13 @@
                         $scope.style[i] = 'background-color: #222933;';
                     }
                 }
-                
+
                 else {
                 	for(i = 0; i < 14; i++) {
                 		$scope.show[i] = 0;
                 		$scope.style[i] = 'background-color: white; color: black;';
             		}
-                	
+
                 	$scope.show[nr] = 1;
                 	$scope.style[nr] = 'background-color: #233859';
                 }
@@ -1287,7 +1287,7 @@
 
     }])
 
-    app.controller('myCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){ 
+    app.controller('myCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){
 
         // Editor options.
         $scope.options = {
@@ -1299,18 +1299,18 @@
         // Called when the editor is completely ready.
         $scope.onReady = function () {
             CKEDITOR.instances['editor'].setReadOnly(true);
-            
+
             var temp = CKEDITOR.instances['editor'].id + "_top";
-            
+
             var bar = document.getElementById(temp);
             bar.style.display = "none";
-            
+
             temp = CKEDITOR.instances['editor'].id + "_bottom";
-            
+
             bar = document.getElementById(temp);
             bar.style.display = "none";
         }
-                
+
         $scope.competition = [];
         $scope.id = sessionStorage.getItem('compID');
 
@@ -1322,7 +1322,7 @@
                 if(data.DEACTIVATED == 'true') {
                 	$scope.check7 = 1;
                 }
-		
+
                 $scope.name = $scope.competition.NAME;
                 var today = new Date();
                 var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
@@ -1340,7 +1340,7 @@
                     $scope.editActive = false;
                     sessionStorage.setItem('editActive', $scope.editActive);
                 }
-            })            
+            })
             .error(function(data,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data;
             });
@@ -1375,31 +1375,31 @@
 
              }
             $scope.showStage = function(){
-              sessionStorage.setItem('compID', $scope.id);
+              sessionStorage.setItem('compID1', $scope.id);
              $location.path('/Multi/home/myCompetitions/myStages');
              }
-            
-            $scope.dropCompetition = function(){           
-                $scope.check2 = 1; 
+
+            $scope.dropCompetition = function(){
+                $scope.check2 = 1;
             }
-            
+
             $scope.dropCompetition2 = function(){
             	var id = sessionStorage.getItem('ID');
-            	
+
             	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason);
-            	
+
             	$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason)
                 .success(function(data){
                 	$scope.check2 = 0;
-                	
+
                 	$scope.retInfo = 'Zawody odwołane! Użytkownicy zostali o tym poinformowani przez wiadomość email z powodem.';
-                	
+
                 	$scope.check3 = 1;
                 	$scope.check7 = 1;
                 	$scope.reason = '';
 
                 })
-                
+
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
@@ -1535,7 +1535,7 @@
 //                }
 //        }])
 
-    app.controller('runnerCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){ 
+    app.controller('runnerCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){
 
     	// Editor options.
         $scope.options = {
@@ -1547,58 +1547,58 @@
         // Called when the editor is completely ready.
         $scope.onReady = function () {
         	CKEDITOR.instances['editor'].setReadOnly(true);
-        	
+
         	var temp = CKEDITOR.instances['editor'].id + "_top";
-        	
+
         	var bar = document.getElementById(temp);
             bar.style.display = "none";
-            
+
             temp = CKEDITOR.instances['editor'].id + "_bottom";
-            
+
             bar = document.getElementById(temp);
             bar.style.display = "none";
         }
-        
+
     	$scope.btnText = 'Rozwiń';
         $scope.btnType = 'btn btn-success';
         $scope.check = 1;
         $scope.cat = '';
-    	
+
     	$scope.response = [];
         $scope.id = sessionStorage.getItem('compID');
-        
-        
+
+
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.response = data;
 
             })
-            
+
             .error(function(data,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data;
             });
-            
+
             $scope.print = function() {
                 if( $scope.check == 1 ) {
                     $scope.btnText = 'Zwiń';
                     $scope.btnType = 'btn btn-danger';
                     $scope.check = 0;
                 }
-                
+
                 else {
                     $scope.btnText = 'Rozwiń';
                     $scope.btnType = 'btn btn-success';
                     $scope.check = 1;
                 }
             };
-            
-            
+
+
     }])
 
-    app.controller('runnersListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){ 
+    app.controller('runnersListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
 
-        var token = sessionStorage.getItem('ID');        
+        var token = sessionStorage.getItem('ID');
 
     	$scope.runners = [
     	                    {IMIE : ''},
@@ -1609,7 +1609,7 @@
                             {EVENT_NR: 'brak'},
                             {CATEGORY: ''}
     	                    ];
-    	                    
+
     	$scope.plci = [{nazwa: 'kobieta'}, {nazwa: 'mężczyzna'}];
     	$scope.cat = [{NAME: ''}, {DESCRIPTION : ''}];
     	$scope.nazwaCat = '';
@@ -1636,28 +1636,28 @@
 				$scope.nazwaCat = '';
 		    	$scope.desc = '';
 			})
-			
+
 			.error(function(data,status,headers,config){
 			$scope.retInfo = 'Błąd!'+ data;
 			});
     	};
-        
+
             $scope.init = function() {
-            	
+
             	$scope.init2();
             	  $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
                 var sex = '';
-                
+
                 $scope.search = 0;
                 $scope.check = 0;
             	$scope.btnText = 'Rozwiń filtry wyszukiwania';
-                
+
                 $scope.spr = sessionStorage.getItem('hide');
             	$scope.age = sessionStorage.getItem('age');
                 $scope.sex = sessionStorage.getItem('sex');
                 $scope.phrase = sessionStorage.getItem('phrase');
                 $scope.cat.NAME = sessionStorage.getItem('category');
-                               
+
                 sessionStorage.removeItem('hide');
                 sessionStorage.removeItem('age');
                 sessionStorage.removeItem('sex');
@@ -1669,54 +1669,54 @@
                 		$scope.btnText = 'Rozwiń filtry wyszukiwania';
                         $scope.search = 0;
                 	}
-                	
+
                 	else {
                 		$scope.btnText = 'Zwiń filtry wyszukiwania';
                         $scope.search = 1;
                 	}
-                	
+
                 };
-     
-                
+
+
             	if($scope.spr != null)
             		$scope.print();
-            	
+
                 if($scope.age == null)
                 	$scope.age = '';
-                
+
                 if($scope.sex == null)
                 	sex = '';
-                	
+
                 	if($scope.phrase == null)
                     	$scope.phrase = '';
-                	
+
                     if($scope.cat.NAME == null)
                     	$scope.cat.NAME = '';
-                    
+
                 	if($scope.sex == 'kobieta') {
                 		sex = 'K';
                 		$scope.sex = $scope.plci[0];
                 	}
-                	
+
                 	if($scope.sex == 'mężczyzna') {
                 		sex = 'M';
                 		$scope.sex = $scope.plci[1];
                 	}
-                	
+
                 	/*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                             '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME);*/
-                	
+
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                                                                                                         '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME)
                     .success(function(data){
                         $scope.runners = data;
                     })
-                    
+
                     .error(function(data,status,headers,config){
                         $scope.retInfo = 'Błąd!'+ data;
                     });
             }
-            
+
            $scope.deleteRunner = function(compID, runnID) {
              if (confirm('Czy napewno chcesz usunąć zawodnika?')) {
 
@@ -1729,9 +1729,9 @@
                     }
                     else
                     {
-                    $route.reload();    
+                    $route.reload();
                     }
-                
+
                 })
                 .error(function(data){
                     $scope.error = data;
@@ -1748,48 +1748,48 @@
                 })
                 .error(function(data){
                     $scope.error = data;
-                   
+
                 });
             };
-            
-            
-            
+
+
+
             $scope.s = function() {
-            	
+
             	if($scope.sex != null) {
             		sessionStorage.setItem('sex', $scope.sex.nazwa);
             	}
-            	
+
             	sessionStorage.setItem('age', $scope.age);
             	sessionStorage.setItem('phrase', $scope.phrase);
-            	
+
             	if($scope.cat != null) {
             		sessionStorage.setItem('category', $scope.cat.NAME);
             	}
-            	
+
             	sessionStorage.setItem('hide', 0);
             	var ind = $scope.categories.indexOf($scope.cat);
             	sessionStorage.setItem('ind', ind);
 
             	$route.reload();
             };
-            
+
             $scope.w = function() {
             	$route.reload();
             };
-            
+
             $scope.init2 = function() {
             	$scope.check = 0;
-            	
+
             	//$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id);
-            	
+
             	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id)
                 .success(function(data){
                     $scope.categories = data;
                     if($scope.categories == "") {
                     	$scope.check = 1;
                     }
-                    
+
                     var ind = sessionStorage.getItem('ind');
 
 //                   $scope.wieloetapowe = sessionStorage.getItem('WIELOETAPOWE');
@@ -1798,10 +1798,10 @@
 
                     if(ind != null)
                     	$scope.cat = $scope.categories[ind];
-                    
+
                     sessionStorage.removeItem('ind');
                 })
-                
+
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
@@ -1819,9 +1819,9 @@
                         if($scope.runners[i].USER_ID == userID)
                             $scope.runners[i].EVENT_NR= startNumber;
                     }
-                    
+
                 })
-                
+
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
@@ -1843,12 +1843,12 @@ sessionStorage.setItem('name', $scope.name);
                                         $location.path('/Multi/home/myCompetition/edit');
 
                                     }
-            
-    }])
-    
-    app.controller('compRunnersListController', ['$scope','$http', '$route', '$sessionStorage', '$log','$location', function($scope, $http, $route, $sessionStorage, $log, $location){ 
 
-       
+    }])
+
+    app.controller('compRunnersListController', ['$scope','$http', '$route', '$sessionStorage', '$log','$location', function($scope, $http, $route, $sessionStorage, $log, $location){
+
+
 
         $scope.runners = [
                             {IMIE : ''},
@@ -1857,31 +1857,31 @@ sessionStorage.setItem('name', $scope.name);
                             {USER_ID: ''},
                             {OPLACONE: ''}
                             ];
-                            
+
         $scope.plci = [{nazwa: 'kobieta'}, {nazwa: 'mężczyzna'}];
         $scope.cat = [{NAME: ''}, {DESCRIPTION : ''}];
-        
+
         var id = sessionStorage.getItem('compID');
         $scope.competitionName = sessionStorage.getItem('compName');
-        
+
         $scope.compPay = sessionStorage.getItem('compPay');
-        
+
             $scope.init = function() {
-                
+
                 $scope.init2();
-                
+
                 var sex = '';
-                
+
                 $scope.search = 0;
                 $scope.check = 0;
                 $scope.btnText = 'Rozwiń filtry wyszukiwania';
-                
+
                 $scope.spr = sessionStorage.getItem('hide');
                 $scope.age = sessionStorage.getItem('age');
                 $scope.sex = sessionStorage.getItem('sex');
                 $scope.phrase = sessionStorage.getItem('phrase');
                 $scope.cat.NAME = sessionStorage.getItem('category');
-                               
+
                 sessionStorage.removeItem('hide');
                 sessionStorage.removeItem('age');
                 sessionStorage.removeItem('sex');
@@ -1893,107 +1893,107 @@ sessionStorage.setItem('name', $scope.name);
                         $scope.btnText = 'Rozwiń filtry wyszukiwania';
                         $scope.search = 0;
                     }
-                    
+
                     else {
                         $scope.btnText = 'Zwiń filtry wyszukiwania';
                         $scope.search = 1;
                     }
-                    
+
                 };
-     
-                
+
+
                 if($scope.spr != null)
                     $scope.print();
-                
+
                 if($scope.age == null)
                     $scope.age = '';
-                
+
                 if($scope.sex == null)
                     sex = '';
-                    
+
                     if($scope.phrase == null)
                         $scope.phrase = '';
-                    
+
                     if($scope.cat.NAME == null)
                         $scope.cat.NAME = '';
-                    
+
                     if($scope.sex == 'kobieta') {
                         sex = 'K';
                         $scope.sex = $scope.plci[0];
                     }
-                    
+
                     if($scope.sex == 'mężczyzna') {
                         sex = 'M';
                         $scope.sex = $scope.plci[1];
                     }
-                    
+
                     /*$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                             '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME);*/
-                    
+
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id +
                                                                                                         '&sex=' + sex + '&age=' + $scope.age + '&phrase=' + $scope.phrase + '&category=' + $scope.cat.NAME)
                     .success(function(data){
                         $scope.runners = data;
                     })
-                    
+
                     .error(function(data,status,headers,config){
                         $scope.retInfo = 'Błąd!'+ data;
                     });
             };
-            
-                   
+
+
             $scope.s = function() {
-                
+
                 if($scope.sex != null) {
                     sessionStorage.setItem('sex', $scope.sex.nazwa);
                 }
-                
+
                 sessionStorage.setItem('age', $scope.age);
                 sessionStorage.setItem('phrase', $scope.phrase);
-                
+
                 if($scope.cat != null) {
                     sessionStorage.setItem('category', $scope.cat.NAME);
                 }
-                
+
                 sessionStorage.setItem('hide', 0);
                 var ind = $scope.categories.indexOf($scope.cat);
                 sessionStorage.setItem('ind', ind);
 
                 $route.reload();
             };
-            
+
             $scope.w = function() {
                 $route.reload();
             };
-            
+
             $scope.init2 = function() {
                 $scope.check = 0;
-                
+
                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/category/list?competition_id=' + id)
                 .success(function(data){
                     $scope.categories = data;
                     if($scope.categories == "") {
                         $scope.check = 1;
                     }
-                    
+
                     var ind = sessionStorage.getItem('ind');
-                    
+
                     if(ind != null)
                         $scope.cat = $scope.categories[ind];
-                    
+
                     sessionStorage.removeItem('ind');
                 })
-                
+
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
-            };            
-            
+            };
+
             $scope.openPage = function() {
                 sessionStorage.setItem('compID', id);
                // sessionStorage.setItem('compData', data);
                 //sessionStorage.setItem('compGodzina', godzina);
-                
+
                 $location.path('/Multi/home/competition');
             };
 
@@ -2001,11 +2001,11 @@ sessionStorage.setItem('name', $scope.name);
                 sessionStorage.setItem('compID', id);
                 $location.path('/Multi/home/competition/results');
             }
-            
-            
+
+
     }])
 
-    app.controller('signController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){ 
+    app.controller('signController', ['$scope','$http', '$location', '$sessionStorage', '$log', function($scope, $http, $location, $sessionStorage, $log){
 
     	$scope.check = 0;
         $scope.check2 = 0;
@@ -2015,33 +2015,33 @@ sessionStorage.setItem('name', $scope.name);
     	$scope.text = "Zapisz się!";
     	$scope.cat = '';
     	$scope.categories = [];
-        
+
         var id = sessionStorage.getItem('compID');
         var dataRozp = sessionStorage.getItem('compData');
         var godzinaRozp = sessionStorage.getItem('compGodzina');
-        
+
         var array1 = dataRozp.split(".");
         var array2 = godzinaRozp.split(":");
-        
+
         for(i = 0; i < array1.length; i++){
         	array1[i] = parseInt(array1[i]);
         }
-        
+
         for(i = 0; i < array2.length; i++){
         	array2[i] = parseInt(array2[i]);
         }
-        
-        
-        
+
+
+
         var teraz = new Date();
         var dataZaw = new Date(array1[2], --array1[1], array1[0], array2[0], array2[1]);
-        
+
         //sessionStorage.removeItem('compID');
         //sessionStorage.removeItem('compData');
         //sessionStorage.removeItem('compGodzina');
 
         //$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=');
-        
+
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
         .success(function(data){
         	var users = [];
@@ -2049,7 +2049,7 @@ sessionStorage.setItem('name', $scope.name);
             var imie = sessionStorage.getItem('IMIE');
             var nazwisko = sessionStorage.getItem('NAZWISKO');
             var email = sessionStorage.getItem('EMAIL');
-            
+
         	for(i = 0; i < data.length; i++) {
         		if(users[i].IMIE == imie && users[i].NAZWISKO == nazwisko && users[i].EMAIL == email) {
         			$scope.check2 = 1;
@@ -2064,22 +2064,22 @@ sessionStorage.setItem('name', $scope.name);
         		$scope.check = 1;
         	}
         })
-        
+
         .error(function(data,status,headers,config){
             $scope.retInfo = 'Błąd!'+ data;
         });
-                    
+
             $scope.sign = function(id) {
             	if($scope.check2 == 0) {
-            		
+
 	            	var user = sessionStorage.getItem('ID');
-	            	
+
 	            	$http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event?user_id=' + user + '&competition_id=' + id + '&category_name=' + $scope.cat.NAME)
 	                .success(function(data){
 	                	if(data.content == 'Brak wolnych miejsc'){
 	                		$scope.retInfo = 'Brak wolnych miejsc na te zawody!';
 	                	}
-	                	
+
 	                	else{
 	                		$scope.retInfo = "Zapis na zawody powiódł się!";
 		                    $scope.check2 = 1;
@@ -2087,12 +2087,12 @@ sessionStorage.setItem('name', $scope.name);
 		                    $scope.text = "Wypisz się!";
 	                	}
 	                })
-	                
+
 	                .error(function(data,status,headers,config){
 	                    $scope.retInfo = 'Błąd!'+ data;
 	                });
             	}
-            	
+
             	else {
             		$scope.signOut(id);
             		$scope.retInfo = '';
@@ -2100,7 +2100,7 @@ sessionStorage.setItem('name', $scope.name);
             		$scope.check3 = 0;
             	}
             };
-            
+
             $scope.signOut = function(id) {
             	var user = sessionStorage.getItem('ID');
             	$http.delete('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/leave?competition_id=' + id + '&user_id=' + user)
@@ -2112,12 +2112,12 @@ sessionStorage.setItem('name', $scope.name);
                     $scope.check5 = 0;
                     $scope.text = "Zapisz się!";
                 })
-                
+
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
             };
-            
+
             $scope.init = function() {
             	$scope.check5 = 0;
             	$scope.init2();
@@ -2129,22 +2129,22 @@ sessionStorage.setItem('name', $scope.name);
                     	$scope.check6 = 1;
                     }
                 })
-                
+
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
             };
-            
+
             $scope.init2 = function() {
             	$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
                 .success(function(data){
-                    
+
                     if(data.DEACTIVATED == 'true') {
                     	$scope.check = 1;
                     	$scope.check7 = 1;
                     }
 
-                })            
+                })
                 .error(function(data,status,headers,config){
                     $scope.retInfo = 'Błąd!'+ data;
                 });
@@ -2160,7 +2160,7 @@ sessionStorage.setItem('name', $scope.name);
                         entities: false
                       };
 
-                    
+
                     $scope.status = 'Dodaj zawody';
 
                     $scope.types = [
@@ -2184,12 +2184,12 @@ sessionStorage.setItem('name', $scope.name);
                     {name:'Kajakarstwo' ,type:'Wyścigi łodzi'},
                     {name:'Wioślarstwo' ,type:'Wyścigi łodzi'},
                     {name:'Inne' ,type:'Inne'}
-                    ];                
+                    ];
 
                     $scope.competition = {
                     memberLimitCheck : 'false'
                     };
-                    
+
                     $scope.logo = {
                     "filesize": 54836, /* bytes */
                     "filetype": "",
@@ -2204,7 +2204,7 @@ sessionStorage.setItem('name', $scope.name);
               $scope.today();
 
               $scope.dateOptions = {
-                formatYear: 'yy',    
+                formatYear: 'yy',
                 minDate: new Date(),
                 startingDay: 1
               };
@@ -2244,19 +2244,19 @@ sessionStorage.setItem('name', $scope.name);
               }
 
         /////////////////////////////////////////////TIMEPICKER/////////////////////////////////////////////////////////////////////
-    
+
         $scope.ismeridian = false;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                     var limit;  //limit uczestnikow przesylany w zapytaniu
                     var cost;
-                    var user = sessionStorage.getItem('ID');  
+                    var user = sessionStorage.getItem('ID');
 
                     $scope.addCompetitionClick = function(){
 
 
                          if($scope.competition.memberLimitCheck)
-                            { 
+                            {
                                 limit = $scope.competition.memberLimit;
                             }
                          else
@@ -2265,15 +2265,15 @@ sessionStorage.setItem('name', $scope.name);
                             }
 
                          if($scope.competition.payCheck)
-                            { 
+                            {
                                 cost = $scope.competition.pay;
                             }
                          else
                             {
                                 cost = '';
                             }
-                            
-                          
+
+
                     $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
                                                                             '&name=' +$scope.competition.name+
                                                                             '&data_rozp='+moment($scope.competition.startDate).format('DD.MM.YYYY')+
@@ -2283,7 +2283,7 @@ sessionStorage.setItem('name', $scope.name);
                                                                             '&typ=' + $scope.competition.type.name+
                                                                             '&limit_ucz=' + limit +
                                                                             '&miejscowosc=' + $scope.competition.city +
-                                                                            '&oplata=' + cost + 
+                                                                            '&oplata=' + cost +
                                                                             '&opis=' + $scope.competition.description +
                                                                             '&image='+ $scope.logo.base64 +
                                                                             '&wieloetapowe=' + 0)
@@ -2307,16 +2307,16 @@ sessionStorage.setItem('name', $scope.name);
                                 $scope.competition.description = "";
                                 $scope.logo = null;
                                }
-                               
-                              
+
+
 
                             })
                             .error(function (data) {
                                 $scope.requestResult = 'Błąd! Nie udało się dodać zawodów.';
                             });
-                    };                
-                
-    }]) 
+                    };
+
+    }])
      app.controller('addMultiCompetitionController', ['$scope', '$http','$location','$window', '$sessionStorage' , function($scope, $http, $location, $window,$sessionStorage, $moment){
 
                         // Editor options.
@@ -2659,7 +2659,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
     }])
 
 
-    app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){ 
+    app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
 
@@ -2670,7 +2670,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
               $scope.today();
 
               $scope.dateOptions = {
-                formatYear: 'yy',    
+                formatYear: 'yy',
                 minDate: new Date(),
                 startingDay: 1
               };
@@ -2710,7 +2710,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
               }
 
         /////////////////////////////////////////////TIMEPICKER/////////////////////////////////////////////////////////////////////
-    
+
         $scope.ismeridian = false;
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2736,7 +2736,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
                                 {name:'Kajakarstwo' ,type:'Wyścigi łodzi'},
                                 {name:'Wioślarstwo' ,type:'Wyścigi łodzi'},
                                 {name:'Inne' ,type:'Inne'}
-                                ]; 
+                                ];
 
                     // Editor options.
                     $scope.options = {
@@ -2745,11 +2745,11 @@ $scope.editActive = sessionStorage.getItem('editActive');
                       entities: false
                     };
 
-                    $scope.competition = [];   
+                    $scope.competition = [];
                     var id = sessionStorage.getItem('compID');
                     var user_id = sessionStorage.getItem('ID');
-                    
-                    
+
+
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                         .success(function(response){
                             var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
@@ -2776,18 +2776,18 @@ $scope.editActive = sessionStorage.getItem('editActive');
                             $scope.competition.description = response.OPIS;
 
                         })
-                        
+
                         .error(function(data,status,headers,config){
                             $scope.retInfo = 'Błąd!'+ data;
-                        });           
+                        });
 
                 var limit;
                 var cost;
                 $scope.saveEditCompetitionClick = function(){
-                                    
+
 
                                      if($scope.competition.memberLimitCheck)
-                                        { 
+                                        {
                                             limit = $scope.competition.memberLimit;
                                         }
                                      else
@@ -2796,14 +2796,14 @@ $scope.editActive = sessionStorage.getItem('editActive');
                                         }
 
                                      if($scope.competition.payCheck)
-                                        { 
+                                        {
                                             cost = $scope.competition.pay;
                                         }
                                      else
                                         {
                                             cost = '';
                                         }
-                                     
+
                                 $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user_id +
                                                                                         '&competition_id='+ id+
                                                                                         '&name=' +$scope.competition.name+
@@ -2814,7 +2814,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
                                                                                         '&typ=' + $scope.competition.type.name+
                                                                                         '&limit_ucz=' + limit +
                                                                                         '&miejscowosc=' + $scope.competition.city +
-                                                                                        '&oplata=' + cost + 
+                                                                                        '&oplata=' + cost +
                                                                                         '&opis=' + $scope.competition.description)
                                         .success(function (data) {
                                             $window.scrollTo(0, 0);
@@ -2860,13 +2860,13 @@ sessionStorage.setItem('name', $scope.competition.name);
 
              }
 
-                               
+
     }])
 
 app.controller('resultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
              var id = sessionStorage.getItem('compID');
-             
+
                     $scope.runners = [];
 
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
@@ -2893,26 +2893,26 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                 }
                             }
                         }
-                                         
+
                     })
-                    
+
                     .error(function(data,status,headers,config){
                         $scope.retInfo = 'Błąd!'+ data;
-                    }); 
+                    });
 
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/competition/compRunnersList');
 
-                        } 
+                        }
 
                     $scope.showDescription = function(){
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/competition');
 
-                        }   
+                        }
 
-                
+
     }])
 
 app.controller('myResultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
@@ -2943,7 +2943,7 @@ $scope.name = sessionStorage.getItem('name');
 
                                 for(var i=0; i < $scope.runners.length; i++)
                                 {
-                                   
+
                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                     for(var j=0; j<$scope.details.POINTS_COUNT; j++)
                                     {
@@ -2953,12 +2953,12 @@ $scope.name = sessionStorage.getItem('name');
                                 }
                             }
                         }
-                                         
+
                     })
-                    
+
                     .error(function(data,status,headers,config){
                         $scope.retInfo = 'Błąd!'+ data;
-                    }); 
+                    });
 
 
                     $scope.DSQ = function(i){
@@ -2970,7 +2970,7 @@ $scope.name = sessionStorage.getItem('name');
                         }
                     }
 
-                    $scope.confirmResultList = function(){     
+                    $scope.confirmResultList = function(){
                         var lastResult=[]
                         var lastBanned=[]
 
@@ -2982,26 +2982,26 @@ $scope.name = sessionStorage.getItem('name');
                             lastResult[i] =$scope.runners[i].EVENT_ID;
                         }
                     }
-                               
+
 
                     for(var i=0; i<$scope.banned.length;i++){
                         if(i!=0){
-                        lastBanned[i] = $scope.banned[i].EVENT_ID; 
+                        lastBanned[i] = $scope.banned[i].EVENT_ID;
                         }
                         else{
-                            lastBanned[i] = $scope.banned[i].EVENT_ID; 
+                            lastBanned[i] = $scope.banned[i].EVENT_ID;
                         }
                     }
-                    
-                    
+
+
                     $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/publish?user_id='+user_id+
                                                                                                 '&competition_id=' + id +
                                                                                                 '&parts='+ lastResult.toString()+
                                                                                                 '&banned='+ lastBanned.toString())
-                    .success(function(data){ 
-                        $scope.retInfo = "Zawody zostały opublikowane"; 
-                        $route.reload();                                   
-                    })                    
+                    .success(function(data){
+                        $scope.retInfo = "Zawody zostały opublikowane";
+                        $route.reload();
+                    })
                     .error(function(data,status,headers,config){
                         $scope.retInfo = 'Błąd!'+ data;
                     });
@@ -3012,7 +3012,7 @@ $scope.name = sessionStorage.getItem('name');
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/myCompetition/runnersList');
 
-                        } 
+                        }
 
                     $scope.showDescription = function(){
                             sessionStorage.setItem('compID', id);
@@ -3024,14 +3024,14 @@ $scope.name = sessionStorage.getItem('name');
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/myCompetition/edit');
 
-                        } 
+                        }
 $scope.makeStage = function(){
 sessionStorage.setItem('name', $scope.name);
  //sessionStorage.setItem('compName', $scope.competition.NAME);
                    $location.path('/Multi/home/myCompetition/stage');
 
              }
-                
+
     }])
-    
+
 })();

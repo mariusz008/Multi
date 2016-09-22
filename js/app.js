@@ -52,7 +52,7 @@
               label: 'MultiJustRace - Dodaj zawody'
               })
             .when('/Multi/home/myCompetitions', {
-              controller: 'showStagesController',
+              controller: 'myCompetitionsController',
               templateUrl: 'views/myCompetitions.html',   
               label: 'MultiJustRace - Lista Twoich zawodów'
             })

@@ -1836,10 +1836,10 @@
                 $location.path('/Multi/home/myCompetition/results');
             }
 
-$scope.makeStage = function(){
-sessionStorage.setItem('name', $scope.name);
- //sessionStorage.setItem('compName', $scope.competition.NAME);
-                   $location.path('/Multi/home/myCompetition/stage');
+                $scope.makeStage = function(){
+                sessionStorage.setItem('name', $scope.name);
+                 //sessionStorage.setItem('compName', $scope.competition.NAME);
+                           $location.path('/Multi/home/myCompetition/stage');
                    }
                                 $scope.editCompetition = function(){
                                         sessionStorage.setItem('compID', id);
@@ -1847,6 +1847,10 @@ sessionStorage.setItem('name', $scope.name);
 
                                     }
 
+                   $scope.showStage = function(){
+                    sessionStorage.setItem('compID1', id);
+                     $location.path('/Multi/home/myCompetitions/myStages');
+                      }
     }])
 
     app.controller('compRunnersListController', ['$scope','$http', '$route', '$sessionStorage', '$log','$location', function($scope, $http, $route, $sessionStorage, $log, $location){

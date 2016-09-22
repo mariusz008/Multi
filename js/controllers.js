@@ -756,7 +756,7 @@
 
             $scope.search = 0;
             $scope.btnText = 'Rozwiń filtry wyszukiwania';
-
+            $scope.compID - sessionStorage.getItem('compID');
             $scope.response = [];
 
             $scope.types = [
@@ -826,7 +826,7 @@
                         '&type=' + temp +
                         '&name=' + $scope.name +
                         '&place=' + $scope.place +
-                        '&wieloetapowe=' + $scope.id)
+                        '&wieloetapowe=' + $scope.compID)
                 .success(function(data){
                 $scope.response = data;
 

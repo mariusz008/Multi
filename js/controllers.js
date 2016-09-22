@@ -2839,26 +2839,30 @@ $scope.editActive = sessionStorage.getItem('editActive');
 
                         }
 
-                $scope.showResultList = function(){
-                sessionStorage.setItem('compID', id);
-                $location.path('/Multi/home/myCompetition/results');
-                }
+                            $scope.showResultList = function(){
+                            sessionStorage.setItem('compID', id);
+                            $location.path('/Multi/home/myCompetition/results');
+                            }
 
-            $scope.showDescription = function(){
+                                    $scope.showDescription = function(){
                                         sessionStorage.setItem('compID', id);
                                         $location.path('/Multi/home/competition');
 
                                     }
-                     $scope.editCompetition = function(){
+                                    $scope.editCompetition = function(){
                                                 sessionStorage.setItem('compID', id);
                                                 $location.path('/Multi/home/myCompetition/edit');
 
                                             }
-$scope.makeStage = function(){
-sessionStorage.setItem('name', $scope.competition.name);
-                   $location.path('/Multi/home/myCompetition/stage');
+                                $scope.makeStage = function(){
+                                            sessionStorage.setItem('name', $scope.competition.name);
+                                              $location.path('/Multi/home/myCompetition/stage');
 
-             }
+                                 }
+                                 $scope.showStage = function(){
+                                               sessionStorage.setItem('compID1', $scope.id);
+                                              $location.path('/Multi/home/myCompetitions/myStages');
+                                              }
 
 
     }])

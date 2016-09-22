@@ -1377,7 +1377,7 @@
              }
             $scope.showStage = function(){
               sessionStorage.setItem('compID', $scope.id);
-             $location.path('/Multi/home/myStages');
+             $location.path('/Multi/home/myCompetition/myStages');
              }
             
             $scope.dropCompetition = function(){           

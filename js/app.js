@@ -25,7 +25,7 @@
               templateUrl: 'views/myCompetition.html',   
               label: 'MultiJustRace - Lista zawodów'
             })
-            .when('/Multi/home/myStages', {
+            .when('/Multi/home/myCompetition/myStages', {
              controller: 'showStagesController',
              templateUrl: 'views/myStages.html',
              label: 'MultiJustRace - Lista etapów'

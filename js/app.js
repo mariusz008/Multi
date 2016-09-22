@@ -25,11 +25,7 @@
               templateUrl: 'views/myCompetition.html',   
               label: 'MultiJustRace - Lista zawodów'
             })
-            .when('/Multi/home/myCompetition/myStages', {
-             controller: 'showStagesController',
-             templateUrl: 'views/myStages.html',
-             label: 'MultiJustRace - Lista etapów'
-             })
+
             .when('/Multi/home/runnerCompetition', {
               controller: 'runnerCompetitionController',
               templateUrl: 'views/runnerCompetition.html',   
@@ -56,10 +52,15 @@
               label: 'MultiJustRace - Dodaj zawody'
               })
             .when('/Multi/home/myCompetitions', {
-              controller: 'myCompetitionsController',
+              controller: 'showStagesController',
               templateUrl: 'views/myCompetitions.html',   
               label: 'MultiJustRace - Lista Twoich zawodów'
             })
+                        .when('/Multi/home/myCompetitions/myStages', {
+                         controller: 'showStagesController',
+                         templateUrl: 'views/myCompetitions.html',
+                         label: 'MultiJustRace - Lista etapów'
+                         })
             .when('/Multi/home/runnerCompetitions', {
               controller: 'runnerCompetitionsController',
               templateUrl: 'views/runnerCompetitions.html',   

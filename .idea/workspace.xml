@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,11 +29,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="60" column="59" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
+            <state relative-caret-position="441">
+              <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -49,11 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="764" column="64" selection-start-line="764" selection-start-column="64" selection-end-line="764" selection-end-column="64" />
+            <state relative-caret-position="237">
+              <caret line="754" column="31" selection-start-line="754" selection-start-column="21" selection-end-line="754" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -311,8 +311,8 @@
         <option value="$PROJECT_DIR$/views/myResultList.html" />
         <option value="$PROJECT_DIR$/views/editCompetition.html" />
         <option value="$PROJECT_DIR$/views/myCompetition.html" />
-        <option value="$PROJECT_DIR$/js/app.js" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/js/app.js" />
       </list>
     </option>
   </component>
@@ -1146,14 +1146,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="97" selection-start-line="18" selection-start-column="88" selection-end-line="18" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/myCompetitions.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1170,14 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="60" column="59" selection-start-line="60" selection-start-column="59" selection-end-line="60" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/myResultList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1186,10 +1170,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="97" selection-start-line="18" selection-start-column="88" selection-end-line="18" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="764" column="64" selection-start-line="764" selection-start-column="64" selection-end-line="764" selection-end-column="64" />
+        <state relative-caret-position="237">
+          <caret line="754" column="31" selection-start-line="754" selection-start-column="21" selection-end-line="754" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="62" column="27" selection-start-line="62" selection-start-column="27" selection-end-line="62" selection-end-column="27" />
           <folding />
         </state>
       </provider>

@@ -1365,7 +1365,7 @@
             }
 
             $scope.editCompetition = function(){
-                sessionStorage.setItem('stage', $scope.competition1);
+                sessionStorage.setItem('stage', $scope.competition1.NAME);
                 $location.path('/Multi/home/myCompetition/edit');
 
             }

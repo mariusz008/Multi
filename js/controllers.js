@@ -1360,6 +1360,7 @@
             sessionStorage.setItem('compName', $scope.competition.NAME);
             sessionStorage.setItem('compPay', $scope.competition.OPLATA);
             sessionStorage.setItem('wielo', $scope.competition.WIELOETAPOWE);
+            sessionStorage.setItem('stage', $scope.competition1.length);
             $location.path('/Multi/home/myCompetition/runnersList');
 
             }
@@ -1371,6 +1372,7 @@
             }
             $scope.makeStage = function(){
                    sessionStorage.setItem('name', $scope.name);
+                   sessionStorage.setItem('stage', $scope.competition1.length);
                    $location.path('/Multi/home/myCompetition/stage');
 
              }
@@ -1408,6 +1410,7 @@
             $scope.showResultList = function(){
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('name', $scope.name);
+                sessionStorage.setItem('stage', $scope.competition1.length);
                 $location.path('/Multi/home/myCompetition/results');
             }
     }])
@@ -1599,7 +1602,7 @@
 
 
         var token = sessionStorage.getItem('ID');
-
+        $scope.hasStage = sessionStorage.getItem('stage');
     	$scope.runners = [
     	                    {IMIE : ''},
     	                    {NAZWISKO : ''},
@@ -2492,10 +2495,10 @@ sessionStorage.setItem('name', $scope.name);
                         allowedContent: true,
                         entities: false
                       };
-
+                     $scope.hasStage = sessionStorage.getItem('stage');
                      $scope.name = sessionStorage.getItem('name');
                     $scope.status = 'Dodaj etap';
-$scope.editActive = sessionStorage.getItem('editActive');
+                     $scope.editActive = sessionStorage.getItem('editActive');
                     $scope.types = [
                     {name:'Bieg przełajowy' ,type:'Biegi'},
                     {name:'Bieg maratoński' ,type:'Biegi'},
@@ -2656,6 +2659,11 @@ $scope.editActive = sessionStorage.getItem('editActive');
                                                                         $location.path('/Multi/home/myCompetition/edit');
 
                                                                     }
+
+                                                                     $scope.showStage = function(){
+                                                                                        sessionStorage.setItem('compID1', id);
+                                                                                         $location.path('/Multi/home/myCompetitions/myStages');
+                                                                                          }
     }])
 
 
@@ -2860,7 +2868,7 @@ $scope.editActive = sessionStorage.getItem('editActive');
 
                                  }
                                  $scope.showStage = function(){
-                                               sessionStorage.setItem('compID1', $scope.id);
+                                               sessionStorage.setItem('compID1', id);
                                               $location.path('/Multi/home/myCompetitions/myStages');
                                               }
 
@@ -2915,6 +2923,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                             $location.path('/Multi/home/competition');
 
                         }
+                                                        $scope.showStage = function(){
+                                                                       sessionStorage.setItem('compID1', id);
+                                                                      $location.path('/Multi/home/myCompetitions/myStages');
+                                                                      }
 
 
     }])
@@ -2924,6 +2936,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
              var id = sessionStorage.getItem('compID');
              var user_id = sessionStorage.getItem('ID');
              $scope.editActive = sessionStorage.getItem('editActive');
+             $scope.hasStage = sessionStorage.getItem('stage');
              $scope.retInfo = '';
              $scope.banned=[];
              $scope.runners = [];
@@ -3029,10 +3042,15 @@ $scope.name = sessionStorage.getItem('name');
                             $location.path('/Multi/home/myCompetition/edit');
 
                         }
-$scope.makeStage = function(){
-sessionStorage.setItem('name', $scope.name);
- //sessionStorage.setItem('compName', $scope.competition.NAME);
+                    $scope.makeStage = function(){
+                    sessionStorage.setItem('name', $scope.name);
+                     //sessionStorage.setItem('compName', $scope.competition.NAME);
                    $location.path('/Multi/home/myCompetition/stage');
+
+                   $scope.showStage = function(){
+                    sessionStorage.setItem('compID1', id);
+                     $location.path('/Multi/home/myCompetitions/myStages');
+                      }
 
              }
 

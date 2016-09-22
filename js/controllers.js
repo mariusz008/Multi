@@ -1359,9 +1359,8 @@
             sessionStorage.setItem('compID', $scope.id);
             sessionStorage.setItem('compName', $scope.competition.NAME);
             sessionStorage.setItem('compPay', $scope.competition.OPLATA);
-                sessionStorage.setItem('wielo', $scope.competition.WIELOETAPOWE);
-
-                $location.path('/Multi/home/myCompetition/runnersList');
+            sessionStorage.setItem('wielo', $scope.competition.WIELOETAPOWE);
+            $location.path('/Multi/home/myCompetition/runnersList');
 
             }
 

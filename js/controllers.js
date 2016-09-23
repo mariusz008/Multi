@@ -3055,6 +3055,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
 }
                    $scope.showStage = function(){
                     sessionStorage.setItem('compID1', id);
+                    sessionStorage.removeItem('name');
                      $location.path('/Multi/home/myCompetitions/myStages');
                       }
 

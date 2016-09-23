@@ -2666,7 +2666,7 @@
                                                                     }
 
                                                                      $scope.showStage = function(){
-                                                                     sessionStorage.removeItem('NAME');
+                                                                     sessionStorage.removeItem('name');
                                                                                         sessionStorage.setItem('compID1', id);
                                                                                          $location.path('/Multi/home/myCompetitions/myStages');
                                                                                           }
@@ -3058,7 +3058,7 @@ app.controller('myResultListController', ['$scope','$http', '$route', '$sessionS
                      $location.path('/Multi/home/myCompetitions/myStages');
                       }
 
-             }
+
 
     }])
 

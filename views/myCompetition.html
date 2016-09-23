@@ -12,11 +12,12 @@
 
 							<ul class="sidenav">
 								<li class="ui-tabs-active"><a href="#">Opis<i class="icon-chevron-right"></i></a></li>
-								<li><a href ng-click="showRunnersList()">Lista zawodników<i class="icon-chevron-right"></i></a></li>
-								<li><a href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
+								<li><a ng-show="competition.WIELOETAPOWE.length == 1" href ng-click="showRunnersList()">Lista zawodników<i class="icon-chevron-right"></i></a></li>
+								<li><a ng-show="competition.WIELOETAPOWE.length == 1" href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
 								<li><a ng-show="editActive" href ng-click="editCompetition()">Edytuj<i class="icon-chevron-right"></i></a></li>
 								<li><a ng-show="competition.WIELOETAPOWE == 1" href ng-click="makeStage()">Definiuj etapy<i class="icon-chevron-right"></i></a></li>
 								<li><a ng-show="competition1.length > 0" href ng-click="showStage()">Zobacz etapy<i class="icon-chevron-right"></i></a></li>
+								<li><a ng-show="competition.WIELOETAPOWE.length >1" href ng-click="showResultList()">Ustal klasyfikacje<i class="icon-chevron-right"></i></a></li>
 
 								<li ng-hide="check7 == 1"><a href="#drop" id="openBtn" data-toggle="modal">Odwołaj zawody</a></li>
 

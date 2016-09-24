@@ -1366,6 +1366,7 @@
                 $scope.retInfo = 'Błąd!'+ data;
             });
 
+            //czy ma etapy
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe='+ $scope.id)
                         .success(function(data1){
                         $scope.competition1 = data1;
@@ -1375,6 +1376,14 @@
                             $scope.retInfo = 'Błąd!'+ data;
                         });
 
+             //czy ma pkt pomiaru czasu
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/route?competition_id='+ $scope.id)
+                            .success(function(data2){
+                          $scope.competition2 = data2;
+                          })
+             .error(function(data,status,headers,config){
+                         $scope.retInfo = 'Błąd!'+ data;
+            });
 
             $scope.showRunnersList = function(){
             sessionStorage.setItem('compID', $scope.id);

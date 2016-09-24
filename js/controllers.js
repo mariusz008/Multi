@@ -2602,27 +2602,9 @@
                         $scope.status = 'Dodaj zawody';
 
                         $scope.types = [
-                        {name:'Bieg przełajowy' ,type:'Biegi'},
-                        {name:'Bieg maratoński' ,type:'Biegi'},
-                        {name:'Bieg uliczny' ,type:'Biegi'},
-                        {name:'Bieg górski' ,type:'Biegi'},
-                        {name:'Chód' ,type:'Biegi'},
-                        {name:'Kolarstwo szosowe' ,type:'Rowerowe'},
-                        {name:'Kolarstwo górskie' ,type:'Rowerowe'},
-                        {name:'Bieg narciarski' ,type:'Narciarskie'},
-                        {name:'Narciarstwo alpejskie' ,type:'Narciarskie'},
-                        {name:'Wyścig samolotów' ,type:'Powietrzne'},
-                        {name:'Wyścig balonów' ,type:'Powietrzne'},
-                        {name:'Wyścig samochodowy' ,type:'Motorowe'},
-                        {name:'Wyścig off-road' ,type:'Motorowe'},
-                        {name:'Karting' ,type:'Motorowe'},
-                        {name:'Wyścig motocykli' ,type:'Motorowe'},
-                        {name:'Wyścig quadów' ,type:'Motorowe'},
-                        {name:'Wyścig skuterów śnieżnych' ,type:'Motorowe'},
-                        {name:'Kajakarstwo' ,type:'Wyścigi łodzi'},
-                        {name:'Wioślarstwo' ,type:'Wyścigi łodzi'},
-                        {name:'Mieszane' ,type:'Inne'},
-                        {name:'Inne' ,type:'Inne'}
+                        {name:'Klasyfikacja generalna' },
+                        {name:'Klasyfikacja generalna drużynowa' },
+                        {name:'Klasyfikacja punktowa'}
                         ];
 
                         $scope.competition = {

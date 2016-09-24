@@ -28,10 +28,31 @@
 
 
  <div class="postcontent nobottommargin col_last">
-    <form name="addMultiCompetitionForm" novalidate>
- 
-        <div id="requestResult" class="well text-center" ng-show="requestResult">{{requestResult}}</div> 
+    <form name="makeClassificationForm" novalidate>
 
+        <div id="requestResult" class="well text-center" ng-show="requestResult">{{requestResult}}</div>
+
+        <div class="container">
+            <label class="col-lg-2">KLASYFIKACJE</label>
+
+            <div class="col-lg-6">
+                <select type="text"
+                        id="type"
+                        name="type"
+                        class="form-control"
+                        ng-model="competition.type"
+                        ng-options="type group by type.name for name in types"
+                        required>
+
+                    <option value=""> Wybierz klasyfikację... </option>
+                </select>
+
+                <div ng-messages="makeClassificationForm.type.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.type.$touched">
+                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
+                </div>
+            </div>
+        </div>
+        <br>
         <div class="container"> 
            <label class="col-lg-2">Nazwa*</label>     
             <div class="col-lg-6">
@@ -44,7 +65,7 @@
                         required 
                         ng-pattern ="/^[a-żA-Ż0-9\w -]*$/">
                     
-                <div ng-messages="addMultiCompetitionForm.name.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.name.$touched">
+                <div ng-messages="makeClassificationForm.name.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.name.$touched">
                     <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko litery i cyfry! </span>
                 </div>
@@ -73,8 +94,8 @@
                 </span>
             </p>
 
-                <div ng-messages="addMultiCompetitionForm.startDate.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.startDate.$touched">
-                    <span ng-show="!addMultiCompetitionForm.startDate.$valid" class="help-block"> Niepoprawnie uzupełnione pole </span>
+                <div ng-messages="makeClassificationForm.startDate.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.startDate.$touched">
+                    <span ng-show="!makeClassificationForm.startDate.$valid" class="help-block"> Niepoprawnie uzupełnione pole </span>
                 </div> 
             </div>
         </div>
@@ -90,7 +111,7 @@
                         required>
             </uib-timepicker>                     
                       
-               <div ng-messages="addMultiCompetitionForm.startTime.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.startTime.$touched">
+               <div ng-messages="makeClassificationForm.startTime.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.startTime.$touched">
                     <span ng-message="required" class="help-block">Pole jest wymagane</span>
                </div>
             </div>
@@ -119,8 +140,8 @@
             </p>
 
                      
-                <div ng-messages="addMultiCompetitionForm.endDate.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.endDate.$touched">
-                    <span ng-show="!addMultiCompetitionForm.endDate.$valid" class="help-block"> Niepoprawnie uzupełnione pole </span>
+                <div ng-messages="makeClassificationForm.endDate.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.endDate.$touched">
+                    <span ng-show="!makeClassificationForm.endDate.$valid" class="help-block"> Niepoprawnie uzupełnione pole </span>
                 </div>
             </div>
         </div>
@@ -136,7 +157,7 @@
                         required>
             </uib-timepicker>  
                       
-               <div ng-messages="addMultiCompetitionForm.endTime.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.endTime.$touched">
+               <div ng-messages="makeClassificationForm.endTime.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.endTime.$touched">
                     <span ng-message="required" class="help-block">Pole jest wymagane</span>
                </div>
             </div>
@@ -162,27 +183,7 @@
             </div>
         </div>
         <br>
-        <div class="container">
-            <label class="col-lg-2">Typ ogólny*</label>
-                        
-            <div class="col-lg-6">
-                <select type="text"
-                        id="type" 
-                        name="type" 
-                        class="form-control" 
-                        ng-model="competition.type"
-                        ng-options="type.name group by type.type for type in types" 
-                        required>
 
-                        <option value=""> Wybierz typ </option>
-                </select>       
-                      
-               <div ng-messages="addMultiCompetitionForm.type.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.type.$touched">
-                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
-                </div>
-            </div>
-        </div>
-        <br>
         <div class="container">
             <label class="col-lg-2">Zawody płatne</label>
             <div class="col-lg-6">
@@ -205,7 +206,7 @@
                         ng-required="competition.payCheck"
                         >  
 
-                        <div ng-messages="addMultiCompetitionForm.pay.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.pay.$touched">
+                        <div ng-messages="makeClassificationForm.pay.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.pay.$touched">
                             <span ng-message="pattern" class="help-block">  Pole może zawierać tylko liczby(większe od 0)</span>
                             <span ng-message="min" class="help-block">Minimalna kwota to 1</span>
                             <span ng-message="required" class="help-block"> Podaj kwotę! </span>                          
@@ -239,7 +240,7 @@
                         ng-required="competition.memberLimitCheck"
                         >  
 
-                        <div ng-messages="addMultiCompetitionForm.memberLimit.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.memberLimit.$touched">
+                        <div ng-messages="makeClassificationForm.memberLimit.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.memberLimit.$touched">
                             <span ng-message="pattern" class="help-block">  Pole może zawierać tylko liczby(większe od 0)</span>
                             <span ng-message="maxlength" class="help-block">Maksymalna liczba uczestników to 9999</span>
                             <span ng-message="min" class="help-block">Minimalna liczba uczestników to 1</span>
@@ -260,7 +261,7 @@
                         accept="image/jpeg" 
                         base-sixty-four-input> 
 
-                         <div ng-messages="addMultiCompetitionForm.logo.$error" ng-show="addMultiCompetitionForm.$submitted || addMultiCompetitionForm.logo.$touched">
+                         <div ng-messages="makeClassificationForm.logo.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.logo.$touched">
                             <span ng-message="accept" class="help-block"> Zły typ pliku(wymagane rozszerzenie to .jpg)</span>
                             <span ng-message="maxsize" class="help-block">Plik jest za duży (max. 5 KB)</span>                         
                         </div>      
@@ -285,7 +286,7 @@
         
         <div class="container">
         <div class=" text-center">
-             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addMultiCompetitionForm.$valid" ng-click="addMultiCompetitionClick()"> Utwórz zawody </button>
+             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Utwórz zawody </button>
              </div>
         </div>            
     </form>

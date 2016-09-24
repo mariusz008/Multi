@@ -2607,92 +2607,10 @@
                         {name:'Klasyfikacja punktowa'}
                         ];
 
-                        $scope.competition = {
-                        memberLimitCheck : 'false'
-                        };
 
-                        $scope.logo = {
-                        "filesize": 54836, /* bytes */
-                        "filetype": "",
-                        "filename": "",
-                        "base64":   ""
-                        }
-            ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
-
-                 $scope.today = function() {
-                    $scope.dt = new Date();
-                  };
-                  $scope.today();
-
-                  $scope.dateOptions = {
-                    formatYear: 'yy',
-                    minDate: new Date(),
-                    startingDay: 1
-                  };
-
-                  $scope.open1 = function() {
-                    $scope.popup1.opened = true;
-                  };
-
-                  $scope.open2 = function() {
-                    $scope.popup2.opened = true;
-                  };
-
-                  $scope.popup1 = {
-                    opened: false
-                  };
-
-                  $scope.popup2 = {
-                    opened: false
-                  };
-
-                  function getDayClass(data) {
-                    var date = data.date,
-                      mode = data.mode;
-                    if (mode === 'day') {
-                      var dayToCheck = new Date(date).setHours(0,0,0,0);
-
-                      for (var i = 0; i < $scope.events.length; i++) {
-                        var currentDay = new Date($scope.events[i].date).setHours(0,0,0,0);
-
-                        if (dayToCheck === currentDay) {
-                          return $scope.events[i].status;
-                        }
-                      }
-                    }
-
-                    return '';
-                  }
-
-            /////////////////////////////////////////////TIMEPICKER/////////////////////////////////////////////////////////////////////
-
-            $scope.ismeridian = false;
-
-            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                        var limit;  //limit uczestnikow przesylany w zapytaniu
-                        var cost;
                         var user = sessionStorage.getItem('ID');
 
                         $scope.addMultiCompetitionClick = function(){
-
-
-                             if($scope.competition.memberLimitCheck)
-                                {
-                                    limit = $scope.competition.memberLimit;
-                                }
-                             else
-                                {
-                                    limit = '';
-                                }
-
-                             if($scope.competition.payCheck)
-                                {
-                                    cost = $scope.competition.pay;
-                                }
-                             else
-                                {
-                                    cost = '';
-                                }
 
 
                         $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
@@ -2738,6 +2656,8 @@
                         };
 
         }])
+
+
     app.controller('editCompetitionController', ['$scope','$http', '$location', '$sessionStorage', '$log', '$window', function($scope, $http, $location, $sessionStorage, $log, $window){
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////

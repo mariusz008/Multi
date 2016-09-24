@@ -2915,11 +2915,10 @@
                                                sessionStorage.setItem('compID1', id);
                                               $location.path('/Multi/home/myCompetitions/myStages');
                                               }
-$scope.makeClassification = function(){
+                $scope.makeClassification = function(){
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('name', $scope.name);
-                sessionStorage.setItem('stage', $scope.competition1.length);
-                sessionStorage.setItem('ilePKT', $scope.competition2.COUNT);
+                sessionStorage.setItem('ilePKT', $scope.ilePKT);
                 $location.path('/Multi/home/myCompetition/makeClassification');
             }
 

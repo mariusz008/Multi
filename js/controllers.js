@@ -2686,6 +2686,16 @@
                                     $scope.requestResult = 'Błąd! Nie udało się dodać zawodów.';
                                 });
                         };
+                                $scope.showDescription = function(){
+                                     sessionStorage.setItem('compID', id);
+                                     $location.path('/Multi/home/myCompetition');
+                                      }
+
+                        $scope.editCompetition = function(){
+                        sessionStorage.setItem('stage', $scope.competition1.length);
+                        $location.path('/Multi/home/myCompetition/edit');
+
+                             }
 
         }])
 

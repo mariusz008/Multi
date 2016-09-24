@@ -1904,6 +1904,11 @@
                 sessionStorage.setItem('compID', id);
                 $location.path('/Multi/home/competition/results');
             }
+            $scope.showStage = function(){
+              sessionStorage.removeItem('name');
+              sessionStorage.setItem('compID1', id);
+              $location.path('/Multi/home/competitions/stages');
+              }
 
 
     }])

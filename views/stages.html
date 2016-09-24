@@ -1,5 +1,6 @@
-<section id="content" ng-controller="competitionsController" ng-init="init()">
-<div class="content-wrap">
+<section id="content" ng-controller="showStagesController" ng-init="init()">
+
+			<div class="content-wrap">
 
 
 					<div class="container clearfix">
@@ -13,8 +14,7 @@
 							<div class="sidebar-widgets-wrap">
 
 							<ul class="sidenav">
-								<li><a href="Multi/home/competitions">Wszystkie zawody<i class="icon-chevron-right"></i></a></li>
-								<li class="ui-tabs-active"><a href>Moje zawody<i class="icon-chevron-right"></i></a></li>							
+								<li class="ui-tabs-active"><a href="#">Etapy<i class="icon-chevron-right"></i></a></li>
 							</ul>
 
 								<div class="widget clearfix">
@@ -55,15 +55,14 @@
 														
 						</div>
 	
-					
-
+					<!-- .sidebar end -->
 <div class="postcontent nobottommargin col_last">
-
-	<div id="portfolio" class="portfolio-3 clearfix" ng-controller="runnerCompetitionsController" ng-init="init()">
-		<div ng-repeat="page in pages" ng-show="show[{{$index}}] == 1">
-			<article class="portfolio-item pf-active pf-featured" ng-repeat="competition in page">
+	
+	<div id="portfolio" class="portfolio-3 clearfix">
+		<div ng-repeat="page in pages track by $index" ng-show="show[{{$index}}] == 1">
+			<article class="portfolio-item pf-active pf-featured" ng-repeat="competition in page track by $index">
 									<div class="portfolio-image">
-										<a href ng-click="openPage(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)">
+										<a href ng-click="openPage(competition.COMPETITION_ID)">
 											<img ng-show="(competition.TYP == 'Bieg przełajowy' ||
 														  competition.TYP == 'Bieg maratoński' ||
 														  competition.TYP == 'Bieg uliczny' ||
@@ -172,14 +171,14 @@
 												 style='width:280px;height:230px;' src="images/czas2.png" />
 										</a>
 										<div class="portfolio-overlay">
-											<a href ng-click="openPage(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+											<a href ng-click="openPage(competition.COMPETITION_ID)" class="center-icon"><i class="icon-line-ellipsis"></i></a>
 										</div>
 									</div>
 									<div class="portfolio-desc">
 										<h3><a href ng-click="openPage(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)">{{competition.NAME}}</a></h3>
 										<div class="portfolio-desc-meta">
 											<div class="col-sm-6 portfolio-desc-meta-text">
-												<i class="color icon-line2-clock inline-block fright"></i>
+												<i class="color icon-calendar2 inline-block fright"></i>
 												<span ng-show="competition.DIFF == 0" class="text ng-binding">Dzisiaj</span>
 												<span ng-show="!competition.DIFF == 0 &&  competition.DIFF < 15 &&  competition.DIFF > -1" class="text ng-binding">za {{competition.DIFF}} dni
 												</span>
@@ -188,14 +187,10 @@
 
 											</div>											
 											<div class="col-sm-6 portfolio-desc-meta-text left-border">
-												<i class="color icon-line2-trophy inline-block"></i>
-												<span class="text ng-binding">coming soon</span>
-											</div>											
-											<div class="col-sm-6 portfolio-desc-meta-text">
-												<i class="color icon-line2-users inline-block"></i>
-												<span class="text ng-binding"> coming soon</span>
-											</div>											
-											<div class="col-sm-6 portfolio-desc-meta-text left-border">
+												<i class="color icon-line2-clock inline-block"></i>
+												<span class="text ng-binding">{{competition.CZAS_ROZP}}</span>
+											</div>																						
+											<div class="col-sm-12 portfolio-desc-meta-text left-border">
 												<i class="color icon-line2-pointer inline-block"></i>
 												<span class="text ng-binding"> {{competition.MIEJSCOWOSC}}</span>
 											</div>
@@ -223,10 +218,9 @@
 			<button class="{{btn[12]}}" style="{{style[12]}}" ng-click="changePage(12)"> Grudzień </button>
 			<button class="{{btn[13]}}" style="{{style[13]}}" ng-click="changePage(13)"> Później </button>
 	</div>
-	</div>
-	</div><!-- .sidebar end -->
+</div>
+</div>
 </div>
 </div>
 </section>
-
 

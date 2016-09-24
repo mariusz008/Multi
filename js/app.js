@@ -60,7 +60,12 @@
                          controller: 'showStagesController',
                          templateUrl: 'views/myStages.html',
                          label: 'MultiJustRace - Lista etapów'
-                         })
+             })
+                         .when('/Multi/home/competitions/stages', {
+                         controller: 'showStagesController',
+                         templateUrl: 'views/stages.html',
+                           label: 'MultiJustRace - Lista etapów'
+              })
             .when('/Multi/home/runnerCompetitions', {
               controller: 'runnerCompetitionsController',
               templateUrl: 'views/runnerCompetitions.html',   

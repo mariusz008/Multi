@@ -1266,7 +1266,7 @@
                         })
             .error(function(data,status,headers,config){
                             $scope.retInfo = 'Błąd!'+ data;
-                        });
+            });
 
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
@@ -1293,6 +1293,10 @@
                 sessionStorage.setItem('compID', $scope.id);
                 $location.path('/Multi/home/competition/results');
             }
+            $scope.showStage = function(){
+                          sessionStorage.setItem('compID1', $scope.id);
+                         $location.path('/Multi/home/competitions/stages');
+                         }
 
     }])
 

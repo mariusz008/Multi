@@ -2616,7 +2616,7 @@
                          $scope.linie = [];
 
                          for(var i=0; i< $scope.ilePKT; i++){
-                            $scope.linie[i]=i+1;
+                            $scope.linie[i]={name:i+1};
                          }
 
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
@@ -2696,12 +2696,12 @@
                                 });
                         };
                                 $scope.showDescription = function(){
-                                     sessionStorage.setItem('compID', id);
+                                     sessionStorage.setItem('compID', $scope.id);
                                      $location.path('/Multi/home/myCompetition');
                                       }
 
                         $scope.editCompetition = function(){
-                        sessionStorage.setItem('stage', $scope.competition1.length);
+                       // sessionStorage.setItem('stage', $scope.competition1.length);
                         $location.path('/Multi/home/myCompetition/edit');
 
                              }

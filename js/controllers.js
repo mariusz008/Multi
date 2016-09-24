@@ -1445,6 +1445,7 @@
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('name', $scope.name);
                 sessionStorage.setItem('stage', $scope.competition1.length);
+                sessionStorage.setItem('ilePKT', $scope.competition2.COUNT);
                 $location.path('/Multi/home/myCompetition/makeClassification');
             }
     }])
@@ -2607,10 +2608,18 @@
                         {name:'Klasyfikacja punktowa'}
                         ];
 
-                  $scope.competition = [];
-                $scope.id = sessionStorage.getItem('compID');
 
-                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
+
+                         $scope.competition = [];
+                        $scope.id = sessionStorage.getItem('compID');
+                         $scope.ilePKT = sessionStorage.getItem('ilePKT');
+                         $scope.linie = [];
+
+                         for(var i=0; i< $scope.ilePKT; i++){
+                            $scope.linie[i]=i+1;
+                         }
+
+                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
                                 .success(function(data){
                                     $scope.competition = data;
 

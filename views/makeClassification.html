@@ -55,6 +55,27 @@
             </div>
         </div>
         <br>
+        <div class="container">
+            <label class="col-lg-2">LINIA POMIAROWA {{linie}}</label>
+
+            <div class="col-lg-6">
+                <select type="text"
+                        id="type"
+                        name="type"
+                        class="form-control"
+                        ng-model="competition.type"
+                        ng-options="item.Id as item.Name for item in ilePKT"
+                        required>
+
+                    <option value=""> Wybierz linię pomiarową... </option>
+                </select>
+
+                <div ng-messages="makeClassificationForm.type.$error" ng-show="makeClassificationForm.$submitted || makeClassificationForm.type.$touched">
+                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
+                </div>
+            </div>
+        </div>
+        <br>
         <div class="container"> 
            <label class="col-lg-2">Nazwa*</label>     
             <div class="col-lg-6">

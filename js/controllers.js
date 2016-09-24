@@ -2831,10 +2831,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                             $location.path('/Multi/home/competition');
 
                         }
-                                                        $scope.showStage = function(){
-                                                                       sessionStorage.setItem('compID1', id);
-                                                                      $location.path('/Multi/home/myCompetitions/myStages');
-                                                                      }
+                          $scope.showStage = function(){
+                         sessionStorage.setItem('compID1', id);
+                         $location.path('/Multi/home/competitions/stages');
+                         }
 
 
     }])

@@ -62,7 +62,7 @@
 		<div ng-repeat="page in pages track by $index" ng-show="show[{{$index}}] == 1">
 			<article class="portfolio-item pf-active pf-featured" ng-repeat="competition in page track by $index">
 									<div class="portfolio-image">
-										<a href ng-click="openPage(competition.COMPETITION_ID)">
+										<a href ng-click="openPage1(competition.COMPETITION_ID)">
 											<img ng-show="(competition.TYP == 'Bieg przełajowy' ||
 														  competition.TYP == 'Bieg maratoński' ||
 														  competition.TYP == 'Bieg uliczny' ||
@@ -171,11 +171,11 @@
 												 style='width:280px;height:230px;' src="images/czas2.png" />
 										</a>
 										<div class="portfolio-overlay">
-											<a href ng-click="openPage(competition.COMPETITION_ID)" class="center-icon"><i class="icon-line-ellipsis"></i></a>
+											<a href ng-click="openPage1(competition.COMPETITION_ID)" class="center-icon"><i class="icon-line-ellipsis"></i></a>
 										</div>
 									</div>
 									<div class="portfolio-desc">
-										<h3><a href ng-click="openPage(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)">{{competition.NAME}}</a></h3>
+										<h3><a href ng-click="openPage1(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)">{{competition.NAME}}</a></h3>
 										<div class="portfolio-desc-meta">
 											<div class="col-sm-6 portfolio-desc-meta-text">
 												<i class="color icon-calendar2 inline-block fright"></i>

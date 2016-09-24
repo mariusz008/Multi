@@ -957,7 +957,13 @@
 
                     $location.path('/Multi/home/myCompetition');
                 };
+                $scope.openPage1 = function(id, data, godzina) {
+                    sessionStorage.setItem('compID', id);
+                    sessionStorage.setItem('compData', data);
+                    sessionStorage.setItem('compGodzina', godzina);
 
+                    $location.path('/Multi/home/competition');
+                };
                 $scope.print = function() {
                     if( $scope.search == 1 ) {
                         $scope.btnText = 'Rozwiń filtry wyszukiwania';
@@ -1285,6 +1291,7 @@
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('compName', $scope.competition.NAME);
                 sessionStorage.setItem('compPay', $scope.competition.OPLATA);
+                sessionStorage.setItem('stage', $scope.competition1.length);
                 $location.path('/Multi/home/competition/compRunnersList');
 
             }
@@ -1745,7 +1752,7 @@
     app.controller('compRunnersListController', ['$scope','$http', '$route', '$sessionStorage', '$log','$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
 
-
+        $scope.hasStage = sessionStorage.getItem('stage');
         $scope.runners = [
                             {IMIE : ''},
                             {NAZWISKO : ''},

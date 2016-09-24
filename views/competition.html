@@ -16,7 +16,20 @@
 								<li><a href ng-click="showResultList()">Wyniki<i class="icon-chevron-right"></i></a></li>
 								<li><a ng-show="competition1.length > 0" href ng-click="showStage()">Zobacz etapy<i class="icon-chevron-right"></i></a></li>
 								<br>
-								<br>
+								<div ng-controller="signController" ng-init="init()">
+									<div class="col-lg-10" ng-hide="check6 == 1 || check5 == 1">
+						                <select type="text"
+						                        id="type"
+						                        name="type"
+						                        class="form-control"
+						                        ng-model="cat"
+						                        ng-options="category.NAME for category in categories"
+						                        required>
+
+						                        <option value=""> Wybierz kategorię </option>
+						                </select>
+					            	</div>
+									<br><br>
 									<li><a href ng-click="sign(competition.COMPETITION_ID)" ng-hide="check == 1">{{text}}</a></li>
 									
 								</div>

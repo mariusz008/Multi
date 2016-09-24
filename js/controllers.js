@@ -1397,6 +1397,7 @@
 
             $scope.editCompetition = function(){
                 sessionStorage.setItem('stage', $scope.competition1.length);
+                sessionStorage.setItem('ilePKT', $scope.competition2.COUNT);
                 $location.path('/Multi/home/myCompetition/edit');
 
             }
@@ -2714,7 +2715,7 @@
 
             ///////////////////////////////////////////DATEPICKER///////////////////////////////////////////////////////////////////
 
-            $scope.hasStage = sessionStorage.getItem('stage');
+            $scope.ilePKT = sessionStorage.getItem('ilePKT');
             $scope.today = function() {
               $scope.dt = new Date();
               };
@@ -2914,7 +2915,13 @@
                                                sessionStorage.setItem('compID1', id);
                                               $location.path('/Multi/home/myCompetitions/myStages');
                                               }
-
+$scope.makeClassification = function(){
+                sessionStorage.setItem('compID', $scope.id);
+                sessionStorage.setItem('name', $scope.name);
+                sessionStorage.setItem('stage', $scope.competition1.length);
+                sessionStorage.setItem('ilePKT', $scope.competition2.COUNT);
+                $location.path('/Multi/home/myCompetition/makeClassification');
+            }
 
     }])
 

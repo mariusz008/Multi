@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myCompetition.html" afterPath="$PROJECT_DIR$/views/myCompetition.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,17 +39,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="543">
-              <caret line="1379" column="103" selection-start-line="1379" selection-start-column="103" selection-end-line="1379" selection-end-column="103" />
+              <caret line="1379" column="87" selection-start-line="1379" selection-start-column="87" selection-end-line="1379" selection-end-column="87" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myCompetition.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myCompetition.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -294,8 +293,8 @@
         <option value="$PROJECT_DIR$/views/competition.html" />
         <option value="$PROJECT_DIR$/views/stage.html" />
         <option value="$PROJECT_DIR$/views/resultList.html" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/views/myCompetition.html" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -1187,18 +1186,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="1379" column="103" selection-start-line="1379" selection-start-column="103" selection-end-line="1379" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/myCompetition.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="1379" column="87" selection-start-line="1379" selection-start-column="87" selection-end-line="1379" selection-end-column="87" />
           <folding />
         </state>
       </provider>

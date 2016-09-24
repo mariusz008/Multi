@@ -1377,7 +1377,7 @@
                         });
 
              //czy ma pkt pomiaru czasu
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/route?competition_id='+ $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/gps/all?competition_id='+ $scope.id)
                             .success(function(data2){
                           $scope.competition2 = data2;
                           })

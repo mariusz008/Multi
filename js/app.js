@@ -66,6 +66,11 @@
                          templateUrl: 'views/stages.html',
                            label: 'MultiJustRace - Lista etapów'
               })
+            .when('/Multi/home/myCompetition/makeClassification', {
+                         controller: 'makeClassificationController',
+                         templateUrl: 'views/makeClassification.html',
+                           label: 'MultiJustRace - Klasyfikacja'
+              })
             .when('/Multi/home/runnerCompetitions', {
               controller: 'runnerCompetitionsController',
               templateUrl: 'views/runnerCompetitions.html',   

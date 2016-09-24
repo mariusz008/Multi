@@ -2786,7 +2786,7 @@
 app.controller('resultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
              var id = sessionStorage.getItem('compID');
-             sessionStorage.setItem('stage', $scope.competition1.length);
+             $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
 
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)

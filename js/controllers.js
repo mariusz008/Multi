@@ -1375,7 +1375,7 @@
             .error(function(data,status,headers,config){
                             $scope.retInfo = 'Błąd!'+ data;
                         });
-
+ 
              //czy ma pkt pomiaru czasu
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/gps/all?competition_id='+ $scope.id)
                             .success(function(data2){

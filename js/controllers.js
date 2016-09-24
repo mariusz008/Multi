@@ -2618,7 +2618,7 @@
                          for(var i=0; i< $scope.ilePKT; i++){
                             $scope.linie[i]={name:i+1};
                          }
-                         $scope.linie[i+1]={name:'META'};
+                         $scope.linie[i]={name:'META'};
 
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
                                 .success(function(data){

@@ -31,7 +31,15 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     	$scope.competition = [];
         $scope.id = sessionStorage.getItem('compID');
         
-        
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe='+ $scope.id)
+                                .success(function(data1){
+                                $scope.competition1 = data1;
+
+                                })
+                    .error(function(data,status,headers,config){
+                                    $scope.retInfo = 'Błąd!'+ data;
+                    });
+
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
                 $scope.competition = data;
@@ -62,6 +70,10 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
                 sessionStorage.setItem('compPay', $scope.competition.OPLATA);
                 window.location = '/Multi/guestResultList.html';
             }
+            $scope.showStage = function(){
+             sessionStorage.setItem('compID1', $scope.id);
+            $location.path('/Multi/home/competitions/stages');
+             }
 
      
     }])

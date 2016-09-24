@@ -962,7 +962,7 @@
                     sessionStorage.setItem('compData', data);
                     sessionStorage.setItem('compGodzina', godzina);
 
-                    $location.path('/Multi/home/competition');
+                    $location.path('/Multi/home/competition/stage');
                 };
                 $scope.print = function() {
                     if( $scope.search == 1 ) {

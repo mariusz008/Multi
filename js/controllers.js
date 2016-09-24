@@ -2607,6 +2607,9 @@
                         {name:'Klasyfikacja punktowa'}
                         ];
 
+                  $scope.competition = [];
+                $scope.id = sessionStorage.getItem('compID');
+
                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
                                 .success(function(data){
                                     $scope.competition = data;

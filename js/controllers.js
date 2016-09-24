@@ -2614,12 +2614,12 @@
                          $scope.competition = [];
                         $scope.id = sessionStorage.getItem('compID');
                          $scope.ilePKT = sessionStorage.getItem('ilePKT');
-                         $scope.linie = [];
+                         $scope.lines = [];
 
                          for(var i=0; i< $scope.ilePKT; i++){
-                            $scope.linie[i]={name:i+1};
+                            $scope.lines[i]={name:i+1};
                          }
-                         $scope.linie[i]={name:'META'};
+                         $scope.lines[i]={name:'META'};
 
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
                                 .success(function(data){
@@ -2703,7 +2703,7 @@
                                       }
 
                         $scope.editCompetition = function(){
-                       // sessionStorage.setItem('stage', $scope.competition1.length);
+                       sessionStorage.setItem('compID', $scope.id);
                         $location.path('/Multi/home/myCompetition/edit');
 
                              }

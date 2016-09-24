@@ -2599,7 +2599,7 @@
                           };
 
 
-                        $scope.status = 'Dodaj zawody';
+                        $scope.status = 'Ustal klasyfikacje';
 
                         $scope.types = [
                         {name:'Klasyfikacja generalna' },

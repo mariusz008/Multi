@@ -2616,7 +2616,15 @@
                         {name:'Klasyfikacja punktowa'}
                         ];
 
-
+            //czy ma trase
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/track?competition_id='+ $scope.id)
+                            .success(function(datax){
+                          $scope.competitionx = datax;
+                          console.log(datax);
+                          })
+             .error(function(data,status,headers,config){
+                         $scope.retInfo = 'Błąd!'+ data;
+            });
 
                          for(var i=0; i< $scope.ilePKT; i++){
                             $scope.lines[i]={name:'Linia pomiarowa nr ' + (i+1)};

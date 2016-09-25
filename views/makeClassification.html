@@ -80,7 +80,19 @@
         <br>
 
 
-        
+        <div id="map" style="width:800px;height:400px;background:white"></div>
+
+        <script>
+        function myMap() {
+          var mapCanvas = document.getElementById("map");
+          var mapOptions = {
+            center: new google.maps.LatLng(51.5, -0.2), zoom: 10
+          };
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+        }
+        </script>
+         <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
         <div class="container">
         <div class=" text-center">
              <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Utwórz zawody </button>

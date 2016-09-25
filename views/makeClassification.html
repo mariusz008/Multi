@@ -92,8 +92,49 @@
         marker.setMap(map);
         }
         </script>
-         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap"></script>
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
 
+        <br>
+        <br>
+
+        <div class="container">
+            <label class="col-lg-2">Punktacja</label>
+            <div class="col-lg-6">
+                <input type="number"
+                       id="points"
+                       name="points"
+                       class="form-control"
+                       placeholder="Punktacja"
+                       ng-model="classification.points"
+                       required
+                       ng-pattern ="/^[0-9]*$/">
+
+                <div ng-messages="addStageForm.name.$error" ng-show="addStageForm.$submitted || addStageForm.name.$touched">
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Premia czasowa</label>
+            <label class="col-lg-4">Bonusowe sekundy za miejsce</label>
+            <div class="col-lg-15">
+                <input type="number"
+                       id="timepoints"
+                       name="timepoints"
+                       class="form-control"
+                       placeholder="Premia czasowa"
+                       ng-model="classification.timepoints"
+                       required
+                       ng-pattern ="/^[0-9]*$/">
+
+                <div ng-messages="addStageForm.name.$error" ng-show="addStageForm.$submitted || addStageForm.name.$touched">
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
+                </div>
+            </div>
+        </div>
         <br>
         <br>
         <div class="container">

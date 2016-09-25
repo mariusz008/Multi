@@ -2598,6 +2598,8 @@
                  $scope.competition = [];
                  $scope.id = sessionStorage.getItem('compID');
                  $scope.ilePKT = sessionStorage.getItem('ilePKT');
+                 $scope.name = sessionStorage.getItem('name');
+
                  $scope.lines = [];
                  $scope.status = 'Ustal klasyfikacje';
 

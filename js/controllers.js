@@ -2593,15 +2593,20 @@
 
    app.controller('makeClassificationController', ['$scope', '$http','$location','$window', '$sessionStorage' , function($scope, $http, $location, $window,$sessionStorage, $moment){
 
+
+                 $scope.editActive = sessionStorage.getItem('editActive');
+                 $scope.competition = [];
+                 $scope.id = sessionStorage.getItem('compID');
+                 $scope.ilePKT = sessionStorage.getItem('ilePKT');
+                 $scope.lines = [];
+                 $scope.status = 'Ustal klasyfikacje';
+
                         // Editor options.
                           $scope.options = {
                             language: 'pl',
                             allowedContent: true,
                             entities: false
                           };
-
-
-                        $scope.status = 'Ustal klasyfikacje';
 
                         $scope.types = [
                         {name:'Klasyfikacja generalna' },
@@ -2611,45 +2616,10 @@
 
 
 
-                         $scope.competition = [];
-                        $scope.id = sessionStorage.getItem('compID');
-                         $scope.ilePKT = sessionStorage.getItem('ilePKT');
-                         $scope.lines = [];
-
                          for(var i=0; i< $scope.ilePKT; i++){
-                            $scope.lines[i]={name:i+1};
+                            $scope.lines[i]={name:'Linia pomiarowa nr ' + (i+1)};
                          }
                          $scope.lines[i]={name:'META'};
-
-                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
-                                .success(function(data){
-                                    $scope.competition = data;
-
-                                    if(data.DEACTIVATED == 'true') {
-                                        $scope.check7 = 1;
-                                    }
-
-                                    $scope.name = $scope.competition.NAME;
-                                    var today = new Date();
-                                    var datePattern = /(\d{2}).(\d{2}).(\d{4})/;
-                                    var compDate = new Date($scope.competition.DATA_ROZP.replace(datePattern, '$3, $2, $1'));
-                                    var compTime = $scope.competition.CZAS_ROZP.split(":");
-                                    compDate.setHours(compTime[0]);
-                                    compDate.setMinutes(compTime[1]);
-                                    if(today < compDate)
-                                    {
-                                        $scope.editActive = true;
-                                        sessionStorage.setItem('editActive', $scope.editActive);
-                                    }
-                                    else
-                                    {
-                                        $scope.editActive = false;
-                                        sessionStorage.setItem('editActive', $scope.editActive);
-                                    }
-                                })
-                                .error(function(data,status,headers,config){
-                                    $scope.retInfo = 'Błąd!'+ data;
-                                });
 
                         var user = sessionStorage.getItem('ID');
 

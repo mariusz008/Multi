@@ -2620,7 +2620,9 @@
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/track?competition_id='+ $scope.id)
                             .success(function(datax){
                           $scope.competitionx = datax;
+                          sessionStorage.setItem('pkt', $scope.competitionx.POINTY0);
                           console.log(datax);
+
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;
@@ -2632,19 +2634,6 @@
                          $scope.lines[i]={name:'META'};
 
                         var user = sessionStorage.getItem('ID');
-
-                        var map;
-                        $scope.addOnClick = function(){
-                          var mapOptions = {
-                            zoom: 12,
-                            center: new google.maps.LatLng(51.21356, 17.644),
-                            mapTypeId: google.maps.MapTypeId.ROADMAP
-                          };
-                          map = new google.maps.Map(document.getElementById('map'),
-                              mapOptions);
-                        }
-
-                        google.maps.event.addDomListener(window, 'load', initialize);
 
 
                         $scope.addMultiCompetitionClick = function(){

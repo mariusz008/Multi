@@ -2620,7 +2620,9 @@
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/track?competition_id='+ $scope.id)
                             .success(function(data){
                           $scope.competition1 = data;
-                          sessionStorage.setItem('pkt', $scope.competition1.POINTY0);
+                          sessionStorage.setItem('pktY', $scope.competition1.POINTY0);
+                          sessionStorage.setItem('pktX', $scope.competition1.POINTX0);
+                          sessionStorage.setItem('track', $scope.competition1);
                           console.log(data);
 
                           })

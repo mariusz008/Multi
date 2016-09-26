@@ -31,7 +31,7 @@
 
         <div id="requestResult" class="well text-center" ng-show="requestResult">{{requestResult}}</div>
 
-        <h2>Definiowanie klasyfikacji etapu "{{name}}" {{competitionx.POINT0}}</h2>
+        <h2>Definiowanie klasyfikacji etapu "{{name}}" {{competition1.POINTY0}}</h2>
         <br>
         <br>
         <div class="container">
@@ -85,9 +85,11 @@
         <script>
         var lat = 51.12345;
         var long = 17.123456;
-        //var pktX =
+        var pktY = sessionStorage.getItem('pktY');
+        var pktX = sessionStorage.getItem('pktX');
+
         function myMap() {
-          var myCenter = new google.maps.LatLng(lat,long);
+          var myCenter = new google.maps.LatLng(pktY,pktX);
           var mapCanvas = document.getElementById("map");
           var mapOptions = {center: myCenter, zoom: 12};
           var map = new google.maps.Map(mapCanvas, mapOptions);

@@ -82,16 +82,16 @@
 
         <div id="map" style="width:800px;height:400px;background:white"></div>
 
-        <script>
-        function myMap() {
-          var myCenter = new google.maps.LatLng(competitionx.POINTY0,competitionx.POINTX0);
-          var mapCanvas = document.getElementById("map");
-          var mapOptions = {center: myCenter, zoom: 12};
-          var map = new google.maps.Map(mapCanvas, mapOptions);
-          var marker = new google.maps.Marker({position:myCenter});
-        marker.setMap(map);
-        }
-        </script>
+        <!--<script>-->
+        <!--function myMap() {-->
+          <!--var myCenter = new google.maps.LatLng(competitionx.POINTY0,competitionx.POINTX0);-->
+          <!--var mapCanvas = document.getElementById("map");-->
+          <!--var mapOptions = {center: myCenter, zoom: 12};-->
+          <!--var map = new google.maps.Map(mapCanvas, mapOptions);-->
+          <!--var marker = new google.maps.Marker({position:myCenter});-->
+        <!--marker.setMap(map);-->
+        <!--}-->
+        <!--</script>-->
          <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
 
         <br>

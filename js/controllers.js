@@ -2633,9 +2633,21 @@
 
                         var user = sessionStorage.getItem('ID');
 
+                        var map;
+                        $scope.addOnClick = function(){
+                          var mapOptions = {
+                            zoom: 12,
+                            center: new google.maps.LatLng(51.21356, 17.644),
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                          };
+                          map = new google.maps.Map(document.getElementById('map'),
+                              mapOptions);
+                        }
+
+                        google.maps.event.addDomListener(window, 'load', initialize);
+
+
                         $scope.addMultiCompetitionClick = function(){
-
-
                         $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
                                                                                 '&name=' +$scope.competition.name+
                                                                                 '&data_rozp='+moment($scope.competition.startDate).format('DD.MM.YYYY')+

@@ -2599,7 +2599,7 @@
                  $scope.id = sessionStorage.getItem('compID');
                  $scope.ilePKT = sessionStorage.getItem('ilePKT');
                  $scope.name = sessionStorage.getItem('name');
-
+                     $scope.competition1 = [];
                  $scope.lines = [];
                  $scope.status = 'Ustal klasyfikacje';
 
@@ -2618,10 +2618,10 @@
 
             //czy ma trase
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/track?competition_id='+ $scope.id)
-                            .success(function(datax){
-                          $scope.competitionx = datax;
-                          sessionStorage.setItem('pkt', $scope.competitionx.POINTY0);
-                          console.log(datax);
+                            .success(function(data){
+                          $scope.competition1 = data;
+                          sessionStorage.setItem('pkt', $scope.competition1.POINTY0);
+                          console.log(data);
 
                           })
              .error(function(data,status,headers,config){

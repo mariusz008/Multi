@@ -88,16 +88,29 @@
         var pktY = sessionStorage.getItem('pktY');
         var pktX = sessionStorage.getItem('pktX');
         var count = sessionStorage.getItem('count');
-        //var trasa = sessionStorage.getItem('trasa');
+
         var trasa = [];
-        //alert(trasa);
+        trasa = sessionStorage.getItem('trasa');
         function myMap() {
+            var flightPlanCoordinates = new Array();
+            for(i=0;i<trasa.length;i++)
+            {
+              var point =new google.maps.LatLng(trasa[i],trasa[i+1]);
+              flightPlanCoordinates.push(point);
+            }
           var myCenter = new google.maps.LatLng(pktY,pktX);
           var mapCanvas = document.getElementById("map");
           var mapOptions = {center: myCenter, zoom: 16};
           var map = new google.maps.Map(mapCanvas, mapOptions);
-          var marker = new google.maps.Marker({position:myCenter});
-        marker.setMap(map);
+          //var marker = new google.maps.Marker({position:myCenter});
+        //marker.setMap(map);
+        var flightPath = new google.maps.Polyline({
+    path: flightPlanCoordinates,
+    strokeColor: "#0000FF",
+    strokeOpacity: 0.8,
+    strokeWeight: 2
+  });
+  flightPath.setMap(map);
         }
         </script>
          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>

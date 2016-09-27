@@ -519,7 +519,7 @@
         $scope.btnText = 'Rozwiń filtry wyszukiwania';
 
         $scope.response = [];
-
+        sessionStorage.removeItem('name');
         $scope.types = [
                         {name:'Bieg przełajowy' ,type:'Biegi'},
                         {name:'Bieg maratoński' ,type:'Biegi'},

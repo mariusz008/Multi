@@ -2631,10 +2631,16 @@
                                //arr.push(data.POINTX0.toString());
 
                                //var punkt = 'POINTX' +(i);
-                               arr.push(data.POINTX+(i));
+                               arr.push(data[POINTX0];
                             }
-                            var cities = data[0];
-                            alert(cities);
+                            //var cities = data[0];
+
+                           // JSONObject.city[0] // => Blankaholm
+
+                          //  JSONObject['city'][0] // => Blankaholm
+
+
+                            alert(arr);
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

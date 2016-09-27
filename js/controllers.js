@@ -517,7 +517,7 @@
 
         $scope.search = 0;
         $scope.btnText = 'Rozwiń filtry wyszukiwania';
-
+        sessionStorage.removeItem('name');
         $scope.response = [];
 
         $scope.types = [
@@ -2626,9 +2626,10 @@
                           sessionStorage.setItem('track', $scope.competition1);
                           console.log(data);
                             var arr = [];
-                            for(var i=1; i<=data.COUNT; i++) {
-                               arr.push(data.POINTX0.toString());
-                            }
+                           // for(var i=1; i<=data.COUNT; i++) {
+                              // arr.push(data.POINTX0.toString());
+                               arr.push(data.toString());
+                           // }
                             alert(arr);
                           })
              .error(function(data,status,headers,config){

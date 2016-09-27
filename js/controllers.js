@@ -2625,7 +2625,11 @@
                           sessionStorage.setItem('count', $scope.competition1.COUNT);
                           sessionStorage.setItem('track', $scope.competition1);
                           console.log(data);
-
+                            var arr = [];
+                            for(var i=1; i<=data.COUNT; i++) {
+                               arr.push(data.POINTX0.toString());
+                            }
+                            alert(arr);
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

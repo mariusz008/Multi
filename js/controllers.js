@@ -2626,10 +2626,11 @@
                           sessionStorage.setItem('track', $scope.competition1);
                           console.log(data);
                             var arr = [];
-                           // for(var i=1; i<=data.COUNT; i++) {
-                              // arr.push(data.POINTX0.toString());
-                               arr.push(data.toString());
-                           // }
+                            for(var i=1; i<=data.COUNT; i++) {
+                                var punkt = 'POINTX' +(i);
+                               arr.push(punkt);
+
+                            }
                             alert(arr);
                           })
              .error(function(data,status,headers,config){
@@ -2644,52 +2645,10 @@
                         var user = sessionStorage.getItem('ID');
 
 
-                        $scope.addMultiCompetitionClick = function(){
-                        $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?user_id='+ user+
-                                                                                '&name=' +$scope.competition.name+
-                                                                                '&data_rozp='+moment($scope.competition.startDate).format('DD.MM.YYYY')+
-                                                                                '&czas_rozp='+moment($scope.competition.startTime).format('HH:mm')+
-                                                                                '&data_zak='+moment($scope.competition.endDate).format('DD.MM.YYYY')+
-                                                                                '&czas_zak=' + moment($scope.competition.endTime).format('HH:mm')+
-                                                                                '&typ=' + $scope.competition.type.name+
-                                                                                '&limit_ucz=' + limit +
-                                                                                '&miejscowosc=' + $scope.competition.city +
-                                                                                '&oplata=' + cost +
-                                                                                '&opis=' + $scope.competition.description +
-                                                                                '&image='+ $scope.logo.base64 +
-                                                                                '&wieloetapowe=' + 1)
-                                .success(function (data) {
-
-                                   if(data.content = "Competitions Created")
-                                   {
-                                    $scope.requestResult = "Zawody zostały utworzone! Pamiętaj, że aby zawodnicy mogli zapisywać się na te zawody musisz jeszcze utworzyć kategorie. Możesz to zrobić w menu zaodów.";
-                                    $window.scrollTo(0, 0);
-                                    $scope.competition.name = "";
-                                    $scope.competition.startDate = "";
-                                    $scope.competition.startTime = "";
-                                    $scope.competition.endDate = "";
-                                    $scope.competition.endTime = "";
-                                    $scope.competition.type.name = "";
-                                    $scope.competition.payCheck = false;
-                                    $scope.competition.pay = "";
-                                    $scope.competition.memberLimitCheck = false;
-                                    $scope.competition.memberLimit = "";
-                                    $scope.competition.city = "";
-                                    $scope.competition.description = "";
-                                    $scope.logo = null;
-                                   }
-
-
-
-                                })
-                                .error(function (data) {
-                                    $scope.requestResult = 'Błąd! Nie udało się dodać zawodów.';
-                                });
-                        };
-                                $scope.showDescription = function(){
-                                     sessionStorage.setItem('compID', $scope.id);
-                                     $location.path('/Multi/home/myCompetition');
-                                      }
+                         $scope.showDescription = function(){
+                         sessionStorage.setItem('compID', $scope.id);
+                         $location.path('/Multi/home/myCompetition');
+                         }
 
                         $scope.editCompetition = function(){
                        sessionStorage.setItem('compID', $scope.id);

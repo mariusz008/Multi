@@ -89,12 +89,10 @@
         var pktX = sessionStorage.getItem('pktX');
         var count = sessionStorage.getItem('count');
 
-
-
         function myMap() {
           var myCenter = new google.maps.LatLng(pktY,pktX);
           var mapCanvas = document.getElementById("map");
-          var mapOptions = {center: myCenter, zoom: 14};
+          var mapOptions = {center: myCenter, zoom: 16};
           var map = new google.maps.Map(mapCanvas, mapOptions);
           var marker = new google.maps.Marker({position:myCenter});
         marker.setMap(map);

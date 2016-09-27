@@ -88,10 +88,11 @@
         var pktY = sessionStorage.getItem('pktY');
         var pktX = sessionStorage.getItem('pktX');
         var count = sessionStorage.getItem('count');
+        car json_obj = JSON.parse(sessionStorage.getItem('track'));
         function myMap() {
           var myCenter = new google.maps.LatLng(pktY,pktX);
           var mapCanvas = document.getElementById("map");
-          var mapOptions = {center: myCenter, zoom: 12};
+          var mapOptions = {center: myCenter, zoom: 14};
           var map = new google.maps.Map(mapCanvas, mapOptions);
           var marker = new google.maps.Marker({position:myCenter});
         marker.setMap(map);

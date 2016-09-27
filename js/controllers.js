@@ -519,7 +519,7 @@
         $scope.btnText = 'Rozwiń filtry wyszukiwania';
 
         $scope.response = [];
-        sessionStorage.removeItem('name');
+
         $scope.types = [
                         {name:'Bieg przełajowy' ,type:'Biegi'},
                         {name:'Bieg maratoński' ,type:'Biegi'},
@@ -2622,20 +2622,9 @@
                           $scope.competition1 = data;
                           sessionStorage.setItem('pktY', $scope.competition1.POINTY0);
                           sessionStorage.setItem('pktX', $scope.competition1.POINTX0);
-                          //sessionStorage.
                           sessionStorage.setItem('count', $scope.competition1.COUNT);
                           sessionStorage.setItem('track', $scope.competition1);
                           console.log(data);
-
-
-                                  var myCenter = new google.maps.LatLng($scope.competition1.POINTY0,$scope.competition1.POINTX0);
-                                  var mapCanvas = document.getElementById("map");
-                                  var mapOptions = {center: myCenter, zoom: 14};
-                                var map = new google.maps.Map(mapCanvas, mapOptions);
-                                  var marker = new google.maps.Marker({position:myCenter});
-//                           marker.setMap(map);
-
-
 
                           })
              .error(function(data,status,headers,config){
@@ -2692,32 +2681,6 @@
                                     $scope.requestResult = 'Błąd! Nie udało się dodać zawodów.';
                                 });
                         };
-
-
-//                              <script>
-//                                var lat = 51.12345;
-//                                var long = 17.123456;
-//                                var pktY = sessionStorage.getItem('pktY');
-//                                var pktX = sessionStorage.getItem('pktX');
-//                                var count = sessionStorage.getItem('count');
-//                                var json_obj = JSON.parse(sessionStorage.getItem('track'));
-//                                var arr = [];
-//                                for(var i=1; i<=count; i++) {
-//                                   arr.push(i.toString());
-//                                }
-//                                alert(arr);
-//                                function myMap() {
-//                                  var myCenter = new google.maps.LatLng(pktY,pktX);
-//                                  var mapCanvas = document.getElementById("map");
-//                                  var mapOptions = {center: myCenter, zoom: 14};
-//                                  var map = new google.maps.Map(mapCanvas, mapOptions);
-//                                  var marker = new google.maps.Marker({position:myCenter});
-//                                marker.setMap(map);
-//                                }
-//                                </script>
-//                                 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
-
-
                                 $scope.showDescription = function(){
                                      sessionStorage.setItem('compID', $scope.id);
                                      $location.path('/Multi/home/myCompetition');

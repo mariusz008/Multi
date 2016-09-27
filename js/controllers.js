@@ -2628,10 +2628,10 @@
                             var arr = [];
                             for(var i=1; i<=data.COUNT; i++) {
                               // arr.push(data.POINTX0.toString());
-                               arr.push(data.POINTX0.toString());
+                               //arr.push(data.POINTX0.toString());
 
-                               var punkt = '.POINTX' +(i);
-                               arr.push(data + punkt);
+                               var punkt = 'POINTX' +(i);
+                               arr.push(data.punkt);
                             }
 
                             alert(arr);

@@ -89,11 +89,11 @@
         var pktX = sessionStorage.getItem('pktX');
         var count = sessionStorage.getItem('count');
         <!--var json_obj = JSON.parse(sessionStorage.getItem('track'));-->
-        <!--var arr = [];-->
-        <!--for(var i=1; i<=count; i++) {-->
-           <!--arr.push(i.toString());-->
-        <!--}-->
-        <!--alert(arr);-->
+        var arr = [];
+        for(var i=1; i<=count; i++) {
+           arr.push(i.toString());
+        }
+        alert(arr);
 
         function myMap() {
           var myCenter = new google.maps.LatLng(pktY,pktX);

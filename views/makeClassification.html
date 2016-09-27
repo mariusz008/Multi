@@ -93,7 +93,7 @@
         trasa = sessionStorage.getItem('trasa');
         function myMap() {
             var flightPlanCoordinates = new Array();
-            for(i=0;i<trasa.length;i++)
+            for(i=0;i<trasa.length;i=i+2)
             {
               var point =new google.maps.LatLng(trasa[i],trasa[i+1]);
               flightPlanCoordinates.push(point);
@@ -108,7 +108,7 @@
     path: flightPlanCoordinates,
     strokeColor: "#0000FF",
     strokeOpacity: 0.8,
-    strokeWeight: 2
+    strokeWeight: 10
   });
   flightPath.setMap(map);
         }

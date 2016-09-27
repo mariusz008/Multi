@@ -2627,10 +2627,13 @@
                           console.log(data);
                             var arr = [];
                             for(var i=1; i<=data.COUNT; i++) {
-                                var punkt = 'POINTX' +(i);
-                               arr.push(punkt);
+                              // arr.push(data.POINTX0.toString());
+                               arr.push(data.POINTX0.toString());
 
+                               var punkt = '.POINTX' +(i);
+                               arr.push(data + punkt);
                             }
+
                             alert(arr);
                           })
              .error(function(data,status,headers,config){

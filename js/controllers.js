@@ -2624,7 +2624,8 @@
                           sessionStorage.setItem('pktX', $scope.competition1.POINTX0);
                           sessionStorage.setItem('count', $scope.competition1.COUNT);
                           sessionStorage.setItem('track', $scope.competition1);
-                         
+                          console.log(data);
+
                             var arr = [];
                             for(var i=0; i<data.COUNT; i++) {
                               arr.push(data["POINTY"+(i)]);

@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/makeClassification.html" afterPath="$PROJECT_DIR$/views/makeClassification.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +55,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="2684" column="34" selection-start-line="2684" selection-start-column="34" selection-end-line="2684" selection-end-column="34" />
+            <state relative-caret-position="167">
+              <caret line="2698" column="38" selection-start-line="2698" selection-start-column="38" selection-end-line="2698" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -1228,8 +1226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="2684" column="34" selection-start-line="2684" selection-start-column="34" selection-end-line="2684" selection-end-column="34" />
+        <state relative-caret-position="167">
+          <caret line="2698" column="38" selection-start-line="2698" selection-start-column="38" selection-end-line="2698" selection-end-column="38" />
           <folding />
         </state>
       </provider>

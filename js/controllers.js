@@ -2628,6 +2628,13 @@
                           console.log(data);
 
 
+//                                  var myCenter = new google.maps.LatLng($scope.competition1.POINTY0,$scope.competition1.POINTX0);
+//                                  var mapCanvas = document.getElementById("map");
+//                                  var mapOptions = {center: myCenter, zoom: 14};
+//                                var map = new google.maps.Map(mapCanvas, mapOptions);
+//                                 var marker = new google.maps.Marker({position:myCenter});
+//                           marker.setMap(map);
+
 
 
                           })
@@ -2685,7 +2692,6 @@
                                     $scope.requestResult = 'Błąd! Nie udało się dodać zawodów.';
                                 });
                         };
-
 
 
 //                              <script>

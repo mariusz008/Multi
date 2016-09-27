@@ -2633,8 +2633,8 @@
                                //var punkt = 'POINTX' +(i);
                                arr.push(data.POINTX+(i));
                             }
-
-                            alert(arr);
+                            var cities = data[0];
+                            alert(cities);
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

@@ -98,12 +98,12 @@
               var point =new google.maps.LatLng(trasa[i],trasa[i+1]);
               flightPlanCoordinates.push(point);
             }
-          var myCenter = new google.maps.LatLng(pktY,pktX);
+          var myCenter = new google.maps.LatLng(trasa[12],trasa[13]);
           var mapCanvas = document.getElementById("map");
           var mapOptions = {center: myCenter, zoom: 16};
           var map = new google.maps.Map(mapCanvas, mapOptions);
-          //var marker = new google.maps.Marker({position:myCenter});
-        //marker.setMap(map);
+          var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
         var flightPath = new google.maps.Polyline({
     path: flightPlanCoordinates,
     strokeColor: "#0000FF",

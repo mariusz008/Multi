@@ -127,6 +127,16 @@
               var mapOptions = {center: myCenter, zoom: 17};
               var map = new google.maps.Map(mapCanvas, mapOptions);
 
+            //markery
+            var infowindowStart = new google.maps.InfoWindow({
+                content: "<span>Linia startu</span>"
+            });
+             var infowindowMeta = new google.maps.InfoWindow({
+                content: "<span>Linia mety</span>"
+            });
+
+
+
             markerStart[0] = new google.maps.Marker({
                 position:liniaStart1[0],
                 icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
@@ -139,6 +149,13 @@
             });
             markerStart[0].setMap(map);
             markerStart[1].setMap(map);
+            google.maps.event.addListener(markerStart[0], 'click', function() {
+              infowindowStart.open(map,markerStart[0]);
+            });
+            google.maps.event.addListener(markerStart[1], 'click', function() {
+              infowindowStart.open(map,markerStart[1]);
+            });
+
 
             markerMeta[0] = new google.maps.Marker({
                 position:liniaMeta1[0],
@@ -152,6 +169,18 @@
             });
             markerMeta[0].setMap(map);
             markerMeta[1].setMap(map);
+            google.maps.event.addListener(markerMeta[0], 'click', function() {
+              infowindowMeta.open(map,markerMeta[0]);
+            });
+            google.maps.event.addListener(markerMeta[1], 'click', function() {
+              infowindowMeta.open(map,markerMeta[1]);
+            });
+
+
+
+
+
+
 
             var flightPath = new google.maps.Polyline({
             path: liniaTrasa1,

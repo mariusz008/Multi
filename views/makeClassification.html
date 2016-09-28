@@ -146,12 +146,12 @@
           });
 
 
-            var razem = [];
+            var linieKontrolne = [];
 
-            for(i=0;i<srodek1.length;i=i+2)
+            for(i=0;i<(srodek1.length)/2;i++)
                 {
-                  razem[i] =  new google.maps.Polyline({
-                    path: [liniaSrodek1[i],liniaSrodek1[i+1]],
+                  linieKontrolne[i] =  new google.maps.Polyline({
+                    path: [liniaSrodek1[(2*i)],liniaSrodek1[(2*i)+1]],
                     strokeColor: "#fd5700",
                     strokeOpacity: 0.8,
                     strokeWeight: 3
@@ -174,8 +174,12 @@
           flightPath.setMap(map)
           flightPath1.setMap(map)
           flightPath2.setMap(map)
-        //  flightPath3.setMap(map)
-        //  flightPath4.setMap(map)
+
+            for(i=0;i<(srodek1.length)/2;i++)
+                {
+                  linieKontrolne[i].setMap(map)
+               }
+
 
         }
         </script>

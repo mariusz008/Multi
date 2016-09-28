@@ -144,12 +144,14 @@
             strokeOpacity: 0.8,
             strokeWeight: 3
           });
+
           var flightPath3 = new google.maps.Polyline({
-            path: liniaSrodek1,
+            path: liniaSrodek1[0],liniaSrodek1[1],liniaSrodek1[2],liniaSrodek1[3],
             strokeColor: "#fd5700",
             strokeOpacity: 0.8,
             strokeWeight: 3
           });
+
           flightPath.setMap(map)
           flightPath1.setMap(map)
           flightPath2.setMap(map)

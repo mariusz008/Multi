@@ -2630,10 +2630,10 @@
                               arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
                             }
 
-                               start.push(data[0]["START1Y"]);
-                               start.push(data[0]["START1X"]);
-                               start.push(data[0]["START2Y"]);
-                               start.push(data[0]["START2X"]);
+                               start.push(data[0]["START1y"]);
+                               start.push(data[0]["START1x"]);
+                               start.push(data[0]["START2y"]);
+                               start.push(data[0]["START2x"]);
 
 
                             sessionStorage.setItem('trasa',JSON.stringify(arr));

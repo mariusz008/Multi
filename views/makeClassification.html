@@ -81,38 +81,35 @@
 
 
         <div id="map" style="width:800px;height:400px;background:white"></div>
-
         <script>
-        var lat = 51.12345;
-        var long = 17.123456;
-        var pktY = sessionStorage.getItem('pktY');
-        var pktX = sessionStorage.getItem('pktX');
-        var count = sessionStorage.getItem('count');
-
-        var trasa = [];
-        trasa = sessionStorage.getItem('trasa');
-        function myMap() {
-            var flightPlanCoordinates = new Array();
-            for(i=0;i<trasa.length;i=i+2)
-            {
-              var point =new google.maps.LatLng(trasa[i],trasa[i+1]);
-              flightPlanCoordinates.push(point);
-            }
-          var myCenter = new google.maps.LatLng(trasa[12],trasa[13]);
-          var mapCanvas = document.getElementById("map");
-          var mapOptions = {center: myCenter, zoom: 16};
-          var map = new google.maps.Map(mapCanvas, mapOptions);
-          var marker = new google.maps.Marker({position:myCenter});
-        marker.setMap(map);
-        var flightPath = new google.maps.Polyline({
-    path: flightPlanCoordinates,
-    strokeColor: "#0000FF",
-    strokeOpacity: 0.8,
-    strokeWeight: 10
-  });
-  flightPath.setMap(map);
+            var trasa1 = [];
+            trasa1 = JSON.parse(sessionStorage.getItem('trasa'));
+            function myMap() {
+                var flightPlanCoordinates = new Array();
+                for(i=0;i<trasa1.length;i=i+2)
+                {
+                  var point =new google.maps.LatLng(trasa1[i],trasa1[i+1]);
+                 flightPlanCoordinates.push(point);
+               }
+              var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
+              var mapCanvas = document.getElementById("map");
+              var mapOptions = {center: myCenter, zoom: 15};
+              var map = new google.maps.Map(mapCanvas, mapOptions);
+        //    var marker = new google.maps.Marker({position:myCenter});
+          //  marker.setMap(map);
+            var flightPath = new google.maps.Polyline({
+            path: flightPlanCoordinates,
+            strokeColor: "#434749",
+            strokeOpacity: 0.8,
+            strokeWeight: 3
+          });
+          flightPath.setMap(map)
+          //niebieski #0000d9
+         // pomaranczowy #fd5700
+        //zielony #03f400
         }
         </script>
+
          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
 
         <br>

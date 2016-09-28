@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/makeClassification.html" afterPath="$PROJECT_DIR$/views/makeClassification.html" />
     </list>
     <ignored path="web.iws" />
@@ -32,18 +35,18 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
+            <state relative-caret-position="1428">
               <caret line="84" column="52" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="makeClassification.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="makeClassification.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
+            <state relative-caret-position="629">
+              <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
@@ -52,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="2627" column="0" selection-start-line="2627" selection-start-column="0" selection-end-line="2627" selection-end-column="0" />
+            <state relative-caret-position="288">
+              <caret line="2626" column="63" selection-start-line="2626" selection-start-column="63" selection-end-line="2626" selection-end-column="63" />
               <folding />
             </state>
           </provider>
@@ -65,7 +68,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
+            <state relative-caret-position="238">
               <caret line="14" column="56" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="56" />
               <folding />
             </state>
@@ -75,7 +78,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
+            <state relative-caret-position="47940">
               <caret line="2820" column="14" selection-start-line="2820" selection-start-column="14" selection-end-line="2820" selection-end-column="14" />
               <folding />
             </state>
@@ -319,8 +322,8 @@
         <option value="$PROJECT_DIR$/application.html" />
         <option value="$PROJECT_DIR$/views/application.html" />
         <option value="$PROJECT_DIR$/style.css" />
-        <option value="$PROJECT_DIR$/js/controllers.js" />
         <option value="$PROJECT_DIR$/views/makeClassification.html" />
+        <option value="$PROJECT_DIR$/js/controllers.js" />
       </list>
     </option>
   </component>
@@ -362,7 +365,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -385,6 +387,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,7 +734,6 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1765625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19665273" sideWeight="0.4625" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -744,6 +746,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17991632" sideWeight="0.49791667" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19665273" sideWeight="0.4625" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -948,7 +951,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="156" column="57" selection-start-line="156" selection-start-column="57" selection-end-line="156" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,7 +958,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="58" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="58" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -964,7 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-794">
           <caret line="0" column="59" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -972,29 +972,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="59" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#1;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#2;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#3;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#4;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#5;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#6;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#7;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#8;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#9;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#10;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#11;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#12;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#13;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#14;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#15;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#16;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#17;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#18;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#19;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#20;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,9 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="57" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="57" />
-          <folding>
-            <element signature="n#style#0;n#img#5;n#a#0;n#div#0;n#article#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1012,7 +986,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="57" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1027,7 +1000,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="122" selection-start-line="35" selection-start-column="117" selection-end-line="35" selection-end-column="122" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1035,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="121" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1087,7 +1058,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3111">
           <caret line="0" column="61" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="61" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1111,14 +1081,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="18" selection-start-line="16" selection-start-column="18" selection-end-line="16" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#a#0;n#h4#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#2;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#img#3;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1126,7 +1088,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="173" column="35" selection-start-line="173" selection-start-column="35" selection-end-line="173" selection-end-column="84" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1149,7 +1110,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="66" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,7 +1117,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2456">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1171,7 +1130,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
+        <state relative-caret-position="1428">
           <caret line="84" column="52" selection-start-line="84" selection-start-column="31" selection-end-line="84" selection-end-column="52" />
           <folding />
         </state>
@@ -1179,7 +1138,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="238">
           <caret line="14" column="56" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="56" />
           <folding />
         </state>
@@ -1187,28 +1146,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
+        <state relative-caret-position="47940">
           <caret line="2820" column="14" selection-start-line="2820" selection-start-column="14" selection-end-line="2820" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="2627" column="0" selection-start-line="2627" selection-start-column="0" selection-end-line="2627" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="102" column="43" selection-start-line="102" selection-start-column="43" selection-end-line="102" selection-end-column="43" />
+        <state relative-caret-position="629">
+          <caret line="108" column="25" selection-start-line="108" selection-start-column="25" selection-end-line="108" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#3;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#0;n#div#6;n#form#0;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="2626" column="63" selection-start-line="2626" selection-start-column="63" selection-end-line="2626" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>

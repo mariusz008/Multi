@@ -2617,22 +2617,18 @@
                         ];
 
             //czy ma trase
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/track?competition_id='+ $scope.id)
+            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/gps/all?competition_id='+ $scope.id)
                             .success(function(data){
                           $scope.competition1 = data;
-                          sessionStorage.setItem('pktY', $scope.competition1.POINTY0);
-                          sessionStorage.setItem('pktX', $scope.competition1.POINTX0);
-                          sessionStorage.setItem('count', $scope.competition1.COUNT);
-                          sessionStorage.setItem('track', $scope.competition1);
-                          console.log(data);
 
                             var arr = [];
-                            for(var i=0; i<data.COUNT; i++) {
-                              arr.push(data["POINTY"+(i)]);
-                              arr.push(data["POINTX"+(i)]);
+                            for(var i=0; i<data[2].COUNT; i++) {
+                              arr.push(data[2]["POINTY"+(i)].replace(/"/g, ""));
+                              arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
                             }
-                            //alert(arr);
-                            sessionStorage.setItem('trasa', arr);
+                            sessionStorage.setItem('trasa',JSON.stringify(arr));
+                             console.log(arr[0]);
+
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

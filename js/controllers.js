@@ -2635,18 +2635,26 @@
                                start.push(data[0]["START2y"]);
                                start.push(data[0]["START2x"]);
 
-
                                 meta.push(data[0]["META1y"]);
                                 meta.push(data[0]["META1x"]);
                                 meta.push(data[0]["META2y"]);
                                 meta.push(data[0]["META2x"]);
 
+                        for(var i=0; i<data[0].COUNT; i++) {
+                              srodek.push(data[0]["PUNKT"+(i)+"Ay"]);
+                              srodek.push(data[0]["PUNKT"+(i)+"Ax"]);
+                              srodek.push(data[0]["PUNKT"+(i)+"By"]);
+                              srodek.push(data[0]["PUNKT"+(i)+"Bx"]);
+                            }
+
                             sessionStorage.setItem('trasa',JSON.stringify(arr));
                             sessionStorage.setItem('start',JSON.stringify(start));
                             sessionStorage.setItem('meta',JSON.stringify(meta));
+                            sessionStorage.setItem('srodek',JSON.stringify(srodek));
                             console.log(arr[0]);
-                             console.log(start);
-                             console.log(meta);
+                            console.log(start);
+                            console.log(meta);
+                            console.log(srodek);
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

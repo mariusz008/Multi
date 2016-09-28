@@ -123,8 +123,8 @@
               var mapOptions = {center: myCenter, zoom: 17};
               var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        //    var marker = new google.maps.Marker({position:myCenter});
-          //  marker.setMap(map);
+            var marker = new google.maps.Marker({position:liniaStart1});
+            marker.setMap(map);
 
             var flightPath = new google.maps.Polyline({
             path: liniaTrasa1,

@@ -2630,8 +2630,8 @@
                               arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
                             }
                             for(var i=0; i<data[0].COUNT; i++) {
-                               start.push(data[0]["START"+(i+1)+"Y"].replace(/"/g, ""));
-                               start.push(data[0]["START"+(i+1)+"X"].replace(/"/g, ""));
+                               start.push(data[0]["START"+(i+1)+"Y"]);
+                               start.push(data[0]["START"+(i+1)+"X"]);
                            }
 
 

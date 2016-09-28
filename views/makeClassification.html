@@ -84,12 +84,15 @@
         <script>
             var trasa1 = [];
             var start1 = [];
+            var meta1 = [];
 
             trasa1 = JSON.parse(sessionStorage.getItem('trasa'));
             start1 = JSON.parse(sessionStorage.getItem('start'));
+            meta1 = JSON.parse(sessionStorage.getItem('meta'));
 
             var liniaTrasa1 = new Array();
             var liniaStart1 = new Array();
+            var liniaMeta1 = new Array();
 
             function myMap() {
 
@@ -103,6 +106,11 @@
                   var point1 =new google.maps.LatLng(start1[i],start1[i+1]);
                   liniaStart1.push(point1);
                }
+               for(i=0;i<meta1.length;i=i+2)
+                {
+                  var point2 =new google.maps.LatLng(meta1[i],meta1[i+1]);
+                  liniaMeta1.push(point2);
+               }
               var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
               var mapCanvas = document.getElementById("map");
               var mapOptions = {center: myCenter, zoom: 17};
@@ -115,15 +123,23 @@
             path: liniaTrasa1,
             strokeColor: "#434749",
             strokeOpacity: 0.8,
-            strokeWeight: 3
+            strokeWeight: 4
           });
           var flightPath1 = new google.maps.Polyline({
             path: liniaStart1,
-            strokeColor: "#0000d9",
+            strokeColor: "#004dfc",
             strokeOpacity: 0.8,
-            strokeWeight: 4
+            strokeWeight: 3
+          });
+          var flightPath2 = new google.maps.Polyline({
+            path: liniaMeta1,
+            strokeColor: "#03f400",
+            strokeOpacity: 0.8,
+            strokeWeight: 3
           });
           flightPath.setMap(map)
+          flightPath1.setMap(map)
+          flightPath2.setMap(map)
           //niebieski #0000d9
          // pomaranczowy #fd5700
         //zielony #03f400

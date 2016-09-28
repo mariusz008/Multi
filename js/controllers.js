@@ -2636,11 +2636,17 @@
                                start.push(data[0]["START2x"]);
 
 
+                                meta.push(data[0]["META1y"]);
+                                meta.push(data[0]["META1x"]);
+                                meta.push(data[0]["META2y"]);
+                                meta.push(data[0]["META2x"]);
+
                             sessionStorage.setItem('trasa',JSON.stringify(arr));
                             sessionStorage.setItem('start',JSON.stringify(start));
+                            sessionStorage.setItem('meta',JSON.stringify(meta));
                             console.log(arr[0]);
                              console.log(start);
-
+                             console.log(meta);
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

@@ -2625,6 +2625,8 @@
                             var start = [];
                             var srodek = [];
                             var meta = [];
+                            var POI = [];
+                            var POIname = [];
                             for(var i=0; i<data[2].COUNT; i++) {
                               arr.push(data[2]["POINTY"+(i)].replace(/"/g, ""));
                               arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
@@ -2647,14 +2649,19 @@
                               srodek.push(data[0]["PUNKT"+(i)+"Bx"]);
                             }
 
+                    for(var i=0; i<data[1].COUNT; i++) {
+                              POI.push(data[1]["POINT_POIY"+(i)]);
+                              POI.push(data[1]["POINT_POIX"+(i)]);
+                              POIname.push(data[1]["POINT_POINAME"+(i)]);
+                            }
+
                             sessionStorage.setItem('trasa',JSON.stringify(arr));
                             sessionStorage.setItem('start',JSON.stringify(start));
                             sessionStorage.setItem('meta',JSON.stringify(meta));
                             sessionStorage.setItem('srodek',JSON.stringify(srodek));
-//                            console.log(arr[0]);
-//                            console.log(start);
-//                            console.log(meta);
-//                            console.log(srodek);
+                            sessionStorage.setItem('POI',JSON.stringify(POI));
+                            sessionStorage.setItem('POIname',JSON.stringify(POIname));
+
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

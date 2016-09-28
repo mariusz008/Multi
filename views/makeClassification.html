@@ -90,16 +90,19 @@
             start1 = JSON.parse(sessionStorage.getItem('start'));
             meta1 = JSON.parse(sessionStorage.getItem('meta'));
             srodek1 = JSON.parse(sessionStorage.getItem('srodek'));
-
+            POI1 = JSON.parse(sessionStorage.getItem('POI'));
+            POIname1 = JSON.parse(sessionStorage.getItem('POIname'));
             var liniaTrasa1 = new Array();
             var liniaStart1 = new Array();
             var liniaMeta1 = new Array();
             var liniaSrodek1 = new Array();
+
             var linieKontrolne = [];
 
             var markerStart = [];
             var markerMeta = [];
             var markerSrodek = [];
+            var markerPOI = [];
 
             function myMap() {
 
@@ -138,7 +141,9 @@
             var infowindowSrodek = new google.maps.InfoWindow({
                 content: "<span>Linia pomiarowa nr </span>"
             });
-
+            var infowindowPOI = new google.maps.InfoWindow({
+                content: "<span>POI</span>"
+            });
 
 
 
@@ -182,27 +187,20 @@
             });
 
 
-<!--for(i=0;i<(srodek1.length)/2;i++)-->
-                <!--{-->
-                 <!--markerMeta[0] = new google.maps.Marker({-->
-                    <!--position:liniaMeta1[0],-->
-                    <!--icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',-->
-                    <!--title: 'Meta'-->
-                <!--});-->
-                <!--markerMeta[1] = new google.maps.Marker({-->
-                    <!--position:liniaMeta1[1],-->
-                    <!--icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',-->
-                    <!--title: 'Meta'-->
-                <!--});-->
-                <!--markerMeta[0].setMap(map);-->
-                <!--markerMeta[1].setMap(map);-->
-                <!--google.maps.event.addListener(markerMeta[0], 'click', function() {-->
-                  <!--infowindowMeta.open(map,markerMeta[0]);-->
-                <!--});-->
-                <!--google.maps.event.addListener(markerMeta[1], 'click', function() {-->
-                  <!--infowindowMeta.open(map,markerMeta[1]);-->
-                <!--});-->
-               <!--}-->
+            for( i=0; i<POIname1.length; i++){
+            markerPOI[i] = new google.maps.Marker({
+                position:[POI[i],POI[i+1]],
+                icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
+                title: POIname[i]
+            });
+
+            markerPOI[i].setMap(map);
+
+            google.maps.event.addListener(markerPOI[i], 'click', function() {
+              infowindowPOI.open(map,markerPOI[i]);
+            });
+            }
+
 
 
             <!--linie-->
@@ -238,12 +236,12 @@
 
                   markerSrodek[(2*i)] = new google.maps.Marker({
                     position:liniaSrodek1[(2*i)],
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
                     title: 'Linia pomiarowa nr '+(2*i)
                 });
                 markerSrodek[(2*i)+1] = new google.maps.Marker({
                     position:liniaSrodek1[(2*i)+1],
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
                     title: 'Linia pomiarowa nr '+((2*i)+1)
                 });
                 markerSrodek[(2*i)].setMap(map);

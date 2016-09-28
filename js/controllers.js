@@ -2622,12 +2622,23 @@
                           $scope.competition1 = data;
 
                             var arr = [];
+                            var start = [];
+                            var srodek = [];
+                            var meta = [];
                             for(var i=0; i<data[2].COUNT; i++) {
                               arr.push(data[2]["POINTY"+(i)].replace(/"/g, ""));
                               arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
                             }
+                            for(var i=0; i<data[0].COUNT; i++) {
+                               start.push(data[0]["START"+(i+1)+"Y"].replace(/"/g, ""));
+                               start.push(data[0]["START"+(i+1)+"X"].replace(/"/g, ""));
+                           }
+
+
                             sessionStorage.setItem('trasa',JSON.stringify(arr));
-                             console.log(arr[0]);
+                            sessionStorage.setItem('start',JSON.stringify(start));
+                            console.log(arr[0]);
+                             console.log(start);
 
                           })
              .error(function(data,status,headers,config){

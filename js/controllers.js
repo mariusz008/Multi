@@ -2651,10 +2651,10 @@
                             sessionStorage.setItem('start',JSON.stringify(start));
                             sessionStorage.setItem('meta',JSON.stringify(meta));
                             sessionStorage.setItem('srodek',JSON.stringify(srodek));
-                            console.log(arr[0]);
-                            console.log(start);
-                            console.log(meta);
-                            console.log(srodek);
+//                            console.log(arr[0]);
+//                            console.log(start);
+//                            console.log(meta);
+//                            console.log(srodek);
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;

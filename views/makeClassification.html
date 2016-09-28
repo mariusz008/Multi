@@ -96,6 +96,10 @@
             var liniaMeta1 = new Array();
             var liniaSrodek1 = new Array();
 
+            var markerStart = [];
+            var markerMeta = [];
+            var markerSrodek = [];
+
             function myMap() {
 
                 for(i=0;i<trasa1.length;i=i+2)
@@ -123,8 +127,30 @@
               var mapOptions = {center: myCenter, zoom: 17};
               var map = new google.maps.Map(mapCanvas, mapOptions);
 
-            var marker = new google.maps.Marker({position:liniaStart1});
-            marker.setMap(map);
+            markerStart[0] = new google.maps.Marker({
+                position:liniaStart1[0],
+                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                title: 'Start'
+            });
+            markerStart[1] = new google.maps.Marker({
+                position:liniaStart1[1],
+                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+                title: 'Start'
+            });
+            markerStart.setMap(map);
+
+            markerMeta[0] = new google.maps.Marker({
+                position:liniaMeta1[0],
+                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                title: 'Meta'
+            });
+            markerMeta[1] = new google.maps.Marker({
+                position:liniaMeta1[1],
+                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
+                title: 'Meta'
+            });
+            markerMeta.setMap(map);
+
 
             var flightPath = new google.maps.Polyline({
             path: liniaTrasa1,

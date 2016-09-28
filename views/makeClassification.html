@@ -85,14 +85,16 @@
             var trasa1 = [];
             var start1 = [];
             var meta1 = [];
-
+            var srodek1 = [];
             trasa1 = JSON.parse(sessionStorage.getItem('trasa'));
             start1 = JSON.parse(sessionStorage.getItem('start'));
             meta1 = JSON.parse(sessionStorage.getItem('meta'));
+            srodek1 = JSON.parse(sessionStorage.getItem('srodek'));
 
             var liniaTrasa1 = new Array();
             var liniaStart1 = new Array();
             var liniaMeta1 = new Array();
+            var liniaSrodek1 = new Array();
 
             function myMap() {
 
@@ -110,6 +112,11 @@
                 {
                   var point2 =new google.maps.LatLng(meta1[i],meta1[i+1]);
                   liniaMeta1.push(point2);
+               }
+               for(i=0;i<srodek1.length;i=i+2)
+                {
+                  var point3 =new google.maps.LatLng(meta1[i],meta1[i+1]);
+                  liniaSrodek1.push(point3);
                }
               var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
               var mapCanvas = document.getElementById("map");
@@ -137,9 +144,16 @@
             strokeOpacity: 0.8,
             strokeWeight: 3
           });
+          var flightPath3 = new google.maps.Polyline({
+            path: liniaSrodek1,
+            strokeColor: "#fd5700",
+            strokeOpacity: 0.8,
+            strokeWeight: 3
+          });
           flightPath.setMap(map)
           flightPath1.setMap(map)
           flightPath2.setMap(map)
+          flightPath3.setMap(map)
           //niebieski #0000d9
          // pomaranczowy #fd5700
         //zielony #03f400

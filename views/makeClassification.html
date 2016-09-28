@@ -95,6 +95,7 @@
             var liniaStart1 = new Array();
             var liniaMeta1 = new Array();
             var liniaSrodek1 = new Array();
+            var linieKontrolne = [];
 
             var markerStart = [];
             var markerMeta = [];
@@ -127,13 +128,17 @@
               var mapOptions = {center: myCenter, zoom: 17};
               var map = new google.maps.Map(mapCanvas, mapOptions);
 
-            //markery
+            <!--markery-->
             var infowindowStart = new google.maps.InfoWindow({
                 content: "<span>Linia startu</span>"
             });
              var infowindowMeta = new google.maps.InfoWindow({
                 content: "<span>Linia mety</span>"
             });
+            var infowindowSrodek = new google.maps.InfoWindow({
+                content: "<span>Linia pomiarowa nr </span>"
+            });
+
 
 
 
@@ -177,10 +182,30 @@
             });
 
 
+<!--for(i=0;i<(srodek1.length)/2;i++)-->
+                <!--{-->
+                 <!--markerMeta[0] = new google.maps.Marker({-->
+                    <!--position:liniaMeta1[0],-->
+                    <!--icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',-->
+                    <!--title: 'Meta'-->
+                <!--});-->
+                <!--markerMeta[1] = new google.maps.Marker({-->
+                    <!--position:liniaMeta1[1],-->
+                    <!--icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',-->
+                    <!--title: 'Meta'-->
+                <!--});-->
+                <!--markerMeta[0].setMap(map);-->
+                <!--markerMeta[1].setMap(map);-->
+                <!--google.maps.event.addListener(markerMeta[0], 'click', function() {-->
+                  <!--infowindowMeta.open(map,markerMeta[0]);-->
+                <!--});-->
+                <!--google.maps.event.addListener(markerMeta[1], 'click', function() {-->
+                  <!--infowindowMeta.open(map,markerMeta[1]);-->
+                <!--});-->
+               <!--}-->
 
 
-
-
+            <!--linie-->
 
             var flightPath = new google.maps.Polyline({
             path: liniaTrasa1,
@@ -201,9 +226,6 @@
             strokeWeight: 3
           });
 
-
-            var linieKontrolne = [];
-
             for(i=0;i<(srodek1.length)/2;i++)
                 {
                   linieKontrolne[i] =  new google.maps.Polyline({
@@ -212,29 +234,38 @@
                     strokeOpacity: 0.8,
                     strokeWeight: 3
                   });
-               }
+                  linieKontrolne[i].setMap(map)
 
-          <!--var flightPath3 = new google.maps.Polyline({-->
-            <!--path: [liniaSrodek1[0],liniaSrodek1[1]],-->
-            <!--strokeColor: "#fd5700",-->
-            <!--strokeOpacity: 0.8,-->
-            <!--strokeWeight: 3-->
-          <!--});-->
-          <!--var flightPath4 = new google.maps.Polyline({-->
-            <!--path: [liniaSrodek1[2],liniaSrodek1[3]],-->
-            <!--strokeColor: "#fd5700",-->
-            <!--strokeOpacity: 0.8,-->
-            <!--strokeWeight: 3-->
-          <!--});-->
+                  markerSrodek[(2*i)] = new google.maps.Marker({
+                    position:liniaSrodek1[(2*i)],
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+                    title: 'Linia pomiarowa nr '+(2*i)
+                });
+                markerSrodek[(2*i)+1] = new google.maps.Marker({
+                    position:liniaSrodek1[(2*i)+1],
+                    icon: 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+                    title: 'Linia pomiarowa nr '+((2*i)+1)
+                });
+                markerSrodek[(2*i)].setMap(map);
+                markerSrodek[(2*i)+1].setMap(map);
+                google.maps.event.addListener(markerSrodek[(2*i)], 'click', function() {
+                  infowindowSrodek.open(map,markerSrodek[(2*i)]);
+                });
+                google.maps.event.addListener(markerSrodek[(2*i)+1], 'click', function() {
+                  infowindowSrodek.open(map,markerSrodek[(2*i)+1]);
+                });
+
+
+               }
 
           flightPath.setMap(map)
           flightPath1.setMap(map)
           flightPath2.setMap(map)
 
-            for(i=0;i<(srodek1.length)/2;i++)
-                {
-                  linieKontrolne[i].setMap(map)
-               }
+            <!--for(i=0;i<(srodek1.length)/2;i++)-->
+                <!--{-->
+                  <!--linieKontrolne[i].setMap(map)-->
+               <!--}-->
 
 
         }

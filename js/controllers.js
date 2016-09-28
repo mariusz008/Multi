@@ -2629,10 +2629,11 @@
                               arr.push(data[2]["POINTY"+(i)].replace(/"/g, ""));
                               arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
                             }
-                            for(var i=0; i<data[0].COUNT; i++) {
-                               start.push(data[0]["START"+(i+1)+"Y"]);
-                               start.push(data[0]["START"+(i+1)+"X"]);
-                           }
+
+                               start.push(data[0]["START1Y"]);
+                               start.push(data[0]["START1X"]);
+                               start.push(data[0]["START2Y"]);
+                               start.push(data[0]["START2X"]);
 
 
                             sessionStorage.setItem('trasa',JSON.stringify(arr));

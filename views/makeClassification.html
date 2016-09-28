@@ -137,7 +137,8 @@
                 icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
                 title: 'Start'
             });
-            markerStart.setMap(map);
+            markerStart[0].setMap(map);
+            markerStart[1].setMap(map);
 
             markerMeta[0] = new google.maps.Marker({
                 position:liniaMeta1[0],
@@ -149,8 +150,8 @@
                 icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
                 title: 'Meta'
             });
-            markerMeta.setMap(map);
-
+            markerMeta[0].setMap(map);
+            markerMeta[1].setMap(map);
 
             var flightPath = new google.maps.Polyline({
             path: liniaTrasa1,

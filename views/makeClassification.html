@@ -80,7 +80,7 @@
         <br>
 
 
-        <div id="map" style="width:1000px;height:600px;background:white"></div>
+        <div id="map" style="width:800px;height:600px;background:white"></div>
         <script>
             var trasa1 = [];
             var start1 = [];
@@ -146,7 +146,13 @@
           });
 
           var flightPath3 = new google.maps.Polyline({
-            path: [liniaSrodek1[0],liniaSrodek1[1],liniaSrodek1[2],liniaSrodek1[3]],
+            path: [liniaSrodek1[0],liniaSrodek1[1]],
+            strokeColor: "#fd5700",
+            strokeOpacity: 0.8,
+            strokeWeight: 3
+          });
+          var flightPath4 = new google.maps.Polyline({
+            path: [liniaSrodek1[2],liniaSrodek1[3]],
             strokeColor: "#fd5700",
             strokeOpacity: 0.8,
             strokeWeight: 3
@@ -156,9 +162,8 @@
           flightPath1.setMap(map)
           flightPath2.setMap(map)
           flightPath3.setMap(map)
-          //niebieski #0000d9
-         // pomaranczowy #fd5700
-        //zielony #03f400
+          flightPath4.setMap(map)
+
         }
         </script>
 

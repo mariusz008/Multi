@@ -278,52 +278,15 @@ console.log(POIname1);
         <br>
 
         <div class="container">
-        <label class="col-lg-2">Punktacja</label>
-	<label1 class="col-lg-2">Ilość punktów za miejsce za miejsce</label1> 
-	<div class="col-lg-1">
-                <input type="number"
-                       id="Nrpoints"
-                       name="points"
-                       class="form-control"
-                       placeholder="NrPoint"
-                       ng-model="classification.NrOfPoints"
-                       required
-                       ng-pattern ="/^[0-9]*$/">
-
-                <div ng-messages="addStageForm.name.$error" ng-show="addStageForm.$submitted || addStageForm.name.$touched">
-                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
-                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
-                </div>
-            </div>
-	<label1 class="col-lg-13">:</label1>
+            <label class="col-lg-2">Punktacja</label>
+	<label1 class="col-lg-2">Ilość punktów za miejsce za miejsce</label1>            
 	<div class="col-lg-2">
                 <input type="number"
                        id="points"
                        name="points"
                        class="form-control"
-                       placeholder="Punkty"
+                       placeholder="Punktacja"
                        ng-model="classification.points"
-                       required
-                       ng-pattern ="/^[0-9]*$/">
-
-		<div ng-messages="addStageForm.name.$error" ng-show="addStageForm.$submitted || addStageForm.name.$touched">
-                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
-                    <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
-                </div> 
-            </div>
-        
-</div>
-        <br>
-        <div class="container">
-            <label class="col-lg-2">Premia czasowa</label>
-            <label1 class="col-lg-2">Bonusowe sekundy za miejsce</label1>
-            <div class="col-lg-1">
-                <input type="number"
-                       id="timepoints"
-                       name="timepoints"
-                       class="form-control"
-                       placeholder="NrTime"
-                       ng-model="classification.NrOfTimePoints"
                        required
                        ng-pattern ="/^[0-9]*$/">
 
@@ -332,22 +295,27 @@ console.log(POIname1);
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
-	<label1 class="col-lg-13">:</label1>
-<div class="col-lg-2">
+        </div>
+        <br>
+        <div class="container">
+            <label class="col-lg-2">Premia czasowa</label>
+            <label1 class="col-lg-2">Bonusowe sekundy za miejsce</label1>
+            <div class="col-lg-2">
                 <input type="number"
-                       id="Nrnumber"
-                       name="points"
+                       id="timepoints"
+                       name="timepoints"
                        class="form-control"
-                       placeholder="Bonusowe sekundy"
+                       placeholder="Premia czasowa"
                        ng-model="classification.timepoints"
                        required
-                       ng-pattern ="/^[0-9]*$/">	
-	<div ng-messages="addStageForm.name.$error" ng-show="addStageForm.$submitted || addStageForm.name.$touched">
+                       ng-pattern ="/^[0-9]*$/">
+
+                <div ng-messages="addStageForm.name.$error" ng-show="addStageForm.$submitted || addStageForm.name.$touched">
                     <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
-                </div>        
-	</div>
-</div>
+                </div>
+            </div>
+        </div>
         <br>
         <br>
         <div class="container">

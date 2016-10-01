@@ -316,14 +316,15 @@ console.log(POIname1);
                 </div> 
             </div>
     </div>
+        <br>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <div class=" text-center">
-                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
+                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid" ng-click="addPoint()"> Potwierdź </button>
             </div>
         </div>
     </form>
          <!--koniec pierwszego forma-->
-        <br>
+
          <!--drugi form-->
          <form name="addTime" novalidate>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
@@ -363,7 +364,7 @@ console.log(POIname1);
 
             <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
-                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
+                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid" ng-click="addTime()"> Potwierdź </button>
                 </div>
             </div>
          </form>
@@ -372,7 +373,7 @@ console.log(POIname1);
         <br>
         <div class="container">
         <div class=" text-center">
-             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź klasyfikację </button>
+             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addClassification()"> Potwierdź klasyfikację </button>
              </div>
         </div>
      <!--tu wyjebalem forma-->

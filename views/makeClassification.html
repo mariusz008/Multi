@@ -56,7 +56,7 @@
         </div>
         <br>
         <br>
-        <div class="container" ng-show="type.name == 'Klasyfikacja punktowa'">
+        <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <label class="col-lg-2">LINIA POMIAROWA </label>
 
             <div class="col-lg-6">
@@ -80,7 +80,7 @@
         <br>
 
 
-        <div id="map" style="width:800px;height:600px;background:white"></div>
+        <div id="map" style="width:800px;height:600px;background:white" ng-show="classification.type.name == 'Klasyfikacja punktowa'"></div>
         <script>
             var trasa1 = [];
             var start1 = [];
@@ -277,7 +277,7 @@ console.log(POIname1);
         <br>
         <br>
 
-        <div class="container">
+        <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
         <label class="col-lg-2">Punktacja</label>
 	<label1 class="col-lg-2">Ilość punktów za miejsce </label1>
 	<div class="col-lg-1">
@@ -295,8 +295,8 @@ console.log(POIname1);
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
-	<label1 class="col-lg-13">:</label1>
-	<div class="col-lg-2">
+	<label1 class="col-lg-13" ng-show="classification.type.name == 'Klasyfikacja punktowa'">:</label1>
+	<div class="col-lg-2" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <input type="number"
                        id="points"
                        name="points"
@@ -314,14 +314,14 @@ console.log(POIname1);
         
 </div>
         <br>
-        <div class="container">
+        <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <div class=" text-center">
                 <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
             </div>
         </div>
         <br>
         <br>
-        <div class="container">
+        <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <label class="col-lg-2">Premia czasowa</label>
             <label1 class="col-lg-2">Bonusowe sekundy za miejsce</label1>
             <div class="col-lg-1">
@@ -339,8 +339,8 @@ console.log(POIname1);
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
-	<label1 class="col-lg-13">:</label1>
-<div class="col-lg-2">
+	<label1 class="col-lg-13" ng-show="classification.type.name == 'Klasyfikacja punktowa'">:</label1>
+<div class="col-lg-2" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <input type="number"
                        id="Nrnumber"
                        name="points"
@@ -358,7 +358,7 @@ console.log(POIname1);
 </div>
 
 <br>
-            <div class="container">
+            <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
                     <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
                 </div>

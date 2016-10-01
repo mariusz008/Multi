@@ -55,7 +55,7 @@
             </div>
         </div>
     </form>
-     <form name="makeClassificationForm1" novalidate>
+
 
 
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
@@ -278,7 +278,9 @@ console.log(POIname1);
 
         <br>
         <br>
-<form name="addPoint" novalidate>
+
+         <!--pierwsza forma-->
+    <form name="addPoint" novalidate>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
         <label class="col-lg-2">Punktacja</label>
 	<label1 class="col-lg-2">Ilość punktów za miejsce </label1>
@@ -293,7 +295,7 @@ console.log(POIname1);
                        ng-pattern ="/^[0-9]*$/">
 
                 <div ng-messages="addPoint.$error" ng-show="addPoint.$submitted || addPoint.$touched">
-                    <span ng-message="required2" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
@@ -309,22 +311,20 @@ console.log(POIname1);
                        ng-pattern ="/^[0-9]*$/">
 
 		<div ng-messages="addPoint.$error" ng-show="addPoint.$submitted || addPoint.$touched">
-                    <span ng-message="required2" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div> 
             </div>
-
-
-</div>
-</form>
-        <br>
+    </div>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <div class=" text-center">
                 <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
             </div>
         </div>
-
+    </form>
+         <!--koniec pierwszego forma-->
         <br>
+         <!--drugi form-->
          <form name="addTime" novalidate>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <label class="col-lg-2">Premia czasowa</label>
@@ -340,12 +340,12 @@ console.log(POIname1);
                        ng-pattern ="/^[0-9]*$/">
 
                 <div ng-messages="addTime.$error" ng-show="addTime.$submitted || addTime.$touched">
-                    <span ng-message="required1" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
-	<label1 class="col-lg-13" ng-show="classification.type.name == 'Klasyfikacja punktowa'">:</label1>
-<div class="col-lg-2" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
+            <label1 class="col-lg-13" ng-show="classification.type.name == 'Klasyfikacja punktowa'">:</label1>
+              <div class="col-lg-2" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <input type="number"
                        id="Nrnumber"
                        name="points"
@@ -354,32 +354,28 @@ console.log(POIname1);
                        ng-model="classification.timepoints"
                        required
                        ng-pattern ="/^[0-9]*$/">	
-	<div ng-messages="addTime.$error" ng-show="addTime.$submitted || addTime.$touched">
-                    <span ng-message="required1" class="help-block"> Pole jest wymagane! </span>
+	            <div ng-messages="addTime.$error" ng-show="addTime.$submitted || addTime.$touched">
+                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>        
-	</div>
+	        </div>
+        </div>
 
-</div>
-
-         </form>
-
-<br>
             <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
                     <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
                 </div>
             </div>
-
-     </form>
+         </form>
+<!--koniec drugiego forma-->
         <br>
         <br>
         <div class="container">
         <div class=" text-center">
              <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź klasyfikację </button>
              </div>
-        </div>            
-
+        </div>
+     <!--tu wyjebalem forma-->
 
     </div>
     </div>

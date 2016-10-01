@@ -55,9 +55,8 @@
             </div>
         </div>
     </form>
+
      <form name="makeClassificationForm1" novalidate>
-
-
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <label class="col-lg-2">LINIA POMIAROWA </label>
 
@@ -88,8 +87,8 @@
             var start1 = [];
             var meta1 = [];
             var srodek1 = [];
-var POI1 = [];
-var POIname1 = [];
+            var POI1 = [];
+            var POIname1 = [];
             trasa1 = JSON.parse(sessionStorage.getItem('trasa'));
             start1 = JSON.parse(sessionStorage.getItem('start'));
             meta1 = JSON.parse(sessionStorage.getItem('meta'));
@@ -100,9 +99,9 @@ var POIname1 = [];
             var liniaStart1 = new Array();
             var liniaMeta1 = new Array();
             var liniaSrodek1 = new Array();
-console.log(srodek1);
-console.log(POI1);
-console.log(POIname1);
+<!--console.log(srodek1);-->
+<!--console.log(POI1);-->
+<!--console.log(POIname1);-->
             var linieKontrolne = [];
 
             var markerStart = [];
@@ -319,7 +318,7 @@ console.log(POIname1);
         <br>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <div class=" text-center">
-                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid || !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
+                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid && !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
             </div>
         </div>
     </form>

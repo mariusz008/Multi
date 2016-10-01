@@ -55,7 +55,7 @@
             </div>
         </div>
     </form>
-
+     <form name="makeClassificationForm1" novalidate>
 
 
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
@@ -319,7 +319,7 @@ console.log(POIname1);
         <br>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <div class=" text-center">
-                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid" ng-click="addPoint()"> Potwierdź </button>
+                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid || !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
             </div>
         </div>
     </form>
@@ -364,7 +364,7 @@ console.log(POIname1);
 
             <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
-                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid" ng-click="addTime()"> Potwierdź </button>
+                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid && !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
                 </div>
             </div>
          </form>
@@ -373,10 +373,10 @@ console.log(POIname1);
         <br>
         <div class="container">
         <div class=" text-center">
-             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addClassification()"> Potwierdź klasyfikację </button>
+             <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź klasyfikację </button>
              </div>
         </div>
-     <!--tu wyjebalem forma-->
+     </form>
 
     </div>
     </div>

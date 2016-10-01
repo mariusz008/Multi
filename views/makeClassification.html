@@ -54,7 +54,7 @@
                 </div>
             </div>
         </div>
-
+    </form>
      <form name="makeClassificationForm1" novalidate>
         <br>
         <br>
@@ -74,7 +74,7 @@
                 </select>
 
                 <div ng-messages="makeClassificationForm1.type.$error" ng-show="makeClassificationForm1.$submitted || makeClassificationForm1.type.$touched">
-                    <span ng-message="required" class="help-block">Pole jest wymagane</span>
+                    <span ng-message="required1" class="help-block">Pole jest wymagane</span>
                 </div>
             </div>
         </div>
@@ -293,7 +293,7 @@ console.log(POIname1);
                        ng-pattern ="/^[0-9]*$/">
 
                 <div ng-messages="makeClassificationForm1.$error" ng-show="makeClassificationForm1.$submitted || makeClassificationForm1.$touched">
-                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required1" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
@@ -309,7 +309,7 @@ console.log(POIname1);
                        ng-pattern ="/^[0-9]*$/">
 
 		<div ng-messages="makeClassificationForm1.$error" ng-show="makeClassificationForm1.$submitted || makeClassificationForm1.$touched">
-                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required1" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div> 
             </div>
@@ -337,7 +337,7 @@ console.log(POIname1);
                        ng-pattern ="/^[0-9]*$/">
 
                 <div ng-messages="makeClassificationForm1.$error" ng-show="makeClassificationForm1.$submitted || makeClassificationForm1.$touched">
-                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required1" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>
             </div>
@@ -352,13 +352,13 @@ console.log(POIname1);
                        required
                        ng-pattern ="/^[0-9]*$/">	
 	<div ng-messages="makeClassificationForm1.$error" ng-show="makeClassificationForm1.$submitted || makeClassificationForm1.$touched">
-                    <span ng-message="required" class="help-block"> Pole jest wymagane! </span>
+                    <span ng-message="required1" class="help-block"> Pole jest wymagane! </span>
                     <span ng-message="pattern" class="help-block">Pole może zawierać tylko cyfry! </span>
                 </div>        
 	</div>
 
 </div>
-
+     </form>
 <br>
             <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
@@ -374,8 +374,8 @@ console.log(POIname1);
              <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!makeClassificationForm.$valid || !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź klasyfikację </button>
              </div>
         </div>            
-    </form>
-     </form>
+
+
     </div>
     </div>
     </div>

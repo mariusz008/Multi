@@ -2596,6 +2596,15 @@
 
                  $scope.editActive = sessionStorage.getItem('editActive');
                  $scope.competition = [];
+                 var pointTab = [];
+                 var timeTab = [];
+                            var arr = [];
+                            var start = [];
+                            var srodek = [];
+                            var meta = [];
+                            var POI = [];
+                            var POIname = [];
+                  var nrOfLine;
                  $scope.id = sessionStorage.getItem('compID');
                  $scope.ilePKT = sessionStorage.getItem('ilePKT');
                  $scope.name = sessionStorage.getItem('name');
@@ -2621,12 +2630,7 @@
                             .success(function(data){
                           $scope.competition1 = data;
 
-                            var arr = [];
-                            var start = [];
-                            var srodek = [];
-                            var meta = [];
-                            var POI = [];
-                            var POIname = [];
+
                             for(var i=0; i<data[2].COUNT; i++) {
                               arr.push(data[2]["POINTY"+(i)].replace(/"/g, ""));
                               arr.push(data[2]["POINTX"+(i)].replace(/"/g, ""));
@@ -2686,6 +2690,18 @@
 
                              }
 
+
+        $scope.addPoint = function() {
+            nrOfLine = $scope.classification.lines;
+            pointTab.push(nrOfLine.substring(nrOfLine.lastIndexOf(" "),nrOfLine.length)+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
+            alert(pointTab);
+        };
+        $scope.addTime = function() {
+
+        nrOfLine = $scope.classification.lines;
+                    timeTab.push(nrOfLine.substring(nrOfLine.lastIndexOf(" "),nrOfLine.length)+"_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
+                    alert(timeTab);
+                };
         }])
 
 

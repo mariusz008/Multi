@@ -318,7 +318,7 @@
         <br>
         <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
             <div class=" text-center">
-                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid && !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
+                <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid && !makeClassificationForm1.$valid" ng-click="addPoint()"> Potwierdź </button>
             </div>
         </div>
     </form>
@@ -363,7 +363,7 @@
 
             <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
-                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid && !makeClassificationForm1.$valid" ng-click="addMultiCompetitionClick()"> Potwierdź </button>
+                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid && !makeClassificationForm1.$valid" ng-click="addTime()"> Potwierdź </button>
                 </div>
             </div>
          </form>

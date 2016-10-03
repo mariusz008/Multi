@@ -82,6 +82,7 @@
 
 
         <div id="map" style="width:800px;height:450px;background:white"></div>
+         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
         <script>
             var trasa1 = [];
             var start1 = [];
@@ -273,7 +274,7 @@
         }
         </script>
 
-         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
+
 
         <br>
         <br>
@@ -363,7 +364,7 @@
 
             <div class="container" ng-show="classification.type.name == 'Klasyfikacja punktowa'">
                 <div class=" text-center">
-                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid && !makeClassificationForm1.$valid" ng-click="addTime()"> Potwierdź </button>
+                    <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid && !makeClassificationForm1.$valid" ng-click="addTime1()"> Potwierdź </button>
                 </div>
             </div>
          </form>

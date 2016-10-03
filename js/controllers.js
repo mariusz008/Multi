@@ -1334,7 +1334,7 @@
 
         $scope.competition = [];
         $scope.id = sessionStorage.getItem('compID');
-
+        var id = sessionStorage.getItem('ID');
 
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + $scope.id)
             .success(function(data){
@@ -1417,7 +1417,7 @@
             }
 
             $scope.dropCompetition2 = function(){
-            	var id = sessionStorage.getItem('ID');
+
 
             	$http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/deactivate?user_id=' + id + '&competition_id=' + $scope.id + '&reason=' + $scope.reason)
                 .success(function(data){
@@ -1444,6 +1444,7 @@
             }
             $scope.makeClassification = function(){
                 sessionStorage.setItem('compID', $scope.id);
+                sessionStorage.setItem('ID', id);
                 sessionStorage.setItem('name', $scope.name);
                 sessionStorage.setItem('stage', $scope.competition1.length);
                 sessionStorage.setItem('ilePKT', $scope.competition2.COUNT);
@@ -2611,7 +2612,7 @@
                      $scope.competition1 = [];
                  $scope.lines = [];
                  $scope.status = 'Ustal klasyfikacje';
-
+                var user = sessionStorage.getItem('ID');
                         // Editor options.
                           $scope.options = {
                             language: 'pl',
@@ -2691,17 +2692,57 @@
                              }
 
 
-        $scope.addPoint = function() {
-            nrOfLine = $scope.classification.lines;
-            pointTab.push(nrOfLine.substring(nrOfLine.lastIndexOf(" "),nrOfLine.length)+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
-            alert(pointTab);
-        };
-        $scope.addTime = function() {
+         $scope.addPoint = function() {
+                    nrOfLine = $scope.classification.lines.name;
+        var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
+                   pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.cl$
+                    alert(pointTab);
+                };
 
-        nrOfLine = $scope.classification.lines;
-                    timeTab.push(nrOfLine.substring(nrOfLine.lastIndexOf(" "),nrOfLine.length)+"_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
+        $scope.addTime1 = function() {
+        nrOfLine = $scope.classification.lines.name;
+        var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
+                    timeTab.push(res+"_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
                     alert(timeTab);
                 };
+
+
+             $scope.addMultiCompetitionClick = function() {
+
+                 $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?owner_id='+ user+
+                                                                                            '&competition_id=' +$scope.id+
+                                                                                            '&typ='+$scope.classification.type.name+
+                                                                                            '&points='+pointTab+
+                                                                                            '&timebonus='+timeTab)
+                                            .success(function (data) {
+
+                                               if(data.content = "Classification Created")
+                                               {
+                                                $scope.requestResult = "Klasyfikacja została utworzona!";
+                                                $window.scrollTo(0, 0);
+//                                                $scope.competition.name = "";
+//                                                $scope.competition.startDate = "";
+//                                                $scope.competition.startTime = "";
+//                                                $scope.competition.endDate = "";
+//                                                $scope.competition.endTime = "";
+//                                                $scope.competition.type.name = "";
+//                                                $scope.competition.payCheck = false;
+//                                                $scope.competition.pay = "";
+//                                                $scope.competition.memberLimitCheck = false;
+//                                                $scope.competition.memberLimit = "";
+//                                                $scope.competition.city = "";
+//                                                $scope.competition.description = "";
+//                                                $scope.logo = null;
+                                               }
+
+
+
+                                            })
+                                            .error(function (data) {
+                                                $scope.requestResult = 'Błąd! Nie udało się stworzyć klasyfikacji.';
+                                            });
+                                    };
+
         }])
 
 

@@ -1394,7 +1394,7 @@
                                  }
                                  else if (data3.code==200)
                                  {
-                                 $scope.class = data3.TYP;
+                                 $scope.class = data3;
                                  }
                                       })
                          .error(function(data,status,headers,config){

@@ -2695,24 +2695,27 @@
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;
                     if(nrOfLine=="META"){
-                    var res = "X";
-                    alert("meta");
+                    pointTab.push("X_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
+                    $scope.requestResult1 = "Dodałeś " + $scope.classification.points + " pktów dla "+$scope.classification.NrOfPoints+"-go zawodnika na mecie";
                     }
                     else {
                     var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
-                    alert("niemeta");
+                    pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
+                    $scope.requestResult1 = "Dodałeś " + $scope.classification.points + " pktów dla "+$scope.classification.NrOfPoints+"-go zawodnika na linii pomiarowej nr "+res;
                     }
-                   pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
-                   // alert(pointTab);
-                   $scope.requestResult1 = "Dodałeś " + $scope.classification.points + " pktów dla "+$scope.classification.NrOfPoints+"-go zawodnika na linii pomiarowej nr "+res;
                 };
 
         $scope.addTime1 = function() {
-        nrOfLine = $scope.classification.lines.name;
-        var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
-                    timeTab.push(res+"_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
-                   // alert(timeTab);
-                   $scope.requestResult2 = "Odjąłeś " + $scope.classification.timepoints + " bonusowych sekund dla "+$scope.classification.NrOfTimePoints+"-go zawodnika na linii pomiarowej nr "+res;
+                    nrOfLine = $scope.classification.lines.name;
+                    if(nrOfLine=="META"){
+                     timeTab.push("X_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
+                     $scope.requestResult2 = "Odjąłeś " + $scope.classification.timepoints + " bonusowych sekund dla "+$scope.classification.NrOfTimePoints+"-go zawodnika na mecie";
+                      }
+                       else {
+                       var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
+                       timeTab.push(res+"_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
+                       $scope.requestResult2 = "Odjąłeś " + $scope.classification.timepoints + " bonusowych sekund dla "+$scope.classification.NrOfTimePoints+"-go zawodnika na linii pomiarowej nr "+res;
+                     }
                 };
 
 

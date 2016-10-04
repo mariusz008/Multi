@@ -1388,7 +1388,8 @@
             //czy ma klasyfikacje
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+ $scope.id)
                                         .success(function(data3){
-                                $scope.class = data3;
+
+                                        $scope.class = data3;
                                       })
                          .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;

@@ -322,6 +322,8 @@
                 <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addPoint.$valid && !makeClassificationForm1.$valid" ng-click="addPoint()"> Potwierdź </button>
             </div>
         </div>
+        <br>
+        <div id="requestResult1" class="well text-center" ng-show="requestResult1">{{requestResult1}}</div>
     </form>
          <!--koniec pierwszego forma-->
 
@@ -367,6 +369,8 @@
                     <button  class="btn btn-primary btn-lg" style="margin-right: 200px;" ng-disabled="!addTime.$valid && !makeClassificationForm1.$valid" ng-click="addTime1()"> Potwierdź </button>
                 </div>
             </div>
+             <br>
+             <div id="requestResult2" class="well text-center" ng-show="requestResult2">{{requestResult2}}</div>
          </form>
 <!--koniec drugiego forma-->
         <br>

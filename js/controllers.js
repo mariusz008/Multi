@@ -2696,14 +2696,16 @@
                     nrOfLine = $scope.classification.lines.name;
         var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
                    pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
-                    alert(pointTab);
+                   // alert(pointTab);
+                   $scope.requestResult1 = "Dodałeś " + $scope.classification.points + " pktów dla "+$scope.classification.NrOfPoints+"-go zawodnika na linii pomiarowej nr "+res;
                 };
 
         $scope.addTime1 = function() {
         nrOfLine = $scope.classification.lines.name;
         var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
                     timeTab.push(res+"_"+$scope.classification.NrOfTimePoints+"_"+$scope.classification.timepoints);
-                    alert(timeTab);
+                   // alert(timeTab);
+                   $scope.requestResult2 = "Odjąłeś " + $scope.classification.timepoints + " bonusowych sekund dla "+$scope.classification.NrOfTimePoints+"-go zawodnika na linii pomiarowej nr "+res;
                 };
 
 
@@ -2712,32 +2714,20 @@
                  $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?owner_id='+ user+
                                                                                             '&competition_id=' +$scope.id+
                                                                                             '&typ='+$scope.classification.type.name+
-                                                                                            '&points='+pointTab+
-                                                                                            '&timebonus='+timeTab)
+                                                                                            '&points='+pointTab.replace(/\s+/g, '')+
+                                                                                            '&timebonus='+timeTab.replace(/\s+/g, ''))
                                             .success(function (data) {
 
                                                if(data.content = "Classification added")
                                                {
                                                 $scope.requestResult = "Klasyfikacja została utworzona!";
                                                 $window.scrollTo(0, 0);
-//                                                $scope.competition.name = "";
-//                                                $scope.competition.startDate = "";
-//                                                $scope.competition.startTime = "";
-//                                                $scope.competition.endDate = "";
-//                                                $scope.competition.endTime = "";
-//                                                $scope.competition.type.name = "";
-//                                                $scope.competition.payCheck = false;
-//                                                $scope.competition.pay = "";
-//                                                $scope.competition.memberLimitCheck = false;
-//                                                $scope.competition.memberLimit = "";
-//                                                $scope.competition.city = "";
-//                                                $scope.competition.description = "";
-//                                                $scope.logo = null;
                                                }
 
                                             })
                                             .error(function (data) {
                                                 $scope.requestResult = 'Błąd! Nie udało się stworzyć klasyfikacji.';
+                                                $window.scrollTo(0, 0);
                                             });
                                     };
 

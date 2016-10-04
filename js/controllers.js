@@ -2711,11 +2711,15 @@
 
              $scope.addMultiCompetitionClick = function() {
 
+                  if(timeTab.length==0 && pointTab.length ==0)  {
+                    $scope.requestResult = 'Błąd! Nie dodałeś punktacji.';
+                  }
+                    else {
                  $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?owner_id='+ user+
                                                                                             '&competition_id=' +$scope.id+
                                                                                             '&typ='+$scope.classification.type.name+
-                                                                                            '&points='+pointTab.replace(/\s+/g, '')+
-                                                                                            '&timebonus='+timeTab.replace(/\s+/g, ''))
+                                                                                            '&points='+pointTab.toString()+
+                                                                                            '&timebonus='+timeTab.toString())
                                             .success(function (data) {
 
                                                if(data.content = "Classification added")
@@ -2729,8 +2733,8 @@
                                                 $scope.requestResult = 'Błąd! Nie udało się stworzyć klasyfikacji.';
                                                 $window.scrollTo(0, 0);
                                             });
-                                    };
-
+                                    }
+                };
         }])
 
 

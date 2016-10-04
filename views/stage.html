@@ -55,7 +55,10 @@
 							<h2 ng-show="competition.WIELOETAPOWE==1">"{{competition.NAME}}" - Zawody wieloetapowe  </h2>
 							<h2 ng-show="competition.WIELOETAPOWE==0">"{{competition.NAME}}" - Zawody jednoetapowe  </h2>
 							<h2 ng-show="competition.WIELOETAPOWE.length>1">"{{competition.NAME}}" - Etap zawodów  </h2>
-								<h5>{{competition.TYP}}</h5>							
+							<h3 ng-show="competition.WIELOETAPOWE.length>1 && class.TYP.length>1">{{class.TYP}}</h3>
+							<h3 ng-show="competition.WIELOETAPOWE.length>1 && class.CODE==215">Brak klasyfikacji</h3>
+
+							<h5>{{competition.TYP}}</h5>
 												
 							<p ng-hide="competition.OPIS == ''">
 							<textarea class="editor" ng-hide="!competition.OPIS" name="editor" ckeditor="options" ng-model="competition.OPIS" ready="onReady()"></textarea>

@@ -2695,7 +2695,7 @@
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;
         var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
-                   pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.cl$
+                   pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
                     alert(pointTab);
                 };
 
@@ -2716,7 +2716,7 @@
                                                                                             '&timebonus='+timeTab)
                                             .success(function (data) {
 
-                                               if(data.content = "Classification Created")
+                                               if(data.content = "Classification added")
                                                {
                                                 $scope.requestResult = "Klasyfikacja została utworzona!";
                                                 $window.scrollTo(0, 0);
@@ -2734,8 +2734,6 @@
 //                                                $scope.competition.description = "";
 //                                                $scope.logo = null;
                                                }
-
-
 
                                             })
                                             .error(function (data) {

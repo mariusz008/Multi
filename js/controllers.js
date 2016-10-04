@@ -2694,7 +2694,14 @@
 
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;
-        var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
+                    if(nrOfLine=="META"){
+                    var res = "X";
+                    alert("meta");
+                    }
+                    else {
+                    var res = nrOfLine.substring(nrOfLine.lastIndexOf(' '),nrOfLine.length);
+                    alert("niemeta");
+                    }
                    pointTab.push(res+"_"+$scope.classification.NrOfPoints+"_"+$scope.classification.points);
                    // alert(pointTab);
                    $scope.requestResult1 = "Dodałeś " + $scope.classification.points + " pktów dla "+$scope.classification.NrOfPoints+"-go zawodnika na linii pomiarowej nr "+res;

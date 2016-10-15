@@ -1393,8 +1393,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
                 var user_id = sessionStorage.getItem('ID');
                 $scope.id = sessionStorage.getItem('compID');
-                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/user/list?user_id=' + user_id +
-                        '&type=' + temp +
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=' + temp +
                         '&name=' + $scope.name +
                         '&place=' + $scope.place +
                         '&wieloetapowe=' + $scope.compID)

@@ -68,7 +68,7 @@
               })
               .when('/Multi/home/competitions/runnerStages', {
                           controller: 'showRunnerStagesController',
-                          templateUrl: 'views/stages.html',
+                          templateUrl: 'views/runnerStages.html',
                           label: 'MultiJustRace - Lista etapów'
               })
 

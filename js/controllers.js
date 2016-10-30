@@ -2960,7 +2960,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                         $location.path('/Multi/home/myCompetition/edit');
 
                              }
-
+$scope.czyjuzjest = 1;
 
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;

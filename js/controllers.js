@@ -2963,7 +2963,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                         $location.path('/Multi/home/myCompetition/edit');
 
                              }
-
+                            async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE"
                              $window.map = new google.maps.Map(document.getElementById('map'), {
                                      center: {
                                          lat: -34.397,

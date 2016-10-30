@@ -2964,14 +2964,15 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
                              }
 
-        $scope.myMap = function() {
+                             $window.map = new google.maps.Map(document.getElementById('map'), {
+                                     center: {
+                                         lat: -34.397,
+                                         lng: 150.644
+                                     },
+                                     zoom: 8
+                                 });
 
-        var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
-                      var mapCanvas = document.getElementById("map");
-                      var mapOptions = {center: myCenter, zoom: 17};
-                      var map = new google.maps.Map(mapCanvas, mapOptions);
 
-        };
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;
                     if(nrOfLine=="META"){

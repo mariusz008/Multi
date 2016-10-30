@@ -2864,7 +2864,13 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
    app.controller('makeClassificationController', ['$scope', '$http','$location','$window', '$sessionStorage' , function($scope, $http, $location, $window,$sessionStorage, $moment){
 
-
+                .config(function(uiGmapGoogleMapApiProvider) {
+                                 uiGmapGoogleMapApiProvider.configure({
+                                         key: 'AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE',
+                                     v: '3.20', //defaults to latest 3.X anyhow
+                                     libraries: 'weather,geometry,visualization'
+                                 });
+                             })
                  $scope.editActive = sessionStorage.getItem('editActive');
                  $scope.competition = [];
                  var pointTab = [];
@@ -2963,14 +2969,18 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                         $location.path('/Multi/home/myCompetition/edit');
 
                              }
-//                            async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE"
-                             $window.map = new google.maps.Map(document.getElementById('map'), {
+
+uiGmapGoogleMapApi.then(function(maps) {
+ $window.map = new google.maps.Map(document.getElementById('map'), {
                                      center: {
                                          lat: -34.397,
                                          lng: 150.644
                                      },
                                      zoom: 8
                                  });
+    });
+//                            async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE"
+
 
 
          $scope.addPoint = function() {

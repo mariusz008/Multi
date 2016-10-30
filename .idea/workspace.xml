@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/makeClassification.html" afterPath="$PROJECT_DIR$/views/makeClassification.html" />
     </list>
     <ignored path="web.iws" />
@@ -43,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="296">
-              <caret line="2805" column="232" selection-start-line="2805" selection-start-column="232" selection-end-line="2805" selection-end-column="232" />
+              <caret line="2830" column="58" selection-start-line="2830" selection-start-column="56" selection-end-line="2830" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -52,79 +49,11 @@
       <file leaf-file-name="makeClassification.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="makeStage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/makeStage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4029">
-              <caret line="237" column="158" selection-start-line="237" selection-start-column="153" selection-end-line="237" selection-end-column="158" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="runnerStages.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/runnerStages.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2737">
-              <caret line="161" column="48" selection-start-line="161" selection-start-column="48" selection-end-line="161" selection-end-column="48" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="myStages.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/myStages.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="57" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="competition.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/competition.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="103" selection-start-line="16" selection-start-column="88" selection-end-line="16" selection-end-column="103" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1190">
-              <caret line="70" column="65" selection-start-line="70" selection-start-column="65" selection-end-line="70" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="runnerCompetitions.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/runnerCompetitions.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="65" selection-start-line="0" selection-start-column="65" selection-end-line="0" selection-end-column="65" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/stage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="829">
+              <caret line="273" column="9" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#form#1;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1184,14 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/runnerStages.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2737">
-          <caret line="161" column="48" selection-start-line="161" selection-start-column="48" selection-end-line="161" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/myStages.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1211,16 +1132,26 @@
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="2805" column="232" selection-start-line="2805" selection-start-column="232" selection-end-line="2805" selection-end-column="232" />
+          <caret line="2830" column="58" selection-start-line="2830" selection-start-column="56" selection-end-line="2830" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/runnerStages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="858">
+          <caret line="161" column="48" selection-start-line="161" selection-start-column="48" selection-end-line="161" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="91" column="37" selection-start-line="91" selection-start-column="37" selection-end-line="91" selection-end-column="37" />
-          <folding />
+        <state relative-caret-position="829">
+          <caret line="273" column="9" selection-start-line="273" selection-start-column="9" selection-end-line="273" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#form#1;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

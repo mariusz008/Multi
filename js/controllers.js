@@ -2936,7 +2936,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                             sessionStorage.setItem('srodek',JSON.stringify(srodek));
                             sessionStorage.setItem('POI',JSON.stringify(POI));
                             sessionStorage.setItem('POIname',JSON.stringify(POIname));
-
+                            $scope.czyjuzjest = 1;
                           })
              .error(function(data,status,headers,config){
                          $scope.retInfo = 'Błąd!'+ data;
@@ -2960,7 +2960,6 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                         $location.path('/Multi/home/myCompetition/edit');
 
                              }
-$scope.czyjuzjest = 1;
 
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;

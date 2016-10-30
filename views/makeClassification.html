@@ -83,196 +83,196 @@
 
         <div id="map" style="width:800px;height:450px;background:white"></div>
          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
-        <script>
-            var trasa1 = [];
-            var start1 = [];
-            var meta1 = [];
-            var srodek1 = [];
-            var POI1 = [];
-            var POIname1 = [];
-            trasa1 = JSON.parse(sessionStorage.getItem('trasa'));
-            start1 = JSON.parse(sessionStorage.getItem('start'));
-            meta1 = JSON.parse(sessionStorage.getItem('meta'));
-            srodek1 = JSON.parse(sessionStorage.getItem('srodek'));
-            POI1 = JSON.parse(sessionStorage.getItem('POI'));
-            POIname1 = JSON.parse(sessionStorage.getItem('POIname'));
-            var liniaTrasa1 = new Array();
-            var liniaStart1 = new Array();
-            var liniaMeta1 = new Array();
-            var liniaSrodek1 = new Array();
-<!--console.log(srodek1);-->
-<!--console.log(POI1);-->
-<!--console.log(POIname1);-->
-            var linieKontrolne = [];
+        <!--<script>-->
+            <!--var trasa1 = [];-->
+            <!--var start1 = [];-->
+            <!--var meta1 = [];-->
+            <!--var srodek1 = [];-->
+            <!--var POI1 = [];-->
+            <!--var POIname1 = [];-->
+            <!--trasa1 = JSON.parse(sessionStorage.getItem('trasa'));-->
+            <!--start1 = JSON.parse(sessionStorage.getItem('start'));-->
+            <!--meta1 = JSON.parse(sessionStorage.getItem('meta'));-->
+            <!--srodek1 = JSON.parse(sessionStorage.getItem('srodek'));-->
+            <!--POI1 = JSON.parse(sessionStorage.getItem('POI'));-->
+            <!--POIname1 = JSON.parse(sessionStorage.getItem('POIname'));-->
+            <!--var liniaTrasa1 = new Array();-->
+            <!--var liniaStart1 = new Array();-->
+            <!--var liniaMeta1 = new Array();-->
+            <!--var liniaSrodek1 = new Array();-->
+<!--&lt;!&ndash;console.log(srodek1);&ndash;&gt;-->
+<!--&lt;!&ndash;console.log(POI1);&ndash;&gt;-->
+<!--&lt;!&ndash;console.log(POIname1);&ndash;&gt;-->
+            <!--var linieKontrolne = [];-->
 
-            var markerStart = [];
-            var markerMeta = [];
-            var markerSrodek = [];
-            var markerPOI = [];
+            <!--var markerStart = [];-->
+            <!--var markerMeta = [];-->
+            <!--var markerSrodek = [];-->
+            <!--var markerPOI = [];-->
 
-            function myMap() {
+            <!--function myMap() {-->
 
-                for(i=0;i<trasa1.length;i=i+2)
-                {
-                  var point =new google.maps.LatLng(trasa1[i],trasa1[i+1]);
-                  liniaTrasa1.push(point);
-               }
-               for(i=0;i<start1.length;i=i+2)
-                {
-                  var point1 =new google.maps.LatLng(start1[i],start1[i+1]);
-                  liniaStart1.push(point1);
-               }
-               for(i=0;i<meta1.length;i=i+2)
-                {
-                  var point2 =new google.maps.LatLng(meta1[i],meta1[i+1]);
-                  liniaMeta1.push(point2);
-               }
-               for(i=0;i<srodek1.length;i=i+2)
-                {
-                  var point3 =new google.maps.LatLng(srodek1[i],srodek1[i+1]);
-                  liniaSrodek1.push(point3);
-               }
-              var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
-              var mapCanvas = document.getElementById("map");
-              var mapOptions = {center: myCenter, zoom: 17};
-              var map = new google.maps.Map(mapCanvas, mapOptions);
-
-            <!--markery-->
-            var infowindowStart = new google.maps.InfoWindow({
-                content: "<span>Linia startu</span>"
-            });
-             var infowindowMeta = new google.maps.InfoWindow({
-                content: "<span>Linia mety</span>"
-            });
-            var infowindowSrodek = new google.maps.InfoWindow({
-                content: "<span>Linia pomiarowa nr </span>"
-            });
-            var infowindowPOI = new google.maps.InfoWindow({
-                content: "<span>POI</span>"
-            });
-
-
-
-            markerStart[0] = new google.maps.Marker({
-                position:liniaStart1[0],
-                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-                title: 'Start'
-            });
-            markerStart[1] = new google.maps.Marker({
-                position:liniaStart1[1],
-                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-                title: 'Start'
-            });
-            markerStart[0].setMap(map);
-            markerStart[1].setMap(map);
-            google.maps.event.addListener(markerStart[0], 'click', function() {
-              infowindowStart.open(map,markerStart[0]);
-            });
-            google.maps.event.addListener(markerStart[1], 'click', function() {
-              infowindowStart.open(map,markerStart[1]);
-            });
-
-
-            markerMeta[0] = new google.maps.Marker({
-                position:liniaMeta1[0],
-                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                title: 'Meta'
-            });
-            markerMeta[1] = new google.maps.Marker({
-                position:liniaMeta1[1],
-                icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-                title: 'Meta'
-            });
-            markerMeta[0].setMap(map);
-            markerMeta[1].setMap(map);
-            google.maps.event.addListener(markerMeta[0], 'click', function() {
-              infowindowMeta.open(map,markerMeta[0]);
-            });
-            google.maps.event.addListener(markerMeta[1], 'click', function() {
-              infowindowMeta.open(map,markerMeta[1]);
-            });
-
-            for( i=0; i<POIname1.length; i++){
-            markerPOI[i] = new google.maps.Marker({
-                position:new google.maps.LatLng(POI1[i],POI1[i+1]),
-                icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',
-                title: POIname1[i]
-            });
-
-            markerPOI[i].setMap(map);
-
-            google.maps.event.addListener(markerPOI[i], 'click', function() {
-              infowindowPOI.open(map,markerPOI[i]);
-            });
-            }
-
-
-
-            <!--linie-->
-
-            var flightPath = new google.maps.Polyline({
-            path: liniaTrasa1,
-            strokeColor: "#434749",
-            strokeOpacity: 0.8,
-            strokeWeight: 4
-          });
-          var flightPath1 = new google.maps.Polyline({
-            path: liniaStart1,
-            strokeColor: "#004dfc",
-            strokeOpacity: 0.8,
-            strokeWeight: 3
-          });
-          var flightPath2 = new google.maps.Polyline({
-            path: liniaMeta1,
-            strokeColor: "#03f400",
-            strokeOpacity: 0.8,
-            strokeWeight: 3
-          });
-
-            for(i=0,j=1;i<(srodek1.length)/2;i++, j++)
-                {
-                  linieKontrolne[i] =  new google.maps.Polyline({
-                    path: [liniaSrodek1[(2*i)],liniaSrodek1[(2*i)+1]],
-                    strokeColor: "#fd5700",
-                    strokeOpacity: 0.8,
-                    strokeWeight: 3
-                  });
-                  linieKontrolne[i].setMap(map)
-
-                  markerSrodek[(2*i)] = new google.maps.Marker({
-                    position:liniaSrodek1[(2*i)],
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
-                    title: 'Linia pomiarowa nr '+ j
-                });
-                markerSrodek[(2*i)+1] = new google.maps.Marker({
-                    position:liniaSrodek1[(2*i)+1],
-                    icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',
-                    title: 'Linia pomiarowa nr '+ j
-                });
-                markerSrodek[(2*i)].setMap(map);
-                markerSrodek[(2*i)+1].setMap(map);
-                google.maps.event.addListener(markerSrodek[(2*i)], 'click', function() {
-                  infowindowSrodek.open(map,markerSrodek[(2*i)]);
-                });
-                google.maps.event.addListener(markerSrodek[(2*i)+1], 'click', function() {
-                  infowindowSrodek.open(map,markerSrodek[(2*i)+1]);
-                });
-
-
-               }
-
-          flightPath.setMap(map)
-          flightPath1.setMap(map)
-          flightPath2.setMap(map)
-
-            <!--for(i=0;i<(srodek1.length)/2;i++)-->
+                <!--for(i=0;i<trasa1.length;i=i+2)-->
                 <!--{-->
+                  <!--var point =new google.maps.LatLng(trasa1[i],trasa1[i+1]);-->
+                  <!--liniaTrasa1.push(point);-->
+               <!--}-->
+               <!--for(i=0;i<start1.length;i=i+2)-->
+                <!--{-->
+                  <!--var point1 =new google.maps.LatLng(start1[i],start1[i+1]);-->
+                  <!--liniaStart1.push(point1);-->
+               <!--}-->
+               <!--for(i=0;i<meta1.length;i=i+2)-->
+                <!--{-->
+                  <!--var point2 =new google.maps.LatLng(meta1[i],meta1[i+1]);-->
+                  <!--liniaMeta1.push(point2);-->
+               <!--}-->
+               <!--for(i=0;i<srodek1.length;i=i+2)-->
+                <!--{-->
+                  <!--var point3 =new google.maps.LatLng(srodek1[i],srodek1[i+1]);-->
+                  <!--liniaSrodek1.push(point3);-->
+               <!--}-->
+              <!--var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);-->
+              <!--var mapCanvas = document.getElementById("map");-->
+              <!--var mapOptions = {center: myCenter, zoom: 17};-->
+              <!--var map = new google.maps.Map(mapCanvas, mapOptions);-->
+
+            <!--&lt;!&ndash;markery&ndash;&gt;-->
+            <!--var infowindowStart = new google.maps.InfoWindow({-->
+                <!--content: "<span>Linia startu</span>"-->
+            <!--});-->
+             <!--var infowindowMeta = new google.maps.InfoWindow({-->
+                <!--content: "<span>Linia mety</span>"-->
+            <!--});-->
+            <!--var infowindowSrodek = new google.maps.InfoWindow({-->
+                <!--content: "<span>Linia pomiarowa nr </span>"-->
+            <!--});-->
+            <!--var infowindowPOI = new google.maps.InfoWindow({-->
+                <!--content: "<span>POI</span>"-->
+            <!--});-->
+
+
+
+            <!--markerStart[0] = new google.maps.Marker({-->
+                <!--position:liniaStart1[0],-->
+                <!--icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',-->
+                <!--title: 'Start'-->
+            <!--});-->
+            <!--markerStart[1] = new google.maps.Marker({-->
+                <!--position:liniaStart1[1],-->
+                <!--icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',-->
+                <!--title: 'Start'-->
+            <!--});-->
+            <!--markerStart[0].setMap(map);-->
+            <!--markerStart[1].setMap(map);-->
+            <!--google.maps.event.addListener(markerStart[0], 'click', function() {-->
+              <!--infowindowStart.open(map,markerStart[0]);-->
+            <!--});-->
+            <!--google.maps.event.addListener(markerStart[1], 'click', function() {-->
+              <!--infowindowStart.open(map,markerStart[1]);-->
+            <!--});-->
+
+
+            <!--markerMeta[0] = new google.maps.Marker({-->
+                <!--position:liniaMeta1[0],-->
+                <!--icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',-->
+                <!--title: 'Meta'-->
+            <!--});-->
+            <!--markerMeta[1] = new google.maps.Marker({-->
+                <!--position:liniaMeta1[1],-->
+                <!--icon: 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',-->
+                <!--title: 'Meta'-->
+            <!--});-->
+            <!--markerMeta[0].setMap(map);-->
+            <!--markerMeta[1].setMap(map);-->
+            <!--google.maps.event.addListener(markerMeta[0], 'click', function() {-->
+              <!--infowindowMeta.open(map,markerMeta[0]);-->
+            <!--});-->
+            <!--google.maps.event.addListener(markerMeta[1], 'click', function() {-->
+              <!--infowindowMeta.open(map,markerMeta[1]);-->
+            <!--});-->
+
+            <!--for( i=0; i<POIname1.length; i++){-->
+            <!--markerPOI[i] = new google.maps.Marker({-->
+                <!--position:new google.maps.LatLng(POI1[i],POI1[i+1]),-->
+                <!--icon: 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',-->
+                <!--title: POIname1[i]-->
+            <!--});-->
+
+            <!--markerPOI[i].setMap(map);-->
+
+            <!--google.maps.event.addListener(markerPOI[i], 'click', function() {-->
+              <!--infowindowPOI.open(map,markerPOI[i]);-->
+            <!--});-->
+            <!--}-->
+
+
+
+            <!--&lt;!&ndash;linie&ndash;&gt;-->
+
+            <!--var flightPath = new google.maps.Polyline({-->
+            <!--path: liniaTrasa1,-->
+            <!--strokeColor: "#434749",-->
+            <!--strokeOpacity: 0.8,-->
+            <!--strokeWeight: 4-->
+          <!--});-->
+          <!--var flightPath1 = new google.maps.Polyline({-->
+            <!--path: liniaStart1,-->
+            <!--strokeColor: "#004dfc",-->
+            <!--strokeOpacity: 0.8,-->
+            <!--strokeWeight: 3-->
+          <!--});-->
+          <!--var flightPath2 = new google.maps.Polyline({-->
+            <!--path: liniaMeta1,-->
+            <!--strokeColor: "#03f400",-->
+            <!--strokeOpacity: 0.8,-->
+            <!--strokeWeight: 3-->
+          <!--});-->
+
+            <!--for(i=0,j=1;i<(srodek1.length)/2;i++, j++)-->
+                <!--{-->
+                  <!--linieKontrolne[i] =  new google.maps.Polyline({-->
+                    <!--path: [liniaSrodek1[(2*i)],liniaSrodek1[(2*i)+1]],-->
+                    <!--strokeColor: "#fd5700",-->
+                    <!--strokeOpacity: 0.8,-->
+                    <!--strokeWeight: 3-->
+                  <!--});-->
                   <!--linieKontrolne[i].setMap(map)-->
+
+                  <!--markerSrodek[(2*i)] = new google.maps.Marker({-->
+                    <!--position:liniaSrodek1[(2*i)],-->
+                    <!--icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',-->
+                    <!--title: 'Linia pomiarowa nr '+ j-->
+                <!--});-->
+                <!--markerSrodek[(2*i)+1] = new google.maps.Marker({-->
+                    <!--position:liniaSrodek1[(2*i)+1],-->
+                    <!--icon: 'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',-->
+                    <!--title: 'Linia pomiarowa nr '+ j-->
+                <!--});-->
+                <!--markerSrodek[(2*i)].setMap(map);-->
+                <!--markerSrodek[(2*i)+1].setMap(map);-->
+                <!--google.maps.event.addListener(markerSrodek[(2*i)], 'click', function() {-->
+                  <!--infowindowSrodek.open(map,markerSrodek[(2*i)]);-->
+                <!--});-->
+                <!--google.maps.event.addListener(markerSrodek[(2*i)+1], 'click', function() {-->
+                  <!--infowindowSrodek.open(map,markerSrodek[(2*i)+1]);-->
+                <!--});-->
+
+
                <!--}-->
 
+          <!--flightPath.setMap(map)-->
+          <!--flightPath1.setMap(map)-->
+          <!--flightPath2.setMap(map)-->
 
-        }
-        </script>
+            <!--&lt;!&ndash;for(i=0;i<(srodek1.length)/2;i++)&ndash;&gt;-->
+                <!--&lt;!&ndash;{&ndash;&gt;-->
+                  <!--&lt;!&ndash;linieKontrolne[i].setMap(map)&ndash;&gt;-->
+               <!--&lt;!&ndash;}&ndash;&gt;-->
+
+
+        <!--}-->
+        <!--</script>-->
 
 
 

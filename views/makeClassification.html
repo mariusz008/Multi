@@ -83,14 +83,14 @@
 
         <div id="map" style="width:800px;height:450px;background:white"></div>
          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
-        <script>
-            var trasa1 = [];
+        <!--<script>-->
+            <!--var trasa1 = [];-->
             <!--var start1 = [];-->
             <!--var meta1 = [];-->
             <!--var srodek1 = [];-->
             <!--var POI1 = [];-->
             <!--var POIname1 = [];-->
-            trasa1 = JSON.parse(sessionStorage.getItem('trasa'));
+            <!--trasa1 = JSON.parse(sessionStorage.getItem('trasa'));-->
             <!--start1 = JSON.parse(sessionStorage.getItem('start'));-->
             <!--meta1 = JSON.parse(sessionStorage.getItem('meta'));-->
             <!--srodek1 = JSON.parse(sessionStorage.getItem('srodek'));-->
@@ -100,9 +100,6 @@
             <!--var liniaStart1 = new Array();-->
             <!--var liniaMeta1 = new Array();-->
             <!--var liniaSrodek1 = new Array();-->
-<!--&lt;!&ndash;console.log(srodek1);&ndash;&gt;-->
-<!--&lt;!&ndash;console.log(POI1);&ndash;&gt;-->
-<!--&lt;!&ndash;console.log(POIname1);&ndash;&gt;-->
             <!--var linieKontrolne = [];-->
 
             <!--var markerStart = [];-->
@@ -110,7 +107,7 @@
             <!--var markerSrodek = [];-->
             <!--var markerPOI = [];-->
 
-            function myMap() {
+            <!--function myMap() {-->
 
                 <!--for(i=0;i<trasa1.length;i=i+2)-->
                 <!--{-->
@@ -132,10 +129,10 @@
                   <!--var point3 =new google.maps.LatLng(srodek1[i],srodek1[i+1]);-->
                   <!--liniaSrodek1.push(point3);-->
                <!--}-->
-              var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
-              var mapCanvas = document.getElementById("map");
-              var mapOptions = {center: myCenter, zoom: 17};
-              var map = new google.maps.Map(mapCanvas, mapOptions);
+              <!--var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);-->
+              <!--var mapCanvas = document.getElementById("map");-->
+              <!--var mapOptions = {center: myCenter, zoom: 17};-->
+              <!--var map = new google.maps.Map(mapCanvas, mapOptions);-->
 
             <!--&lt;!&ndash;markery&ndash;&gt;-->
             <!--var infowindowStart = new google.maps.InfoWindow({-->
@@ -271,8 +268,8 @@
                <!--&lt;!&ndash;}&ndash;&gt;-->
 
 
-        }
-        </script>
+        <!--}-->
+        <!--</script>-->
 
 
 

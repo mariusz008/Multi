@@ -2942,6 +2942,9 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                          $scope.retInfo = 'Błąd!'+ data;
             });
 
+
+
+
                          for(var i=0; i< $scope.ilePKT; i++){
                             $scope.lines[i]={name:'Linia pomiarowa nr ' + (i+1)};
                          }
@@ -2961,7 +2964,14 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
                              }
 
+        $scope.myMap = function() {
 
+        var myCenter = new google.maps.LatLng(trasa1[0],trasa1[1]);
+                      var mapCanvas = document.getElementById("map");
+                      var mapOptions = {center: myCenter, zoom: 17};
+                      var map = new google.maps.Map(mapCanvas, mapOptions);
+
+        };
          $scope.addPoint = function() {
                     nrOfLine = $scope.classification.lines.name;
                     if(nrOfLine=="META"){

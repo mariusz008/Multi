@@ -83,7 +83,7 @@
 
         <div ng-show="competition1.length > 0" id="map" style="width:800px;height:450px;background:white"></div>
          <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0lVpHRuXY4EItUedoBZA5r0xtFUzCWDE&callback=myMap" type="text/javascript"></script>
-        <script>
+        <script ng-show="competition1.length > 0">
             var trasa1 = [];
             var start1 = [];
             var meta1 = [];

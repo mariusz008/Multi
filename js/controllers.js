@@ -2212,7 +2212,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
     	$scope.text = "Zapisz się!";
     	$scope.cat = '';
     	$scope.categories = [];
-
+        var zawody = [];
         var id = sessionStorage.getItem('compID');
         var dataRozp = sessionStorage.getItem('compData');
         var godzinaRozp = sessionStorage.getItem('compGodzina');
@@ -2233,9 +2233,18 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
         var teraz = new Date();
         var dataZaw = new Date(array1[2], --array1[1], array1[0], array2[0], array2[1]);
 
-        //sessionStorage.removeItem('compID');
-        //sessionStorage.removeItem('compData');
-        //sessionStorage.removeItem('compGodzina');
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)
+                .success(function(data){
+                $scope.response = data;
+
+                for(var i=0; i<$scope.response.length; i++)
+                {
+                    zawody.push($scope.response[i].COMPETITION_ID);
+                }
+             })
+                .error(function(data,status,headers,config){
+                $scope.retInfo = 'Błąd!'+ data;
+                });
 
         //$log.log('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=');
 
@@ -2276,13 +2285,30 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 	                	if(data.content == 'Brak wolnych miejsc'){
 	                		$scope.retInfo = 'Brak wolnych miejsc na te zawody!';
 	                	}
-
 	                	else{
 	                		$scope.retInfo = "Zapis na zawody powiódł się!";
 		                    $scope.check2 = 1;
 		                    $scope.check5 = 1;
 		                    $scope.text = "Wypisz się!";
 	                	}
+	                	for(var i=0; i<zawody.length; i++)
+                        {
+                             $http.put('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event?user_id=' + user + '&competition_id=' + zawody[i] + '&category_name=' + $scope.cat.NAME)
+                             	                .success(function(data){
+                             	                	if(data.content == 'Brak wolnych miejsc'){
+                             	                		$scope.retInfo = 'Brak wolnych miejsc na te zawody!';
+                             	                	}
+                             	                	else{
+                             	                		$scope.retInfo = "Zapis na zawody powiódł się!";
+                             		                    $scope.check2 = 1;
+                             		                    $scope.check5 = 1;
+                             		                    //$scope.text = "Wypisz się!";
+                             	                	}
+                             	                })
+                             	                .error(function(data,status,headers,config){
+                             	                    $scope.retInfo = 'Błąd!'+ data;
+                             	                });
+                        }
 	                })
 
 	                .error(function(data,status,headers,config){

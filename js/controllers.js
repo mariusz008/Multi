@@ -3262,10 +3262,40 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
+            var zawody = [];
+
+
+
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
+                .success(function(data1){
+                $scope.infoOzawodach = data1;
+             })
+                .error(function(data,status,headers,config){
+                $scope.retInfo = 'Błąd!'+ data;
+                });
+
+if($scope.infoOzawodach.WIELOETAPOWE.length>1){
+        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)
+                .success(function(data){
+                $scope.response = data;
+
+                for(var i=0; i<$scope.response.length; i++)
+                {
+                    zawody.push($scope.response[i].COMPETITION_ID);
+                }
+             })
+                .error(function(data,status,headers,config){
+                $scope.retInfo = 'Błąd!'+ data;
+                });
+                }
+
 
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
+
+
+
                         if($scope.runners[1] != null)
                         {
                             $scope.timesColumn = [];

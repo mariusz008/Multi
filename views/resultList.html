@@ -23,8 +23,8 @@
 						<!--content -->
 						<div class="postcontent nobottommargin col_last">
 
-							<div class="container" ng-show="runners[1] == null && info.WIELOETAPOWE == 0"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
-							<div class="container" ng-show="runners[1] == null && info.WIELOETAPOWE == 1"><h4> Tu dropdown lista i "Lista wyników..."</h4></div>
+							<div class="container" ng-show="runners[1] == null"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
+							<div class="container" ng-show="runners[1] == null && response.length > 1"><h4> Tu dropdown lista i "Lista wyników..."</h4></div>
 
 							<div ng-hide="runners[1] == null" style="overflow-x:auto">
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>

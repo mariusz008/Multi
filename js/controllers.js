@@ -3263,12 +3263,12 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
             var zawody = [];
-            $scope.info = "";
+            var info = "";
 
 
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
-                $scope.info = data1;
+                 info = data1;
              })
                 .error(function(data1,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data1;
@@ -3276,7 +3276,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
 
 
- if($scope.info.WIELOETAPOWE.length>1){
+ if(info.WIELOETAPOWE.length>1){
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)
                 .success(function(data){
                 $scope.response = data;

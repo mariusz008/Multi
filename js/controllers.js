@@ -3270,30 +3270,23 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 .success(function(data1){
                  info = data1;
                  infoWielo = data1.WIELOETAPOWE;
-             })
-                .error(function(data1,status,headers,config){
-                $scope.retInfo = 'Błąd!'+ data1;
-                });
-
-console.log("przed " + infoWielo);
-           if(infoWielo==1){
-            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
-                .success(function(data){
-                $scope.response = data;
-                console.log(data);
-                console.log("po");
-                for(var i=0; i<$scope.response.length; i++)
-                {
-                    zawody.push($scope.response[i].COMPETITION_ID);
-                }
-                console.log(zawody);
-             })
-                .error(function(data,status,headers,config){
-                $scope.retInfo = 'Błąd!'+ data;
-                });
-                }
-
-                if(infoWielo==0){
+                 if(infoWielo==1){
+                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
+                                 .success(function(data){
+                                 $scope.response = data;
+                                 console.log(data);
+                                 console.log("po");
+                                 for(var i=0; i<$scope.response.length; i++)
+                                 {
+                                     zawody.push($scope.response[i].COMPETITION_ID);
+                                 }
+                                 console.log(zawody);
+                              })
+                                 .error(function(data,status,headers,config){
+                                 $scope.retInfo = 'Błąd!'+ data;
+                                 });
+                                 }
+                else if(infoWielo==0){
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
@@ -3328,6 +3321,12 @@ console.log("przed " + infoWielo);
                         $scope.retInfo = 'Błąd!'+ data;
                     });
 }
+             })
+                .error(function(data1,status,headers,config){
+                $scope.retInfo = 'Błąd!'+ data1;
+                });
+
+
 
 
 

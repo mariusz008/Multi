@@ -3263,18 +3263,19 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
             var zawody = [];
-
+var info = "";
 
 
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
-                $scope.infoOzawodach = data1;
+                info = data1;
+                console.log(data1);
              })
-                .error(function(data,status,headers,config){
-                $scope.retInfo = 'Błąd!'+ data;
+                .error(function(data1,status,headers,config){
+                $scope.retInfo = 'Błąd!'+ data1;
                 });
 
-document.write($scope.infoOzawodach);
+console.log(info);
 
 //if($scope.infoOzawodach.WIELOETAPOWE.length>1){
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)

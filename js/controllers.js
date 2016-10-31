@@ -3275,12 +3275,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 $scope.retInfo = 'Błąd!'+ data1;
                 });
 
-
+console.log("przed");
            if(infoWielo==1){
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
                 .success(function(data){
                 $scope.response = data;
                 console.log(data);
+                console.log("po");
                 for(var i=0; i<$scope.response.length; i++)
                 {
                     zawody.push($scope.response[i].COMPETITION_ID);

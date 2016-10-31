@@ -3270,13 +3270,14 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 .success(function(data1){
                  info = data1;
                  infoWielo = data1.WIELOETAPOWE;
+                 console.log(infoWielo);
              })
                 .error(function(data1,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data1;
                 });
 
 
-
+console.log(infoWielo);
            if(infoWielo==1){
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)
                 .success(function(data){
@@ -3297,7 +3298,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
-                        console.log(data);
+                    //    console.log(data);
 
 
                         if($scope.runners[1] != null)

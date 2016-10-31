@@ -3277,15 +3277,16 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
 
 
- if(infoWielo==1){
+           if(infoWielo==1){
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)
                 .success(function(data){
                 $scope.response = data;
-
+                console.log(data);
                 for(var i=0; i<$scope.response.length; i++)
                 {
                     zawody.push($scope.response[i].COMPETITION_ID);
                 }
+                console.log(zawody);
              })
                 .error(function(data,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data;
@@ -3296,7 +3297,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
-
+                        console.log(data);
 
 
                         if($scope.runners[1] != null)

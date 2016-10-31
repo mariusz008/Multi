@@ -3274,7 +3274,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 $scope.retInfo = 'Błąd!'+ data;
                 });
 
-if($scope.infoOzawodach.WIELOETAPOWE.length>1){
+document.write(infoOzawodach);
+
+//if($scope.infoOzawodach.WIELOETAPOWE.length>1){
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?&type=&name=&place=&wieloetapowe=' + id)
                 .success(function(data){
                 $scope.response = data;
@@ -3287,7 +3289,7 @@ if($scope.infoOzawodach.WIELOETAPOWE.length>1){
                 .error(function(data,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data;
                 });
-                }
+       //         }
 
 
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)

@@ -3275,7 +3275,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 $scope.retInfo = 'Błąd!'+ data1;
                 });
 
-console.log("przed");
+console.log("przed " + infoWielo);
            if(infoWielo==1){
             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
                 .success(function(data){

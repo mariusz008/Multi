@@ -3284,9 +3284,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                      zawody.push($scope.response[i].COMPETITION_ID);
                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[i])
                                          .success(function(data3){
-                                           $scope.response1 = data3;
-
-                                            $scope.classification[i]={name:$scope.response1[i].TYP};
+                                            $scope.classification[i]={name:$scope.data3[i].TYP};
                                             })
                                          .error(function(data,status,headers,config){
                                             $scope.retInfo = 'Błąd!'+ data;

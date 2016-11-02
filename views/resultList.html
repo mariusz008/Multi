@@ -47,6 +47,8 @@
 										</div>
 									</div>
 								</div>
+								<br>
+								<br>
 								<div ng-hide="runners[1] == null" style="overflow-x:auto">
 
 									<div ng-show="types.length>0" class="container">
@@ -57,7 +59,7 @@
 													id="classification"
 													name="classification"
 													class="form-control"
-													ng-model="competition.type"
+													ng-model="classification.type"
 													ng-options="type.name for type in classification"
 													required>
 

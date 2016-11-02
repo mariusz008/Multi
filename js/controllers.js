@@ -3312,8 +3312,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
                                  }
-                                 console.log($scope.types);
-                                 console.log(zawody);
+                                 $scope.types[i]={name:i+1 +". OGÓLNE"};
                               })
                                  .error(function(data,status,headers,config){
                                  $scope.retInfo = 'Błąd!'+ data;

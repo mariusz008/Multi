@@ -3266,6 +3266,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var info = "";
             var infoWielo = "";
 
+            $scope.types = [];
+
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
                  info = data1;
@@ -3276,6 +3278,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  $scope.response = data;
                                  for(var i=0; i<$scope.response.length; i++)
                                  {
+                                     $scope.types.push($scope.response[i].NAME);
                                      zawody.push($scope.response[i].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){

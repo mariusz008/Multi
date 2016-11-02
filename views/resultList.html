@@ -64,7 +64,8 @@
 									<br>
 								<br>
 								<br>
-								<table ng-disabled="!resultList.$valid" class="table" width="400"  >
+								<div ng-disabled="!resultList.$valid">
+								<table class="table" width="400"  >
   								<tr>
   									<th width="100" class="tg-zcxc">Miejsce</th>
 								    <th width="100" class="tg-zcxc">Imię</th>
@@ -82,6 +83,7 @@
 								    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
   								</tr>
 								</table>
+								</div>
 								</div>
 						</div>
 					</div>

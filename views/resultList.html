@@ -28,7 +28,7 @@
 							<div ng-hide="runners[1] == null" style="overflow-x:auto">
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'true'">  Oficjalna lista wyników</h4>
-								<div class="container">
+								<div ng-show="types.length>0" class="container">
 									<label class="col-lg-2">Etap</label>
 
 									<div class="col-lg-6">
@@ -47,6 +47,8 @@
 										</div>
 									</div>
 								</div>
+								<br>
+								<br>
 								<table class="table" width="400"  >
   								<tr>
   									<th width="100" class="tg-zcxc">Miejsce</th>

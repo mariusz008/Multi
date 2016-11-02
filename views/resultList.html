@@ -47,6 +47,28 @@
 										</div>
 									</div>
 								</div>
+								<div ng-hide="runners[1] == null" style="overflow-x:auto">
+
+									<div ng-show="types.length>0" class="container">
+										<label class="col-lg-2">Klasyfikacja</label>
+
+										<div class="col-lg-6">
+											<select type="text"
+													id="classification"
+													name="classification"
+													class="form-control"
+													ng-model="competition.type"
+													ng-options="type.name for type in classification"
+													required>
+
+												<option value=""> Wybierz klasyfikację </option>
+											</select>
+
+											<div ng-messages="resultList.type.$error" ng-show="resultList.$submitted || resultList.type.$touched">
+											</div>
+										</div>
+									</div>
+									<br>
 								<br>
 								<br>
 								<table class="table" width="400"  >

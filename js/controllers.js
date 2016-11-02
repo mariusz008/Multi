@@ -3267,6 +3267,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var infoWielo = "";
 
             $scope.types = [];
+            $scope.classification = [];
 
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
@@ -3278,9 +3279,16 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  $scope.response = data;
                                  for(var i=0; i<$scope.response.length; i++)
                                  {
-                                     $scope.types.push($scope.response[i].NAME);
+
                                       $scope.types[i]={name:i+1 +". " + $scope.response[i].NAME + " - " + $scope.response[i].DATA_ROZP};
                                      zawody.push($scope.response[i].COMPETITION_ID);
+                                $http.get(' http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[i])
+                                         .success(function(data3){
+                                           $scope.response1 = data3;
+                                            $scope.classification[i]={$scope.response1[i].TYP};
+                                         .error(function(data,status,headers,config){
+                                            $scope.retInfo = 'Błąd!'+ data;
+                                      });
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3311,6 +3319,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
+
+
+
                                  }
                                  $scope.types[i]={name:i+1 +". OGÓLNE"};
                               })

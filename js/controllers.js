@@ -3268,6 +3268,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
             $scope.types = [];
             $scope.classification = [];
+            $scope.classification = [
+                        {name:'Klasyfikacja generalna' },
+                        {name:'Klasyfikacja generalna drużynowa' },
+                        {name:'Klasyfikacja punktowa'}
+                        ];
 
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
@@ -3282,13 +3287,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
                                       $scope.types[i]={name:i+1 +". " + $scope.response[i].NAME + " - " + $scope.response[i].DATA_ROZP};
                                      zawody.push($scope.response[i].COMPETITION_ID);
-                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[i])
-                                         .success(function(data3){
-                                            $scope.classification[i]={name:data3[i].TYP};
-                                            })
-                                         .error(function(data,status,headers,config){
-                                            $scope.retInfo = 'Błąd!'+ data;
-                                      });
+//                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[i])
+//                                         .success(function(data3){
+//                                            $scope.classification[0]={name:data3[0].TYP};
+//                                            })
+//                                         .error(function(data,status,headers,config){
+//                                            $scope.retInfo = 'Błąd!'+ data;
+//                                      });
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){
                                                              $scope.runners = data;

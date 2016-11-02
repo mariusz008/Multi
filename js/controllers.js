@@ -3279,7 +3279,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  for(var i=0; i<$scope.response.length; i++)
                                  {
                                      $scope.types.push($scope.response[i].NAME);
-                                     console.log("ffffff");
+                                     //console.log("ffffff");
                                      zawody.push($scope.response[i].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){
@@ -3312,6 +3312,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
                                  }
+                                 console.log($scope.types);
                                  console.log(zawody);
                               })
                                  .error(function(data,status,headers,config){

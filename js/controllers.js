@@ -3279,6 +3279,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  for(var i=0; i<$scope.response.length; i++)
                                  {
                                      $scope.types.push($scope.response[i].NAME);
+                                     console.log($scope.types);
                                      zawody.push($scope.response[i].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){

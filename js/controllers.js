@@ -3314,10 +3314,7 @@ console.log("start");
                                                               console.log("1");
                                                               console.log($scope.runners);
                                                               console.log("2");
-                                                              console.log($scope.wyniki[1].MIEJSCE);
-                                                              console.log($scope.wyniki[1].IMIE);
-                                                              console.log($scope.wyniki[1].NAZWISKO);
-                                                              console.log($scope.wyniki[1].KLUB);
+                                                              console.log($scope.wyniki[0]);
                                                               console.log("3");
                                                              }
 

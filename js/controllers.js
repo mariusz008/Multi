@@ -3310,11 +3310,11 @@ console.log("start");
                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                      }
                                                                  }
-                                                              $scope.wyniki[i] = $scope.runners;
+                                                              $scope.wyniki[i].push($scope.runners);
                                                               console.log("1");
                                                               console.log($scope.runners);
                                                               console.log("2");
-                                                              console.log($scope.wyniki[0]);
+                                                              console.log($scope.wyniki);
                                                               console.log("3");
                                                              }
 

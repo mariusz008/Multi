@@ -3314,7 +3314,7 @@ console.log("start");
                                                               console.log("1");
                                                               console.log($scope.runners);
                                                               console.log("2");
-                                                              console.log($scope.wyniki[i]);
+                                                              console.log($scope.wyniki[0].MIEJSCE);
                                                               console.log("3");
                                                              }
 

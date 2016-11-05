@@ -3310,7 +3310,7 @@ console.log("tete");
                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                      }
                                                                  }
-                                                              $scope.wyniki[i].push($scope.runners);
+                                                              $scope.wyniki[i] = $scope.runners;
                                                               console.log($scope.wyniki);
                                                               console.log("rere");
                                                              }

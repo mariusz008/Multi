@@ -3315,6 +3315,9 @@ console.log("start");
                                                               console.log($scope.runners);
                                                               console.log("2");
                                                               console.log($scope.wyniki[0].MIEJSCE);
+                                                              console.log($scope.wyniki[0].IMIE);
+                                                              console.log($scope.wyniki[0].NAZWISKO);
+                                                              console.log($scope.wyniki[0].KLUB);
                                                               console.log("3");
                                                              }
 

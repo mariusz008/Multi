@@ -3274,7 +3274,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                         {name:'Klasyfikacja generalna drużynowa' },
                         {name:'Klasyfikacja punktowa'}
                         ];
-
+console.log("start");
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
                  info = data1;
@@ -3314,7 +3314,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                               console.log("1");
                                                               console.log($scope.runners);
                                                               console.log("2");
-                                                              console.log($scope.wyniki);
+                                                              console.log($scope.wyniki[i]);
                                                               console.log("3");
                                                              }
 
@@ -3325,7 +3325,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          });
                                  }
                                  $scope.types[i]={name:i+1 +". OGÓLNE"};
-                                 console.log($scope.classification);
+                                 //console.log($scope.classification);
                               })
                                  .error(function(data,status,headers,config){
                                  $scope.retInfo = 'Błąd!'+ data;

@@ -3310,7 +3310,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                      }
                                                                  }
-                                                                 
+                                                              $scope.wyniki[i].push($scope.runners);
+                                                              console.log($scope.wyniki);
                                                              }
 
                                                          })

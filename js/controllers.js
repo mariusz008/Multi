@@ -3274,7 +3274,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                         {name:'Klasyfikacja generalna drużynowa' },
                         {name:'Klasyfikacja punktowa'}
                         ];
-
+console.log("tete");
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
                  info = data1;
@@ -3310,7 +3310,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                      }
                                                                  }
-                                                                 
+                                                              $scope.wyniki[i].push($scope.runners);
+                                                              console.log($scope.wyniki);
+                                                              console.log("rere");
                                                              }
 
                                                          })

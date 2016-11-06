@@ -3298,9 +3298,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
                                                                      $scope.timesColumn[i] = i+1;
                                                                  }
-
-                                                                 for(var i=1; i < $scope.runners.length; i++)
+//tutaj na odwrot
+                                                                 for(var i=($scope.runners.length); i > 0; i--)
                                                                  {
+                                                                     if($scope.runners[i].POINT1_TIME != null){
                                                                      $scope.runners[i].MIEJSCE = i;
 
                                                                      $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
@@ -3308,6 +3309,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                      {
                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                     }
                                                                      }
                                                                  }
                                                               $scope.wyniki.push($scope.runners);

@@ -97,7 +97,7 @@
 										<th width="100" class="tg-zcxc">Klub</th>
 										<th ng-repeat="times in wynikiTimes[competition.type.id]" width="100" class="tg-zcxc">Czas PK{{times}}</th>
 									</tr>
-									<tr  ng-repeat="runner in wyniki[competition.type.id] | orderBy:'-MIEJSCE'" ng-if="$index >0" >
+									<tr  ng-repeat="runner in wyniki[competition.type.id] | orderBy:'MIEJSCE'" ng-if="$index >0" >
 										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
 										<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
 										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>

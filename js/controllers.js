@@ -3267,7 +3267,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var zawody = [];
             var info = "";
             var infoWielo = "";
-
+            var m = 1;
+            var n = 0;
             $scope.types = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
@@ -3303,9 +3304,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
                                                                     var sprawdz = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
-                                                                                 var newTableObject = document.getElementById(table1);
-                                                                                 sorttable.makeSortable(newTableObject);
-                                                                     
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                             $scope.runners[i].MIEJSCE = k;
                                                                             $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
@@ -3314,13 +3312,18 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                  var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                  $scope.runners[i].TIMES[j] = eval(timeName);
                                                                              }
+                                                                             m++;
                                                                           }
                                                                              else {
                                                                              k--;
                                                                              }
                                                                         }
                                                                  }
-                                                              $scope.wyniki.push($scope.runners);
+                                                              for(var xx =0; xx<m; xx++){
+                                                              $scope.wyniki[n].push($scope.runners[xx]);
+                                                              }
+
+
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 

@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="" />
+    <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/controllers.js___jb_tmp___" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+    </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -37,8 +41,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="3325" column="79" selection-start-line="3325" selection-start-column="79" selection-end-line="3325" selection-end-column="79" />
+            <state relative-caret-position="324">
+              <caret line="3320" column="66" selection-start-line="3320" selection-start-column="66" selection-end-line="3320" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -1174,8 +1178,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="3325" column="79" selection-start-line="3325" selection-start-column="79" selection-end-line="3325" selection-end-column="79" />
+        <state relative-caret-position="324">
+          <caret line="3320" column="66" selection-start-line="3320" selection-start-column="66" selection-end-line="3320" selection-end-column="66" />
           <folding />
         </state>
       </provider>

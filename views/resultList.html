@@ -27,7 +27,7 @@
 
 							<div ng-hide="runners[1] == null" >
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>
-								<h4 class="text-center" >{{classification.type.name}} {{classification.type.id}} {{types.type}}</h4>
+								<h4 class="text-center" >{{classification.type.name}} {{competition.type}}</h4>
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'true'">  Oficjalna lista wyników</h4>
 								<div ng-show="types.length>0" class="container">
 									<label class="col-lg-2">Etap</label>
@@ -95,9 +95,9 @@
 										<th width="100" class="tg-zcxc">Nazwisko</th>
 										<th width="100" class="tg-zcxc">Kategoria</th>
 										<th width="100" class="tg-zcxc">Klub</th>
-										<th ng-repeat="times in wynikiTimes[1]" width="100" class="tg-zcxc">Czas PK{{times}}</th>
+										<th ng-repeat="times in wynikiTimes[competition.type.id]" width="100" class="tg-zcxc">Czas PK{{times}}</th>
 									</tr>
-									<tr  ng-repeat="runner in wyniki[1]" ng-if="$index >0">
+									<tr  ng-repeat="runner in wyniki[competition.type.id]" ng-if="$index >0">
 										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
 										<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
 										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>

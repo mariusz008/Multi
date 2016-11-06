@@ -3308,7 +3308,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     var sprawdz = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-                                                                            //console.log($scope.runners[i]);
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
@@ -3317,22 +3316,12 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
-
-                                                                                     console.log(xd);
-                                                                                     console.log($scope.runners[i]);
-                                                                                     $scope.runners1[xd]=$scope.runners[i];
-                                                                                     console.log($scope.runners1[xd]);
-                                                                                     xd++;
                                                                                   }
                                                                              else {
                                                                              k--;
                                                                              }
                                                                         }
                                                                  }
-                                                                 console.log("koniec");
-                                                                 console.log($scope.runners1);
-                                                                 console.log($scope.runners);
-                                                                // $scope.runners2.push($scope.runners1);
                                                               $scope.wyniki.push($scope.runners);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }

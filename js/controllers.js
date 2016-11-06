@@ -3313,17 +3313,27 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
-                                                                                     console.log("1");
-                                                                                     console.log($scope.runners[i]);
-                                                                                     console.log("2");
-                                                                                     console.log($scope.runners);
-                                                                                     $scope.runners1[k] = $scope.runners[i];
                                                                                   }
                                                                              else {
                                                                              k--;
                                                                              }
                                                                         }
                                                                  }
+                                                                for(var l=0; l<($scope.runners.length);l++){
+                                                                 if($scope.runners[i] != undefined){
+                                                                     if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+
+                                                                     var ll = ($scope.runners.length)-l;
+                                                                                console.log("1");
+                                                                                     console.log($scope.runners[i]);
+                                                                                     console.log("2");
+                                                                                     console.log($scope.runners);
+                                                                                     $scope.runners1[l] = $scope.runners[ll];
+                                                                   }
+                                                                }
+                                                                }
+
+
                                                               $scope.wyniki.push($scope.runners1);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }

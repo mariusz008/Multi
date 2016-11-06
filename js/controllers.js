@@ -3264,6 +3264,7 @@ var xd = 0;
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
                     $scope.runners1 = [];
+                     $scope.runners2 = [];
                     $scope.wyniki = [];
                     $scope.wynikiTimes = [];
             var zawody = [];
@@ -3325,25 +3326,8 @@ var xd = 0;
                                                                              }
                                                                         }
                                                                  }
-                                                                 //console.log($scope.runners[i]);
-
-
-//                                                                for(var l=0; l<($scope.runners.length);l++){
-//                                                                 if($scope.runners[i] != undefined){
-//                                                                     if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-//
-//                                                                     var ll = ($scope.runners.length)-l;
-//                                                                                console.log("1");
-//                                                                                     console.log($scope.runners[i]);
-//                                                                                     console.log("2");
-//                                                                                     console.log($scope.runners);
-//                                                                                     $scope.runners1[l] = $scope.runners[ll];
-//                                                                   }
-//                                                                }
-//                                                                }
-
-
-                                                              $scope.wyniki.push($scope.runners1);
+                                                                 $scope.runners2.push($scope.runners1);
+                                                              $scope.wyniki.push($scope.runners2);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 

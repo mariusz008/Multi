@@ -3269,11 +3269,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var infoWielo = "";
 
             $scope.types = [];
-            $scope.classification = [];
             $scope.classification = [
-                        {id: 0, name:'Klasyfikacja generalna' },
-                        {id: 1, name:'Klasyfikacja generalna drużynowa' },
-                        {id: 2, name:'Klasyfikacja punktowa'}
+                        {name:'Klasyfikacja generalna' },
+                        {name:'Klasyfikacja generalna drużynowa' },
+                        {name:'Klasyfikacja punktowa'}
                         ];
 
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
@@ -3286,7 +3285,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  $scope.response = data;
                                  for(var i=0; i<$scope.response.length; i++)
                                  {
-                                      $scope.types[i]={name:i+1 +". " + $scope.response[i].NAME + " - " + $scope.response[i].DATA_ROZP};
+                                      $scope.types[i]={id: i, name:i+1 +". " + $scope.response[i].NAME + " - " + $scope.response[i].DATA_ROZP};
                                      zawody.push($scope.response[i].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){

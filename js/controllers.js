@@ -3259,7 +3259,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
 app.controller('resultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
-
+var xd = 0;
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
@@ -3307,7 +3307,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     var sprawdz = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-                                                                            console.log($scope.runners[i]);
+                                                                            //console.log($scope.runners[i]);
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
@@ -3317,14 +3317,15 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                      console.log($scope.runners[i]);
-                                                                                     $scope.runners1[i]=$scope.runners[i];
+                                                                                     $scope.runners1[xd]=$scope.runners[i];
+                                                                                     xd++;
                                                                                   }
                                                                              else {
                                                                              k--;
                                                                              }
                                                                         }
                                                                  }
-                                                                 console.log($scope.runners[i]);
+                                                                 //console.log($scope.runners[i]);
 
 
 //                                                                for(var l=0; l<($scope.runners.length);l++){

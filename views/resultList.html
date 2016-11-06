@@ -67,7 +67,7 @@
 									<br>
 							</div>
 							<div style="overflow-x:auto">
-								<table ng-show="types.length==0" class="table" width="400"  >
+								<table ng-show="types.length==0" class="table" width="450"  >
   								<tr>
   									<th width="100" class="tg-zcxc">Miejsce</th>
 								    <th width="100" class="tg-zcxc">Imię</th>
@@ -88,7 +88,7 @@
 								<br>
 								<br>
 
-								<table ng-show="classification.type.name == 'Klasyfikacja generalna'" class="table" width="400"  >
+								<table id="table1" ng-show="classification.type.name == 'Klasyfikacja generalna'" class="sortable" width="450"  >
 									<tr>
 										<th width="100" class="tg-zcxc">Miejsce </th>
 										<th width="100" class="tg-zcxc">Imię</th>
@@ -97,7 +97,7 @@
 										<th width="100" class="tg-zcxc">Klub</th>
 										<th ng-repeat="times in wynikiTimes[competition.type.id]" width="100" class="tg-zcxc">Czas PK{{times}}</th>
 									</tr>
-									<tr  ng-repeat="runner in wyniki[competition.type.id]" ng-if="$index >0">
+									<tr  ng-repeat="runner in wyniki[competition.type.id]" ng-if="$index >0" >
 										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
 										<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
 										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>

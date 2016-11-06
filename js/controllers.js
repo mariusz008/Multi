@@ -3267,7 +3267,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var zawody = [];
             var info = "";
             var infoWielo = "";
-
+            var newTableObject = document.getElementById(table1);
+            sorttable.makeSortable(newTableObject);
             $scope.types = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
@@ -3298,23 +3299,29 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
                                                                      $scope.timesColumn[i] = i+1;
                                                                  }
-//tutaj na odwrot
-                                                                 for(var i=($scope.runners.length); i > 0; i--)
-                                                                 {
-                                                                     if($scope.runners[i].POINT1_TIME != null){
-                                                                     $scope.runners[i].MIEJSCE = i;
 
-                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-                                                                     {
-                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                     }
-                                                                     }
+                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+                                                                 {
+                                                                    var sprawdz = $scope.runners[i];
+                                                                     if($scope.runners[i] != undefined){
+                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+                                                                            $scope.runners[i].MIEJSCE = k;
+                                                                            $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                             for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                             {
+                                                                                 var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                 $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                             }
+                                                                          }
+                                                                             else {
+                                                                             k--;
+                                                                             }
+                                                                        }
                                                                  }
                                                               $scope.wyniki.push($scope.runners);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
+
 
                                                          })
 

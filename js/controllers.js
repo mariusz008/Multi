@@ -3267,8 +3267,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var zawody = [];
             var info = "";
             var infoWielo = "";
-            var newTableObject = document.getElementById(table1);
-            sorttable.makeSortable(newTableObject);
+
             $scope.types = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
@@ -3304,6 +3303,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
                                                                     var sprawdz = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
+                                                                                 var newTableObject = document.getElementById(table1);
+                                                                                 sorttable.makeSortable(newTableObject);
+                                                                     
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                             $scope.runners[i].MIEJSCE = k;
                                                                             $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);

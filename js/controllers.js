@@ -3263,6 +3263,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
                     $scope.wyniki = [];
+                    $scope.wynikiTimes = [];
             var zawody = [];
             var info = "";
             var infoWielo = "";
@@ -3311,6 +3312,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                      }
                                                                  }
                                                               $scope.wyniki.push($scope.runners);
+                                                              $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 
                                                          })

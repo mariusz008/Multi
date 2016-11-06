@@ -3322,7 +3322,12 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                              }
                                                                         }
                                                                  }
-                                                              $scope.wyniki.push($scope.runners);
+                                                                  if($scope.runners[i] != undefined){
+                                                                      if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+                                                                      $scope.wyniki.push($scope.runners);
+                                                                        }
+                                                                  }
+
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 

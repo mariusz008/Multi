@@ -3259,7 +3259,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
 app.controller('resultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
-var xd = 0;
+
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
@@ -3317,6 +3317,7 @@ var xd = 0;
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
+                                                                                     var xd = 0;
                                                                                      console.log(xd);
                                                                                      console.log($scope.runners[i]);
                                                                                      $scope.runners1[xd]=$scope.runners[i];

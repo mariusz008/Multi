@@ -3308,7 +3308,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                             console.log($scope.runners[i]);
-                                                                            
+
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
@@ -3316,12 +3316,15 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
+                                                                                     console.log($scope.runners[i]);
+                                                                                     $scope.runners1[i]=$scope.runners[i];
                                                                                   }
                                                                              else {
                                                                              k--;
                                                                              }
                                                                         }
                                                                  }
+                                                                 console.log($scope.runners[i]);
 
 
 //                                                                for(var l=0; l<($scope.runners.length);l++){
@@ -3339,7 +3342,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 //                                                                }
 
 
-                                                              $scope.wyniki.push($scope.runners);
+                                                              $scope.wyniki.push($scope.runners1);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 

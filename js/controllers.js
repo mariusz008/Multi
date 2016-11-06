@@ -3262,6 +3262,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
+                    $scope.runners1 = [];
                     $scope.wyniki = [];
                     $scope.wynikiTimes = [];
             var zawody = [];
@@ -3305,25 +3306,25 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     var sprawdz = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-                                                                            $scope.runners[i].MIEJSCE = k;
-                                                                            $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                             for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-                                                                             {
-                                                                                 var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                 $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                             }
-                                                                             m++;
-                                                                          }
+                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                                     {
+                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                                     }
+                                                                                     console.log("1");
+                                                                                     console.log($scope.runners[i]);
+                                                                                     console.log("2");
+                                                                                     console.log($scope.runners);
+                                                                                     $scope.runners1[k] = $scope.runners[i];
+                                                                                  }
                                                                              else {
                                                                              k--;
                                                                              }
                                                                         }
                                                                  }
-                                                              for(var xx =0; xx<m; xx++){
-                                                              $scope.wyniki[n].push($scope.runners[xx]);
-                                                              }
-
-
+                                                              $scope.wyniki.push($scope.runners1);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 

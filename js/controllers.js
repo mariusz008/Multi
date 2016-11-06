@@ -3311,11 +3311,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                      }
                                                                  }
                                                               $scope.wyniki.push($scope.runners);
-                                                              console.log("1");
-                                                              console.log($scope.runners);
-                                                              console.log("2");
-                                                              console.log($scope.wyniki);
-                                                              console.log("3");
                                                              }
 
                                                          })

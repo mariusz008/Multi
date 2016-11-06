@@ -3330,8 +3330,9 @@ var xd = 0;
                                                                  }
                                                                  console.log("koniec");
                                                                  console.log($scope.runners1);
+                                                                 console.log($scope.runners);
                                                                 // $scope.runners2.push($scope.runners1);
-                                                              $scope.wyniki.push($scope.runners2);
+                                                              $scope.wyniki.push($scope.runners1);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 

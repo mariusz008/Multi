@@ -3271,9 +3271,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             $scope.types = [];
             $scope.classification = [];
             $scope.classification = [
-                        {name:'Klasyfikacja generalna' },
-                        {name:'Klasyfikacja generalna drużynowa' },
-                        {name:'Klasyfikacja punktowa'}
+                        {id: 0, name:'Klasyfikacja generalna' },
+                        {id: 1, name:'Klasyfikacja generalna drużynowa' },
+                        {id: 2, name:'Klasyfikacja punktowa'}
                         ];
 
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)

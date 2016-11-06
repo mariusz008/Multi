@@ -3302,7 +3302,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
                                                                      $scope.timesColumn[i] = i+1;
                                                                  }
-
+                                                                var xd = 0;
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
                                                                     var sprawdz = $scope.runners[i];
@@ -3317,7 +3317,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
-                                                                                     var xd = 0;
+
                                                                                      console.log(xd);
                                                                                      console.log($scope.runners[i]);
                                                                                      $scope.runners1[xd]=$scope.runners[i];

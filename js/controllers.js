@@ -3317,8 +3317,10 @@ var xd = 0;
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
+                                                                                     console.log(xd);
                                                                                      console.log($scope.runners[i]);
                                                                                      $scope.runners1[xd]=$scope.runners[i];
+                                                                                     console.log($scope.runners1[xd]);
                                                                                      xd++;
                                                                                   }
                                                                              else {
@@ -3326,7 +3328,9 @@ var xd = 0;
                                                                              }
                                                                         }
                                                                  }
-                                                                 $scope.runners2.push($scope.runners1);
+                                                                 console.log("koniec");
+                                                                 console.log($scope.runners1);
+                                                                // $scope.runners2.push($scope.runners1);
                                                               $scope.wyniki.push($scope.runners2);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }

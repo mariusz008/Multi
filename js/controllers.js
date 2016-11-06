@@ -3258,6 +3258,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
     }])
 
 app.controller('resultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
+            var xd = 0;
 
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
@@ -3276,7 +3277,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                         {name:'Klasyfikacja generalna drużynowa' },
                         {name:'Klasyfikacja punktowa'}
                         ];
-
+if (xd == 0){
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
                  info = data1;
@@ -3306,6 +3307,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     var sprawdz = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+                                                                            console.log($scope.runners);
+                                                                            
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
@@ -3319,7 +3322,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                              }
                                                                         }
                                                                  }
-                                                                 console.log($scope.runners[i]);
+
+
 //                                                                for(var l=0; l<($scope.runners.length);l++){
 //                                                                 if($scope.runners[i] != undefined){
 //                                                                     if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
@@ -3389,8 +3393,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 .error(function(data1,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data1;
                 });
-
-
+xd++;
+}
 
 
 

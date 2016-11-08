@@ -3270,6 +3270,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wyniki = [];
                     $scope.wynikiTimes = [];
             var zawody = [];
+            var x1 = [];
+            var x2 = [];
             var info = "";
             var infoWielo = "";
             var m = 1;
@@ -3299,15 +3301,18 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  $scope.timesColumn = [];
-
+                                                                  x2 = [];
                                                                  for(var i=0;i<$scope.runners[0].POINTS_COUNT;i++)
                                                                  {
                                                                      $scope.timesColumn[i] = i+1;
+                                                                     x2[i] = i+1;
                                                                  }
                                                                 var xd = 0;
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
-                                                                    var sprawdz = $scope.runners[i];
+
+                                                                  x1 = [];
+                                                                    x1 = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
 
@@ -3325,10 +3330,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                         }
                                                                  }
 
-                                                                      $scope.wyniki.push($scope.runners);
+                                                                      $scope.wyniki.push(x1);
 
 
-                                                              $scope.wynikiTimes.push($scope.timesColumn);
+                                                              $scope.wynikiTimes.push(x2);
                                                              }
 
 

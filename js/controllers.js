@@ -3302,8 +3302,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              console.log(data);
                                                              if($scope.runners[1] != null)
                                                              {
+                                                                $scope.timesColumn = [];
 
-                                                                  x2 = [];
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;

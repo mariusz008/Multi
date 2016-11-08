@@ -3268,6 +3268,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.runners1 = [];
                      $scope.runners2 = [];
                     $scope.wyniki = [];
+                    $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
             var zawody = [];
             var x1 = [];
@@ -3312,7 +3313,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
 
                                                                   x1 = [];
-                                                                    x1 = $scope.runners[i];
+                                                                    x1[i] = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
 
@@ -3330,8 +3331,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                         }
                                                                  }
 
-                                                                      $scope.wyniki.push(x1);
-
+                                                                      $scope.wyniki.push($scope.runners);
+                                                                    $scope.wyniki1.push(x1);
 
                                                               $scope.wynikiTimes.push(x2);
                                                              }

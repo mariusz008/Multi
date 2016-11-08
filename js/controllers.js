@@ -3330,7 +3330,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  }
 
                                                                       $scope.wyniki.push($scope.runners);
-$scope.runners = [];
+
 
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                               $scope.timesColumn = [];

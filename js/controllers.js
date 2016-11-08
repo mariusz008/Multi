@@ -3277,7 +3277,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var m = 1;
             var n = 0;
             $scope.types = [];
-            $scope.timesColumn = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
                         {name:'Klasyfikacja generalna drużynowa' },
@@ -3302,25 +3301,25 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              console.log(data);
                                                              if($scope.runners[1] != null)
                                                              {
-                                                                $scope.timesColumn = [];
-
+                                                                 $scope.timesColumn = [];
+                                                                  x2 = [];
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
                                                                  }
                                                                 var xd = 0;
-                                                                for(var g=($scope.runners.length-1), k=1; g > 0, k<($scope.runners.length); g--, k++)
+                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
 
-                                                                     if($scope.runners[g] != undefined){
-                                                                            if($scope.runners[g].hasOwnProperty('POINT1_TIME')){
+                                                                     if($scope.runners[i] != undefined){
+                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
 
-                                                                                    $scope.runners[g].MIEJSCE = k;
-                                                                                    $scope.runners[g].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[g].TIMES[j] = eval(timeName);
+                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3342,7 +3341,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
                                  }
-                                 $scope.types[i]={name:i+1 +". OGÓLNE"};
+                                 $scope.types[i]={name:i+1 +". Ogólne"};
                                  //console.log($scope.classification);
                               })
                                  .error(function(data,status,headers,config){

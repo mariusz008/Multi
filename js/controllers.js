@@ -3292,11 +3292,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
                                  .success(function(data){
                                  $scope.response = data;
-                                 for(var ii=0; ii<$scope.response.length; ii++)
+                                 for(var i=0; i<$scope.response.length; i++)
                                  {
-                                      $scope.types[ii]={id: ii, name:ii+1 +". " + $scope.response[ii].NAME + " - " + $scope.response[ii].DATA_ROZP};
-                                     zawody.push($scope.response[ii].COMPETITION_ID);
-                                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[ii])
+                                      $scope.types[i]={id: i, name:i+1 +". " + $scope.response[i].NAME + " - " + $scope.response[i].DATA_ROZP};
+                                     zawody.push($scope.response[i].COMPETITION_ID);
+                                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
@@ -3309,20 +3309,20 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                      x2[i] = i+1;
                                                                  }
                                                                 var xd = 0;
-                                                                for(var n=($scope.runners.length-1), k=1; n > 0, k<($scope.runners.length); n--, k++)
+                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
 
                                                                   x1 = [];
-                                                                    x1[n] = $scope.runners[n];
-                                                                     if($scope.runners[n] != undefined){
-                                                                            if($scope.runners[n].hasOwnProperty('POINT1_TIME')){
+                                                                    x1[i] = $scope.runners[i];
+                                                                     if($scope.runners[i] != undefined){
+                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
 
-                                                                                    $scope.runners[n].MIEJSCE = k;
-                                                                                    $scope.runners[n].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[n].TIMES[j] = eval(timeName);
+                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3344,7 +3344,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
                                  }
-                                 $scope.types[ii]={name:i+1 +". OGÓLNE"};
+                                 $scope.types[i]={name:i+1 +". OGÓLNE"};
                                  //console.log($scope.classification);
                               })
                                  .error(function(data,status,headers,config){

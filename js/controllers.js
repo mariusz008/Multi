@@ -3312,8 +3312,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
 
-                                                                  x1 = [];
-                                                                    x1[k-1] = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
 

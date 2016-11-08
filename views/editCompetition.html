@@ -26,12 +26,8 @@
 <div class="postcontent nobottommargin col_last">
       
     <form name="editCompetitionForm" class="form-horizontal" >
-       <section id="content"> 
-        <div class="container" ng-show="registrationForm.$submitted">
-            <div class="alert alert-danger">
-                <strong>{{retInfo}}</strong>
-            </div>
-       </div> 
+       <section id="content">
+           <div id="requestResult" class="well text-center" ng-show="requestResult">{{requestResult}}</div>
 
         <div class="container"> 
            <label class="col-lg-2">Nazwa*</label>     

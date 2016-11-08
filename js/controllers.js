@@ -3309,18 +3309,18 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                      $scope.timesColumn[a] = a+1;
                                                                  }
                                                                 var xd = 0;
-                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+                                                                for(var g=($scope.runners.length-1), k=1; g > 0, k<($scope.runners.length); g--, k++)
                                                                  {
 
-                                                                     if($scope.runners[i] != undefined){
-                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+                                                                     if($scope.runners[g] != undefined){
+                                                                            if($scope.runners[g].hasOwnProperty('POINT1_TIME')){
 
-                                                                                    $scope.runners[i].MIEJSCE = k;
-                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    $scope.runners[g].MIEJSCE = k;
+                                                                                    $scope.runners[g].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                                         $scope.runners[g].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3330,9 +3330,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  }
 
                                                                       $scope.wyniki.push($scope.runners);
-
+$scope.runners = [];
 
                                                               $scope.wynikiTimes.push($scope.timesColumn);
+                                                              $scope.timesColumn = [];
                                                              }
 
 

@@ -3199,7 +3199,8 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                                                                                         '&limit_ucz=' + limit +
                                                                                         '&miejscowosc=' + $scope.competition.city +
                                                                                         '&oplata=' + cost +
-                                                                                        '&opis=' + $scope.competition.description)
+                                                                                        '&opis=' + $scope.competition.description +
+                                                                                        '&wieloetapowe=' + $scope.competition.wieloetapowe)
                                         .success(function (data) {
                                             $window.scrollTo(0, 0);
                                            $scope.requestResult = 'Zapisano zmiany!';
@@ -3235,6 +3236,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                                     }
                                     $scope.editCompetition = function(){
                                                 sessionStorage.setItem('compID', id);
+                                                
                                                 $location.path('/Multi/home/myCompetition/edit');
 
                                             }

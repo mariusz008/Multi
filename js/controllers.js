@@ -3203,12 +3203,12 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                                                                                         '&wieloetapowe=' + $scope.competition.wieloetapowe)
                                         .success(function (data) {
                                             $window.scrollTo(0, 0);
-                                           $scope.retInfo = 'Zapisano zmiany!';
+                                           $scope.requestResult = 'Zapisano zmiany!';
 
                                         })
                                         .error(function (data) {
                                             $window.scrollTo(0, 0);
-                                            $scope.retInfo = 'Błąd! Nie udało się edytować zawodów.';
+                                            $scope.requestResult = 'Błąd! Nie udało się edytować zawodów.';
                                         });
                                 };
 

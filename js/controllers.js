@@ -3277,6 +3277,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var m = 1;
             var n = 0;
             $scope.types = [];
+            $scope.timesColumn = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
                         {name:'Klasyfikacja generalna drużynowa' },
@@ -3301,7 +3302,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              console.log(data);
                                                              if($scope.runners[1] != null)
                                                              {
-                                                                 $scope.timesColumn = [];
+
                                                                   x2 = [];
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {

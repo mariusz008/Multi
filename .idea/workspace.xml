@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
     </list>
     <ignored path="web.iws" />
@@ -42,20 +40,8 @@
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="364">
-              <caret line="3238" column="48" selection-start-line="3238" selection-start-column="48" selection-end-line="3238" selection-end-column="48" />
+              <caret line="3209" column="67" selection-start-line="3209" selection-start-column="67" selection-end-line="3209" selection-end-column="67" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resultList.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/resultList.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="94" column="85" selection-start-line="94" selection-start-column="85" selection-end-line="94" selection-end-column="85" />
-              <folding>
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -63,8 +49,18 @@
       <file leaf-file-name="editCompetition.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/editCompetition.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="286" column="131" selection-start-line="286" selection-start-column="107" selection-end-line="286" selection-end-column="131" />
+            <state relative-caret-position="2091">
+              <caret line="135" column="28" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="makeClassification.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="104" />
               <folding />
             </state>
           </provider>
@@ -1102,13 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="373" column="126" selection-start-line="373" selection-start-column="82" selection-end-line="373" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/ng-sortable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1887">
@@ -1185,10 +1174,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/editCompetition.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="286" column="131" selection-start-line="286" selection-start-column="107" selection-end-line="286" selection-end-column="131" />
+        <state relative-caret-position="2091">
+          <caret line="135" column="28" selection-start-line="135" selection-start-column="24" selection-end-line="135" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1196,7 +1193,7 @@
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
-          <caret line="3238" column="48" selection-start-line="3238" selection-start-column="48" selection-end-line="3238" selection-end-column="48" />
+          <caret line="3209" column="67" selection-start-line="3209" selection-start-column="67" selection-end-line="3209" selection-end-column="67" />
           <folding />
         </state>
       </provider>

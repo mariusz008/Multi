@@ -3313,7 +3313,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  {
 
                                                                   x1 = [];
-                                                                    x1[i] = $scope.runners[i];
+                                                                    x1[k-1] = $scope.runners[i];
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
 

@@ -3276,6 +3276,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var infoWielo = "";
             var m = 1;
             var n = 0;
+            var dd = 0;
             $scope.types = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
@@ -3291,11 +3292,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
                                  .success(function(data){
                                  $scope.response = data;
-                                 for(var i=0; i<$scope.response.length; i++)
+                                 for(dd; dd<$scope.response.length; dd++)
                                  {
-                                      $scope.types[i]={id: i, name:i+1 +". " + $scope.response[i].NAME + " - " + $scope.response[i].DATA_ROZP};
+
+                                 var fg = dd+1;
+                                      $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[i].COMPETITION_ID);
-                                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[i])
+                                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[dd])
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              console.log(data);
@@ -3341,7 +3344,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
                                  }
-                                 $scope.types[i]={name:i+1 +". Ogólne"};
+                                 var cc = dd+1;
+                                 $scope.types[dd]={name:cc +". Ogólne"};
                                  //console.log($scope.classification);
                               })
                                  .error(function(data,status,headers,config){

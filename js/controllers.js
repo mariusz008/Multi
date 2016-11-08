@@ -3271,7 +3271,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
             var zawody = [];
-            var x1 = [];
             var x2 = [];
             var info = "";
             var infoWielo = "";
@@ -3303,10 +3302,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              {
                                                                  $scope.timesColumn = [];
                                                                   x2 = [];
-                                                                 for(var i=0;i<$scope.runners[0].POINTS_COUNT;i++)
+                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                     $scope.timesColumn[i] = i+1;
-                                                                     x2[i] = i+1;
+                                                                     $scope.timesColumn[a] = a+1;
                                                                  }
                                                                 var xd = 0;
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
@@ -3330,9 +3328,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  }
 
                                                                       $scope.wyniki.push($scope.runners);
-                                                                    $scope.wyniki1.push(x1);
 
-                                                              $scope.wynikiTimes.push(x2);
+
+                                                              $scope.wynikiTimes.push(timesColumn);
                                                              }
 
 

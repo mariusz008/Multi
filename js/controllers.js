@@ -3339,11 +3339,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
-                                                         .success(function(dataa){
-                                                             $scope.response1 = dataa;
-                                                            // console.log($scope.classPoints);
-                                                            console.log($scope.response1.length);
-                                                            for(var v=1;v<$scope.response1.length;v++){
+                                                         .success(function(data){
+                                                             $scope.response1 = data;
+                                                            var keys = Object.keys(data);
+                                                            console.log(keys);
+                                                            console.log(keys.length);
+
+                                                            for(var v=1;v<keys.length;v++){
                                                                 console.log("pierwsza"+v);
                                                             for(var b=1;b<$scope.timesColumn.length;b++){
                                                                     var pointName = 'dataa.LINIA'+v+'_POINT_'+b;

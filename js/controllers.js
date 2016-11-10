@@ -3267,6 +3267,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.runners = [];
                     $scope.runners1 = [];
                     $scope.classPoints = [];
+                    $scope.classPoints1 = [];
                      $scope.runners2 = [];
                     $scope.wyniki = [];
                     $scope.wyniki1 = [];
@@ -3340,11 +3341,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(dataa){
-                                                            // $scope.classPoints.push(dataa);
+                                                             $scope.classPoints1 = dataa;
                                                             // console.log($scope.classPoints);
-                                                            console.log("s");
-                                                            for(var v=1;v<dataa.length;v++){
-console.log("pierwsza"+v);
+                                                            console.log($scope.classPoints1.length);
+                                                            for(var v=1;v<$scope.classPoints1.length;v++){
+                                                                console.log("pierwsza"+v);
                                                             for(var b=1;b<$scope.timesColumn.length;b++){
                                                                     var pointName = 'dataa.LINIA'+v+'_POINT_'+b;
                                                                     $scope.classPoints.push(eval(pointName));

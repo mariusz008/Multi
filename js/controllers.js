@@ -3342,12 +3342,15 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                             var keys = Object.keys(data);
-                                                            console.log(keys);
-                                                            console.log(keys.length);
+                                                           // console.log(keys);
+                                                            //console.log(keys.length);
 
                                                             for(var v=1;v<keys.length;v++){
                                                                 console.log("pierwsza"+v);
-                                                            for(var b=1;b<$scope.wynikiTimes[v-1].length;b++){
+                                                                console.log($scope.wynikiTimes[v-1]);
+console.log($scope.wynikiTimes[v-1].length);
+
+                                                            for(var b=1;b<15;b++){
                                                                     var pointName = 'data.LINIA'+v+'_POINT_'+b;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     console.log(eval(pointName));

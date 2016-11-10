@@ -3342,7 +3342,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                             var keys = Object.keys(data);
-                                                           // console.log(keys);
+                                                            console.log(keys);
                                                             //console.log(keys.length);
 
                                                             for(var v=1;v<keys.length;v++){

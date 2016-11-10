@@ -3305,7 +3305,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  .error(function(data,status,headers,config){
                                  $scope.retInfo = 'Błąd!'+ data;
                                  });
-                                 for(dd; dd<zawody.length; dd++)
+                                 for(var dd=0; dd<zawody.length; dd++)
                                  {
                                   $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[dd])
                                                          .success(function(data){

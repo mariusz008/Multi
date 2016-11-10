@@ -3296,7 +3296,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  $scope.response = data;
                                  for(dd; dd<$scope.response.length; dd++)
                                  {
-
                                  var fg = dd+1;
                                       $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[dd].COMPETITION_ID);
@@ -3341,10 +3340,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(dataa){
-                                                             $scope.classPoints1 = dataa;
+                                                             $scope.response1 = dataa;
                                                             // console.log($scope.classPoints);
-                                                            console.log($scope.classPoints1.length);
-                                                            for(var v=1;v<$scope.classPoints1.length;v++){
+                                                            console.log($scope.response1.length);
+                                                            for(var v=1;v<$scope.response1.length;v++){
                                                                 console.log("pierwsza"+v);
                                                             for(var b=1;b<$scope.timesColumn.length;b++){
                                                                     var pointName = 'dataa.LINIA'+v+'_POINT_'+b;

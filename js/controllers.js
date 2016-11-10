@@ -3348,9 +3348,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             for(var v=1;v<keys.length;v++){
                                                                // console.log("pierwsza"+v);
                                                                 //console.log($scope.wynikiTimes[v-1]);
-                                                                var tibia = Object.keys($scope.wynikiTimes[v]);
+                                                                var tibia = Object.keys($scope.wynikiTimes[(v-1)]);
 
-                                                            for(var b=1;b<tibia.length;b++){
+                                                            for(var b=1;b<=tibia.length;b++){
                                                                     var pointName = 'data.LINIA'+v+'_POINT_'+b;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     if (eval(pointName) != 'undefined')

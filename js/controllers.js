@@ -3351,7 +3351,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
-
+}
                                  }
                 else if(infoWielo==0){
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)

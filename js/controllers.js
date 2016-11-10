@@ -3346,9 +3346,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             //console.log(keys.length);
 
                                                             for(var v=1;v<keys.length;v++){
-                                                                console.log("pierwsza"+v);
+                                                               // console.log("pierwsza"+v);
                                                                 //console.log($scope.wynikiTimes[v-1]);
-                                                                var tibia = Object.keys($scope.wynikiTimes[(v-1)]);
+                                                                var tibia = Object.keys($scope.wynikiTimes[v]);
 
                                                             for(var b=1;b<tibia.length;b++){
                                                                     var pointName = 'data.LINIA'+v+'_POINT_'+b;

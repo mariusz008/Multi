@@ -3347,14 +3347,15 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
                                                             for(var v=1;v<keys.length;v++){
                                                                 console.log("pierwsza"+v);
-                                                                console.log($scope.wynikiTimes[v-1]);
-console.log($scope.wynikiTimes[v-1].length);
+                                                                //console.log($scope.wynikiTimes[v-1]);
+                                                                var tibia = $scope.wynikiTimes[(v-1)].length;
 
-                                                            for(var b=1;b<15;b++){
+                                                            for(var b=1;b<tibia;b++){
                                                                     var pointName = 'data.LINIA'+v+'_POINT_'+b;
                                                                     $scope.classPoints.push(eval(pointName));
-                                                                    console.log(eval(pointName));
-                                                                    console.log("druga"+b);
+                                                                    if (eval(pointName) != 'undefined')
+                                                                    console.log("["+v+","+b+"] = "+eval(pointName));
+
                                                             }
 
                                                             }

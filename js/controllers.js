@@ -3347,7 +3347,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             for(var b=1;b<$scope.timesColumn.length;b++){
                                                                     var pointName = 'dataa.LINIA'+v+'_POINT_'+b;
                                                                     $scope.classPoints.push(eval(pointName));
-                                                                    console.log($scope.classPoints);
+                                                                    console.log(eval(pointName));
+                                                                    console.log("druga"+b);
                                                             }
 
                                                             }

@@ -3347,7 +3347,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(dataa){
                                                              $scope.classPoints = dataa;
-                                                             console.log(classPoints);
+                                                             console.log($scope.classPoints);
 
 
                                                          })

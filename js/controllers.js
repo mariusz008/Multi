@@ -3294,11 +3294,20 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  $scope.response = data;
                                  for(dd; dd<$scope.response.length; dd++)
                                  {
-
                                  var fg = dd+1;
-                                      $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
-                                     zawody.push($scope.response[dd].COMPETITION_ID);
-                                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[dd])
+                                  $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
+                                  zawody.push($scope.response[dd].COMPETITION_ID);
+                                }
+                                 var cc = dd+1;
+                                 $scope.types[dd]={name:cc +". Ogólne"};
+                                 //console.log($scope.classification);
+                                })
+                                 .error(function(data,status,headers,config){
+                                 $scope.retInfo = 'Błąd!'+ data;
+                                 });
+                                 for(dd; dd<zawody.length; dd++)
+                                 {
+                                  $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[dd])
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              console.log(data);
@@ -3339,18 +3348,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
 
                                                          })
-
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                          });
-                                 }
-                                 var cc = dd+1;
-                                 $scope.types[dd]={name:cc +". Ogólne"};
-                                 //console.log($scope.classification);
-                              })
-                                 .error(function(data,status,headers,config){
-                                 $scope.retInfo = 'Błąd!'+ data;
-                                 });
+
                                  }
                 else if(infoWielo==0){
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)

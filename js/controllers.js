@@ -3342,6 +3342,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .success(function(dataa){
                                                             // $scope.classPoints.push(dataa);
                                                             // console.log($scope.classPoints);
+                                                            console.log("s");
                                                             for(var v=1;v<dataa.length;v++){
 console.log("pierwsza"+v);
                                                             for(var b=1;b<$scope.timesColumn.length;b++){

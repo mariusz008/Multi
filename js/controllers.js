@@ -3301,7 +3301,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                       $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[dd].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
-                                                         .success(function(data){
+                                                         .then(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
@@ -3339,14 +3339,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              }
 
                                                          })
-                                                         .then(function(data)
-                                                         {
-                                                         console.log("then");
-                                                         console.log(dd);
+                                                         .catch(function(response) {
+                                                           console.error('error', response.status, response.data);
                                                          })
-                                                         .error(function(data,status,headers,config){
-                                                             $scope.retInfo = 'Błąd!'+ data;
-                                                             console.log('Błąd1!'+ data);
+                                                         .finally(function() {
+                                                           console.log("finally finished"+dd);
                                                          });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(data){

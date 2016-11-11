@@ -3286,7 +3286,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                         {name:'Klasyfikacja generalna drużynowa' },
                         {name:'Klasyfikacja punktowa'}
                         ];
- $scope.init = function() {
+        $scope.init = function() {
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
                  info = data1;
@@ -3303,7 +3303,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+zawody[dd])
                                                          .success(function(data){
                                                              $scope.runners = data;
-                                                             //console.log(data);
+                                                             console.log(data);
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  $scope.timesColumn = [];
@@ -3338,7 +3338,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                               $scope.wyniki.push($scope.runners);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
-                                                             else console.log("tu sie zjebalo");
+
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
@@ -3349,7 +3349,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             var keys = Object.keys(data);
                                                             console.log(data);
                                                             var X = $scope.timesColumn.length;
-                                                            console.log(X+" "+n);
+
                                                             block1: { for(var v=1;v<=X;v++){
                                                                 var n = 1;
                                                                 block2: { while (1) {

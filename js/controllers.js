@@ -3307,6 +3307,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              {
                                                                  $scope.timesColumn = [];
                                                                   x2 = [];
+                                                                  console.log(data.POINTS_COUNT);
+                                                                  console.log(data[0].POINTS_COUNT);
+                                                                  console.log($scope.runners[0].POINTS_COUNT);
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
@@ -3344,16 +3347,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             var keys = Object.keys(data);
                                                             console.log(data);
                                                             var X = $scope.timesColumn.length;
-
                                                             console.log(X+" "+n);
                                                             block1: { for(var v=1;v<=X;v++){
-                                                                console.log(v);
                                                                 var n = 1;
                                                                 block2: { while (1) {
                                                                 if(v==X) var pointName = 'data.LINIAX_POINT_'+n;
                                                                 else var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
-                                                                    console.log(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
                                                                     console.log("["+v+","+(n-1)+"]="+eval(pointName));

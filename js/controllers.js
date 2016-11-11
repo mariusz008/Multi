@@ -3273,6 +3273,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
+                    $scope.response;
             var zawody = [];
             var x2 = [];
             var info = "";

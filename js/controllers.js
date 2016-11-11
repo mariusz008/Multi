@@ -3355,7 +3355,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
                                                                     console.log("["+v+","+(n-1)+"] = "+eval(pointName));
-                                                                    else continue block1;
+                                                                    else break block2;
                                                                 }
                                                                 }
                                                             }

@@ -3272,6 +3272,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wyniki = [];
                     $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
+                    $scope.timesColumn = [];
             var zawody = [];
             var x2 = [];
             var info = "";
@@ -3307,7 +3308,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              {
                                                                  $scope.timesColumn = [];
                                                                   x2 = [];
-                                                                  console.log(data.POINTS_COUNT);
+
                                                                   console.log(data[0].POINTS_COUNT);
                                                                   console.log($scope.runners[0].POINTS_COUNT);
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
@@ -3337,6 +3338,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                               $scope.wyniki.push($scope.runners);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
+                                                             else console.log("tu sie zjebalo");
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;

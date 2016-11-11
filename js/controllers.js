@@ -3281,6 +3281,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
             var m = 1;
             var n = 0;
             var dd = 0;
+            var comp_ID;
             $scope.types = [];
             $scope.classification = [
                         {name:'Klasyfikacja generalna' },
@@ -3301,11 +3302,12 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  var fg = dd+1;
                                       $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[dd].COMPETITION_ID);
+                                     comp_ID = dd+"-"+$scope.response[dd].COMPETITION_ID;
                                      console.log(dd+"-"+$scope.response[dd].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
                                                          .success(function(data){
 
-                                                         console.log(dd+"-"+$scope.response[dd].COMPETITION_ID);
+                                                         console.log(comp_ID);
                                                              $scope.runners = data;
                                                              console.log(data);
                                                              if($scope.runners[1] != null)

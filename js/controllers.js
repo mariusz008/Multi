@@ -3286,6 +3286,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                         {name:'Klasyfikacja generalna drużynowa' },
                         {name:'Klasyfikacja punktowa'}
                         ];
+                        var xd=0;
         $scope.init = function() {
         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
@@ -3301,8 +3302,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                       $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[dd].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
-                                                         .then(function(response){
-                                                             $scope.runners = response;
+                                                         .success(function(data){
+                                                             $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  $scope.timesColumn = [];
@@ -3338,13 +3339,16 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 
+                                                         })
+
+                                                         .error(function(data,status,headers,config){
+                                                             $scope.retInfo = 'Błąd!'+ data;
+                                                             console.log('Błąd1!'+ data);
+                                                         })
+                                                         .finally(function() {
+                                                           console.log("finally finished  "+xd);
+                                                           xd++;
                                                          });
-//                                                         .catch(function(response) {
-//                                                           console.error('error', response.status, response.data);
-//                                                         })
-//                                                         .finally(function() {
-//                                                           console.log("finally finished"+dd);
-//                                                         });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(data){
                                                              $scope.response1 = data;

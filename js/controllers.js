@@ -3350,12 +3350,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                 console.log(v);
                                                                 var n = 1;
                                                                 block2: { while (1) {
-                                                                       var pointName = 'data.LINIA'+v+'_POINT_'+n;
+                                                                if(v==X) var pointName = 'data.LINIAX_POINT_'+n;
+                                                                else var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     console.log(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
-                                                                    console.log("["+v+","+(n-1)+"] = "+eval(pointName));
+                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     else break block2;
                                                                 }
                                                                 }

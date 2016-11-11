@@ -3303,8 +3303,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
-                                                             console.log(dd);
-                                                             console.log(data);
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  $scope.timesColumn = [];
@@ -3440,7 +3438,19 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
 
     }])
-
+app.service("PromiseUtils", function($q) {
+       return {
+           getPromiseHttpResult: function (httpPromise) {
+               var deferred = $q.defer();
+               httpPromise.success(function (data) {
+                   deferred.resolve(data);
+               }).error(function () {
+                   deferred.reject(arguments);
+               });
+               return deferred.promise;
+           }
+       }
+   })
 app.controller('myResultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
 
              var id = sessionStorage.getItem('compID');

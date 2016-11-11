@@ -3307,7 +3307,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
                                                          .success(function(data){
 
-                                                         console.log(comp_ID);
+                                                         console.log(zawody[dd]);
                                                              $scope.runners = data;
                                                              console.log(data);
                                                              if($scope.runners[1] != null)

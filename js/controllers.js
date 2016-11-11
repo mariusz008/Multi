@@ -3346,18 +3346,19 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             var X = $scope.timesColumn.length;
                                                             var n = 1;
                                                             console.log(X+" "+n);
-                                                            for(var v=1;v<=X;v++){
+                                                            block1: { for(var v=1;v<=X;v++){
                                                                 //var tibia = Object.keys($scope.wynikiTimes[(v-1)]);
-                                                                while (1) {
+                                                                block2: { while (1) {
                                                                        var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     console.log(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
-                                                                    console.log("["+v+","+n+"] = "+eval(pointName));
-                                                                    else break;
+                                                                    console.log("["+v+","+(n-1)+"] = "+eval(pointName));
+                                                                    else break block2;
                                                                 }
-
+                                                                }
+                                                            }
                                                             }
 
 

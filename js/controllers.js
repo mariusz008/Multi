@@ -3343,6 +3343,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
+                                                             console.log('Błąd1!'+ data);
                                                          });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(data){
@@ -3370,6 +3371,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
+                                                             console.log('Błąd2!'+ data);
                                                          });
 
 
@@ -3380,6 +3382,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                               })
                                  .error(function(data,status,headers,config){
                                  $scope.retInfo = 'Błąd!'+ data;
+                                 console.log('Błąd3!'+ data);
                                  });
                                  }
                 else if(infoWielo==0){

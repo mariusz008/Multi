@@ -3342,12 +3342,12 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                             var keys = Object.keys(data);
-                                                           // console.log(keys);
+                                                            console.log(data);
                                                             var X = $scope.timesColumn.length;
                                                             var n = 1;
                                                             console.log(X+" "+n);
                                                             block1: { for(var v=1;v<=X;v++){
-                                                                //var tibia = Object.keys($scope.wynikiTimes[(v-1)]);
+                                                                console.log(v);
                                                                 block2: { while (1) {
                                                                        var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
@@ -3355,7 +3355,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
                                                                     console.log("["+v+","+(n-1)+"] = "+eval(pointName));
-                                                                    else break block2;
+                                                                    else continue block1;
                                                                 }
                                                                 }
                                                             }

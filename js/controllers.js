@@ -3338,13 +3338,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                               $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 
-                                                         })
-                                                         .catch(function(response) {
-                                                           console.error('error', response.status, response.data);
-                                                         })
-                                                         .finally(function() {
-                                                           console.log("finally finished"+dd);
                                                          });
+//                                                         .catch(function(response) {
+//                                                           console.error('error', response.status, response.data);
+//                                                         })
+//                                                         .finally(function() {
+//                                                           console.log("finally finished"+dd);
+//                                                         });
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
                                                          .success(function(data){
                                                              $scope.response1 = data;

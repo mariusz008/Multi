@@ -3301,7 +3301,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  var fg = dd+1;
                                       $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[dd].COMPETITION_ID);
-                                     console.log($scope.response[dd].COMPETITION_ID);
+                                     console.log(dd+"-"+$scope.response[dd].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3361,7 +3361,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
-                                                                    console.log($scope.response[dd].NAME+"-["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     else break block2;
                                                                 }
                                                                 }

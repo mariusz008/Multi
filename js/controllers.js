@@ -3352,11 +3352,12 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                        var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     console.log(eval(pointName));
+                                                                    n++;
                                                                     if (eval(pointName) != undefined)
                                                                     console.log("["+v+","+n+"] = "+eval(pointName));
                                                                     else break;
                                                                 }
-                                                                 n++;
+
                                                             }
 
 

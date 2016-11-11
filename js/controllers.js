@@ -3342,24 +3342,24 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                             var keys = Object.keys(data);
-                                                            console.log(keys);
-                                                            console.log(data);
-
-                                                            for(var v=1;v<keys.length;v++){
-                                                               // console.log("pierwsza"+v);
-                                                                //console.log($scope.wynikiTimes[v-1]);
-                                                                var tibia = Object.keys($scope.wynikiTimes[(v-1)]);
-
-                                                            for(var b=1;b<=tibia.length;b++){
-                                                                    var pointName = 'data.LINIA'+v+'_POINT_'+b;
+                                                           // console.log(keys);
+                                                            var X = $scope.timesColumn.length;
+                                                            var n = 1;
+                                                            console.log(X+" "+n);
+                                                            for(var v=1;v<=X;v++){
+                                                                //var tibia = Object.keys($scope.wynikiTimes[(v-1)]);
+                                                                while (1) {
+                                                                       var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     console.log(eval(pointName));
-                                                                    if (eval(pointName) != 'undefined')
-                                                                    console.log("["+v+","+b+"] = "+eval(pointName));
-
+                                                                    if (eval(pointName) != undefined)
+                                                                    console.log("["+v+","+n+"] = "+eval(pointName));
+                                                                    else break;
+                                                                }
+                                                                 n++;
                                                             }
 
-                                                            }
+
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;

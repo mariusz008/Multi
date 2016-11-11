@@ -3301,8 +3301,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                       $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
                                      zawody.push($scope.response[dd].COMPETITION_ID);
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
-                                                         .then(function(data){
-                                                             $scope.runners = data;
+                                                         .then(function(response){
+                                                             $scope.runners = response;
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  $scope.timesColumn = [];

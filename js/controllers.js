@@ -3344,10 +3344,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             var keys = Object.keys(data);
                                                             console.log(data);
                                                             var X = $scope.timesColumn.length;
-                                                            var n = 1;
+
                                                             console.log(X+" "+n);
                                                             block1: { for(var v=1;v<=X;v++){
                                                                 console.log(v);
+                                                                var n = 1;
                                                                 block2: { while (1) {
                                                                        var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));

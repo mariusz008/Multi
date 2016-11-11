@@ -3339,11 +3339,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              }
 
                                                          })
-                                                         .then(function(data))
+                                                         .then(function(data)
                                                          {
                                                          console.log("then");
                                                          console.log(dd);
-                                                         }
+                                                         })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                              console.log('Błąd1!'+ data);

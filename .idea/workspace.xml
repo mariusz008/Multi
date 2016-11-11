@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
     </list>
     <ignored path="web.iws" />
@@ -39,8 +41,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="3352" column="75" selection-start-line="3352" selection-start-column="75" selection-end-line="3352" selection-end-column="75" />
+            <state relative-caret-position="476">
+              <caret line="3355" column="97" selection-start-line="3355" selection-start-column="97" selection-end-line="3355" selection-end-column="97" />
               <folding />
             </state>
           </provider>
@@ -49,7 +51,7 @@
       <file leaf-file-name="resultList.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/resultList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
+            <state relative-caret-position="561">
               <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding />
             </state>
@@ -338,8 +340,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -1137,7 +1139,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/resultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
+        <state relative-caret-position="561">
           <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
@@ -1145,8 +1147,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="3352" column="75" selection-start-line="3352" selection-start-column="75" selection-end-line="3352" selection-end-column="75" />
+        <state relative-caret-position="476">
+          <caret line="3355" column="97" selection-start-line="3355" selection-start-column="97" selection-end-line="3355" selection-end-column="97" />
           <folding />
         </state>
       </provider>

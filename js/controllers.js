@@ -3343,7 +3343,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.response1 = data;
                                                             var keys = Object.keys(data);
                                                             console.log(keys);
-                                                            //console.log(keys.length);
+                                                            console.log(data);
 
                                                             for(var v=1;v<keys.length;v++){
                                                                // console.log("pierwsza"+v);
@@ -3353,6 +3353,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             for(var b=1;b<=tibia.length;b++){
                                                                     var pointName = 'data.LINIA'+v+'_POINT_'+b;
                                                                     $scope.classPoints.push(eval(pointName));
+                                                                    console.log(eval(pointName));
                                                                     if (eval(pointName) != 'undefined')
                                                                     console.log("["+v+","+b+"] = "+eval(pointName));
 

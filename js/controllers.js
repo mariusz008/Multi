@@ -3448,9 +3448,9 @@ $scope.listaWynikow1 = [];
                                                                 }
                                                             }
                                                             }
-                                                            for(var i=0, k=$scope.timesColumn.length;i<$scope.timesColumn.length, k>0;i++, k--)
+                                                            for(var i=0;i<$scope.timesColumn.length;i++)
                                                             {
-                                                               for(var j=0;j<$scope.listaWynikow1.length;j++)
+                                                               for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
                                                                   {
 
                                                                     console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[j+1].TIMES[k-1]);

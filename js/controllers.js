@@ -3275,6 +3275,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.timesColumn = [];
                     var zawody = new Array();
 $scope.listaWynikow1 = [];
+
             $scope.daneEtapow = [];
             var info = "";
             $scope.infoWielo = "";
@@ -3442,6 +3443,8 @@ $scope.listaWynikow1 = [];
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
                                                                     console.log("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    $scope.wyniki[[v],[(n-1)]] = eval(pointName);
+                                                                    //$scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
                                                                     }
                                                                     else break block2;
                                                                 }
@@ -3453,7 +3456,7 @@ $scope.listaWynikow1 = [];
                                                                for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
                                                                   {
 
-                                                                    console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[j+1].TIMES[k-1]);
+                                                                    console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[j+1].TIMES[i]);
 
                                                                   }
                                                             }

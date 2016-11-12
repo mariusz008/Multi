@@ -3441,7 +3441,7 @@ $scope.listaWynikow1 = [];
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined)
-                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    console.log("["+(n-1)+","+v+"]="+eval(pointName));
                                                                     else break block2;
                                                                 }
                                                                 }
@@ -3451,7 +3451,7 @@ $scope.listaWynikow1 = [];
                                                             {
                                                                for(var j=0;j<$scope.listaWynikow1.length;j++)
                                                                   {
-                                                                      console.log("["+j+","+i+"]");
+                                                                      console.log("["+(j+1}+","+(i+1)+"]");
                                                                   }
                                                             }
 

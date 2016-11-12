@@ -39,7 +39,7 @@
 												class="form-control"
 												ng-model="competition.type"
 												ng-options="type.name for type in types"
-												ng-click="wynikiGeneralnej(competition.type.id)"
+												ng-click="wynikiGeneralnej(competition.type.id) wynikiPunktowej(competition.type.id)"
 												required>
 
 											<option value=""> Wybierz etap </option>
@@ -90,6 +90,25 @@
 								<br>
 
 								<table id="table1" ng-show="classification.type.name == 'Klasyfikacja generalna'" class="table" width="450"  >
+									<tr>
+										<th width="100" class="tg-zcxc">Miejsce </th>
+										<th width="100" class="tg-zcxc">Imię</th>
+										<th width="100" class="tg-zcxc">Nazwisko</th>
+										<th width="100" class="tg-zcxc">Kategoria</th>
+										<th width="100" class="tg-zcxc">Klub</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
+									</tr>
+									<tr  ng-repeat="runner in runners | orderBy:'MIEJSCE'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+										<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
+										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+										<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
+										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+									</tr>
+								</table>
+
+								<table id="table1" ng-show="classification.type.name == 'Klasyfikacja punktowa'" class="table" width="450"  >
 									<tr>
 										<th width="100" class="tg-zcxc">Miejsce </th>
 										<th width="100" class="tg-zcxc">Imię</th>

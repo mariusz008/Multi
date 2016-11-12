@@ -3350,28 +3350,18 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
              }
 
 
-
-
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
-             //$scope.wyniki = [];
-           // $scope.wynikiTimes = [];
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
-                                                             console.log(idZawodow);
-                                                             console.log(data);
-                                                             console.log($scope.wyniki);
-                                                             console.log($scope.wynikiTimes);
                                                              if($scope.runners[1] != null)
                                                              {
                                                              $scope.timesColumn = [];
-
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
                                                                  }
-
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
 
@@ -3384,7 +3374,6 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                         //console.log($scope.runners);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3392,51 +3381,43 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                              }
                                                                         }
                                                                  }
-
-                                                              $scope.wyniki.push($scope.runners);
-                                                              $scope.wynikiTimes.push($scope.timesColumn);
-                                                              console.log($scope.wyniki);
-                                                              console.log($scope.wynikiTimes);
                                                              }
+                                        })
+                                     .error(function(data,status,headers,config){
+                                     $scope.retInfo = 'Błąd!'+ data;
+                                     console.log('Błąd3!'+ data);
+                                     });
+                         }
 
+                        //klasyfikacja punktowa
+                        $scope.wynikiPunktowej = function(idZawodow) {
+                                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+                                                         .success(function(data){
+                                                             $scope.response1 = data;
+                                                            var keys = Object.keys(data);
+                                                            //console.log(data);
+                                                            var X = $scope.timesColumn.length;
 
-                              })
-                                 .error(function(data,status,headers,config){
-                                 $scope.retInfo = 'Błąd!'+ data;
-                                 console.log('Błąd3!'+ data);
-                                 });
+                                                            block1: { for(var v=1;v<=X;v++){
+                                                                var n = 1;
+                                                                block2: { while (1) {
+                                                                if(v==X) var pointName = 'data.LINIAX_POINT_'+n;
+                                                                else var pointName = 'data.LINIA'+v+'_POINT_'+n;
+                                                                    $scope.classPoints.push(eval(pointName));
+                                                                    n++;
+                                                                    if (eval(pointName) != undefined)
+                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    else break block2;
+                                                                }
+                                                                }
+                                                            }
+                                                            }
+                                                         })
+                                                         .error(function(data,status,headers,config){
+                                                             $scope.retInfo = 'Błąd!'+ data;
+                                                             console.log('Błąd2!'+ data);
+                                                         });
 }
-//klasyfikacja punktowa
-
-//                                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.response[dd].COMPETITION_ID)
-//                                                         .success(function(data){
-//                                                             $scope.response1 = data;
-//                                                            var keys = Object.keys(data);
-//                                                            console.log(data);
-//                                                            var X = $scope.timesColumn.length;
-//
-//                                                            block1: { for(var v=1;v<=X;v++){
-//                                                                var n = 1;
-//                                                                block2: { while (1) {
-//                                                                if(v==X) var pointName = 'data.LINIAX_POINT_'+n;
-//                                                                else var pointName = 'data.LINIA'+v+'_POINT_'+n;
-//                                                                    $scope.classPoints.push(eval(pointName));
-//                                                                    n++;
-//                                                                    if (eval(pointName) != undefined)
-//                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
-//                                                                    else break block2;
-//                                                                }
-//                                                                }
-//                                                            }
-//                                                            }
-//
-//
-//                                                         })
-//                                                         .error(function(data,status,headers,config){
-//                                                             $scope.retInfo = 'Błąd!'+ data;
-//                                                             console.log('Błąd2!'+ data);
-//                                                         });
-
 
 
 

@@ -3365,11 +3365,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              console.log($scope.wynikiTimes);
                                                              if($scope.runners[1] != null)
                                                              {
+                                                             $scope.timesColumn = [];
+
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
                                                                  }
-                                                                var xd = 0;
+
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
 

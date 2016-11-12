@@ -3395,12 +3395,39 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
                         if(idZawodow!=undefined){
-                                                   $scope.wynikiGeneralnej(idZawodow);
-                                                   console.log($scope.runners);
-                                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+                                                         .success(function(data){
+                                                             $scope.runners = data;
+                                                             if($scope.runners[1] != null)
+                                                             {
+                                                             $scope.timesColumn = [];
+                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
+                                                                 {
+                                                                     $scope.timesColumn[a] = a+1;
+                                                                 }
+                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+                                                                 {
+
+                                                                     if($scope.runners[i] != undefined){
+                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+
+                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                                     {
+                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                                     }
+                                                                                  }
+                                                                             else {
+                                                                             k--;
+                                                                             }
+                                                                        }
+                                                                 }
+                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
-
+                                                            console.log(data);
                                                             block1: { for(var v=1;v<=$scope.timesColumn.length;v++){
                                                                 var n = 1;
                                                                 block2: { while (1) {
@@ -3420,6 +3447,13 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                              console.log('Błąd2!'+ data);
                                                          });
+                                                             }
+                                                    })
+                                                 .error(function(data,status,headers,config){
+                                                 $scope.retInfo = 'Błąd!'+ data;
+                                                 console.log('Błąd3!'+ data);
+                                                 });
+
                                            }
                                 }
 

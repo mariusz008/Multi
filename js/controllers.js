@@ -3359,6 +3359,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
+                                                             console.log(idZawodow);
+                                                             console.log(data);
+                                                             console.log($scope.wyniki);
+                                                             console.log($scope.wynikiTimes);
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
@@ -3378,7 +3382,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                         console.log($scope.runners);
+                                                                                         //console.log($scope.runners);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3389,6 +3393,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
                                                               $scope.wyniki.push($scope.runners);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
+                                                              console.log($scope.wyniki);
+                                                              console.log($scope.wynikiTimes);
                                                              }
 
 

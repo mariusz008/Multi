@@ -3259,7 +3259,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
     }])
 
-app.controller('resultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
+app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location){
 
 
              var id = sessionStorage.getItem('compID');
@@ -3270,6 +3270,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.classPoints1 = [];
                      $scope.runners2 = [];
                     $scope.wyniki = [];
+                    $scope.wynikii = [];
                     $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
@@ -3443,9 +3444,7 @@ $scope.listaWynikow1 = [];
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
                                                                     console.log("["+v+","+(n-1)+"]="+eval(pointName));
-                                                                    $scope.wyniki.push("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
-                                                                    //$scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
                                                                     }
                                                                     else break block2;
                                                                 }
@@ -3453,16 +3452,25 @@ $scope.listaWynikow1 = [];
 
                                                             }
                                                             }
-                                                            console.log($scope.wyniki);
-                                                            console.log($scope.wyniki1);
                                                             for(var i=0;i<$scope.timesColumn.length;i++)
                                                             {
+
+
                                                                for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
                                                                   {
                                                                     console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[k].TIMES[i]);
-                                                                    console.log($scope.wyniki[[(i+1)],[(j+1)]]);
+                                                                    var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
+                                                                    if(ob != undefined) {
+                                                                    console.log(ob['name']);
+                                                                    $scope.wyniki.push(ob['name']);
+                                                                    }
+                                                                    else {
+                                                                    console.log("0");
+                                                                    $scope.wyniki.push("0");
+                                                                    }
                                                                   }
                                                             }
+                                                            console.log($scope.wyniki);
 
                                                          })
                                                          .error(function(data,status,headers,config){

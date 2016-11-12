@@ -3277,7 +3277,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
             $scope.daneEtapow = [];
             var info = "";
-            var infoWielo = "";
+            $scope.infoWielo = "";
             var m = 1;
             var n = 0;
 
@@ -3293,8 +3293,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
                  info = data1;
-                 infoWielo = data1.WIELOETAPOWE;
-                 if(infoWielo==1){
+                 $scope.infoWielo = data1.WIELOETAPOWE;
+                 if($scope.infoWielo==1){
                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/all?type=&name=&place=&wieloetapowe=' + id)
                                  .success(function(data){
                                  $scope.daneEtapow = data;
@@ -3305,7 +3305,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                   console.log('Błąd1!'+ data);
                                   });
                  }
-                else if(infoWielo==0){
+                else if($scope.infoWielo==0){
                     $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
                     .success(function(data){
                         $scope.runners = data;
@@ -3341,7 +3341,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
 
              $scope.wypelnijEtapy = function() {
-                        for(var dd =0; dd<$scope.response.length; dd++)
+                        for(var dd =0; dd<$scope.daneEtapow.length; dd++)
                          {
                                       $scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
                          }

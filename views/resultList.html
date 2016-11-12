@@ -25,7 +25,7 @@
 
 							<div class="container" ng-show="runners[1] == null && types.length==0"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
 
-							<div ng-hide="runners[1] == null" >
+							<div ng-hide="runners[1] == null && infoWielo==0" >
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>
 								<h4 class="text-center" ></h4>
 								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'true'">  Oficjalna lista wyników</h4>

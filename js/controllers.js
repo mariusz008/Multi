@@ -3329,7 +3329,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
 
-                                                                                         $scope.zawody[dd].push($scope.runners[i].TIMES[j]);
+                                                                                         $scope.zawody[dd,i,j].push(eval(timeName));
                                                                                      }
                                                                                   }
                                                                              else {

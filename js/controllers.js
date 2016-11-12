@@ -3297,29 +3297,17 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  .success(function(data){
                                  $scope.response = data;
                                  for(dd; dd<$scope.response.length; dd++)
-                                 {
-                                 var fg = dd+1;
-                                      $scope.types[dd]={id: dd, name:fg +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
-                                     zawody.push($scope.response[dd].COMPETITION_ID);
+                                     {
+                                      $scope.types[dd]={id: dd, name:dd+1 +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
+
+                                      //klasyfikacja generalna
+
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
                                                          .success(function(data){
-
-
-                                                         })
-
-                                                         .error(function(data,status,headers,config){
-                                                             $scope.retInfo = 'Błąd!'+ data;
-                                                             console.log('Błąd1!'+ data);
-                                                         })
-                                                         .finally(function(data) {
-                                                           console.log("finally finished  "+xd);
-                                                           xd++;
-$scope.runners = data;
+                                                             $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
                                                                  $scope.timesColumn = [];
-                                                                  x2 = [];
-
                                                                   console.log(data[0].POINTS_COUNT);
                                                                   console.log($scope.runners[0].POINTS_COUNT);
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
@@ -3346,22 +3334,29 @@ $scope.runners = data;
                                                                              }
                                                                         }
                                                                  }
-                                                              $scope.wyniki.push($scope.runners);
-                                                              $scope.wynikiTimes.push($scope.timesColumn);
+//                                                              $scope.wyniki.push($scope.runners);
+//                                                              $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
-                                                         });
-                                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+zawody[dd])
-                                                         .success(function(data){
-
-
 
                                                          })
- .error(function(data,status,headers,config){
-                                                              $scope.retInfo = 'Błąd!'+ data;
-                                                              console.log('Błąd1!'+ data);
-                                                          })
-                                                          .finally(function(data) {
- $scope.response1 = data;
+
+                                                         .error(function(data,status,headers,config){
+                                                             $scope.retInfo = 'Błąd!'+ data;
+                                                             console.log('Błąd1!'+ data);
+                                                         })
+                                                         .finally(function() {
+
+                                                         $scope.wyniki.push($scope.runners);
+                                                           $scope.wynikiTimes.push($scope.timesColumn);
+                                                           console.log("finally finished  "+xd);
+                                                           xd++;
+                                                         });
+
+                                                //klasyfikacja punktowa
+
+                                                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.response[dd].COMPETITION_ID)
+                                                         .success(function(data){
+                                                             $scope.response1 = data;
                                                             var keys = Object.keys(data);
                                                             console.log(data);
                                                             var X = $scope.timesColumn.length;
@@ -3380,7 +3375,15 @@ $scope.runners = data;
                                                                 }
                                                             }
                                                             }
-});
+
+
+                                                         })
+                                                         .error(function(data,status,headers,config){
+                                                             $scope.retInfo = 'Błąd!'+ data;
+                                                             console.log('Błąd2!'+ data);
+                                                         });
+
+
                                  }
                                  var cc = dd+1;
                                  $scope.types[dd]={name:cc +". Ogólne"};

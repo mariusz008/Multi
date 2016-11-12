@@ -3300,7 +3300,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                  for(dd; dd<$scope.response.length; dd++)
                                      {
                                       $scope.types[dd]={id: dd, name:dd+1 +". " + $scope.response[dd].NAME + " - " + $scope.response[dd].DATA_ROZP};
-
+                                        $scope.zawody[dd] = new Array();
                                       //klasyfikacja generalna
 
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.response[dd].COMPETITION_ID)
@@ -3328,7 +3328,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                         $scope.zawody[dd] = new Array();
+
                                                                                          $scope.zawody[dd].push($scope.runners[i].TIMES[j]);
                                                                                      }
                                                                                   }

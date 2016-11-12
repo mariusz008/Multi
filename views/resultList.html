@@ -39,6 +39,7 @@
 												class="form-control"
 												ng-model="competition.type"
 												ng-options="type.name for type in types"
+												ng-click="wynikiGeneralnej(competition.type.id)"
 												required>
 
 											<option value=""> Wybierz etap </option>
@@ -88,7 +89,7 @@
 								<br>
 								<br>
 
-								<table id="table1" ng-show="classification.type.name == 'Klasyfikacja generalna'" ng-click="wynikiGeneralnej(competition.type.id)" class="table" width="450"  >
+								<table id="table1" ng-show="classification.type.name == 'Klasyfikacja generalna'" class="table" width="450"  >
 									<tr>
 										<th width="100" class="tg-zcxc">Miejsce </th>
 										<th width="100" class="tg-zcxc">Imię</th>

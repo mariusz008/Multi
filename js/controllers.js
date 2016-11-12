@@ -3427,10 +3427,9 @@ $scope.listaWynikow1 = [];
                                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
-
+                                                                $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
-                                                                //console.log($scope.runners[i].TIMES);
                                                                 if($scope.runners[i] != undefined)
                                                                 $scope.listaWynikow1.push($scope.runners[i].TIMES);
                                                                 block2: { while (1) {
@@ -3449,7 +3448,7 @@ $scope.listaWynikow1 = [];
                                                             {
                                                                for(var j=0;j<$scope.listaWynikow1.length;j++)
                                                                   {
-                                                                      console.log("{"+j+","+i+"]");
+                                                                      console.log("["+j+","+i+"]");
                                                                   }
                                                             }
 

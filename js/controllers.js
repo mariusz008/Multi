@@ -3440,18 +3440,21 @@ $scope.listaWynikow1 = [];
                                                                 else var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
-                                                                    if (eval(pointName) != undefined)
+                                                                    if (eval(pointName) != undefined) {
                                                                     console.log("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    }
                                                                     else break block2;
                                                                 }
                                                                 }
                                                             }
                                                             }
-                                                            for(var i=0;i<$scope.timesColumn.length;i++)
+                                                            for(var i=0, k=$scope.timesColumn.length;i<$scope.timesColumn.length, k>0;i++, k--)
                                                             {
                                                                for(var j=0;j<$scope.listaWynikow1.length;j++)
                                                                   {
-                                                                      console.log("["+j+","+i+"]");
+
+                                                                    console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[j+1].TIMES[k-1]);
+
                                                                   }
                                                             }
 

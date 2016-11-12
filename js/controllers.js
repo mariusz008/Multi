@@ -3273,6 +3273,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
+                    $scope.matrix1 = math.matrix([]);
             var zawody = [];
             var x2 = [];
             var info = "";
@@ -3307,7 +3308,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
-                                                                 $scope.timesColumn = [];
+
                                                                   console.log(data[0].POINTS_COUNT);
                                                                   console.log($scope.runners[0].POINTS_COUNT);
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
@@ -3327,6 +3328,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                                         $scope.matrix1[dd][i].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3334,8 +3336,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                              }
                                                                         }
                                                                  }
-//                                                              $scope.wyniki.push($scope.runners);
-//                                                              $scope.wynikiTimes.push($scope.timesColumn);
+                                                              $scope.wyniki.push($scope.runners);
+                                                              $scope.wynikiTimes.push($scope.timesColumn);
                                                              }
 
                                                          })
@@ -3343,14 +3345,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                              console.log('Błąd1!'+ data);
-                                                         })
-                                                         .finally(function() {
-
-                                                         $scope.wyniki.push($scope.runners);
-                                                           $scope.wynikiTimes.push($scope.timesColumn);
-                                                           console.log("finally finished  "+xd);
-                                                           xd++;
                                                          });
+
 
                                                 //klasyfikacja punktowa
 

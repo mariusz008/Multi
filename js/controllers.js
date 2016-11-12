@@ -3274,7 +3274,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
                     var zawody = new Array();
-
+$scope.listaWynikow1 = [];
             $scope.daneEtapow = [];
             var info = "";
             $scope.infoWielo = "";
@@ -3430,7 +3430,9 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
                                                             block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
-                                                                console.log(runners[i].TIMES);
+                                                                //console.log($scope.runners[i].TIMES);
+                                                                if($scope.runners[i].TIMES != undefined)
+                                                                $scope.listaWynikow1.push($scope.runners[i].TIMES);
                                                                 block2: { while (1) {
                                                                 if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
                                                                 else var pointName = 'data.LINIA'+v+'_POINT_'+n;
@@ -3443,6 +3445,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                 }
                                                             }
                                                             }
+                                                            console.log($scope.listaWynikow1);
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;

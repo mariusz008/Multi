@@ -3449,6 +3449,7 @@ $scope.listaWynikow1 = [];
                                                                     else break block2;
                                                                 }
                                                                 }
+                                                                console.log($scope.wyniki);
                                                             }
                                                             }
                                                             for(var i=0;i<$scope.timesColumn.length;i++)

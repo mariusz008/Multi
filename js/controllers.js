@@ -3328,8 +3328,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
-
-                                                                                         $scope.zawody[dd,i,j].push(eval(timeName));
+                                                                                            zawody[[dd],[i],[j]] = eval(timeName);
+                                                                                         console.log($scope.zawody);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3339,7 +3339,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                  }
                                                               $scope.wyniki.push($scope.runners);
                                                               $scope.wynikiTimes.push($scope.timesColumn);
-                                                              console.log($scope.zawody);
+                                                              console.log($scope.zawody[0,1,4]);
+                                                              console.log($scope.zawody[0,2,4]);
+                                                              console.log($scope.zawody[0,3,2]);
+                                                              console.log($scope.zawody[0,3,1]);
                                                              }
 
                                                          })

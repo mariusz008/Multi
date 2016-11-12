@@ -3445,7 +3445,14 @@ $scope.listaWynikow1 = [];
                                                                 }
                                                             }
                                                             }
-                                                            console.log($scope.listaWynikow1);
+                                                            for(var i=0;i<runners[i].TIMES.length;i++)
+                                                            {
+                                                               for(var j=0;j<listaWynikow1.length;j++)
+                                                                  {
+                                                                      console.log("{"+j+","+i+"]");
+                                                                  }
+                                                            }
+
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;

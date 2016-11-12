@@ -3391,14 +3391,14 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
+
+                                                   $scope.wynikiGeneralnej(idZawodow);
+                                                   console.log($scope.runners);
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
-                                                            var keys = Object.keys(data);
-                                                            //console.log(data);
-                                                            var X = $scope.timesColumn.length;
 
-                                                            block1: { for(var v=1;v<=X;v++){
+                                                            block1: { for(var v=1;v<=$scope.timesColumn.length;v++){
                                                                 var n = 1;
                                                                 block2: { while (1) {
                                                                 if(v==X) var pointName = 'data.LINIAX_POINT_'+n;

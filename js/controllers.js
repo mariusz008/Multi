@@ -3445,9 +3445,9 @@ $scope.listaWynikow1 = [];
                                                                 }
                                                             }
                                                             }
-                                                            for(var i=0;i<runners[i].TIMES.length;i++)
+                                                            for(var i=0;i<$scope.runners[i].TIMES.length;i++)
                                                             {
-                                                               for(var j=0;j<listaWynikow1.length;j++)
+                                                               for(var j=0;j<$scope.listaWynikow1.length;j++)
                                                                   {
                                                                       console.log("{"+j+","+i+"]");
                                                                   }

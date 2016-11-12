@@ -3352,6 +3352,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
+
+            if(idZawodow!=undefined){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3388,10 +3390,11 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                      console.log('Błąd3!'+ data);
                                      });
                          }
+                         }
 
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
-
+                        if(idZawodow!=undefined){
                                                    $scope.wynikiGeneralnej(idZawodow);
                                                    console.log($scope.runners);
                                                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
@@ -3401,7 +3404,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                             block1: { for(var v=1;v<=$scope.timesColumn.length;v++){
                                                                 var n = 1;
                                                                 block2: { while (1) {
-                                                                if(v==X) var pointName = 'data.LINIAX_POINT_'+n;
+                                                                if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
                                                                 else var pointName = 'data.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
@@ -3417,7 +3420,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                              console.log('Błąd2!'+ data);
                                                          });
-}
+                                           }
+                                }
 
 
 

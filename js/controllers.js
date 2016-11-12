@@ -3428,7 +3428,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                          .success(function(data){
                                                              $scope.response1 = data;
 
-                                                            block1: { for(var i=($scope.runners.length-1), var v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
+                                                            block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
                                                                 console.log(runners[i].TIMES);
                                                                 block2: { while (1) {

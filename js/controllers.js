@@ -3354,8 +3354,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
 
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
-             $scope.wyniki = [];
-            $scope.wynikiTimes = [];
+             //$scope.wyniki = [];
+           // $scope.wynikiTimes = [];
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;

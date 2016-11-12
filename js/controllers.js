@@ -3430,8 +3430,11 @@ $scope.listaWynikow1 = [];
                                                                 $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
-                                                                if($scope.runners[i] != undefined)
+                                                                if($scope.runners[i] != undefined){
+                                                                if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                 $scope.listaWynikow1.push($scope.runners[i].TIMES);
+                                                                }
+                                                                }
                                                                 block2: { while (1) {
                                                                 if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
                                                                 else var pointName = 'data.LINIA'+v+'_POINT_'+n;

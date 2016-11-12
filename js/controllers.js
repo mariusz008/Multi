@@ -3443,15 +3443,18 @@ $scope.listaWynikow1 = [];
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
                                                                     console.log("["+v+","+(n-1)+"]="+eval(pointName));
-                                                                    $scope.wyniki[[v],[(n-1)]] = eval(pointName);
+                                                                    $scope.wyniki.push("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
                                                                     //$scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
                                                                     }
                                                                     else break block2;
                                                                 }
                                                                 }
-                                                                console.log($scope.wyniki);
+
                                                             }
                                                             }
+                                                            console.log($scope.wyniki);
+                                                            console.log($scope.wyniki1);
                                                             for(var i=0;i<$scope.timesColumn.length;i++)
                                                             {
                                                                for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)

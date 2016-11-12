@@ -3427,9 +3427,10 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
-                                                            console.log(data);
-                                                            block1: { for(var v=1;v<=$scope.timesColumn.length;v++){
+
+                                                            block1: { for(var i=($scope.runners.length-1), var v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
+                                                                console.log(runners[i].TIMES);
                                                                 block2: { while (1) {
                                                                 if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
                                                                 else var pointName = 'data.LINIA'+v+'_POINT_'+n;

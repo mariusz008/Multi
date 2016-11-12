@@ -3273,7 +3273,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                     $scope.wyniki1 = [];
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
-                    $scope.zawody = [];
+                    $scope.zawody = new Array();
 
 
             var info = "";
@@ -3328,7 +3328,8 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                         $scope.zawody[dd] = $scope.runners[i].TIMES[j];
+                                                                                         $scope.zawody[dd] = new Array();
+                                                                                         $scope.zawody[dd].push($scope.runners[i].TIMES[j]);
                                                                                      }
                                                                                   }
                                                                              else {

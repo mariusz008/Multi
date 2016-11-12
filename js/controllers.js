@@ -3431,7 +3431,7 @@ $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
                                                                 //console.log($scope.runners[i].TIMES);
-                                                                if($scope.runners[i].TIMES != undefined)
+                                                                if($scope.runners[i] != undefined)
                                                                 $scope.listaWynikow1.push($scope.runners[i].TIMES);
                                                                 block2: { while (1) {
                                                                 if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
@@ -3445,7 +3445,7 @@ $scope.listaWynikow1 = [];
                                                                 }
                                                             }
                                                             }
-                                                            for(var i=0;i<$scope.runners[i].TIMES.length;i++)
+                                                            for(var i=0;i<$scope.timesColumn.length;i++)
                                                             {
                                                                for(var j=0;j<$scope.listaWynikow1.length;j++)
                                                                   {

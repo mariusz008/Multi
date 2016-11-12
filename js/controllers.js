@@ -3456,8 +3456,8 @@ $scope.listaWynikow1 = [];
                                                                for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
                                                                   {
 
-                                                                    console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[j+1].TIMES[i]);
-
+                                                                    console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[k].TIMES[i]);
+                                                                    console.log($scope.wyniki[[(i+1)],[(j+1)]]);
                                                                   }
                                                             }
 

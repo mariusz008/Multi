@@ -3328,7 +3328,7 @@ app.controller('resultListController', ['$scope','$http', '$route', '$sessionSto
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                         $scope.zawody[dd].CLASS[i].TIMES[j] = eval(timeName);
+                                                                                         $scope.zawody[dd,i].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                   }
                                                                              else {

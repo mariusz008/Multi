@@ -3452,11 +3452,12 @@ $scope.listaWynikow1 = [];
 
                                                             }
                                                             }
-                                                            for(var i=0;i<$scope.timesColumn.length;i++)
-                                                            {
+
+                                                            for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
+                                                                  {
 
 
-                                                               for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
+                                                               for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[k].TIMES[i]);
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];

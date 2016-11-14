@@ -97,7 +97,7 @@
 										<th width="100" class="tg-zcxc">Kategoria</th>
 										<th width="100" class="tg-zcxc">Klub</th>
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
-										<th width="100" class="tg-zcxc">SUMA</th>
+
 									</tr>
 									<tr  ng-repeat="runner in runners | orderBy:'MIEJSCE'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
 										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
@@ -117,6 +117,7 @@
 										<th width="100" class="tg-zcxc">Kategoria</th>
 										<th width="100" class="tg-zcxc">Klub</th>
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Punkty PK{{times}}</th>
+										<th width="100" class="tg-zcxc">SUMA</th>
 									</tr>
 									<tr  ng-repeat="runner in runners | orderBy:'MIEJSCE'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
 										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
@@ -125,6 +126,7 @@
 										<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
 										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
 										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+
 									</tr>
 								</table>
 								</div>

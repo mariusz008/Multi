@@ -3355,7 +3355,7 @@ $scope.listaWynikow1 = [];
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
 
-            if(idZawodow!=undefined){
+            if(idZawodow!=undefined && $scope.classification.id==2){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3396,7 +3396,7 @@ $scope.listaWynikow1 = [];
 
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
-                        if(idZawodow!=undefined){
+                        if(idZawodow!=undefined && $scope.classification.id==2){
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;

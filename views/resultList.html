@@ -100,8 +100,8 @@
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
 
 									</tr>
-									<tr  ng-repeat="runner in runners | orderBy:'MIEJSCE'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
-										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="100" class="tg-yw4l">{{ $index+1 }}</td>
 										<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
 										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
 										<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
@@ -116,8 +116,8 @@
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
 
 									</tr>
-									<tr  ng-repeat="runner in runners | orderBy:'MIEJSCE'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
-										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="100" class="tg-yw4l">{{ $index+1 }}</td>
 										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
 										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
 									</tr>
@@ -132,8 +132,8 @@
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Punkty PK{{times}}</th>
 										<th width="100" class="tg-zcxc">SUMA</th>
 									</tr>
-									<tr  ng-repeat="runner in runners | orderBy:'MIEJSCE'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
-										<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+									<tr  ng-repeat="runner in runners | orderBy:'SUMA'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="100" class="tg-yw4l">{{ $index+1 }}</td>
 										<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
 										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
 										<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>

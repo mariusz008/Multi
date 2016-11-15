@@ -3415,11 +3415,11 @@ $scope.listaWynikow1 = [];
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-                                                                                     {
-                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                     }
+//                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+//                                                                                     {
+//                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+//                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
+//                                                                                     }
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3455,7 +3455,7 @@ $scope.listaWynikow1 = [];
 
                                                             for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
                                                                   {
-                                                            $scope.runners[j].POINTS = new Array($scope.listaWynikow1.length);
+                                                           // $scope.runners[j].POINTS = new Array($scope.listaWynikow1.length);
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[k].TIMES[i]);
@@ -3463,12 +3463,12 @@ $scope.listaWynikow1 = [];
                                                                     if(ob != undefined) {
                                                                     console.log(ob['name']);
                                                                     $scope.wyniki.push(ob['name']);
-                                                                    $scope.runners[k].POINTS[i] = ob['name'];
+                                                                    $scope.runners[k].TIMES[i] = ob['name'];
                                                                     }
                                                                     else {
                                                                     console.log("0");
                                                                     $scope.wyniki.push("0");
-                                                                    $scope.runners[k].POINTS[i] = "0";
+                                                                    $scope.runners[k].TIMES[i] = "0";
                                                                     }
                                                                   }
                                                             }

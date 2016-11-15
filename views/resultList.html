@@ -59,6 +59,7 @@
 													class="form-control"
 													ng-model="classification.type"
 													ng-options="type.name for type in classification"
+													ng-click="wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id)"
 													required>
 
 												<option value=""> Wybierz klasyfikację </option>
@@ -125,7 +126,7 @@
 										<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
 										<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
 										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
-										<td ng-repeat="t in runner.POINTS track by $index" width="100" class="tg-yw4l">{{t}}</td>
+										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
 
 									</tr>
 								</table>

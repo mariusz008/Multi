@@ -3472,7 +3472,7 @@ $scope.wyniki1 = [];
                                                                     if(ob != undefined) {
                                                                     console.log(ob['name']);
                                                                     //$scope.wyniki.push(ob['name']);
-                                                                    suma = suma + ob['name'];
+                                                                    suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[k].TIMES[i] = ob['name'];
                                                                     }
                                                                     else {

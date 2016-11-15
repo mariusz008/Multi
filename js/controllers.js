@@ -3398,7 +3398,7 @@ var suma = 0;
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
+                                                                                         $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3419,8 +3419,82 @@ var suma = 0;
                     //klasyfikcja druzynowa
                     $scope.wynikiDruzynowej = function(idZawodow) {
                     if($scope.classification!=undefined){
+
+                    var godziny = [];
+                    var minuty = [];
+                    var sekundy = [];
+
+
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+                                                         .success(function(data){
+                                                             $scope.runners = data;
+                                                             if($scope.runners[1] != null)
+                                                             {
+                                                             $scope.timesColumn = [];
+                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
+                                                                 {
+                                                                     $scope.timesColumn[a] = a+1;
+                                                                        if($scope.runners[a].hasOwnProperty('NAZWISKO'))
+                                                                          {
+
+                                                                          for(var b=0; b<$scope.zawodnicy.length; b++){
+                                                                        if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
+                                                                           {
+                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
+                                                                           }
+                                                                          }
+}
+                                                                 }
+                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+                                                                 {
+
+                                                                     if($scope.runners[i] != undefined){
+                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+var godziny1 = 0;
+                    var minuty1 = 0;
+                    var sekundy1 = 0;
+                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                                     {
+                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+
+godziny1 = parseInt(godziny1) + parseInt(eval(timeName).substring(0,2));
+minuty1 = parseInt(minuty1) + parseInt(eval(timeName).substring(3,5));
+sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
+                                                                                         $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
+                                                                                     }
+                                                                                     godziny.push(godziny1);
+                                                                                     minuty.push(minuty1);
+                                                                                     sekundy.push(sekundy1);
+                                                                                     console.log(godziny);
+                                                                                     console.log(minuty);
+                                                                                     console.log(sekundy);
+                                                                                  }
+                                                                             else {
+                                                                             k--;
+                                                                             }
+                                                                        }
+                                                                 }
+
+                                                             }
+                                        })
+                                     .error(function(data,status,headers,config){
+                                     $scope.retInfo = 'Błąd!'+ data;
+                                     console.log('Błąd3!'+ data);
+                                     });
+                         }
+                         }
+                         }
+                        //klasyfikacja punktowa
+                        $scope.wynikiPunktowej = function(idZawodow) {
+
+                        if($scope.classification!=undefined){
+                         if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
+                        $scope.wyniki1 = [];
+                                        $scope.runners = [];
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
@@ -3448,72 +3522,7 @@ var suma = 0;
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-                                                                                     {
-                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         console.log(eval(timeName).substring(0,2));
-                                                                                         console.log(eval(timeName).substring(3,5));
-                                                                                         console.log(eval(timeName).substring(6,8));
-                                                                                         console.log(eval(timeName).substring(9,12));
 
-                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                     }
-                                                                                  }
-                                                                             else {
-                                                                             k--;
-                                                                             }
-                                                                        }
-                                                                 }
-                                                             }
-                                        })
-                                     .error(function(data,status,headers,config){
-                                     $scope.retInfo = 'Błąd!'+ data;
-                                     console.log('Błąd3!'+ data);
-                                     });
-                         }
-                         }
-                         }
-                        //klasyfikacja punktowa
-                        $scope.wynikiPunktowej = function(idZawodow) {
-
-                        if($scope.classification!=undefined){
-                         if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
-                        $scope.wyniki1 = [];
-                                        $scope.runners = [];
-                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
-                                                         .success(function(data){
-                                                             $scope.runners = data;
-                                                             if($scope.runners[1] != null)
-                                                             {
-                                                             $scope.timesColumn = [];
-                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
-                                                                 {
-                                                                     $scope.timesColumn[a] = a+1;
-if($scope.runners[a].hasOwnProperty('NAZWISKO'))
-                                                                          {
-
-                                                                          for(var b=0; b<$scope.zawodnicy.length; b++){
-                                                                        if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
-                                                                           {
-                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
-                                                                           }
-                                                                          }
-}
-                                                                 }
-                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
-                                                                 {
-
-                                                                     if($scope.runners[i] != undefined){
-                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-
-                                                                                    $scope.runners[i].MIEJSCE = k;
-                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-
-//                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-//                                                                                     {
-//                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-//                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
-//                                                                                     }
                                                                                   }
                                                                              else {
                                                                              k--;

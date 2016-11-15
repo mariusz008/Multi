@@ -3381,7 +3381,7 @@ var suma = 0;
                                                                           for(var b=0; b<$scope.zawodnicy.length; b++){
                                                                         if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
                                                                            {
-                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[a].KLUB;
+                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
                                                                            }
                                                                           }
 }
@@ -3429,6 +3429,16 @@ var suma = 0;
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
+if($scope.runners[a].hasOwnProperty('NAZWISKO'))
+                                                                          {
+
+                                                                          for(var b=0; b<$scope.zawodnicy.length; b++){
+                                                                        if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
+                                                                           {
+                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
+                                                                           }
+                                                                          }
+}
                                                                  }
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
@@ -3474,6 +3484,16 @@ var suma = 0;
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
+if($scope.runners[a].hasOwnProperty('NAZWISKO'))
+                                                                          {
+
+                                                                          for(var b=0; b<$scope.zawodnicy.length; b++){
+                                                                        if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
+                                                                           {
+                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
+                                                                           }
+                                                                          }
+}
                                                                  }
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {

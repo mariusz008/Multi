@@ -3449,7 +3449,7 @@ $scope.listaWynikow1 = [];
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
                                                                     //console.log("["+v+","+(n-1)+"]="+eval(pointName));
-                                                                    $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
+                                                                    //$scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
                                                                     }
                                                                     else break block2;
                                                                 }

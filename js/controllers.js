@@ -3276,7 +3276,7 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
                     $scope.timesColumn = [];
                     var zawody = new Array();
 $scope.listaWynikow1 = [];
-
+var suma = 0;
             $scope.daneEtapow = [];
             var info = "";
             $scope.infoWielo = "";
@@ -3354,7 +3354,7 @@ $scope.listaWynikow1 = [];
 
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
-
+            if($scope.classification!=undefined){
              if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
@@ -3393,10 +3393,15 @@ $scope.listaWynikow1 = [];
                                      });
                          }
                          }
+                         }
 
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
+
+                        if($scope.classification!=undefined){
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
+                        $scope.wyniki1 = [];
+                                        $scope.runners = [];
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3415,11 +3420,12 @@ $scope.listaWynikow1 = [];
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-                                                                                     {
-                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
-                                                                                     }
+
+//                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+//                                                                                     {
+//                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+//                                                                                         $scope.runners[i].TIMES[j] = eval(timeName);
+//                                                                                     }
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3433,9 +3439,10 @@ $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
                                                                 if($scope.runners[i] != undefined){
-                                                                if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-                                                                $scope.listaWynikow1.push($scope.runners[i].TIMES);
-                                                                }
+                                                                    if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+                                                                        $scope.listaWynikow1.push($scope.runners[i].TIMES);
+                                                                        console.log("block1: v="+v+", i="+i);
+                                                                    }
                                                                 }
                                                                 block2: { while (1) {
                                                                 if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
@@ -3443,8 +3450,9 @@ $scope.listaWynikow1 = [];
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
-                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    //console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
+                                                                    console.log("block2: v="+v+", i="+i);
                                                                     }
                                                                     else break block2;
                                                                 }
@@ -3455,25 +3463,31 @@ $scope.listaWynikow1 = [];
 
                                                             for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
                                                                   {
+                                                                  $scope.runners[k].SUMA = [];
 
+                                                                suma = 0;
 
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
-                                                                    console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[k].TIMES[i]);
+                                                                    console.log("["+(i+1)+","+(j+1)+"]");
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
                                                                     if(ob != undefined) {
                                                                     console.log(ob['name']);
-                                                                    $scope.wyniki.push(ob['name']);
+                                                                    //$scope.wyniki.push(ob['name']);
+                                                                    suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[k].TIMES[i] = ob['name'];
                                                                     }
                                                                     else {
                                                                     console.log("0");
-                                                                    $scope.wyniki.push("0");
-                                                                    $scope.runners[k].TIMES[i] = "0";
+                                                                    //$scope.wyniki.push("0");
+                                                                    $scope.runners[k].TIMES[i] = "-";
                                                                     }
                                                                   }
+                                                                  $scope.runners[k].SUMA = suma;
+                                                                  console.log(suma);
+                                                                  console.log($scope.runners);
                                                             }
-                                                            console.log($scope.wyniki);
+
 
                                                          })
                                                          .error(function(data,status,headers,config){
@@ -3487,6 +3501,7 @@ $scope.listaWynikow1 = [];
                                                  console.log('Błąd3!'+ data);
                                                  });
 
+                                           }
                                            }
                                 }
 

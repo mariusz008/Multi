@@ -3478,7 +3478,7 @@ var suma = 0;
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                                 $scope.listaWynikow1 = [];
-                                                            block1: { for(var i=($scope.runners.length-1), v=1;i > 0,v<=$scope.timesColumn.length;i--,v++){
+                                                            block1: { for(var i=($scope.runners.length-1), v=1;i >= 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
                                                                 if($scope.runners[i] != undefined){
                                                                     if($scope.runners[i].hasOwnProperty('POINT1_TIME')){

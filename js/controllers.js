@@ -3397,6 +3397,8 @@ $scope.listaWynikow1 = [];
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
+
+                                        $scope.runners = [];
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3443,7 +3445,7 @@ $scope.listaWynikow1 = [];
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
-                                                                    console.log("["+v+","+(n-1)+"]="+eval(pointName));
+                                                                    //console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
                                                                     }
                                                                     else break block2;

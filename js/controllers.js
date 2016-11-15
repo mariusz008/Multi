@@ -3354,7 +3354,7 @@ var suma = 0;
 
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
-            if($scope.classification.type.name!=undefined){
+            if($scope.classification!=undefined){
              if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
@@ -3398,7 +3398,7 @@ var suma = 0;
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
 
-                        if($scope.classification.type.name!=undefined){
+                        if($scope.classification!=undefined){
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
 $scope.wyniki1 = [];
                                         $scope.runners = [];
@@ -3467,7 +3467,7 @@ $scope.wyniki1 = [];
 
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
-                                                                    //console.log("["+(i+1)+","+(j+1)+"]="+$scope.runners[k].TIMES[i]);
+                                                                    console.log("["+(i+1)+","+(j+1)+"]");
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
                                                                     if(ob != undefined) {
                                                                     console.log(ob['name']);
@@ -3478,7 +3478,7 @@ $scope.wyniki1 = [];
                                                                     else {
                                                                     console.log("0");
                                                                     //$scope.wyniki.push("0");
-                                                                    $scope.runners[k].TIMES[i] = "0";
+                                                                    $scope.runners[k].TIMES[i] = "-";
                                                                     }
                                                                   }
                                                                   $scope.runners[k].SUMA = suma;

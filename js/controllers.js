@@ -3451,10 +3451,10 @@ var suma = 0;
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         console.log(timeName.substring(0,2));
-                                                                                         console.log(timeName.substring(3,5));
-                                                                                         console.log(timeName.substring(6,8));
-                                                                                         console.log(timeName.substring(9,12));
+                                                                                         console.log(eval(timeName).substring(0,2));
+                                                                                         console.log(eval(timeName).substring(3,5));
+                                                                                         console.log(eval(timeName).substring(6,8));
+                                                                                         console.log(eval(timeName).substring(9,12));
 
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }

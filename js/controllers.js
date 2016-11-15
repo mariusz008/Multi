@@ -3429,7 +3429,7 @@ var suma = 0;
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
-if($scope.runners[a].hasOwnProperty('NAZWISKO'))
+                                                                        if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {
 
                                                                           for(var b=0; b<$scope.zawodnicy.length; b++){
@@ -3451,6 +3451,11 @@ if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                         console.log(timeName.substring(0,2));
+                                                                                         console.log(timeName.substring(3,5));
+                                                                                         console.log(timeName.substring(6,8));
+                                                                                         console.log(timeName.substring(9,12));
+
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName);
                                                                                      }
                                                                                   }

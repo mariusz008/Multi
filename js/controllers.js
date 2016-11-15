@@ -3265,6 +3265,7 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
+                    $scope.zawodnicy = [];
                     $scope.runners1 = [];
                     $scope.classPoints = [];
                     $scope.classPoints1 = [];
@@ -3339,6 +3340,15 @@ var suma = 0;
                 .error(function(data1,status,headers,config){
                 $scope.retInfo = 'Błąd!'+ data1;
                 });
+
+                $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
+                                    .success(function(data){
+                                        $scope.zawodnicy = data;
+                                    })
+
+                                    .error(function(data,status,headers,config){
+                                        $scope.retInfo = 'Błąd!'+ data;
+                                    });
             }
 
 
@@ -3365,12 +3375,23 @@ var suma = 0;
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
+                                                                      if($scope.runners[a].hasOwnProperty('NAZWISKO'))
+                                                                          {
+
+                                                                          for(var b=0; b<$scope.zawodnicy.length; b++){
+                                                                        if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
+                                                                           {
+                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[a].KLUB;
+                                                                           }
+                                                                          }
+}
                                                                  }
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
 
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);

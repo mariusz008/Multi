@@ -3583,7 +3583,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     //console.log("["+(i+1)+","+(j+1)+"]");
-                                                                    var ob = $filter('filter')($scope.listaWynikow1, {id:(i+1), id1:(j+1)})[0];
+                                                                    var ob = $filter('filter')($scope.ostatniWynik, {id:(i+1), id1:(j+1)})[0];
 
                                                                     if(ob != undefined) {
                                                                     //console.log(ob['name']);

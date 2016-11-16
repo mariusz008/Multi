@@ -3530,7 +3530,7 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                         var b = $scope.runners[i].TIMES[j];
                                                                                         var a = b.split(':');
                                                                                         var seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-
+console.log(seconds);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3575,7 +3575,7 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
 
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
-                                                                    console.log("["+(i+1)+","+(j+1)+"]");
+                                                                    //console.log("["+(i+1)+","+(j+1)+"]");
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
                                                                     if(ob != undefined) {
                                                                     //console.log(ob['name']);

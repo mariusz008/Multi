@@ -3539,7 +3539,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                      }
 
 
-                                                                                     console.log($scope.ostatniWynik);
+                                                                                  //   console.log($scope.ostatniWynik);
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3556,15 +3556,18 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
 
                                                                             $scope.runners[j].TABCZASU = new Array(ileZawodnikow);
                                                                             for(var i=1; i<($scope.runners.length);i++){
+
+                                                                            if($scope.runners[i] != undefined ){
                                                                                             var timeName = '$scope.runners[i].POINT'+j+'_TIME';
                                                                                          $scope.runners[j].TABCZASU[i] = eval(timeName).substring(0,8);
                                                                                         var b = $scope.runners[j].TABCZASU[i];
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                         //console.log(seconds);
-                                                                                        $scope.ostatniWynik1.push({id: i, id1: (j+1), name:seconds});
+                                                                                        $scope.ostatniWynik1.push({id: j, id1: i, name:seconds});
                                                                                 }
                                                                                 console.log($scope.ostatniWynik1);
+                                                                                }
                                                                             }
                                                                        }
                                                                  }

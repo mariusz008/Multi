@@ -3535,12 +3535,12 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                         console.log(seconds);
                                                                                         $scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
-                                                                                        var timeName1 = '$scope.runners[(j+1)].POINT'+(i)+'_TIME';
-                                                                                        $scope.runners[i].TABCZASU[j] = eval(timeName1).substring(0,8);
+                                                                                        var timeName1 = '$scope.runners[(j+1)].POINT'+(k)+'_TIME';
+                                                                                        $scope.runners[(j+1)].TABCZASU[k] = eval(timeName1).substring(0,8);
                                                                                         var b = $scope.runners[i].TABCZASU[j];
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                        console.log(seconds);                                                                                        
+                                                                                        console.log(seconds);
                                                                                      }
                                                                                      //$scope.ostatniWynik[k-1] = seconds;
 

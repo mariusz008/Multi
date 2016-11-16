@@ -3534,7 +3534,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                         var b = $scope.runners[i].TIMES[j];
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                        console.log(seconds);
+                                                                                        //console.log(seconds);
                                                                                         $scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
 
@@ -3561,14 +3561,14 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                         var b = $scope.runners[j].TABCZASU[i];
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                        console.log(seconds);
-                                                                                        $scope.ostatniWynik1.push({id: i, id1: {j+1}, name:seconds});
+                                                                                        //console.log(seconds);
+                                                                                        $scope.ostatniWynik1.push({id: i, id1: (j+1), name:seconds});
                                                                                 }
                                                                                 console.log($scope.ostatniWynik1);
                                                                             }
                                                                        }
                                                                  }
-                                                                 console.log($scope.ostatniWynik);
+                                                                 //console.log($scope.ostatniWynik);
                                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
@@ -3589,7 +3589,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                     if (eval(pointName) != undefined) {
                                                                     //console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
-                                                                    console.log($scope.wyniki1);
+                                                                    //console.log($scope.wyniki1);
                                                                     }
                                                                     else break block2;
                                                                 }

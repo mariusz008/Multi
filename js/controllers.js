@@ -3535,7 +3535,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                         console.log(seconds);
                                                                                      }
                                                                                      $scope.ostatniWynik[k-1] = seconds;
-                                                                                     console.log(ostatniWynik);
+                                                                                     console.log($scope.ostatniWynik);
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3543,7 +3543,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                         }
 
                                                                  }
-                                                                 console.log(ostatniWynik);
+                                                                 console.log($scope.ostatniWynik);
                                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;

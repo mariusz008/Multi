@@ -3527,12 +3527,10 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
-                                                                    var b = $scope.runners[i].TIMES[j];
-                                                                    console.log(b);
-                                                                    var a = b.split(':');
-                                                                    console.log(a);
-                                                                    var seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                    console.log(seconds);
+                                                                                        var b = $scope.runners[i].TIMES[j];
+                                                                                        var a = b.split(':');
+                                                                                        var seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+
                                                                                      }
                                                                                   }
                                                                              else {

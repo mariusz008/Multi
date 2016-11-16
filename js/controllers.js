@@ -3562,8 +3562,9 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                         console.log(seconds);
-                                                                                        $scope.ostatniWynik1.push({id: (j), id1: i, name:seconds});
+                                                                                        $scope.ostatniWynik1.push({id: i, id1: {j+1}, name:seconds});
                                                                                 }
+                                                                                console.log($scope.ostatniWynik1);
                                                                             }
                                                                        }
                                                                  }

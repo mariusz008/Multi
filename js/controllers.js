@@ -3522,6 +3522,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
 
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
@@ -3576,12 +3577,12 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                     console.log(ob['name']);
                                                                     //$scope.wyniki.push(ob['name']);
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
-                                                                    //$scope.runners[k].TIMES[i] = ob['name'];
+                                                                    $scope.runners[k].TIMES1[i] = ob['name'];
                                                                     }
                                                                     else {
                                                                     console.log("0");
                                                                     //$scope.wyniki.push("0");
-                                                                    //$scope.runners[k].TIMES[i] = "-";
+                                                                    $scope.runners[k].TIMES1[i] = "-";
                                                                     }
                                                                   }
                                                                   $scope.runners[k].SUMA = suma;

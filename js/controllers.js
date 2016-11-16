@@ -3576,6 +3576,10 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                     if(ob != undefined) {
                                                                     console.log(ob['name']);
                                                                     //$scope.wyniki.push(ob['name']);
+
+                                                                    var a = ob['name'].split(':');
+                                                                    var seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+                                                                    console.log(seconds);
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[k].TIMES1[i] = ob['name'];
                                                                     }

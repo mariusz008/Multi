@@ -3527,6 +3527,12 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
+                                                                    var b = $scope.runners[i].TIMES[j];
+                                                                    console.log(b);
+                                                                    var a = b.split(':');
+                                                                    console.log(a);
+                                                                    var seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+                                                                    console.log(seconds);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3543,7 +3549,7 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                 if($scope.runners[i] != undefined){
                                                                     if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                         $scope.listaWynikow1.push($scope.runners[i].TIMES);
-                                                                        console.log("block1: v="+v+", i="+i);
+                                                                        //console.log("block1: v="+v+", i="+i);
                                                                     }
                                                                 }
                                                                 block2: { while (1) {
@@ -3554,7 +3560,7 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                     if (eval(pointName) != undefined) {
                                                                     //console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
-                                                                    console.log("block2: v="+v+", i="+i);
+                                                                   // console.log("block2: v="+v+", i="+i);
                                                                     }
                                                                     else break block2;
                                                                 }
@@ -3576,13 +3582,7 @@ for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                     if(ob != undefined) {
                                                                     //console.log(ob['name']);
                                                                     //$scope.wyniki.push(ob['name']);
-                                                                    var b = ob['name'];
-                                                                    console.log(b);
 
-                                                                    var a = b.split(':');
-                                                                    console.log(a);
-                                                                    var seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                    console.log(seconds);
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[k].TIMES1[i] = ob['name'];
                                                                     }

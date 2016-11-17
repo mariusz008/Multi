@@ -3374,7 +3374,7 @@ var ileZawodnikow = 0;
                                     });
             }
 
-$sccope.wypelnijKlasyfikacje = function(idZawodow) {
+$scope.wypelnijKlasyfikacje = function(idZawodow) {
 
 //$scope.classification = [];
 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)

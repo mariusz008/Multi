@@ -3473,10 +3473,10 @@ var ileZawodnikow = 0;
                                                                                         //$scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
 
-                                                                                  }
+                                                                                  } else console.log("nie bylo1");
 
                                                                         }
-                                                                        else console.log("nie bylo");
+                                                                        else console.log("nie bylo2");
                                                                  }
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {

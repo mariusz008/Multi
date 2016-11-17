@@ -3265,6 +3265,7 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
+                    $scope.runners1 = [];
                     $scope.zawodnicy = [];
                     $scope.runners1 = [];
                     $scope.classPoints = [];
@@ -3547,30 +3548,35 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                         }
 
                                                                  }
-                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
-                                                                 {
-                                                                 var seconds = 0;
-
-                                                                        if($scope.runners[j] != undefined){
-                                                                            if($scope.runners[j].hasOwnProperty('POINT1_TIME')){
-
-                                                                            $scope.runners[j].TABCZASU = new Array(ileZawodnikow);
-                                                                            for(var i=1; i<($scope.runners.length);i++){
-
-                                                                            if($scope.runners[i] != undefined ){
-                                                                                            var timeName = '$scope.runners[i].POINT'+j+'_TIME';
-                                                                                         $scope.runners[j].TABCZASU[i] = eval(timeName).substring(0,8);
-                                                                                        var b = $scope.runners[j].TABCZASU[i];
-                                                                                        var a = b.split(':');
-                                                                                        seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                        //console.log(seconds);
-                                                                                        $scope.ostatniWynik1.push({id: j, id1: i, name:seconds});
-                                                                                }
-                                                                                console.log($scope.ostatniWynik1);
-                                                                                }
-                                                                            }
-                                                                       }
-                                                                 }
+                                                                // for (var i=0; i<ileZawodnikow; i++)
+                                                                // //{
+                                                                 //   var x = $scope.runners[0].POINTS_COUNT;
+                                                                    var ob = $filter('filter')($scope.runners, POINT5_TIME)[0];
+                                                                 //}
+//                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
+//                                                                 {
+//                                                                 var seconds = 0;
+//
+//                                                                        if($scope.runners[j] != undefined){
+//                                                                            if($scope.runners[j].hasOwnProperty('POINT1_TIME')){
+//
+//                                                                            $scope.runners[j].TABCZASU = new Array(ileZawodnikow);
+//                                                                            for(var i=1; i<($scope.runners.length);i++){
+//
+//                                                                            if($scope.runners[i] != undefined ){
+//                                                                                            var timeName = '$scope.runners[i].POINT'+j+'_TIME';
+//                                                                                         $scope.runners[j].TABCZASU[i] = eval(timeName).substring(0,8);
+//                                                                                        var b = $scope.runners[j].TABCZASU[i];
+//                                                                                        var a = b.split(':');
+//                                                                                        seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+//                                                                                        //console.log(seconds);
+//                                                                                        $scope.ostatniWynik1.push({id: j, id1: i, name:seconds});
+//                                                                                }
+//                                                                                console.log($scope.ostatniWynik1);
+//                                                                                }
+//                                                                            }
+//                                                                       }
+//                                                                 }
                                                                  //console.log($scope.ostatniWynik);
                                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){

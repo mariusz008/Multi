@@ -3533,7 +3533,7 @@ var ileZawodnikow = 0;
                                                                                     ileZawodnikow++;
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
+
 
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
@@ -3592,7 +3592,7 @@ var ileZawodnikow = 0;
                                                                   {
                                                                   $scope.runners[j].SUMA = [];
                                                                 suma = 0;
-
+$scope.runners[j].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];

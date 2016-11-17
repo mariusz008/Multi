@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/controllers.js___jb_tmp___" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/resultList.html" afterPath="$PROJECT_DIR$/views/resultList.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,21 +37,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="3561" column="95" selection-start-line="3561" selection-start-column="95" selection-end-line="3561" selection-end-column="95" />
+            <state relative-caret-position="459">
+              <caret line="3560" column="69" selection-start-line="3560" selection-start-column="69" selection-end-line="3560" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resultList.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="resultList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/resultList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="129" column="36" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
+            <state relative-caret-position="802">
+              <caret line="140" column="72" selection-start-line="140" selection-start-column="72" selection-end-line="140" selection-end-column="72" />
               <folding />
             </state>
           </provider>
@@ -297,8 +296,8 @@
         <option value="$PROJECT_DIR$/js/sorttable.js" />
         <option value="$PROJECT_DIR$/home.html" />
         <option value="$PROJECT_DIR$/views/editCompetition.html" />
-        <option value="$PROJECT_DIR$/views/resultList.html" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/views/resultList.html" />
       </list>
     </option>
   </component>
@@ -737,7 +736,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1153,18 +1152,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/resultList.html">
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="129" column="36" selection-start-line="129" selection-start-column="36" selection-end-line="129" selection-end-column="36" />
+        <state relative-caret-position="459">
+          <caret line="3560" column="69" selection-start-line="3560" selection-start-column="69" selection-end-line="3560" selection-end-column="69" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/views/resultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="3561" column="95" selection-start-line="3561" selection-start-column="95" selection-end-line="3561" selection-end-column="95" />
+        <state relative-caret-position="802">
+          <caret line="140" column="72" selection-start-line="140" selection-start-column="72" selection-end-line="140" selection-end-column="72" />
           <folding />
         </state>
       </provider>

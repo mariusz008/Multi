@@ -3460,10 +3460,10 @@ var ileZawodnikow = 0;
                                                                                      {
 
                                                                                      if(druzyny.indexOf($scope.runners[j].KLUB)!= -1){
-                                                                                     console.log("juz jest");
+                                                                                     console.log("juz jest"+i+" "+j);
                                                                                      }
                                                                                      else {
-                                                                                     console.log("nie ma");
+                                                                                     console.log("nie ma"+i+" "+j);
                                                                                      druzyny.push($scope.runners[j].KLUB);
                                                                                      }
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';

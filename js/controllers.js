@@ -3453,7 +3453,7 @@ var ileZawodnikow = 0;
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
-
+$scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 
@@ -3469,9 +3469,7 @@ var ileZawodnikow = 0;
                                                                                      }
 
                                                                                   }
-                                                                             else {
 
-                                                                             }
                                                                         }
                                                                  }
                                                                  for(var i=0; i<($scope.runners.length); i++)

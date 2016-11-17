@@ -116,7 +116,7 @@
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
 
 									</tr>
-									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0"  >
+									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
 										<td width="100" class="tg-yw4l">{{ $index+1 }}</td>
 										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
 										<td ng-repeat="t in runner.TIMES1 track by $index" width="100" class="tg-yw4l">{{t}}</td>

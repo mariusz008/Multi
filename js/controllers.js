@@ -3470,7 +3470,7 @@ var ileZawodnikow = 0;
 
                                                                                   }
                                                                              else {
-                                                                             
+
                                                                              }
                                                                         }
                                                                  }

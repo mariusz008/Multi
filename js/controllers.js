@@ -3474,6 +3474,8 @@ $scope.runners[i].MIEJSCE = i+1;
                                                                  }
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {
+
+                                                                  if($scope.runners[i].KLUB != undefined){
                                                                 if(druzyny.indexOf($scope.runners[i].KLUB)!= -1){
                                                                                      console.log("juz jest"+i);
                                                                                      }
@@ -3482,7 +3484,7 @@ $scope.runners[i].MIEJSCE = i+1;
                                                                                      druzyny.push($scope.runners[i].KLUB);
                                                                                      console.log(druzyny);
                                                                                      }
-}
+}}
 
                                                              }
                                         })

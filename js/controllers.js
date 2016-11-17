@@ -3614,7 +3614,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                   $scope.runners[j].SUMA = [];
                                                                 suma = 0;
 
-                                                               for(var i=0;i<=$scope.timesColumn.length;i++)
+                                                               for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
 

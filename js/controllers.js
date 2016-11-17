@@ -3381,7 +3381,7 @@ $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classifica
                                                          .success(function(data){
 
                                                         // $scope.classification[1] = [name:'Klasyfikacja generalna'];
-                                                         $scope.classification[1] = [name:data.TYP);
+                                                       //  $scope.classification[1] = [name:data.TYP);
                                                          })
                                                          .error(function(data,status,headers,config){
                                                                                               $scope.retInfo = 'Błąd!'+ data;

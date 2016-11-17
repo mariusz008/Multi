@@ -3548,23 +3548,13 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                         }
 
                                                                  }
-                                                                // for (var i=0; i<ileZawodnikow; i++)
-                                                                // //{
+
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
-                                                                    //$scope.runners2.push($filter('orderBy')($scope.runners, 'POINT'+x+'_TIME')[0]);
+
                                                                     console.log($scope.runners);
-                                                                    console.log($scope.runners2);
 
-                                                                   // for(var i = 0; i<$scope.runners.length; i++){
 
-                                                                   // if($scope.runners[(i+1)].hasOwnProperty('POINT1_TIME')){
-                                                                  //    $scope.runners1[(i+1)] = $filter('orderBy')($scope.runners[(i+1)], 'POINT'+x+'_TIME')[0];
-                                                                   // console.log($scope.runners1[i]);
-                                                                   // console.log($scope.runners2[i]);
-                                                                  //  }
-                                                                  //  }
-                                                                 //}
 //                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
 //                                                                 {
 //                                                                 var seconds = 0;
@@ -3573,8 +3563,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
 //                                                                            if($scope.runners[j].hasOwnProperty('POINT1_TIME')){
 //
 //                                                                            $scope.runners[j].TABCZASU = new Array(ileZawodnikow);
-//                                                                            for(var i=1; i<($scope.runners.length);i++){
-//
+//                                                                            for(var i=1; i<($scope.runners.
 //                                                                            if($scope.runners[i] != undefined ){
 //                                                                                            var timeName = '$scope.runners[i].POINT'+j+'_TIME';
 //                                                                                         $scope.runners[j].TABCZASU[i] = eval(timeName).substring(0,8);
@@ -3619,33 +3608,25 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                             }
                                                             }
 
-                                                            for(var j=0, k=$scope.listaWynikow1.length;j<$scope.listaWynikow1.length, k>0;j++, k--)
+                                                            for(var j=0;j<$scope.listaWynikow1.length;j++)
                                                                   {
-                                                                  $scope.runners[k].SUMA = [];
-
+                                                                  $scope.runners[j].SUMA = [];
                                                                 suma = 0;
 
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
-                                                                    //console.log("["+(i+1)+","+(j+1)+"]");
                                                                     var ob = $filter('filter')($scope.ostatniWynik, {id:(i+1), id1:(j+1)})[0];
 
                                                                     if(ob != undefined) {
-                                                                    //console.log(ob['name']);
-                                                                    //$scope.wyniki.push(ob['name']);
-
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
-                                                                    $scope.runners[k].TIMES1[i] = ob['name'];
+                                                                    $scope.runners[(j+1)].TIMES1[i] = ob['name'];
                                                                     }
                                                                     else {
-                                                                    //console.log("0");
-                                                                    //$scope.wyniki.push("0");
-                                                                    $scope.runners[k].TIMES1[i] = "-";
+                                                                    $scope.runners[(j+1)].TIMES1[i] = "-";
                                                                     }
                                                                   }
-                                                                  $scope.runners[k].SUMA = suma;
-                                                                  //console.log(suma);
-                                                                  //console.log($scope.runners);
+                                                                  $scope.runners[(j+1)].SUMA = suma;
+
                                                             }
 
 

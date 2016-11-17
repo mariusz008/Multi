@@ -3456,7 +3456,7 @@ var ileZawodnikow = 0;
                                                                                     console.log($scope.timesColumn.length);
                                                                                     $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                    //$scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 
                                                                                     for(var j=0; j<$scope.timesColumn.length; j++)
                                                                                      {

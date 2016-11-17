@@ -3491,7 +3491,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
 
-                        if($scope.classification!=undefined){
+                        if($scope.classification!=undefined && $scope.classification.type.name!=undefined){
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
                         $scope.wyniki1 = [];
                         $scope.ostatniWynik = [];

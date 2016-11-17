@@ -3452,6 +3452,8 @@ var ileZawodnikow = 0;
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
                                                                                     console.log("jest j="+j+" i="+i );
+                                                                                    console.log($scope.runners[i]);
+                                                                                    console.log($scope.runners[0].POINTS_COUNT);
                                                                                     $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     //$scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
@@ -3481,20 +3483,20 @@ console.log("ee j="+j+" i="+i );
                                                                   {
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
-                                                                 console.log("juz jest"+i);
+                                                                // console.log("juz jest"+i);
                                                                  //var n = $scope.runners[i].KLUB.indexOf("welcome");
 
 
                                                                  }
                                                                   else {
-                                                                   console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
+                                                                 //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
                                                                    $scope.druzyny.push($scope.runners[i].KLUB);
                                                                     $scope.runnersDruz[i] =  $scope.runners[i];
-                                                                   console.log($scope.druzyny);
+                                                                 //  console.log($scope.druzyny);
                                                                    console.log($scope.runnersDruz[i]);
                                                                    }
                                                                 }}
-                                                                console.log($scope.runnersDruz);
+                                                              //  console.log($scope.runnersDruz);
                                                              }
                                         })
                                      .error(function(data,status,headers,config){

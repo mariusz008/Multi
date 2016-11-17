@@ -3552,7 +3552,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
 
-                                                                    console.log($scope.runners);
+                                                                    //console.log($scope.runners);
 
 
 //                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
@@ -3599,7 +3599,7 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                     if (eval(pointName) != undefined) {
                                                                     //console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
-                                                                    //console.log($scope.wyniki1);
+                                                                    console.log($scope.wyniki1);
                                                                     }
                                                                     else break block2;
                                                                 }

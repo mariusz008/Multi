@@ -3615,17 +3615,17 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
 
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
-                                                                    var ob = $filter('filter')($scope.ostatniWynik, {id:(i+1), id1:(j+1)})[0];
+                                                                    var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
 
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
-                                                                    $scope.runners[(j+1)].TIMES1[i] = ob['name'];
+                                                                    $scope.runners[(j)].TIMES1[i] = ob['name'];
                                                                     }
                                                                     else {
-                                                                    $scope.runners[(j+1)].TIMES1[i] = "-";
+                                                                    $scope.runners[(j)].TIMES1[i] = "-";
                                                                     }
                                                                   }
-                                                                  $scope.runners[(j+1)].SUMA = suma;
+                                                                  $scope.runners[(j)].SUMA = suma;
 
                                                             }
 

@@ -3448,18 +3448,18 @@ var ileZawodnikow = 0;
                                                                    $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                  {
-
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
+                                                                                    console.log("jest"+j+i);
                                                                                     $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    //$scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
 
-                                                                                     console.log(i+" "+j);
+                                                                                   //  console.log(i+" "+j);
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          console.log(timeName);
                                                                                          console.log("eee");
@@ -3474,31 +3474,9 @@ var ileZawodnikow = 0;
                                                                                   } else console.log("nie bylo j="+j+" i="+i );
 
                                                                         }
-                                                                        else console.log("nie bylo2");
+
                                                                  }
- for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
-                                                                  {
-                                                                      if($scope.runners[i] != undefined){
-                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-                                                                                     $scope.runners[i].MIEJSCE = k;
-                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-                                                                                      {
-                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
-                                                                                            var b = $scope.runners[i].TIMES[j];
-                                                                                                                                                                                  var a = b.split(':');
-                                                                                                                                                                                  seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                                                                                                                   $scope.runners[i].TIMES1[j] = seconds;
-                                                                                                                                                                                   console.log($scope.runners[i]);
-                                                                                      }
-                                                                                   }
-                                                                              else {
-                                                                              k--;
-                                                                              }
-                                                                         }
-                                                                  }
+
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {
                                                                   if($scope.runners[i].KLUB != undefined){

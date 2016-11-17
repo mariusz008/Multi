@@ -3383,17 +3383,17 @@ var ileZawodnikow = 0;
 
 $scope.wypelnijKlasyfikacje = function(idZawodow) {
 
-$scope.classification = [];
-$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
-                                                         .success(function(data){
-
-                                                         $scope.classification.push(name:'Klasyfikacja generalna');
-                                                       //  $scope.classification.push(name:data.TYP);
-                                                         })
-                                                         .error(function(data,status,headers,config){
-                                                                                              $scope.retInfo = 'Błąd!'+ data;
-                                                                                              console.log('Błąd3!'+ data);
-                                                                                              });
+//$scope.classification = [];
+//$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+//                                                         .success(function(data){
+//
+//                                                         $scope.classification.push(name:'Klasyfikacja generalna');
+//                                                       //  $scope.classification.push(name:data.TYP);
+//                                                         })
+//                                                         .error(function(data,status,headers,config){
+//                                                                                              $scope.retInfo = 'Błąd!'+ data;
+//                                                                                              console.log('Błąd3!'+ data);
+//                                                                                              });
 
 }
              //klasyfikacja generalna

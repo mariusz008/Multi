@@ -3452,8 +3452,6 @@ var ileZawodnikow = 0;
                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                  {
 
-                                                                 console.log(i);
-                                                                 console.log("ee");
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
@@ -3478,6 +3476,7 @@ var ileZawodnikow = 0;
                                                                                   }
 
                                                                         }
+                                                                        else console.log("nie bylo");
                                                                  }
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {

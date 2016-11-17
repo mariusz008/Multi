@@ -3557,9 +3557,12 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                     console.log($scope.runners2);
 
                                                                     for(var i = 0; i<$scope.runners.length; i++){
-                                                                        console.log($scope.runners[i]);
+
+                                                                    if($scope.runners[(i+1)].hasOwnProperty('POINT1_TIME')){
+                                                                      $scope.runners1[(i+1)] = $filter('orderBy')($scope.runners[(i+1)], 'POINT'+x+'_TIME')[0];
                                                                    // console.log($scope.runners1[i]);
                                                                    // console.log($scope.runners2[i]);
+                                                                    }
                                                                     }
                                                                  //}
 //                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)

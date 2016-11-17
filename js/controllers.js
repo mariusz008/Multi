@@ -3309,9 +3309,7 @@ var suma = 0;
 var ileZawodnikow = 0;
             $scope.types = [];
             $scope.classification = [
-                        {name:'Klasyfikacja generalna' },
-                        {name:'Klasyfikacja generalna drużynowa' },
-                        {name:'Klasyfikacja punktowa'}
+                        {name:'Klasyfikacja generalna' }
                         ];
                         var xd=0;
 

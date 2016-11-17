@@ -3265,6 +3265,7 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];
+                    $scope.runnersDruz = [];
                     $scope.runners1 = [];
                     $scope.zawodnicy = [];
                     $scope.runners1 = [];
@@ -3422,7 +3423,7 @@ var ileZawodnikow = 0;
 
                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
 
-                    var druzyny = [];
+                    $scope.druzyny = [];
 
 
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
@@ -3453,7 +3454,7 @@ var ileZawodnikow = 0;
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
-$scope.runners[i].MIEJSCE = i+1;
+                                                                                    $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 
@@ -3474,18 +3475,22 @@ $scope.runners[i].MIEJSCE = i+1;
                                                                  }
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {
-
                                                                   if($scope.runners[i].KLUB != undefined){
-                                                                if(druzyny.indexOf($scope.runners[i].KLUB)!= -1){
-                                                                                     console.log("juz jest"+i);
-                                                                                     }
-                                                                                     else {
-                                                                                     console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
-                                                                                     druzyny.push($scope.runners[i].KLUB);
-                                                                                     console.log(druzyny);
-                                                                                     }
-}}
-
+                                                                if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
+                                                                 console.log("juz jest"+i);
+                                                                 var n = $scope.runners[i].KLUB.indexOf("welcome");
+$scope.runnersDruz[i] = [];
+console.log($scope.runnersDruz[i]);
+                                                                 }
+                                                                  else {
+                                                                   console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
+                                                                   $scope.druzyny.push($scope.runners[i].KLUB);
+                                                                    $scope.runnersDruz[i] =  $scope.runners[i];
+                                                                   console.log($scope.druzyny);
+                                                                   console.log($scope.runnersDruz[i]);
+                                                                   }
+                                                                }}
+                                                                console.log($scope.runnersDruz);
                                                              }
                                         })
                                      .error(function(data,status,headers,config){

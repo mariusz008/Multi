@@ -3460,7 +3460,10 @@ var ileZawodnikow = 0;
 
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
+
+                                                                                     console.log(i+" "+j);
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                         console.log(timeName);
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
                                                                                         var b = $scope.runners[i].TIMES[j];
                                                                                         var a = b.split(':');
@@ -3478,9 +3481,9 @@ var ileZawodnikow = 0;
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
                                                                  console.log("juz jest"+i);
-                                                                 var n = $scope.runners[i].KLUB.indexOf("welcome");
-$scope.runnersDruz[i] = [];
-console.log($scope.runnersDruz[i]);
+                                                                 //var n = $scope.runners[i].KLUB.indexOf("welcome");
+
+
                                                                  }
                                                                   else {
                                                                    console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

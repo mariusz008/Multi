@@ -113,8 +113,8 @@
 									<tr>
 										<th width="100" class="tg-zcxc">Miejsce </th>
 										<th width="100" class="tg-zcxc">Klub</th>
-										<th ng-repeat="times in timesColumn.splice(-1,1)" width="100" class="tg-zcxc">Czas PK{{times}}</th>
-										<th width="100" class="tg-zcxc">Czas META</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
+
 									</tr>
 									<tr  ng-repeat="runner in runnersDruz | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
 										<td width="100" class="tg-yw4l">{{ $index+1 }}</td>

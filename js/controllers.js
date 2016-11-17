@@ -3451,6 +3451,9 @@ var ileZawodnikow = 0;
                                                                    $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                  {
+
+                                                                 console.log(i);
+                                                                 console.log("ee");
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;

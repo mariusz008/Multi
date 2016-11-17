@@ -3453,26 +3453,22 @@ var ileZawodnikow = 0;
 
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-var godziny1 = 0;
-                    var minuty1 = 0;
-                    var sekundy1 = 0;
+                                                                                    ileZawodnikow++;
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
+
+                                                                                    for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-
-godziny1 = parseInt(godziny1) + parseInt(eval(timeName).substring(0,2));
-minuty1 = parseInt(minuty1) + parseInt(eval(timeName).substring(3,5));
-sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
+                                                                                        var b = $scope.runners[i].TIMES[j];
+                                                                                        var a = b.split(':');
+                                                                                        seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+                                                                                         $scope.runners[i].TIMES1[j] = seconds;
+                                                                                        $scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
-                                                                                     godziny.push(godziny1);
-                                                                                     minuty.push(minuty1);
-                                                                                     sekundy.push(sekundy1);
-                                                                                     console.log(godziny);
-                                                                                     console.log(minuty);
-                                                                                     console.log(sekundy);
+
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3553,33 +3549,6 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
 
-                                                                    //console.log($scope.runners);
-
-
-//                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
-//                                                                 {
-//                                                                 var seconds = 0;
-//
-//                                                                        if($scope.runners[j] != undefined){
-//                                                                            if($scope.runners[j].hasOwnProperty('POINT1_TIME')){
-//
-//                                                                            $scope.runners[j].TABCZASU = new Array(ileZawodnikow);
-//                                                                            for(var i=1; i<($scope.runners.
-//                                                                            if($scope.runners[i] != undefined ){
-//                                                                                            var timeName = '$scope.runners[i].POINT'+j+'_TIME';
-//                                                                                         $scope.runners[j].TABCZASU[i] = eval(timeName).substring(0,8);
-//                                                                                        var b = $scope.runners[j].TABCZASU[i];
-//                                                                                        var a = b.split(':');
-//                                                                                        seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-//                                                                                        //console.log(seconds);
-//                                                                                        $scope.ostatniWynik1.push({id: j, id1: i, name:seconds});
-//                                                                                }
-//                                                                                console.log($scope.ostatniWynik1);
-//                                                                                }
-//                                                                            }
-//                                                                       }
-//                                                                 }
-                                                                 //console.log($scope.ostatniWynik);
                                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;

@@ -119,7 +119,7 @@
 									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
 										<td width="100" class="tg-yw4l">{{ $index+1 }}</td>
 										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
-										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+										<td ng-repeat="t in runner.TIMES1 track by $index" width="100" class="tg-yw4l">{{t}}</td>
 									</tr>
 								</table>
 								<table id="table1" ng-show="classification.type.name == 'Klasyfikacja punktowa'" class="table" width="450"  >

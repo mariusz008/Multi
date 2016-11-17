@@ -3390,11 +3390,8 @@ var ileZawodnikow = 0;
                                                                  }
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
-
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-
-
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                      for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
@@ -3465,6 +3462,7 @@ var ileZawodnikow = 0;
                                                                                      console.log(i+" "+j);
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          console.log(timeName);
+                                                                                         console.log("eee");
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
                                                                                         var b = $scope.runners[i].TIMES[j];
                                                                                         var a = b.split(':');

@@ -3014,8 +3014,8 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                 };
 
 
-             $scope.addMultiCompetitionClick = function() {
-if($scope.types.type.name=="Klasyfikacja punktowa"){
+             $scope.addMultiCompetitionClick = function(id) {
+if(id==2){
                   if(timeTab.length==0 || pointTab.length ==0)  {
                     $scope.requestResult = 'Błąd! Nie dodałeś punktacji.';
                   }

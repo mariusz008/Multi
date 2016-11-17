@@ -3459,8 +3459,9 @@ var ileZawodnikow = 0;
                                                                                      console.log("juz jest"+i);
                                                                                      }
                                                                                      else {
-                                                                                     console.log("nie ma"+i);
+                                                                                     console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
                                                                                      druzyny.push($scope.runners[i].KLUB);
+                                                                                     console.log(druzyny);
                                                                                      }
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {

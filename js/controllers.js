@@ -3596,7 +3596,7 @@ var ileZawodnikow = 0;
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
-if($scope.runners[(j)] != undefined){
+if($scope.runners[i].hasOwnProperty('TIMES1')){
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[(j)].TIMES1[i] = ob['name'];

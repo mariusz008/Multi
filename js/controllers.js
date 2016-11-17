@@ -3394,14 +3394,14 @@ if($scope.daneEtapow!=undefined){
 //                                                                                              $scope.retInfo = 'Błąd!'+ data;
 //                                                                                              console.log('Błąd3!'+ data);
 //                                                                                              });
- $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
-                                    .success(function(data){
-                                        $scope.zawodnicy = data;
-                                    })
-
-                                    .error(function(data,status,headers,config){
-                                        $scope.retInfo = 'Błąd!'+ data;
-                                    });
+// $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
+//                                    .success(function(data){
+//                                        $scope.zawodnicy = data;
+//                                    })
+//
+//                                    .error(function(data,status,headers,config){
+//                                        $scope.retInfo = 'Błąd!'+ data;
+//                                    });
 }}
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {

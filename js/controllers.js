@@ -3308,7 +3308,7 @@ var suma = 0;
             var n = 0;
 var ileZawodnikow = 0;
             $scope.types = [];
-            $scope.classification = [];
+            $scope.classification = [name: 'Klasyfikacja generalna'];
                         var xd=0;
 
         $scope.init = function() {
@@ -3384,16 +3384,16 @@ var ileZawodnikow = 0;
 $scope.wypelnijKlasyfikacje = function(idZawodow) {
 
 //$scope.classification = [];
-//$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
-//                                                         .success(function(data){
-//
-//                                                         $scope.classification.push(name:'Klasyfikacja generalna');
-//                                                       //  $scope.classification.push(name:data.TYP);
-//                                                         })
-//                                                         .error(function(data,status,headers,config){
-//                                                                                              $scope.retInfo = 'Błąd!'+ data;
-//                                                                                              console.log('Błąd3!'+ data);
-//                                                                                              });
+$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+                                                         .success(function(data){
+
+                                                        // $scope.classification[1] = [name:'Klasyfikacja generalna'];
+                                                         $scope.classification[1] = [name:data.TYP];
+                                                         })
+                                                         .error(function(data,status,headers,config){
+                                                                                              $scope.retInfo = 'Błąd!'+ data;
+                                                                                              console.log('Błąd3!'+ data);
+                                                                                              });
 
 }
              //klasyfikacja generalna

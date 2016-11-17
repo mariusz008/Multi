@@ -3551,19 +3551,19 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                 // for (var i=0; i<ileZawodnikow; i++)
                                                                 // //{
                                                                     var x = $scope.runners[0].POINTS_COUNT;
-                                                                    $scope.runners1 = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME')[0];
-                                                                    $scope.runners2.push($filter('orderBy')($scope.runners, 'POINT'+x+'_TIME')[0]);
-                                                                    console.log($scope.runners1);
+                                                                    $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
+                                                                    //$scope.runners2.push($filter('orderBy')($scope.runners, 'POINT'+x+'_TIME')[0]);
+                                                                    console.log($scope.runners);
                                                                     console.log($scope.runners2);
 
-                                                                    for(var i = 0; i<$scope.runners.length; i++){
+                                                                   // for(var i = 0; i<$scope.runners.length; i++){
 
-                                                                    if($scope.runners[(i+1)].hasOwnProperty('POINT1_TIME')){
-                                                                      $scope.runners1[(i+1)] = $filter('orderBy')($scope.runners[(i+1)], 'POINT'+x+'_TIME')[0];
+                                                                   // if($scope.runners[(i+1)].hasOwnProperty('POINT1_TIME')){
+                                                                  //    $scope.runners1[(i+1)] = $filter('orderBy')($scope.runners[(i+1)], 'POINT'+x+'_TIME')[0];
                                                                    // console.log($scope.runners1[i]);
                                                                    // console.log($scope.runners2[i]);
-                                                                    }
-                                                                    }
+                                                                  //  }
+                                                                  //  }
                                                                  //}
 //                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
 //                                                                 {

@@ -3455,17 +3455,17 @@ var ileZawodnikow = 0;
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
-
+                                                                                    if(druzyny.indexOf($scope.runners[i].KLUB)!= -1){
+                                                                                     console.log("juz jest"+i);
+                                                                                     }
+                                                                                     else {
+                                                                                     console.log("nie ma"+i);
+                                                                                     druzyny.push($scope.runners[i].KLUB);
+                                                                                     }
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
 
-                                                                                     if(druzyny.indexOf($scope.runners[j].KLUB)!= -1){
-                                                                                     console.log("juz jest"+i+" "+j);
-                                                                                     }
-                                                                                     else {
-                                                                                     console.log("nie ma"+i+" "+j);
-                                                                                     druzyny.push($scope.runners[j].KLUB);
-                                                                                     }
+
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
                                                                                         var b = $scope.runners[i].TIMES[j];

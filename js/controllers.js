@@ -3451,14 +3451,14 @@ var ileZawodnikow = 0;
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
-                                                                                    console.log("jest"+j+i);
+                                                                                    console.log("jest"+i+j);
                                                                                     $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     //$scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
-
+console.log("ee");
                                                                                    //  console.log(i+" "+j);
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          console.log(timeName);
@@ -3473,7 +3473,7 @@ var ileZawodnikow = 0;
 
                                                                                   } else console.log("nie bylo j="+j+" i="+i );
 
-                                                                        }
+                                                                        } else console.log("xx"+i+j);
 
                                                                  }
 

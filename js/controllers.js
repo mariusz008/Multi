@@ -3491,6 +3491,7 @@ var ileZawodnikow = 0;
                                                                                                                                                                                   var a = b.split(':');
                                                                                                                                                                                   seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                                                                                                                    $scope.runners[i].TIMES1[j] = seconds;
+                                                                                                                                                                                   console.log($scope.runners[i]);
                                                                                       }
                                                                                    }
                                                                               else {

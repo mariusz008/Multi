@@ -3308,8 +3308,7 @@ var suma = 0;
             var n = 0;
 var ileZawodnikow = 0;
             $scope.types = [];
-            $scope.classification = [
-                        ];
+            $scope.classification = [];
                         var xd=0;
 
         $scope.init = function() {
@@ -3382,21 +3381,21 @@ var ileZawodnikow = 0;
                           $scope.types[dd]={name:cc +". Ogólne"};
              }
 
-$scope.wypelnijKlasyfikacje = function(idZawodow) {
-if($scope.classification!=undefined && $scope.classification.type!=undefined){
-$scope.classification = [];
-$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
-                                                         .success(function(data){
-
-                                                         $scope.classification.push(name:'Klasyfikacja generalna');
-                                                       //  $scope.classification.push(name:data.TYP);
-                                                         })
-                                                         .error(function(data,status,headers,config){
-                                                                                              $scope.retInfo = 'Błąd!'+ data;
-                                                                                              console.log('Błąd3!'+ data);
-                                                                                              });
-}
-}
+//$scope.wypelnijKlasyfikacje = function(idZawodow) {
+//if($scope.classification!=undefined && $scope.classification.type!=undefined){
+//$scope.classification = [];
+//$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+//                                                         .success(function(data){
+//
+//                                                         $scope.classification.push(name:'Klasyfikacja generalna');
+//                                                       //  $scope.classification.push(name:data.TYP);
+//                                                         })
+//                                                         .error(function(data,status,headers,config){
+//                                                                                              $scope.retInfo = 'Błąd!'+ data;
+//                                                                                              console.log('Błąd3!'+ data);
+//                                                                                              });
+//}
+//}
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
             if($scope.classification!=undefined && $scope.classification.type!=undefined){

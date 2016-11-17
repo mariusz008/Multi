@@ -3551,12 +3551,8 @@ sekundy1 = parseInt(sekundy1) + parseInt(eval(timeName).substring(6,8));
                                                                 // for (var i=0; i<ileZawodnikow; i++)
                                                                 // //{
                                                                  //   var x = $scope.runners[0].POINTS_COUNT;
-                                                                    var ox = $filter('filter')($scope.runners, POINT5_TIME)[0];
-                                                                    $scope.runners1.push(ox);
-
-                                                                    console.log(ox);
-                                                                    console.log($scope.runners);
-                                                                    console.log($scope.runners1);
+                                                                    var ob = $filter('filter')($scope.runners, POINT5_TIME)[0];
+                                                                    console.log(ob);
                                                                  //}
 //                                                                 for(var j=0; j<$scope.runners[0].POINTS_COUNT;j++)
 //                                                                 {

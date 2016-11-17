@@ -3381,28 +3381,28 @@ var ileZawodnikow = 0;
                           $scope.types[dd]={name:cc +". Ogólne"};
              }
 
-$scope.wypelnijKlasyfikacje = function(idZawodow) {
-
-if($scope.daneEtapow!=undefined){
-//$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
-//                                                         .success(function(data){
+//$scope.wypelnijKlasyfikacje = function(idZawodow) {
 //
-//                                                        // $scope.classification[1] = [name:'Klasyfikacja generalna'];
-//                                                         $scope.classification[1] = [name:data.TYP];
-//                                                         })
-//                                                         .error(function(data,status,headers,config){
-//                                                                                              $scope.retInfo = 'Błąd!'+ data;
-//                                                                                              console.log('Błąd3!'+ data);
-//                                                                                              });
-// $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
-//                                    .success(function(data){
-//                                        $scope.zawodnicy = data;
-//                                    })
-//
-//                                    .error(function(data,status,headers,config){
-//                                        $scope.retInfo = 'Błąd!'+ data;
-//                                    });
-}}
+//if($scope.daneEtapow!=undefined){
+////$http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
+////                                                         .success(function(data){
+////
+////                                                        // $scope.classification[1] = [name:'Klasyfikacja generalna'];
+////                                                         $scope.classification[1] = [name:data.TYP];
+////                                                         })
+////                                                         .error(function(data,status,headers,config){
+////                                                                                              $scope.retInfo = 'Błąd!'+ data;
+////                                                                                              console.log('Błąd3!'+ data);
+////                                                                                              });
+//// $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/event/list?competition_id=' + id + '&sex=&age=&phrase=&category=')
+////                                    .success(function(data){
+////                                        $scope.zawodnicy = data;
+////                                    })
+////
+////                                    .error(function(data,status,headers,config){
+////                                        $scope.retInfo = 'Błąd!'+ data;
+////                                    });
+//}}
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
             if($scope.classification!=undefined && $scope.classification.type!=undefined){

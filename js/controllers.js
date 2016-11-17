@@ -3453,7 +3453,7 @@ var ileZawodnikow = 0;
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
-                                                                                    
+
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
 
@@ -3596,7 +3596,7 @@ var ileZawodnikow = 0;
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
-
+if($scope.runners[(j)] != undefined){
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[(j)].TIMES1[i] = ob['name'];
@@ -3604,7 +3604,7 @@ var ileZawodnikow = 0;
                                                                     else {
                                                                     $scope.runners[(j)].TIMES1[i] = "-";
                                                                     }
-                                                                  }
+                                                                  }}
                                                                   $scope.runners[(j)].SUMA = suma;
 
                                                             }

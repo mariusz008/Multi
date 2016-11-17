@@ -3459,11 +3459,12 @@ var ileZawodnikow = 0;
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
 
-                                                                                     if(druzyny.indexOf($scope.runners[0].KLUB)!= -1){
+                                                                                     if(druzyny.indexOf($scope.runners[j].KLUB)!= -1){
                                                                                      console.log("juz jest");
                                                                                      }
                                                                                      else {
                                                                                      console.log("nie ma");
+                                                                                     druzyny.push($scope.runners[j].KLUB);
                                                                                      }
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);

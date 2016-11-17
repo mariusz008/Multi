@@ -39,8 +39,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="3392" column="2" selection-start-line="3392" selection-start-column="2" selection-end-line="3392" selection-end-column="2" />
+            <state relative-caret-position="413">
+              <caret line="3391" column="103" selection-start-line="3391" selection-start-column="103" selection-end-line="3391" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -1148,8 +1148,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="3392" column="2" selection-start-line="3392" selection-start-column="2" selection-end-line="3392" selection-end-column="2" />
+        <state relative-caret-position="413">
+          <caret line="3391" column="103" selection-start-line="3391" selection-start-column="103" selection-end-line="3391" selection-end-column="103" />
           <folding />
         </state>
       </provider>

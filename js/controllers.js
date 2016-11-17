@@ -3591,7 +3591,7 @@ var ileZawodnikow = 0;
                                                             for(var j=0;j<=$scope.listaWynikow1.length+1;j++)
                                                                   {
                                                                   if($scope.runners[(j)] != undefined){
-                                                                  
+
                                                                   $scope.runners[j].SUMA = [];
                                                                 suma = 0;
 $scope.runners[j].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
@@ -3606,9 +3606,9 @@ $scope.runners[j].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
                                                                     else {
                                                                     $scope.runners[(j)].TIMES1[i] = "-";
                                                                     }
-                                                                  }}
+                                                                  }
                                                                   $scope.runners[(j)].SUMA = suma;
-
+}
                                                             }
 
 

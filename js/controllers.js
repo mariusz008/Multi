@@ -3365,7 +3365,7 @@ var ileZawodnikow = 0;
 
              //klasyfikacja generalna
             $scope.wynikiGeneralnej = function(idZawodow) {
-            if($scope.classification!=undefined && $scope.classification.type.name!=undefined){
+            if($scope.classification!=undefined && $scope.classification.type!=undefined){
              if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
@@ -3420,7 +3420,7 @@ var ileZawodnikow = 0;
                     //klasyfikcja druzynowa
                     $scope.wynikiDruzynowej = function(idZawodow) {
 
-                    if($scope.classification!=undefined && $scope.classification.type.name!=undefined){
+                    if($scope.classification!=undefined && $scope.classification.type!=undefined){
 
                     var druzyny = [];
 
@@ -3498,7 +3498,7 @@ var ileZawodnikow = 0;
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
 
-                        if($scope.classification!=undefined && $scope.classification.type.name!=undefined){
+                        if($scope.classification!=undefined && $scope.classification.type!=undefined){
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
                         $scope.wyniki1 = [];
                         $scope.ostatniWynik = [];

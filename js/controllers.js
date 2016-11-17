@@ -3422,9 +3422,7 @@ var ileZawodnikow = 0;
 
                     if($scope.classification!=undefined && $scope.classification.type.name!=undefined){
 
-                    var godziny = [];
-                    var minuty = [];
-                    var sekundy = [];
+                    var druzyny = [];
 
 
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
@@ -3460,13 +3458,20 @@ var ileZawodnikow = 0;
 
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
+
+                                                                                     if(druzyny.indexOf($scope.runners[0].KLUB)!= -1){
+                                                                                     console.log("juz jest");
+                                                                                     }
+                                                                                     else {
+                                                                                     console.log("nie ma");
+                                                                                     }
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
                                                                                         var b = $scope.runners[i].TIMES[j];
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                          $scope.runners[i].TIMES1[j] = seconds;
-                                                                                        $scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
+                                                                                        //$scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
 
                                                                                   }

@@ -39,8 +39,18 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="3458" column="84" selection-start-line="3458" selection-start-column="84" selection-end-line="3458" selection-end-column="84" />
+            <state relative-caret-position="855">
+              <caret line="3060" column="74" selection-start-line="3060" selection-start-column="74" selection-end-line="3060" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="makeClassification.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -382,20 +392,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiJustRaceWEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MultiJustRaceWEB" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1137,13 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1834">
-          <caret line="184" column="42" selection-start-line="184" selection-start-column="42" selection-end-line="184" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/calendar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-510">
@@ -1159,10 +1148,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/makeClassification.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="3458" column="84" selection-start-line="3458" selection-start-column="84" selection-end-line="3458" selection-end-column="84" />
+        <state relative-caret-position="855">
+          <caret line="3060" column="74" selection-start-line="3060" selection-start-column="74" selection-end-line="3060" selection-end-column="74" />
           <folding />
         </state>
       </provider>

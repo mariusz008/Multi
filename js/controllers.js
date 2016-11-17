@@ -3015,8 +3015,8 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
 
              $scope.addMultiCompetitionClick = function() {
-
-                  if(timeTab.length==0 && pointTab.length ==0)  {
+if($scope.types.type.name=="Klasyfikacja punktowa"){
+                  if(timeTab.length==0 || pointTab.length ==0)  {
                     $scope.requestResult = 'Błąd! Nie dodałeś punktacji.';
                   }
                     else {
@@ -3039,6 +3039,27 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
                                                 $window.scrollTo(0, 0);
                                             });
                                     }
+                                    } else {
+                                                      $http.post('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?owner_id='+ user+
+                                                                                                                                 '&competition_id=' +$scope.id+
+                                                                                                                                 '&typ='+$scope.classification.type.name+
+                                                                                                                                 '&points='+pointTab.toString()+
+                                                                                                                                 '&timebonus='+timeTab.toString())
+                                                                                 .success(function (data) {
+
+                                                                                    if(data.content = "Classification added")
+                                                                                    {
+                                                                                     $scope.requestResult = "Klasyfikacja została utworzona!";
+                                                                                     $window.scrollTo(0, 0);
+                                                                                    }
+
+                                                                                 })
+                                                                                 .error(function (data) {
+                                                                                     $scope.requestResult = 'Błąd! Nie udało się stworzyć klasyfikacji.';
+                                                                                     $window.scrollTo(0, 0);
+                                                                                 });
+                                                                         }
+
                 };
         }])
 

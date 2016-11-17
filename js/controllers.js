@@ -3590,13 +3590,15 @@ var ileZawodnikow = 0;
 
                                                             for(var j=0;j<=$scope.listaWynikow1.length+1;j++)
                                                                   {
+                                                                  if($scope.runners[(j)] != undefined){
+                                                                  
                                                                   $scope.runners[j].SUMA = [];
                                                                 suma = 0;
 $scope.runners[j].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
-if($scope.runners[(j)] != undefined){
+
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[(j)].TIMES1[i] = ob['name'];

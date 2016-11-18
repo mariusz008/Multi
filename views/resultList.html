@@ -39,7 +39,7 @@
 												class="form-control"
 												ng-model="competition.type"
 												ng-options="type.name for type in types"
-												ng-click="wypelnijKlasyfikacje(competition.type.id)"
+												ng-click="wypelnijKlasyfikacje(competition.type.id); wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id)"
 												required>
 
 											<option value=""> Wybierz etap </option>

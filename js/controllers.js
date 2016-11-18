@@ -3380,7 +3380,7 @@ $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classifica
 
                                                         // $scope.classification[1] = [name:'Klasyfikacja generalna']
                                                          if(data.TYP != 'Klasyfikacja generalna') $scope.classification[1] = {name:data.TYP};
-
+else $scope.classification[1] = {};
                                                          })
                                                          .error(function(data,status,headers,config){
                                                                                               $scope.retInfo = 'Błąd!'+ data;

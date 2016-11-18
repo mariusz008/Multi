@@ -3486,20 +3486,12 @@ $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classifica
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
-                                                                                    console.log("jest j="+j+" i="+i );
-                                                                                    console.log($scope.runners[i]);
-                                                                                    console.log($scope.timesColumn.length);
                                                                                     $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
-
                                                                                     for(var j=0; j<$scope.timesColumn.length; j++)
                                                                                      {
-console.log("ee j="+j+" i="+i );
-                                                                                   //  console.log(i+" "+j);
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         console.log(timeName);
-                                                                                         console.log("eee");
                                                                                          $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
                                                                                         var b = $scope.runners[i].TIMES[j];
                                                                                         var a = b.split(':');
@@ -3507,11 +3499,8 @@ console.log("ee j="+j+" i="+i );
                                                                                          $scope.runners[i].TIMES1[j] = seconds;
                                                                                         //$scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
-
-                                                                                  } else console.log("nie bylo j="+j+" i="+i );
-
-                                                                        } else console.log("xx j="+j+" i="+i );
-
+                                                                                  }
+                                                                        }
                                                                  }
 
                                                                  for(var i=0; i<($scope.runners.length); i++)
@@ -3528,7 +3517,7 @@ console.log("ee j="+j+" i="+i );
                                                                    $scope.druzyny.push($scope.runners[i].KLUB);
                                                                     $scope.runnersDruz[i] =  $scope.runners[i];
                                                                  //  console.log($scope.druzyny);
-                                                                   console.log($scope.runnersDruz[i]);
+                                                                 //  console.log($scope.runnersDruz[i]);
                                                                    }
                                                                 }}
                                                               //  console.log($scope.runnersDruz);

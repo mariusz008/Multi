@@ -3374,7 +3374,7 @@ var ileZawodnikow = 0;
 
 $scope.wypelnijKlasyfikacje = function(idZawodow) {
 
-//$scope.classification = [];
+if($scope.daneEtapow[idZawodow] != undefined){
 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
 
@@ -3386,7 +3386,7 @@ $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classifica
                                                                                               $scope.retInfo = 'Błąd!'+ data;
                                                                                               console.log('Błąd3!'+ data);
                                                                                               });
-
+}
 }
 
              $scope.wypelnijEtapy = function() {

@@ -3727,7 +3727,7 @@ $scope.classification = [
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     //for(var j=0; j<$scope.timesColumn.length; j++)
                                                                                     // {
-                                                                                        var timeName = '$scope.runners[i].POINT'+(x+1)+'_TIME';
+                                                                                        var timeName = '$scope.runners[i].POINT'+(x)+'_TIME';
                                                                                          var b = eval(timeName).substring(0,8);
                                                                                           var a = b.split(':');
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);

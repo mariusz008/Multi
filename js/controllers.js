@@ -3715,15 +3715,18 @@ $scope.classification = [
                                                                           }
                                                                     }
                                                                  }
-                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+                                                        $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
+                                                                for(var i=0; i<($scope.runners.length); i++)
                                                                  {
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    ileZawodnikow++;
+                                                                                    $scope.runners[i].MIEJSCE = i+1;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    for(var j=0; j<$scope.timesColumn.length; j++)
                                                                                      {
-                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                        var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
                                                                                          var b = eval(timeName).substring(0,8);
                                                                                           var a = b.split(':');
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
@@ -3731,15 +3734,36 @@ $scope.classification = [
 
                                                                                          //console.log(seconds);
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
-                                                                                         console.log($scope.ostatniWynikx);
+                                                                                         console.log($scope.ostatniWynikx)
                                                                                      }
                                                                                   }
-                                                                             else {
-                                                                             k--;
-                                                                             }
                                                                         }
                                                                  }
-                                                                 console.log($scope.ostatniWynikx);
+//                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+//                                                                 {
+//                                                                     if($scope.runners[i] != undefined){
+//                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+//                                                                                    $scope.runners[i].MIEJSCE = k;
+//                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+//                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+//                                                                                     {
+//                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+//                                                                                         var b = eval(timeName).substring(0,8);
+//                                                                                          var a = b.split(':');
+//                                                                                          seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+//                                                                                         $scope.runners[i].TIMES[j] = seconds;
+//
+//                                                                                         //console.log(seconds);
+//                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
+//                                                                                         console.log($scope.ostatniWynikx);
+//                                                                                     }
+//                                                                                  }
+//                                                                             else {
+//                                                                             k--;
+//                                                                             }
+//                                                                        }
+//                                                                 }
+                                                                 //console.log($scope.ostatniWynikx);
                                                              }
                                         })
                                      .error(function(data,status,headers,config){

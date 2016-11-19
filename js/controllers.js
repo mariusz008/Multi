@@ -3701,10 +3701,12 @@ $scope.classification = [
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
+
+                                                             $scope.timesColumn = [];
                                                              $scope.timesColumn[0] = [" META"];
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                     $scope.timesColumn[a] = a+1;
+                                                                     //$scope.timesColumn[a] = a+1;
                                                                       if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {
                                                                           for(var b=0; b<$scope.zawodnicy.length; b++){

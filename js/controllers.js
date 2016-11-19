@@ -3689,7 +3689,7 @@ $scope.classification = [
                                       }
                                       czyWypelnic = 0;
 console.log(idKlasyfikacji);
-                    if(idKlasyfikacji==0){
+                    if(idKlasyfikacji=="Klasyfikacja generalna"){
 
                     console.log("elo");
                                     for(var i=0; i<($scope.types.length-1); i++){

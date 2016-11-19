@@ -3675,13 +3675,13 @@ $scope.classification = [
                                 }
 
             //wynikiOgolne
-             $scope.wynikiOgolne = function(idZawodow, idKlasyfikacji) {
+             $scope.wynikiOgolne = function(idKlasyfikacji) {
 
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
-console.log(idZawodow+" "+idKlasyfikacji);
-              if(czyWypelnic==1){
+
+              if(czyWypelnic==1 && idKlasyfikacji==undefined){
               $scope.classification.length = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
@@ -3695,7 +3695,7 @@ console.log(idZawodow+" "+idKlasyfikacji);
 
                                     for(var i=0; i<($scope.types.length-1); i++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
-                                     if(idZawodow!=undefined){
+
                                                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                                             .success(function(data){
                                                              $scope.runners = data;
@@ -3746,7 +3746,7 @@ console.log(idZawodow+" "+idKlasyfikacji);
                                      $scope.retInfo = 'Błąd!'+ data;
                                      console.log('Błąd3!'+ data);
                                      });
-                         }
+
                          }
 //                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
 //                                                         .success(function(data){

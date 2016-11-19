@@ -3664,12 +3664,14 @@ var ileZawodnikow = 0;
 
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow) {
-              if($scope.classification!=undefined && $scope.classification.type!=undefined){
-              if(idZawodow!=undefined && $scope.competition.type.name==(cc +". Ogólne")){
+
+             console.log($scope.competition.type.name);
+              //if($scope.classification!=undefined && $scope.classification.type!=undefined){
+              if($scope.competition.type.name==(cc +". Ogólne")){
                         console.log("yeah");
 
 
-                        }
+                 //       }
                         }
              }
 

@@ -3664,15 +3664,15 @@ var ileZawodnikow = 0;
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow, idKlasyfikacji) {
 
-                          $scope.classification.length = 0;
-                          $scope.classification = [
-                           {name:'Klasyfikacja generalna' },
-                           {name:'Klasyfikacja punktowa' },
-                           {name:'Klasyfikacja generalna drużynowa' }
-                                                  ];
+            // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
-              if($scope.competition.type.name==(cc +". Ogólne") && $scope.classification.length<3){
-
+              if($scope.competition.type.name==(cc +". Ogólne")){
+              $scope.classification.length = 0;
+              $scope.classification = [
+               {name:'Klasyfikacja generalna' },
+               {name:'Klasyfikacja punktowa' },
+               {name:'Klasyfikacja generalna drużynowa' }
+                                      ];
 console.log(idKlasyfikacji);
                     if(idKlasyfikacji==0){
 

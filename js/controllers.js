@@ -3666,7 +3666,7 @@ var ileZawodnikow = 0;
 
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
-              if($scope.competition.type.name==(cc +". Ogólne")){
+              if($scope.competition.type.name==(cc +". Ogólne") && $scope.classification.length<3){
               $scope.classification.length = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },

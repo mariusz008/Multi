@@ -3374,7 +3374,7 @@ var ileZawodnikow = 0;
             }
                                             //wypelnijKlasyfikacje
                                             $scope.wypelnijKlasyfikacje = function(idZawodow) {
-                                            if($scope.daneEtapow[idZawodow] != undefined &&$scope.competition.type.name!=(cc +". Ogólne")){
+                                            if($scope.daneEtapow[idZawodow] != undefined && $scope.competition.type.name!=(cc +". Ogólne")){
                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
 
@@ -3401,7 +3401,7 @@ var ileZawodnikow = 0;
 
                                      //klasyfikacja generalna
                                     $scope.wynikiGeneralnej = function(idZawodow) {
-                                    if($scope.classification!=undefined && $scope.classification.type!=undefined){
+                                    if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
                                                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                             .success(function(data){
@@ -3452,7 +3452,7 @@ var ileZawodnikow = 0;
 
                     //klasyfikcja druzynowa
                     $scope.wynikiDruzynowej = function(idZawodow) {
-                    if($scope.classification!=undefined && $scope.classification.type!=undefined){
+                    if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
@@ -3531,7 +3531,7 @@ var ileZawodnikow = 0;
 
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
-                        if($scope.classification!=undefined && $scope.classification.type!=undefined){
+                        if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
                         $scope.wyniki1 = [];
                         $scope.ostatniWynik = [];
@@ -3664,15 +3664,15 @@ var ileZawodnikow = 0;
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow, idKlasyfikacji) {
 
-            // console.log($scope.competition.type.name);
+                          $scope.classification.length = 0;
+                          $scope.classification = [
+                           {name:'Klasyfikacja generalna' },
+                           {name:'Klasyfikacja punktowa' },
+                           {name:'Klasyfikacja generalna drużynowa' }
+                                                  ];
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne") && $scope.classification.length<3){
-              $scope.classification.length = 0;
-              $scope.classification = [
-               {name:'Klasyfikacja generalna' },
-               {name:'Klasyfikacja punktowa' },
-               {name:'Klasyfikacja generalna drużynowa' }
-                                      ];
+
 console.log(idKlasyfikacji);
                     if(idKlasyfikacji==0){
 

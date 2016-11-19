@@ -3306,6 +3306,7 @@ var suma = 0;
             $scope.infoWielo = "";
             var m = 1;
             var n = 0;
+            var cc;
 var ileZawodnikow = 0;
             $scope.types = [];
             $scope.classification = [
@@ -3393,7 +3394,7 @@ var ileZawodnikow = 0;
                                                              {
                                                                           $scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
                                                              }
-                                                              var cc = dd+1;
+                                                              cc = dd+1;
                                                               $scope.types[dd]={name:cc +". Ogólne"};
                                                  }
 
@@ -3664,7 +3665,7 @@ var ileZawodnikow = 0;
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow) {
               if($scope.classification!=undefined && $scope.classification.type!=undefined){
-              if(idZawodow!=undefined && $scope.types.type.name.contains("Ogólne")){
+              if(idZawodow!=undefined && $scope.types.type.name==(cc +". Ogólne")){
 console.log("yeah");
 
 

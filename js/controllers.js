@@ -3299,6 +3299,7 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
                     var zawody = new Array();
+                    var czyWypelnic = 0;
 $scope.listaWynikow1 = [];
 var suma = 0;
             $scope.daneEtapow = [];
@@ -3403,6 +3404,8 @@ var ileZawodnikow = 0;
                                     $scope.wynikiGeneralnej = function(idZawodow) {
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
+
+                                     czyWypelnic = 1;
                                                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                             .success(function(data){
                                                              $scope.runners = data;
@@ -3455,6 +3458,8 @@ var ileZawodnikow = 0;
                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
+
+                     czyWypelnic = 1;
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3538,6 +3543,7 @@ var ileZawodnikow = 0;
                         $scope.ostatniWynik1 = [];
                         $scope.tablicaCzasu = [];
                                         $scope.runners = [];
+                                        czyWypelnic = 1;
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3668,7 +3674,7 @@ var ileZawodnikow = 0;
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
 
-              if(idKlasyfikacji==undefined){
+              if(czyWypelnic==1){
               $scope.classification.length = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
@@ -3676,6 +3682,7 @@ var ileZawodnikow = 0;
                {name:'Klasyfikacja generalna drużynowa' }
                                       ];
                                       }
+                                      czyWypelnic = 0;
 console.log(idKlasyfikacji);
                     if(idKlasyfikacji==0){
 

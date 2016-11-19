@@ -3673,9 +3673,63 @@ var ileZawodnikow = 0;
                {name:'Klasyfikacja punktowa' },
                {name:'Klasyfikacja generalna drużynowa' }
                                       ];
-for(var i=0; i<($scope.types.length-1); i++){
 
+                    if($scope.classification.name=="Klasyfikacja generalna"){
+                                    for(var i=0; i<($scope.types.length-1); i++){
+                                    if($scope.classification!=undefined && $scope.classification.type!=undefined){
+                                     if(idZawodow!=undefined){
+                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
+                                                            .success(function(data){
+                                                             $scope.runners = data;
+                                                             if($scope.runners[1] != null)
+                                                             {
+                                                             $scope.timesColumn = [];
+                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
+                                                                 {
+                                                                     $scope.timesColumn[a] = a+1;
+                                                                      if($scope.runners[a].hasOwnProperty('NAZWISKO'))
+                                                                          {
+                                                                          for(var b=0; b<$scope.zawodnicy.length; b++){
+                                                                        if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
+                                                                           {
+                                                                              $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
+                                                                           }
+                                                                          }
+                                                                    }
+                                                                 }
+                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
+                                                                 {
+                                                                     if($scope.runners[i] != undefined){
+                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
+                                                                                    $scope.runners[i].MIEJSCE = k;
+                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
+                                                                                     {
+                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                         var b = eval(timeName).substring(0,8);
+                                                                                          var a = b.split(':');
+                                                                                          seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+                                                                                         $scope.runners[i].TIMES[j] = seconds;
 
+                                                                                         //console.log(seconds);
+                                                                                         $scope.ostatniWynik.push({idzawodnika:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
+                                                                                         console.log($scope.ostatniWynik);
+                                                                                     }
+                                                                                  }
+                                                                             else {
+                                                                             k--;
+                                                                             }
+                                                                        }
+                                                                 }
+                                                                 console.log($scope.ostatniWynik);
+                                                             }
+                                        })
+                                     .error(function(data,status,headers,config){
+                                     $scope.retInfo = 'Błąd!'+ data;
+                                     console.log('Błąd3!'+ data);
+                                     });
+                         }
+                         }
 //                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
 //                                                         .success(function(data){
 //                                                        console.log(data.TYP);
@@ -3691,7 +3745,7 @@ for(var i=0; i<($scope.types.length-1); i++){
 //                                                                                              console.log('Błąd3!'+ data);
 //                                                                                              });
                                         }
-
+}
                         }
                    }
              }

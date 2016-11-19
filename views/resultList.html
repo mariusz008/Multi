@@ -39,7 +39,7 @@
 												class="form-control"
 												ng-model="competition.type"
 												ng-options="type.name for type in types"
-												ng-click="wypelnijKlasyfikacje(competition.type.id); wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(competition.type.id, classification.type.id)"
+												ng-click="wypelnijKlasyfikacje(competition.type.id); wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(competition.type.id, classification.type)"
 												required>
 
 											<option value=""> Wybierz etap </option>
@@ -59,7 +59,7 @@
 													class="form-control"
 													ng-model="classification.type"
 													ng-options="type.name for type in classification"
-													ng-click="wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(competition.type.id, classification.type.id)"
+													ng-click="wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(competition.type.id, classification.type)"
 													required>
 
 												<option value=""> Wybierz klasyfikację </option>

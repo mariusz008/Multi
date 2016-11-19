@@ -3292,7 +3292,7 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
                     $scope.runners1 = [];
                     $scope.classPoints = [];
                     $scope.classPoints1 = [];
-                    $scope.runners2 = [];
+                     $scope.runners2 = [];
                     $scope.wyniki = [];
                     $scope.wynikii = [];
                     $scope.wyniki1 = [];
@@ -3650,8 +3650,8 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
-              $scope.classification.length = 0;
-              $scope.classification[0] = {name:'Klasyfikacja generalna' };
+            //  $scope.classification.length = 0;
+              //$scope.classification[0] = {name:'Klasyfikacja generalna' };
 //for(var i=0; i<$scope.competition.length-1; i++){
 //                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
 //                                                         .success(function(data){

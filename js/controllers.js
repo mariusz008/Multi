@@ -3667,24 +3667,29 @@ var ileZawodnikow = 0;
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
-
-
               $scope.classification.length = 0;
-              $scope.classification[0] = {name:'Klasyfikacja generalna' };
+              $scope.classification = [
+               {name:'Klasyfikacja generalna' },
+               {name:'Klasyfikacja punktowa' },
+               {name:'Klasyfikacja generalna drużynowa' }
+                                      ];
 for(var i=0; i<($scope.types.length-1); i++){
 
 
-                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
-                                                         .success(function(data){
-                                                        console.log(data.TYP);
-                                                         if(data.TYP != 'Klasyfikacja generalna' ) $scope.classification[i+1] = {name:data.TYP};
-                                                      //  else $scope.classification.length=1;
-
-                                                         })
-                                                         .error(function(data,status,headers,config){
-                                                                                              $scope.retInfo = 'Błąd!'+ data;
-                                                                                              console.log('Błąd3!'+ data);
-                                                                                              });
+//                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
+//                                                         .success(function(data){
+//                                                        console.log(data.TYP);
+//                                                         if(data.TYP != 'Klasyfikacja generalna' ) {
+//                                                         //$scope.classification[i+1] = {name:data.TYP};
+//
+//                                                         }
+//                                                      //  else $scope.classification.length=1;
+//
+//                                                         })
+//                                                         .error(function(data,status,headers,config){
+//                                                                                              $scope.retInfo = 'Błąd!'+ data;
+//                                                                                              console.log('Błąd3!'+ data);
+//                                                                                              });
                                         }
 
                         }

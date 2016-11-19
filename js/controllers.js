@@ -3734,13 +3734,13 @@ $scope.classification = [
                                                                                           var a = b.split(':');
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                          $scope.runners[i].TIMES[0] = seconds;
-                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, zaw:$scope.runners[i].COMPETITION_ID, name:seconds});
+                                                                                       //  $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, zaw:$scope.runners[i].COMPETITION_ID, name:seconds});
 
                                                                                          console.log($scope.ostatniWynikx);
                                                                                    //  }
                                                                                   }
                                                                         }
-                                                                        if(i>iloscZawodnikow) iloscZawodnikow=i;
+                                                                        //if(i>iloscZawodnikow) iloscZawodnikow=i;
                                                                  }
 
                                                              }
@@ -3752,19 +3752,19 @@ $scope.classification = [
 
                          }
                          }
-                         $scope.listaZadownikow = new Array(iloscZawodnikow);
-                         for(var i=0; i<($scope.types.length-1); i++)
-                          {
-                        for(var j=0; j<iloscZawodnikow; j++)
-                             {
-                          //$scope.listaZadownikow[j].COMPETITION_ID =
-                         // var ob = $filter('filter')($scope.ostatniWynikx, {id1:(j+1)})[0];
-                         //  if(ob != undefined) {
-                         //   suma = parseInt(suma) + parseInt(ob['name']);
-                          //   console.log($scope.ostatniWynikx.);
-                          console.log(iloscZawodnikow);
-                             }
-                             }
+//                         $scope.listaZadownikow = new Array(iloscZawodnikow);
+//                         for(var i=0; i<($scope.types.length-1); i++)
+//                          {
+//                        for(var j=0; j<iloscZawodnikow; j++)
+//                             {
+//                          //$scope.listaZadownikow[j].COMPETITION_ID =
+//                         // var ob = $filter('filter')($scope.ostatniWynikx, {id1:(j+1)})[0];
+//                         //  if(ob != undefined) {
+//                         //   suma = parseInt(suma) + parseInt(ob['name']);
+//                          //   console.log($scope.ostatniWynikx.);
+//                          console.log(iloscZawodnikow);
+//                             }
+//                             }
                           }
 }
 //koniec generalki

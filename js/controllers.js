@@ -3662,19 +3662,45 @@ var ileZawodnikow = 0;
                                 }
 
 
+//            //wynikiOgolne
+//             $scope.wynikiOgolne = function(idZawodow) {
+//
+//            // console.log($scope.competition.type.name);
+//              if($scope.competition!=undefined && $scope.competition.type!=undefined){
+//              if($scope.competition.type.name==(cc +". Ogólne")){
+//                        console.log("yeah");
+//
+//
+//                        }
+//                        }
+//             }
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow) {
 
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
-                        console.log("yeah");
 
+              console.log("yeah");
+             // $scope.classification.length = 0;
+            //  $scope.classification[0] = {name:'Klasyfikacja generalna' };
+//for(var i=0; i<$scope.competition.length-1; i++){
+//                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
+//                                                         .success(function(data){
+//                                                        // $scope.classification[1] = [name:'Klasyfikacja generalna']
+//                                                         if(data.TYP != 'Klasyfikacja generalna' && $scope.classification.indexOf(data.TYP)!= -1) $scope.classification[i+1] = {name:data.TYP};
+//                                                      //  else $scope.classification.length=1;
+//
+//                                                         })
+//                                                         .error(function(data,status,headers,config){
+//                                                                                              $scope.retInfo = 'Błąd!'+ data;
+//                                                                                              console.log('Błąd3!'+ data);
+//                                                                                              });
+//                                        }
 
                         }
-                        }
+                   }
              }
-
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/competition/compRunnersList');

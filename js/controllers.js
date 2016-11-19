@@ -3406,7 +3406,7 @@ $scope.classification = [
 
 
                                      //klasyfikacja generalna
-                                    $scope.wynikiGeneralnej = function(idZawodow) {
+                                    $scope.wynikiGeneralnej = function(idZawodow) { czyWypelnic = 1;
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
 
@@ -3459,7 +3459,7 @@ $scope.classification = [
                          }
 
                     //klasyfikcja druzynowa
-                    $scope.wynikiDruzynowej = function(idZawodow) {
+                    $scope.wynikiDruzynowej = function(idZawodow) { czyWypelnic = 1;
                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
@@ -3541,6 +3541,8 @@ $scope.classification = [
 
                         //klasyfikacja punktowa
                         $scope.wynikiPunktowej = function(idZawodow) {
+
+                        czyWypelnic = 1;
                         if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                          if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja punktowa"){
                         $scope.wyniki1 = [];
@@ -3548,7 +3550,7 @@ $scope.classification = [
                         $scope.ostatniWynik1 = [];
                         $scope.tablicaCzasu = [];
                                         $scope.runners = [];
-                                        czyWypelnic = 1;
+
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3688,10 +3690,9 @@ $scope.classification = [
                                       ];
                                       }
                                       czyWypelnic = 0;
-console.log(idKlasyfikacji);
+
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
 
-                    console.log("elo");
                                     for(var i=0; i<($scope.types.length-1); i++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
                                      if(idZawodow!=undefined){

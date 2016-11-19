@@ -3736,7 +3736,7 @@ $scope.classification = [
                                                                                          $scope.runners[i].TIMES[0] = seconds;
 
                                                                                          //console.log(seconds);
-                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:0, name:seconds});
+                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, zaw:$scope.runners[i].COMPETITION_ID, name:seconds});
                                                                                          console.log($scope.ostatniWynikx)
                                                                                    //  }
                                                                                   }
@@ -3752,7 +3752,7 @@ $scope.classification = [
 
                          }
                          }
-                         
+
 }
 //koniec generalki
                         }

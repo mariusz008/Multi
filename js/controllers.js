@@ -3300,8 +3300,11 @@ app.controller('resultListController', ['$scope','$filter', '$http', '$route', '
                     $scope.timesColumn = [];
                     var zawody = new Array();
                     var czyWypelnic = 0;
+                    var iloscZawodnikow = 0;
+                    $scope.listaZadownikow = [];
 $scope.listaWynikow1 = [];
 var suma = 0;
+var jk = 0;
             $scope.daneEtapow = [];
             var info = "";
             $scope.infoWielo = "";
@@ -3591,9 +3594,6 @@ $scope.classification = [
                                                                                         //console.log(seconds);
                                                                                         $scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
-
-
-                                                                                  //   console.log($scope.ostatniWynik);
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3693,17 +3693,17 @@ $scope.classification = [
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
                                     $scope.ostatniWynikx = [];
-                                    for(var i=0; i<($scope.types.length-1); i++){
+                                    for(jk=0; jk<($scope.types.length-1); jk++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
 
-                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
+                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[jk].COMPETITION_ID)
                                                             .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
 
                                                              $scope.timesColumn = [];
-                                                             $scope.timesColumn[0] = [" META"];
+                                                             $scope.timesColumn[0] =  META;
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      //$scope.timesColumn[a] = a+1;
@@ -3734,39 +3734,15 @@ $scope.classification = [
                                                                                           var a = b.split(':');
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                          $scope.runners[i].TIMES[0] = seconds;
+                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, zaw:$scope.runners[i].COMPETITION_ID, name:seconds});
 
-                                                                                         //console.log(seconds);
-                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:0, name:seconds});
                                                                                          console.log($scope.ostatniWynikx)
                                                                                    //  }
                                                                                   }
                                                                         }
+                                                                        if(i>iloscZawodnikow) iloscZawodnikow=i;
                                                                  }
-//                                                                for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
-//                                                                 {
-//                                                                     if($scope.runners[i] != undefined){
-//                                                                            if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
-//                                                                                    $scope.runners[i].MIEJSCE = k;
-//                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-//                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
-//                                                                                     {
-//                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-//                                                                                         var b = eval(timeName).substring(0,8);
-//                                                                                          var a = b.split(':');
-//                                                                                          seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-//                                                                                         $scope.runners[i].TIMES[j] = seconds;
-//
-//                                                                                         //console.log(seconds);
-//                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
-//                                                                                         console.log($scope.ostatniWynikx);
-//                                                                                     }
-//                                                                                  }
-//                                                                             else {
-//                                                                             k--;
-//                                                                             }
-//                                                                        }
-//                                                                 }
-                                                                 //console.log($scope.ostatniWynikx);
+
                                                              }
                                         })
                                      .error(function(data,status,headers,config){
@@ -3775,22 +3751,23 @@ $scope.classification = [
                                      });
 
                          }
-//                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
-//                                                         .success(function(data){
-//                                                        console.log(data.TYP);
-//                                                         if(data.TYP != 'Klasyfikacja generalna' ) {
-//                                                         //$scope.classification[i+1] = {name:data.TYP};
-//
-//                                                         }
-//                                                      //  else $scope.classification.length=1;
-//
-//                                                         })
-//                                                         .error(function(data,status,headers,config){
-//                                                                                              $scope.retInfo = 'Błąd!'+ data;
-//                                                                                              console.log('Błąd3!'+ data);
-//                                                                                              });
-                                        }
+                         }
+                         $scope.listaZadownikow = new Array(iloscZawodnikow);
+                         for(var i=0; i<($scope.types.length-1); i++)
+                          {
+                        for(var j=0; j<iloscZawodnikow; j++)
+                             {
+                          //$scope.listaZadownikow[j].COMPETITION_ID =
+                         // var ob = $filter('filter')($scope.ostatniWynikx, {id1:(j+1)})[0];
+                         //  if(ob != undefined) {
+                         //   suma = parseInt(suma) + parseInt(ob['name']);
+                          //   console.log($scope.ostatniWynikx.);
+                          console.log(iloscZawodnikow);
+                             }
+                             }
+                          }
 }
+//koniec generalki
                         }
                    }
              }

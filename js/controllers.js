@@ -3692,7 +3692,7 @@ $scope.classification = [
                                       czyWypelnic = 0;
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
-
+                                    $scope.ostatniWynikx = [];
                                     for(var i=0; i<($scope.types.length-1); i++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
 
@@ -3730,8 +3730,8 @@ $scope.classification = [
                                                                                          $scope.runners[i].TIMES[j] = seconds;
 
                                                                                          //console.log(seconds);
-                                                                                         $scope.ostatniWynik.push({idzawodnika:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
-                                                                                         console.log($scope.ostatniWynik);
+                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
+                                                                                         console.log($scope.ostatniWynikx);
                                                                                      }
                                                                                   }
                                                                              else {
@@ -3739,7 +3739,7 @@ $scope.classification = [
                                                                              }
                                                                         }
                                                                  }
-                                                                 console.log($scope.ostatniWynik);
+                                                                 console.log($scope.ostatniWynikx);
                                                              }
                                         })
                                      .error(function(data,status,headers,config){

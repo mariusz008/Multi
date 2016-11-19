@@ -3703,7 +3703,7 @@ $scope.classification = [
                                                              {
 
                                                              $scope.timesColumn = [];
-                                                             $scope.timesColumn[0] =  META;
+                                                             $scope.timesColumn[0] =  "META";
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      //$scope.timesColumn[a] = a+1;

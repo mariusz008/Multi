@@ -3311,8 +3311,10 @@ var suma = 0;
 var ileZawodnikow = 0;
             $scope.types = [];
             $scope.classification = [
-                        {name:'Klasyfikacja generalna' }
-                        ];
+                           {name:'Klasyfikacja generalna' },
+                           {name:'Klasyfikacja punktowa' },
+                           {name:'Klasyfikacja generalna drużynowa' }
+                                                  ];
                         var xd=0;
 
         $scope.init = function() {
@@ -3378,7 +3380,10 @@ var ileZawodnikow = 0;
                                             if($scope.daneEtapow[idZawodow] != undefined && $scope.competition.type.name!=(cc +". Ogólne")){
                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
-
+$scope.classification.length=0;
+$scope.classification = [
+                                                                            {name:'Klasyfikacja generalna' }
+                                                                                                   ];
                                                         // $scope.classification[1] = [name:'Klasyfikacja generalna']
                                                          if(data.TYP != 'Klasyfikacja generalna') $scope.classification[1] = {name:data.TYP};
                                                         else $scope.classification.length=1;

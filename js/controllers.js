@@ -3673,7 +3673,7 @@ var ileZawodnikow = 0;
                {name:'Klasyfikacja punktowa' },
                {name:'Klasyfikacja generalna drużynowa' }
                                       ];
-
+console.log(idKlasyfikacji);
                     if(idKlasyfikacji==0){
 
                     console.log("elo");

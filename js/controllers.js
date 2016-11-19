@@ -3665,13 +3665,13 @@ var ileZawodnikow = 0;
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow) {
 
-             console.log($scope.competition.type.name);
-              //if($scope.classification!=undefined && $scope.classification.type!=undefined){
+            // console.log($scope.competition.type.name);
+              if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
                         console.log("yeah");
 
 
-                 //       }
+                        }
                         }
              }
 

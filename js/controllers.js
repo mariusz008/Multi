@@ -3667,12 +3667,15 @@ var ileZawodnikow = 0;
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
+
+              if(idKlasyfikacji==undefined){
               $scope.classification.length = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
                {name:'Klasyfikacja punktowa' },
                {name:'Klasyfikacja generalna drużynowa' }
                                       ];
+                                      }
 console.log(idKlasyfikacji);
                     if(idKlasyfikacji==0){
 

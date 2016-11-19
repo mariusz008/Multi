@@ -3680,7 +3680,7 @@ $scope.classification = [
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
-
+console.log(idZawodow+" "+idKlasyfikacji);
               if(czyWypelnic==1){
               $scope.classification.length = 0;
               $scope.classification = [

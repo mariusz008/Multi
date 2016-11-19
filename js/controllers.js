@@ -3685,17 +3685,19 @@ var ileZawodnikow = 0;
               $scope.classification.length = 0;
               $scope.classification[0] = {name:'Klasyfikacja generalna' };
 for(var i=0; i<($scope.types.length-1); i++){
-//                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
-//                                                         .success(function(data){
-//                                                        // $scope.classification[1] = [name:'Klasyfikacja generalna']
-//                                                         if(data.TYP != 'Klasyfikacja generalna' && $scope.classification.indexOf(data.TYP)!= -1) $scope.classification[i+1] = {name:data.TYP};
-//                                                      //  else $scope.classification.length=1;
-//
-//                                                         })
-//                                                         .error(function(data,status,headers,config){
-//                                                                                              $scope.retInfo = 'Błąd!'+ data;
-//                                                                                              console.log('Błąd3!'+ data);
-//                                                                                              });
+
+console.log($scope.daneEtapow[i].COMPETITION_ID);
+                                            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
+                                                         .success(function(data){
+                                                        // $scope.classification[1] = [name:'Klasyfikacja generalna']
+                                                         if(data.TYP != 'Klasyfikacja generalna' && $scope.classification.indexOf(data.TYP)!= -1) $scope.classification[i+1] = {name:data.TYP};
+                                                      //  else $scope.classification.length=1;
+
+                                                         })
+                                                         .error(function(data,status,headers,config){
+                                                                                              $scope.retInfo = 'Błąd!'+ data;
+                                                                                              console.log('Błąd3!'+ data);
+                                                                                              });
                                         }
 
                         }

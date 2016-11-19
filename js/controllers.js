@@ -3664,10 +3664,8 @@ var ileZawodnikow = 0;
 
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow) {
-             console.log($scope.types.type.name);
-             }
               if($scope.classification!=undefined && $scope.classification.type!=undefined){
-              if(idZawodow!=undefined && $scope.types.type.name==(cc +". Ogólne")){
+              if(idZawodow!=undefined && $scope.competition.type.name==(cc +". Ogólne")){
                         console.log("yeah");
 
 

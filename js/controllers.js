@@ -3380,7 +3380,7 @@ $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classifica
 
                                                         // $scope.classification[1] = [name:'Klasyfikacja generalna']
                                                          if(data.TYP != 'Klasyfikacja generalna') $scope.classification[1] = {name:data.TYP};
-else $scope.classification[1] = {};
+else $scope.classification.length=1;
                                                          })
                                                          .error(function(data,status,headers,config){
                                                                                               $scope.retInfo = 'Błąd!'+ data;
@@ -3663,7 +3663,14 @@ $scope.runners[j].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
                                            }
                                 }
 
-
+             $scope.wynikiOgolne = function() {
+                        for(var dd =0; dd<$scope.daneEtapow.length; dd++)
+                         {
+                                      $scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
+                         }
+                          var cc = dd+1;
+                          $scope.types[dd]={name:cc +". Ogólne"};
+             }
 
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);

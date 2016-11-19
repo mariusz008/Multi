@@ -3374,7 +3374,7 @@ var ileZawodnikow = 0;
             }
                                             //wypelnijKlasyfikacje
                                             $scope.wypelnijKlasyfikacje = function(idZawodow) {
-                                            if($scope.daneEtapow[idZawodow] != undefined){
+                                            if($scope.daneEtapow[idZawodow] != undefined &&$scope.competition.type.name!=(cc +". Ogólne")){
                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
 
@@ -3661,19 +3661,6 @@ var ileZawodnikow = 0;
                                            }
                                 }
 
-
-//            //wynikiOgolne
-//             $scope.wynikiOgolne = function(idZawodow) {
-//
-//            // console.log($scope.competition.type.name);
-//              if($scope.competition!=undefined && $scope.competition.type!=undefined){
-//              if($scope.competition.type.name==(cc +". Ogólne")){
-//                        console.log("yeah");
-//
-//
-//                        }
-//                        }
-//             }
             //wynikiOgolne
              $scope.wynikiOgolne = function(idZawodow) {
 

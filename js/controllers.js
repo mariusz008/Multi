@@ -3662,7 +3662,7 @@ var ileZawodnikow = 0;
                                 }
 
             //wynikiOgolne
-             $scope.wynikiOgolne = function(idZawodow) {
+             $scope.wynikiOgolne = function(idZawodow, idKlasyfikacji) {
 
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
@@ -3674,7 +3674,9 @@ var ileZawodnikow = 0;
                {name:'Klasyfikacja generalna drużynowa' }
                                       ];
 
-                    if($scope.classification.name=="Klasyfikacja generalna"){
+                    if(idKlasyfikacji==0){
+
+                    console.log("elo");
                                     for(var i=0; i<($scope.types.length-1); i++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
                                      if(idZawodow!=undefined){

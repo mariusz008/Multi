@@ -3701,7 +3701,7 @@ $scope.classification = [
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
                                                              {
-                                                             $scope.timesColumn = [];
+                                                             $scope.timesColumn[0] = [" META"];
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
@@ -3723,11 +3723,11 @@ $scope.classification = [
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
                                                                                     $scope.runners[i].MIEJSCE = i+1;
-                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+                                                                                    $scope.runners[i].TIMES = new Array(1);
                                                                                     $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                    for(var j=0; j<$scope.timesColumn.length; j++)
-                                                                                     {
-                                                                                        var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+                                                                                    //for(var j=0; j<$scope.timesColumn.length; j++)
+                                                                                    // {
+                                                                                        var timeName = '$scope.runners[i].POINT'+(x+1)+'_TIME';
                                                                                          var b = eval(timeName).substring(0,8);
                                                                                           var a = b.split(':');
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
@@ -3736,7 +3736,7 @@ $scope.classification = [
                                                                                          //console.log(seconds);
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
                                                                                          console.log($scope.ostatniWynikx)
-                                                                                     }
+                                                                                   //  }
                                                                                   }
                                                                         }
                                                                  }

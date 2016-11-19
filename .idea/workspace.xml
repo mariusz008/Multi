@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.13/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/resultList.html" afterPath="$PROJECT_DIR$/views/resultList.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +40,8 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="3382" column="36" selection-start-line="3382" selection-start-column="36" selection-end-line="3382" selection-end-column="36" />
+            <state relative-caret-position="568">
+              <caret line="3668" column="0" selection-start-line="3668" selection-start-column="0" selection-end-line="3668" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -52,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/views/resultList.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
-              <caret line="41" column="117" selection-start-line="41" selection-start-column="101" selection-end-line="41" selection-end-column="117" />
+              <caret line="41" column="249" selection-start-line="41" selection-start-column="249" selection-end-line="41" selection-end-column="249" />
               <folding />
             </state>
           </provider>
@@ -1142,15 +1141,15 @@
     <entry file="file://$PROJECT_DIR$/views/resultList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
-          <caret line="41" column="117" selection-start-line="41" selection-start-column="101" selection-end-line="41" selection-end-column="117" />
+          <caret line="41" column="249" selection-start-line="41" selection-start-column="249" selection-end-line="41" selection-end-column="249" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="3382" column="36" selection-start-line="3382" selection-start-column="36" selection-end-line="3382" selection-end-column="36" />
+        <state relative-caret-position="568">
+          <caret line="3668" column="0" selection-start-line="3668" selection-start-column="0" selection-end-line="3668" selection-end-column="0" />
           <folding />
         </state>
       </provider>

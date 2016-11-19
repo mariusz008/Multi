@@ -76,7 +76,7 @@
 								    <th width="100" class="tg-zcxc">Nazwisko</th>
 								    <th width="100" class="tg-zcxc">Kategoria</th>
 								    <th width="100" class="tg-zcxc">Klub</th>
-								    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
+								    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
   								</tr>
 								  <tr ng-repeat="runner in runners" ng-if="$index >0">
 								  	<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
@@ -97,7 +97,7 @@
 										<th width="100" class="tg-zcxc">Nazwisko</th>
 										<th width="100" class="tg-zcxc">Kategoria</th>
 										<th width="100" class="tg-zcxc">Klub</th>
-										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
 
 									</tr>
 									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
@@ -113,7 +113,7 @@
 									<tr>
 										<th width="100" class="tg-zcxc">Miejsce </th>
 										<th width="100" class="tg-zcxc">Klub</th>
-										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
 
 									</tr>
 									<tr  ng-repeat="runner in runnersDruz | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
@@ -129,7 +129,7 @@
 										<th width="100" class="tg-zcxc">Nazwisko</th>
 										<th width="100" class="tg-zcxc">Kategoria</th>
 										<th width="100" class="tg-zcxc">Klub</th>
-										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Punkty PK{{times}}</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Punkty {{times}}</th>
 										<th width="100" class="tg-zcxc">SUMA</th>
 									</tr>
 									<tr  ng-repeat="runner in runners" ng-if="$index >=0 && runner.MIEJSCE!=null"  >

@@ -3752,6 +3752,8 @@ $scope.classification = [
 
                          }
                          }
+                         $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, [id, zaw]);
+                         console.log($scope.ostatniWynikx);
 
 }
 //koniec generalki

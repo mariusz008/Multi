@@ -3731,10 +3731,10 @@ $scope.classification = [
                                                                                          var b = eval(timeName).substring(0,8);
                                                                                           var a = b.split(':');
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                         $scope.runners[i].TIMES[j] = seconds;
+                                                                                         $scope.runners[i].TIMES[0] = seconds;
 
                                                                                          //console.log(seconds);
-                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:j, name:seconds});
+                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, a:i, b:0, name:seconds});
                                                                                          console.log($scope.ostatniWynikx)
                                                                                    //  }
                                                                                   }

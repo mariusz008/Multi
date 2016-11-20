@@ -3514,6 +3514,8 @@ $scope.classification = [
 
                                                                  for(var i=0; i<=($scope.runners.length); i++)
                                                                   {
+
+                                                                  if($scope.runners[i] != undefined){
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
                                                                 // console.log("juz jest"+i);
@@ -3522,8 +3524,13 @@ $scope.classification = [
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
                                                                 console.log("index="+index+" klub="+$scope.runners[i].KLUB+" i="+i+"druzyna="+$scope.druzyny[i]);
                                                                 console.log($scope.runnersDruz[index].TIMES1);
-                                                                console.log($scope.runners[index].TIMES1);
                                                                 console.log($scope.runners[i].TIMES1);
+                                                                for(var t=0; t<$scope.runnersDruz[index].TIMES1.length;t++)
+                                                                {
+                                                                   $scope.runnersDruz[index].TIMES1[t] = console.log($scope.runnersDruz[index].TIMES1[t] + $scope.runners[i].TIMES1[t];
+                                                                }
+                                                                }
+                                                                }
                                                                  }
                                                                   else {
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

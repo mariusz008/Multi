@@ -3726,6 +3726,7 @@ var iter = 0;
                                                                  }
                                                                  var x = $scope.runners[0].POINTS_COUNT;
                                                         $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
+                                                        $scope.runners2[iter] = $filter('orderBy')($scope.runners2[iter], 'POINT'+x+'_TIME');
                                                        // $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, 'id');
                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                  {
@@ -3747,7 +3748,7 @@ var iter = 0;
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
                                                                                         // console.log($scope.ostatniWynikx)
                                                                                         $scope.runners[i].TIMES[0];
-console.log($scope.runners2[iter][i]);
+                                                                                        console.log($scope.runners2[iter][i]);
                                                                                    //  }
                                                                                   }
                                                                         }

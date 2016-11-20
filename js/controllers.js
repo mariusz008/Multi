@@ -3803,7 +3803,10 @@ var iter = 0;
 
 $scope.ogolneOdbierz = function(){
 
-    $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, 'POINT4_TIME');
+
+    for(var i=0; i<$scope.ostatniWynikx.length; i++){
+         $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT4_TIME');
+    }
     console.log($scope.ostatniWynikx);
 
 }

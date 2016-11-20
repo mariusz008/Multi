@@ -3763,7 +3763,7 @@ var iter = 0;
 
                          }
                          }
-
+console.log($scope.runners2);
 
 }
 //koniec generalki

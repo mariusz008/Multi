@@ -3527,10 +3527,12 @@ $scope.classification = [
                                                                 console.log($scope.runners[i].TIMES1);
                                                                 for(var t=0; t<$scope.runnersDruz[index].TIMES1.length;t++)
                                                                 {
-                                                                   $scope.runnersDruz[index].TIMES1[t] = $scope.runnersDruz[index].TIMES1[t] + $scope.runners[i].TIMES1[t];
+                                                                   //$scope.runnersDruz[index].TIMES1[t] = $scope.runnersDruz[index].TIMES1[t] + $scope.runners[i].TIMES1[t];
+                                                                   console.log($scope.runnersDruz[index].TIMES1[t]);
+                                                                   console.log($scope.runners[i].TIMES1[t]);
                                                                 }
                                                                 }
-                                                                
+
                                                                  }
                                                                   else {
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

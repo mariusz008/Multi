@@ -3859,7 +3859,7 @@ var iter = 0;
                          }
 }
 
-}
+
 //koniec generalki
                         }
                    }

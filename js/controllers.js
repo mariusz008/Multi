@@ -3715,14 +3715,19 @@ var iter = 0;
                                                              //console.log("zacz");
                                                               var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
                                                               myDataPromise.then(function(data){
-                                                                console.log(data);
-                                                                $scope.ostatniWynikx.push(data);
+                                                              $scope.runners = data;
+                                                                console.log($scope.runners);
+                                                               // callback($scope.runners);
+                                                                $scope.ostatniWynikx.push($scope.runners);
                                                                 xd++;
                                                               });
-                                                              if(xd==iter){
+                                                              if(xd==($scope.types.length-1)){
+
+                                                              setInterval(function(){
                                                               console.log(iter+" "+myDataPromise);
                                                               console.log($scope.ostatniWynikx);
                                                               console.log(JSON.stringify(myDataPromise));
+                                                              },1000)
                                                               }
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);

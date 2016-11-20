@@ -3750,8 +3750,8 @@ var iter = 0;
 
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
                                                                                           var foundItem = $scope.ostatniWynikx[$scope.ostatniWynikx.length-1];
-
-                                                                                         console.log(foundItem);
+                                                                                            var czas = foundItem.time;
+                                                                                         $scope.runners[i].TIMES[0] = $scope.runners[i].TIMES[0] + czas;
                                                                                             //$scope.runners[i].TIMES[0] = seconds;
                                                                                         var timeName1 = '$scope.runners2[iter][i].POINT'+(x)+'_TIME';
                                                                                          var bb = eval(timeName1).substring(0,8);

@@ -3279,18 +3279,8 @@ if(id==2){
             }
 
     }])
-app.factory('myService', function($http) {
 
-    var getData = function(ID) {
-        return $http({method:"GET", url:"http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id="+ID}).then(function(result){
-            return result.data;
-        });
-    };
-
-
-    return { getData: getData };
-});
-app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, myService, $filter, $http, $route, $sessionStorage, $log, $location){
+app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location){
 
 
              var id = sessionStorage.getItem('compID');
@@ -3326,6 +3316,15 @@ var ileZawodnikow = 0;
                            {name:'Klasyfikacja generalna drużynowa' }
                                                   ];
                         var xd=0;
+
+    var getData = function(ID) {
+        return $http({method:"GET", url:"http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id="+ID}).then(function(result){
+            return result.data;
+        });
+    };
+
+
+    return { getData: getData };
 
         $scope.init = function() {
                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)

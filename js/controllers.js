@@ -3709,6 +3709,7 @@ var iter = 0;
                                     $scope.ostatniWynikx = [];
                                     $scope.ostatniWynikx1 = [];
                                     $scope.runners2= new Array($scope.types.length-1);
+                                    var xd = 0;
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
                                                              //console.log("zacz");
@@ -3716,10 +3717,13 @@ var iter = 0;
                                                               myDataPromise.then(function(data){
                                                                 console.log(data);
                                                                 $scope.ostatniWynikx.push(data);
+                                                                xd++;
                                                               });
+                                                              if(xd==iter){
                                                               console.log(iter+" "+myDataPromise);
                                                               console.log($scope.ostatniWynikx);
                                                               console.log(JSON.stringify(myDataPromise));
+                                                              }
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);
 //                                                                 });

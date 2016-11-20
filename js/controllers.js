@@ -3427,8 +3427,8 @@ $scope.classification = [
                                                                         if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
                                                                            {
                                                                               $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
-                                                                        //      console.log($scope.runners[a].KLUB);
-                                                                          //    console.log(a+" "+b);
+                                                                              console.log($scope.runners[a].KLUB);
+                                                                              console.log(a+" "+b);
                                                                            }
                                                                           }
 }}
@@ -3524,15 +3524,9 @@ $scope.classification = [
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
                                                                 console.log("index="+index+" klub="+$scope.runners[i].KLUB+" i="+i+"druzyna="+$scope.druzyny[i]);
                                                                 console.log($scope.runnersDruz[index].TIMES1);
-                                                                console.log($scope.runners[i].TIMES1);
-                                                                for(var t=0; t<$scope.runnersDruz[index].TIMES1.length;t++)
-                                                                {
-                                                                   //$scope.runnersDruz[index].TIMES1[t] = $scope.runnersDruz[index].TIMES1[t] + $scope.runners[i].TIMES1[t];
-                                                                   console.log($scope.runnersDruz[index].TIMES1[t]);
-                                                                   console.log($scope.runners[i].TIMES1[t]);
-                                                                }
-                                                                }
 
+                                                                console.log($scope.runners[i].TIMES1);
+                                                                }
                                                                  }
                                                                   else {
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

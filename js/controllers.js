@@ -3725,7 +3725,7 @@ var iter = 0;
                                                               });
                                                              // if(xd==($scope.types.length-1)){
 
-                                                              $scope.Timer = $interval($scope.ogolneOdbierz,2000);
+                                                              $scope.Timer = $interval(function () {$scope.ogolneOdbierz},2000);
 
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);

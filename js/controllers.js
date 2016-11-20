@@ -3705,8 +3705,8 @@ var iter = 0;
                                                             .success(function(data){
                                                              $scope.runners = data;
                                                              $scope.runners2[iter] = data;
-                                                             console.log($scope.runners);
-                                                             console.log($scope.runners2);
+                                                             //console.log($scope.runners);
+                                                             //console.log($scope.runners2);
                                                              if($scope.runners[1] != null)
                                                              {
                                                              $scope.timesColumn = [];
@@ -3748,14 +3748,20 @@ var iter = 0;
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
                                                                                         // console.log($scope.ostatniWynikx)
                                                                                         $scope.runners[i].TIMES[0];
-                                                                                        console.log($scope.runners2[iter][i]);
+                                                                                        //console.log($scope.runners2[iter][i]);
+                                                                                        if(iter>0){
+                                                                                        for(var f=0;f<($scope.runners2[iter].length);f++){
+                                                                                        console.log($scope.runners2[iter][i].POINT4_TIME);
+                                                                                        console.log($scope.runners2[iter][i].IMIE);
+                                                                                        }
+                                                                                        }
                                                                                    //  }
                                                                                   }
                                                                         }
                                                                  }
 
                                                              }
-                                                             console.log($scope.ostatniWynikx);
+                                                             //console.log($scope.ostatniWynikx);
                                         })
                                      .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;

@@ -3805,7 +3805,9 @@ $scope.ogolneOdbierz = function(){
 
 
     for(var i=0; i<$scope.ostatniWynikx.length; i++){
-         $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT4_TIME');
+
+            var x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
+            $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
     }
     console.log($scope.ostatniWynikx);
 

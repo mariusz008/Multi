@@ -3693,7 +3693,7 @@ $scope.classification = [
 var iter = 0;
             $scope.runners = [];
             $scope.runners1 = [];
-            $scope.runners2 = [];
+            $scope.ostatniWynikx = [];
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
 

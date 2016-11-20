@@ -3289,7 +3289,7 @@ app.factory('myService', function($http) {
     return { getData: _getData };
 });
 
-app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', 'myService', function($scope, $filter, $http, $route, $sessionStorage, $log, $location, myService){
+app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', '$interval', 'myService', function($scope, $filter, $http, $route, $sessionStorage, $log,$interval, $location, myService){
 
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
@@ -3687,6 +3687,7 @@ $scope.classification = [
                                 }
 
             //wynikiOgolne
+            $scope.Timer = null;
             $scope.ostatniWynikx = [];
              $scope.wynikiOgolne = function(idKlasyfikacji) {
 var iter = 0;
@@ -3724,7 +3725,7 @@ var iter = 0;
                                                               });
                                                              // if(xd==($scope.types.length-1)){
 
-                                                              setInterval($scope.ogolneOdbierz,2000);
+                                                              $scope.Timer = $interval($scope.ogolneOdbierz,2000);
 
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);
@@ -3808,7 +3809,12 @@ var iter = 0;
 }
 
 $scope.ogolneOdbierz = function(){
+
+
     console.log($scope.ostatniWynikx);
+    if (angular.isDefined($scope.Timer)) {
+                        $interval.cancel($scope.Timer);
+                    }
 }
 
 //koniec generalki

@@ -14,8 +14,9 @@
         
            
         var response = [];
-var iter=0;
+
         $scope.loginClick = function(){
+        var iter=0;
         for(iter=0; iter<7; iter++){
                 setInterval(function(){
                       console.log(iter);

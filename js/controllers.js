@@ -3279,14 +3279,14 @@ if(id==2){
             }
 
     }])
-app.factory("myService", function($http) {
+app.factory('myService', function($http) {
     var _getData = function(ID) {
         return $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+ID);
     };
     return { getData: _getData };
 });
 
-app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location, myService){
+app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', 'myService', function($scope, $filter, $http, $route, $sessionStorage, $log, $location, myService){
 
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');

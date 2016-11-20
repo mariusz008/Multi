@@ -3810,7 +3810,6 @@ $scope.ogolneOdbierz = function(){
                 if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
 
                          $scope.ostatniWynikx[i][j].TIMES = new Array(1);
-                         x = $scope.ostatniWynikx[i][j].POINTS_COUNT;
                          var timeName = '$scope.ostatniWynikx[i][j].POINT'+(x)+'_TIME';
                          var b = eval(timeName).substring(0,8);
                          var a = b.split(':');

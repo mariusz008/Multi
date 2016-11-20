@@ -3290,7 +3290,7 @@ app.factory('myService', function($http) {
 
     return { getData: getData };
 });
-app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location){
+app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, myService, $filter, $http, $route, $sessionStorage, $log, $location){
 
 
              var id = sessionStorage.getItem('compID');
@@ -3713,7 +3713,7 @@ $scope.classification = [
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
     var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
     myDataPromise.then(function(result) {
-         $scope.data = result; 
+         $scope.data = result;
          console.log("data.name "+$scope.data.name);
     });
     console.log("This will get printed before data.name inside then. And I don't want that.");

@@ -3713,7 +3713,7 @@ var iter = 0;
                                                              $scope.timesColumn[0] =  "META";
                                                                  for(var a=0;a<=$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                    if(a<$scope.runners[0].POINTS_COUNT) $scope.timesColumn[a] = a+1;
+                                                                    //if(a<$scope.runners[0].POINTS_COUNT) $scope.timesColumn[a] = a+1;
                                                                     if($scope.runners[a]!=undefined){
                                                                       if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {

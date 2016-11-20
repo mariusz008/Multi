@@ -3279,7 +3279,17 @@ if(id==2){
             }
 
     }])
+app.factory('myService', function($http) {
 
+    var getData = function(ID) {
+        return $http({method:"GET", url:"http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id="+ID}).then(function(result){
+            return result.data;
+        });
+    };
+
+
+    return { getData: getData };
+});
 app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location){
 
 
@@ -3680,7 +3690,7 @@ $scope.classification = [
 
             //wynikiOgolne
              $scope.wynikiOgolne = function(idKlasyfikacji) {
-var iter = 0;
+            var iter = 0;
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){

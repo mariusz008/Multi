@@ -3680,7 +3680,7 @@ $scope.classification = [
 
             //wynikiOgolne
              $scope.wynikiOgolne = function(idKlasyfikacji) {
-
+var iter = 0;
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
@@ -3697,10 +3697,10 @@ $scope.classification = [
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
                                     $scope.ostatniWynikx = [];
-                                    for(var i=0; i<($scope.types.length-1); i++){
+                                    for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
 
-                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
+                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
                                                             .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
@@ -3742,6 +3742,7 @@ $scope.classification = [
                                                                                          //console.log(seconds);
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
                                                                                         // console.log($scope.ostatniWynikx)
+
                                                                                    //  }
                                                                                   }
                                                                         }
@@ -3757,8 +3758,7 @@ $scope.classification = [
 
                          }
                          }
-                         $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, id);
-                         console.log($scope.ostatniWynikx);
+
 
 }
 //koniec generalki

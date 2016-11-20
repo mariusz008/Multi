@@ -3714,9 +3714,10 @@ var iter = 0;
                                                              //console.log("zacz");
                                                               var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
                                                               myDataPromise.then(function(data){
-                                                                console.log(data.data);
+                                                                console.log(data);
                                                                 console.log(iter);
                                                               });
+                                                              console.log(iter+" "+myDataPromise.data);
                                                               console.log(iter+" "+myDataPromise);
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);

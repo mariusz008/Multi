@@ -3428,6 +3428,7 @@ $scope.classification = [
                                                                            {
                                                                               $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
                                                                               console.log($scope.runners[a].KLUB);
+                                                                              console.log(a+" "+b);
                                                                            }
                                                                           }
 }

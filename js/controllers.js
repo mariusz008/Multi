@@ -3697,6 +3697,7 @@ var iter = 0;
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
                                     $scope.ostatniWynikx = [];
+                                    $scope.ostatniWynikx1 = [];
                                     $scope.runners2= new Array($scope.types.length-1);
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
@@ -3754,14 +3755,12 @@ var iter = 0;
                                                                                           var aa = bb.split(':');
                                                                                           seconds1 = (+aa[0])*60*60+(+aa[1])*60+(+aa[2]);
                                                                                          $scope.runners2[iter][i].TIMES[0] = seconds;
-                                                                                        console.log($scope.runners2[iter][i].TIMES[0]);
-                                                                                        console.log($scope.runners2[iter][i].IMIE);
-                                                                                        $scope.runners[i].TIMES[0] = $scope.runners[i].TIMES[0] + "+"+$scope.runners2[iter][i].TIMES[0];
-                                                                                        if(iter>0){
-                                                                                        //$scope.runners2[iter][i].TIMES[0]=$scope.runners2[iter][i].TIMES[0]+$scope.runners2[iter-1][i].TIMES[0];
-console.log(iter);
-//$scope.runners2[(iter-1)][i].TIMES[0];
-                                                                                        }
+                                                                                      //  console.log($scope.runners2[iter][i].TIMES[0]);
+                                                                                        //console.log($scope.runners2[iter][i].IMIE);
+                                                                                        if(iter==1) console.log($scope.runners2[1][i].TIMES[0])+" - to dla iter=1");
+                                                                                        if(iter==2) console.log($scope.runners2[2][i].TIMES[0])+" - to dla iter=2");
+                                                                                        if(iter==3) console.log($scope.runners2[3][i].TIMES[0])+" - to dla iter=3");
+
                                                                                         //}
                                                                                        // }
                                                                                    //  }

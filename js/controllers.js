@@ -3708,10 +3708,10 @@ var iter = 0;
                                     $scope.runners2= new Array($scope.types.length-1);
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
-                                                             console.log("zacz");
+                                                             //console.log("zacz");
                                                               myService.getData($scope.daneEtapow[iter].COMPETITION_ID).success(function(data){
                                                               $scope.x=data;
-                                                              console.log("elo");
+                                                              console.log(iter);
                                                               });
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);

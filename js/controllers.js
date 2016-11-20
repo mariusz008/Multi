@@ -3687,6 +3687,7 @@ $scope.classification = [
                                 }
 
             //wynikiOgolne
+            $scope.ostatniWynikx = [];
              $scope.wynikiOgolne = function(idKlasyfikacji) {
 var iter = 0;
             $scope.runners = [];
@@ -3706,7 +3707,7 @@ var iter = 0;
                                       czyWypelnic = 0;
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
-                                    $scope.ostatniWynikx = [];
+
                                     $scope.ostatniWynikx1 = [];
                                     $scope.runners2= new Array($scope.types.length-1);
                                     var xd = 0;
@@ -3721,15 +3722,10 @@ var iter = 0;
                                                                 $scope.ostatniWynikx.push($scope.runners);
                                                                 xd++;
                                                               });
-                                                              if(xd==($scope.types.length-1)){
+                                                             // if(xd==($scope.types.length-1)){
 
-                                                              setInterval(function(){
-                                                             // console.log(iter+" "+myDataPromise);
-                                                              console.log($scope.ostatniWynikx);
-                                                              $scope.ogolneOdbierz($scope.ostatniWynikx);
-                                                             // console.log(JSON.stringify(myDataPromise));
-                                                              },1000)
-                                                              }
+                                                              setInterval($scope.ogolneOdbierz,2000);
+
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);
 //                                                                 });
@@ -3811,8 +3807,8 @@ var iter = 0;
                          }
 }
 
-$scope.ogolneOdbierz = function(data){
-    console.log(data);
+$scope.ogolneOdbierz = function(){
+    console.log($scope.ostatniWynikx);
 }
 
 //koniec generalki

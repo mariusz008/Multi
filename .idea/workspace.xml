@@ -40,7 +40,7 @@
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="636">
-              <caret line="3765" column="38" selection-start-line="3765" selection-start-column="38" selection-end-line="3765" selection-end-column="38" />
+              <caret line="3765" column="18" selection-start-line="3765" selection-start-column="18" selection-end-line="3765" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -1148,7 +1148,7 @@
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="636">
-          <caret line="3765" column="38" selection-start-line="3765" selection-start-column="38" selection-end-line="3765" selection-end-column="38" />
+          <caret line="3765" column="18" selection-start-line="3765" selection-start-column="18" selection-end-line="3765" selection-end-column="18" />
           <folding />
         </state>
       </provider>

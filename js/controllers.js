@@ -3763,7 +3763,8 @@ var iter = 0;
                                                                                         console.log($scope.runners2[iter][i].IMIE);
                                                                                         if(iter>0){
                                                                                         //$scope.runners2[iter][i].TIMES[0]=$scope.runners2[iter][i].TIMES[0]+$scope.runners2[iter-1][i].TIMES[0];
-$scope.runners2[(iter-1)][i].TIMES[0];
+console.log(iter);
+//$scope.runners2[(iter-1)][i].TIMES[0];
                                                                                         }
                                                                                         //}
                                                                                        // }

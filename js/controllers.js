@@ -3512,21 +3512,15 @@ $scope.classification = [
                                                                         }
                                                                  }
 
-                                                                 for(var i=0; i<=($scope.runners.length); i++)
+                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                   {
-
-                                                                  if($scope.runners[i] != undefined){
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
                                                                 // console.log("juz jest"+i);
                                                                  //var n = $scope.runners[i].KLUB.indexOf("welcome");
                                                                 //$scope.runnersDruz[i] =
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
-                                                                console.log("index="+index+" klub="+$scope.runners[i].KLUB+" i="+i+"druzyna="+$scope.druzyny[i]);
-                                                                console.log($scope.runnersDruz[index].TIMES1);
-
-                                                                console.log($scope.runners[i].TIMES1);
-                                                                }
+                                                               // console.log("index="+index+" klub="+$scope.runners[i].KLUB+"i="+i+"druzy")
                                                                  }
                                                                   else {
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

@@ -3711,18 +3711,21 @@ var iter = 0;
                                                              {
                                                              $scope.timesColumn = [];
                                                              $scope.timesColumn[0] =  "META";
-                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
+                                                                 for(var a=0;a<=$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                     //$scope.timesColumn[a] = a+1;
+                                                                    if(a<$scope.runners[0].POINTS_COUNT) $scope.timesColumn[a] = a+1;
+                                                                    if($scope.runners[a]!=undefined){
                                                                       if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {
                                                                           for(var b=0; b<$scope.zawodnicy.length; b++){
                                                                         if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
                                                                            {
                                                                               $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
+                                                                             // console.log($scope.runners[a].KLUB);
+                                                                              //console.log(a+" "+b);
                                                                            }
                                                                           }
-                                                                    }
+}}
                                                                  }
                                                                  var x = $scope.runners[0].POINTS_COUNT;
                                                         $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
@@ -3751,7 +3754,12 @@ var iter = 0;
                                                                                         //console.log($scope.runners2[iter][i]);
                                                                                       //  if(iter>0){
                                                                                        // for(var f=0;f<($scope.runners2[iter].length);f++){
-                                                                                        console.log($scope.runners2[iter][i].POINT4_TIME);
+                                                                                        var timeName1 = '$scope.runners2[iter][i].POINT'+(x)+'_TIME';
+                                                                                         var bb = eval(timeName1).substring(0,8);
+                                                                                          var aa = bb.split(':');
+                                                                                          seconds1 = (+aa[0])*60*60+(+aa[1])*60+(+aa[2]);
+                                                                                         $scope.runners2[iter][i].TIMES[0] = seconds;
+                                                                                        console.log($scope.runners2[iter][i].TIMES[0]);
                                                                                         console.log($scope.runners2[iter][i].IMIE);
                                                                                         //}
                                                                                        // }

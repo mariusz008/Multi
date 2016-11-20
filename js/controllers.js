@@ -3719,24 +3719,17 @@ var iter = 0;
                                                               myDataPromise.then(function(data){
                                                               $scope.runners = data;
                                                                 console.log($scope.runners);
-                                                               // callback($scope.runners);
+
                                                                 $scope.ostatniWynikx.push($scope.runners);
                                                                 xd++;
                                                               });
-                                                             // if(xd==($scope.types.length-1)){
-                                                             }
-                                                                                      }
-                                                              $timeout($scope.ogolneOdbierz,2000);
+                                             }
+                                    }
+                                     $timeout($scope.ogolneOdbierz,500);
 
-//                                                                myDataPromise.then(function(data) {
-//                                                            console.log("data.name "+iter);
-//                                                                 });
-//                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
-//                                                            .success(function(data){
+
 //                                                             $scope.runners = data;
 //                                                             $scope.runners2[iter] = data;
-//                                                             //console.log($scope.runners);
-//                                                             //console.log($scope.runners2);
 //                                                             if($scope.runners[1] != null)
 //                                                             {
 //                                                             $scope.timesColumn = [];

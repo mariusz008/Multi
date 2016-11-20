@@ -22,12 +22,12 @@
                       console.log(iter);
                 },2000);
         }
-        if(var==7){
-        console.log("t");
-        setInterval(function(){
-                              console.log(iter);
-                        },2000);
-        }
+//        if(var==7){
+//        console.log("t");
+//        setInterval(function(){
+//                              console.log(iter);
+//                        },2000);
+//        }
 //            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/login?login='+ $scope.user.login +
 //                                                                        '&password='+ $scope.user.password)
 //

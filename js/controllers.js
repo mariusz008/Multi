@@ -3419,10 +3419,10 @@ $scope.classification = [
                                                              $scope.timesColumn = [];
                                                                  for(var a=0;a<=$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                     $scope.timesColumn[a] = a+1;
+
                                                                       if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {
-
+$scope.timesColumn[a] = a+1;
                                                                           for(var b=0; b<$scope.zawodnicy.length; b++){
                                                                         if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
                                                                            {

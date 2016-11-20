@@ -3697,15 +3697,16 @@ var iter = 0;
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
                                     $scope.ostatniWynikx = [];
+                                    $scope.runners2= new Array($scope.types.length-1);
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
 
                                                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
                                                             .success(function(data){
                                                              $scope.runners = data;
+                                                             $scope.runners2[iter] = data;
                                                              if($scope.runners[1] != null)
                                                              {
-
                                                              $scope.timesColumn = [];
                                                              $scope.timesColumn[0] =  "META";
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
@@ -3723,7 +3724,7 @@ var iter = 0;
                                                                  }
                                                                  var x = $scope.runners[0].POINTS_COUNT;
                                                         $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
-                                                        $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, 'id');
+                                                       // $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, 'id');
                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                  {
                                                                      if($scope.runners[i] != undefined){
@@ -3743,6 +3744,7 @@ var iter = 0;
                                                                                          //console.log(seconds);
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
                                                                                         // console.log($scope.ostatniWynikx)
+                                                                                        $scope.runners[i].TIMES[0]
 
                                                                                    //  }
                                                                                   }

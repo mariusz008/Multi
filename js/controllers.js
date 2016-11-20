@@ -3769,12 +3769,7 @@ var iter = 0;
                                                                                           var aa = bb.split(':');
                                                                                           seconds1 = (+aa[0])*60*60+(+aa[1])*60+(+aa[2]);
                                                                                          $scope.runners2[iter][i].TIMES[0] = seconds;
-                                                                                      //  console.log($scope.runners2[iter][i].TIMES[0]);
-                                                                                        //console.log($scope.runners2[iter][i].IMIE);
-
-                                                                                        //}
-                                                                                       // }
-                                                                                   //  }
+                                                                                        console.log(iter);
                                                                                   }
                                                                         }
                                                                  }

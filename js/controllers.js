@@ -3281,7 +3281,10 @@ if(id==2){
     }])
 app.factory('myService', function($http) {
     var _getData = function(ID) {
-        return $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+ID);
+        return $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+ID)
+        .then(function(result){
+        return result.data;
+        });
     };
     return { getData: _getData };
 });

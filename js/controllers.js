@@ -3747,13 +3747,8 @@ var iter = 0;
                                                                                           seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                          $scope.runners[i].TIMES[0] = seconds;
 
-                                                                                         //console.log(seconds);
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
-                                                                                        // console.log($scope.ostatniWynikx)
-                                                                                        $scope.runners[i].TIMES[0];
-                                                                                        //console.log($scope.runners2[iter][i]);
-                                                                                      //  if(iter>0){
-                                                                                       // for(var f=0;f<($scope.runners2[iter].length);f++){
+
                                                                                         var timeName1 = '$scope.runners2[iter][i].POINT'+(x)+'_TIME';
                                                                                          var bb = eval(timeName1).substring(0,8);
                                                                                           var aa = bb.split(':');
@@ -3761,6 +3756,7 @@ var iter = 0;
                                                                                          $scope.runners2[iter][i].TIMES[0] = seconds;
                                                                                         console.log($scope.runners2[iter][i].TIMES[0]);
                                                                                         console.log($scope.runners2[iter][i].IMIE);
+                                                                                        $scope.runners[i].TIMES[0] = $scope.runners[i].TIMES[0] + 1;
                                                                                         if(iter>0){
                                                                                         //$scope.runners2[iter][i].TIMES[0]=$scope.runners2[iter][i].TIMES[0]+$scope.runners2[iter-1][i].TIMES[0];
 console.log(iter);

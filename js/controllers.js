@@ -3715,10 +3715,11 @@ var iter = 0;
                                                               var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
                                                               myDataPromise.then(function(data){
                                                                 console.log(data);
-                                                                console.log(iter);
+                                                                $scope.ostatniWynikx.push(data);
                                                               });
-                                                              console.log(iter+" "+myDataPromise.data);
                                                               console.log(iter+" "+myDataPromise);
+                                                              console.log($scope.ostatniWynikx);
+                                                              console.log(JSON.stringify(myDataPromise));
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);
 //                                                                 });

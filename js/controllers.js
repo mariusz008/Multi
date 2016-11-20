@@ -3711,10 +3711,10 @@ var iter = 0;
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
                                                              console.log("zacz");
-//                                                              var myDataPromise = $scope.getData($scope.daneEtapow[iter].COMPETITION_ID);
-//                                                                myDataPromise.then(function(data) {
-//                                                            console.log("data.name "+iter);
-//                                                                 });
+                                                              var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
+                                                                myDataPromise.then(function(data) {
+                                                            console.log("data.name "+iter);
+                                                                 });
 //                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
 //                                                            .success(function(data){
 //                                                             $scope.runners = data;

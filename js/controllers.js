@@ -3724,9 +3724,10 @@ var iter = 0;
                                                               if(xd==($scope.types.length-1)){
 
                                                               setInterval(function(){
-                                                              console.log(iter+" "+myDataPromise);
+                                                             // console.log(iter+" "+myDataPromise);
                                                               console.log($scope.ostatniWynikx);
-                                                              console.log(JSON.stringify(myDataPromise));
+                                                              $scope.ogolneOdbierz($scope.ostatniWynikx);
+                                                             // console.log(JSON.stringify(myDataPromise));
                                                               },1000)
                                                               }
 //                                                                myDataPromise.then(function(data) {
@@ -3810,6 +3811,9 @@ var iter = 0;
                          }
 }
 
+$scope.ogolneOdbierz = function(data){
+    console.log(data);
+}
 
 //koniec generalki
                         }

@@ -3718,7 +3718,7 @@ var iter = 0;
                                                               var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
                                                               myDataPromise.then(function(data){
                                                               $scope.runners = data;
-                                                                console.log($scope.runners);
+                                                                //console.log($scope.runners);
 
                                                                 $scope.ostatniWynikx.push($scope.runners);
                                                                 xd++;
@@ -3803,7 +3803,7 @@ var iter = 0;
 
 $scope.ogolneOdbierz = function(){
 
-
+    $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, 'POINT4_TIME');
     console.log($scope.ostatniWynikx);
 
 }

@@ -3723,6 +3723,7 @@ var iter = 0;
                                                                  }
                                                                  var x = $scope.runners[0].POINTS_COUNT;
                                                         $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
+                                                        $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, 'time');
                                                                 for(var i=0; i<($scope.runners.length); i++)
                                                                  {
                                                                      if($scope.runners[i] != undefined){

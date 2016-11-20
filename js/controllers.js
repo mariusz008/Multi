@@ -3797,12 +3797,14 @@ $scope.ogolneOdbierz = function(){
 
     var x = null;
     //posortowane wg czasu
-    for(var i=0; i<$scope.ostatniWynikx.length; i++){
-            x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
-            $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
-    }
+//    for(var i=0; i<$scope.ostatniWynikx.length; i++){
+//            x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
+//            $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
+//    }
 
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
+        x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
+        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
         for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
           if($scope.ostatniWynikx[i][j] != undefined){
                 if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){

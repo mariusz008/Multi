@@ -3289,7 +3289,7 @@ app.factory('myService', function($http) {
     return { getData: _getData };
 });
 
-app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', '$interval', 'myService', function($scope, $filter, $http, $route, $sessionStorage, $log,$interval, $location, myService){
+app.controller('resultListController', ['$scope','$timeout', '$filter', '$http', '$route', '$sessionStorage', '$log', '$location', '$interval', 'myService', function($scope,$timeout, $filter, $http, $route, $sessionStorage, $log,$interval, $location, myService){
 
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
@@ -3725,7 +3725,7 @@ var iter = 0;
                                                               });
                                                              // if(xd==($scope.types.length-1)){
 
-                                                              $scope.Timer = $interval(function () {$scope.ogolneOdbierz},2000);
+                                                              $timeout($scope.ogolneOdbierz,2000);
 
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);
@@ -3812,9 +3812,7 @@ $scope.ogolneOdbierz = function(){
 
 
     console.log($scope.ostatniWynikx);
-    if (angular.isDefined($scope.Timer)) {
-                        $interval.cancel($scope.Timer);
-                    }
+
 }
 
 //koniec generalki

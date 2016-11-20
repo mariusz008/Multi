@@ -3709,10 +3709,10 @@ var iter = 0;
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
                                                              //console.log("zacz");
-                                                              myService.getData($scope.daneEtapow[iter].COMPETITION_ID)
-                                                              .then(function(data){
-console.log(data);
-console.log(iter);
+                                                              var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
+                                                              myDataPromise.then(function(data){
+                                                                console.log(data.data);
+                                                                console.log(iter);
                                                               });
                                                               console.log(iter);
 //                                                                myDataPromise.then(function(data) {

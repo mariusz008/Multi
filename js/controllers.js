@@ -3716,7 +3716,7 @@ var iter = 0;
 
                                                                     // this is only run after getData() resolves
                                                                     $scope.data = result;
-                                                                    console.log("data.name"+$scope.daneEtapow[iter].COMPETITION_ID);
+                                                                    console.log("data.name"+$scope.data);
                                                                  });
                                                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
                                                             .success(function(data){

@@ -3427,8 +3427,8 @@ $scope.classification = [
                                                                         if($scope.runners[a].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
                                                                            {
                                                                               $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
-                                                                              console.log($scope.runners[a].KLUB);
-                                                                              console.log(a+" "+b);
+                                                                             // console.log($scope.runners[a].KLUB);
+                                                                              //console.log(a+" "+b);
                                                                            }
                                                                           }
 }}

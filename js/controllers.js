@@ -3710,7 +3710,7 @@ $scope.classification = [
                                     $scope.runners2= new Array($scope.types.length-1);
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
-    var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
+    var myDataPromise = resultListController.getData($scope.daneEtapow[iter].COMPETITION_ID);
     myDataPromise.then(function(result) {
          $scope.data = result;
          console.log("data.name "+$scope.data.name);

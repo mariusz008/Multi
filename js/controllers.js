@@ -3746,8 +3746,8 @@ var iter = 0;
                                                                                          //console.log(seconds);
                                                                                          $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
                                                                                         // console.log($scope.ostatniWynikx)
-                                                                                        $scope.runners[i].TIMES[0]
-
+                                                                                        $scope.runners[i].TIMES[0];
+console.log($scope.runners2[iter][i]);
                                                                                    //  }
                                                                                   }
                                                                         }
@@ -3763,7 +3763,7 @@ var iter = 0;
 
                          }
                          }
-console.log($scope.runners2);
+
 
 }
 //koniec generalki

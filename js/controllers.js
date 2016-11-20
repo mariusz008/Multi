@@ -3279,13 +3279,11 @@ if(id==2){
             }
 
     }])
-app.factory('myService', function($http) {
-    var getData = function(ID) {
-        return $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+ID).then(function(result){
-            return result.data;
-        });
+app.factory("myService", function($http) {
+    var _getData = function(ID) {
+        return $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+ID);
     };
-    return { getData: getData };
+    return { getData: _getData };
 });
 
 app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location, myService){
@@ -3711,10 +3709,13 @@ var iter = 0;
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
                                                              console.log("zacz");
-                                                              var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
-                                                                myDataPromise.then(function(data) {
-                                                            console.log("data.name "+iter);
-                                                                 });
+                                                              myService.getData($scope.daneEtapow[iter].COMPETITION_ID).success(function(data){
+                                                              $scope.x=data;
+                                                              console.log("elo");
+                                                              });
+//                                                                myDataPromise.then(function(data) {
+//                                                            console.log("data.name "+iter);
+//                                                                 });
 //                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
 //                                                            .success(function(data){
 //                                                             $scope.runners = data;

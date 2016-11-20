@@ -3530,7 +3530,7 @@ $scope.classification = [
                                                                    $scope.runnersDruz[index].TIMES1[t] = $scope.runnersDruz[index].TIMES1[t] + $scope.runners[i].TIMES1[t];
                                                                 }
                                                                 }
-                                                                }
+                                                                
                                                                  }
                                                                   else {
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

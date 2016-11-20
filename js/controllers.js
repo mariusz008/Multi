@@ -3705,6 +3705,8 @@ var iter = 0;
                                                             .success(function(data){
                                                              $scope.runners = data;
                                                              $scope.runners2[iter] = data;
+                                                             console.log($scope.runners);
+                                                             console.log($scope.runners2);
                                                              if($scope.runners[1] != null)
                                                              {
                                                              $scope.timesColumn = [];

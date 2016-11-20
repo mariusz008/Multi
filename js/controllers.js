@@ -3714,7 +3714,7 @@ var iter = 0;
                                                                 console.log(data.data);
                                                                 console.log(iter);
                                                               });
-                                                              console.log(iter);
+                                                              console.log(iter+" "+myDataPromise);
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);
 //                                                                 });

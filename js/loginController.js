@@ -19,7 +19,7 @@
         for(var iter=0; iter<7; iter++){
                 setInterval(function(){
                       console.log(iter);
-                },1000)        
+                },2000);
         }
 //            $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/user/login?login='+ $scope.user.login +
 //                                                                        '&password='+ $scope.user.password)

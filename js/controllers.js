@@ -3749,12 +3749,12 @@ var iter = 0;
                                                                                         // console.log($scope.ostatniWynikx)
                                                                                         $scope.runners[i].TIMES[0];
                                                                                         //console.log($scope.runners2[iter][i]);
-                                                                                        if(iter>0){
-                                                                                        for(var f=0;f<($scope.runners2[iter].length);f++){
+                                                                                      //  if(iter>0){
+                                                                                       // for(var f=0;f<($scope.runners2[iter].length);f++){
                                                                                         console.log($scope.runners2[iter][i].POINT4_TIME);
                                                                                         console.log($scope.runners2[iter][i].IMIE);
-                                                                                        }
-                                                                                        }
+                                                                                        //}
+                                                                                       // }
                                                                                    //  }
                                                                                   }
                                                                         }

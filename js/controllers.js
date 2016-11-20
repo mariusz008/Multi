@@ -3757,9 +3757,9 @@ var iter = 0;
                                                                                          $scope.runners2[iter][i].TIMES[0] = seconds;
                                                                                       //  console.log($scope.runners2[iter][i].TIMES[0]);
                                                                                         //console.log($scope.runners2[iter][i].IMIE);
-                                                                                        if(iter==1) console.log($scope.runners2[1][i].TIMES[0])+" - to dla iter=1");
-                                                                                        if(iter==2) console.log($scope.runners2[2][i].TIMES[0])+" - to dla iter=2");
-                                                                                        if(iter==3) console.log($scope.runners2[3][i].TIMES[0])+" - to dla iter=3");
+                                                                                        if(iter==1) console.log($scope.runners2[1][i].TIMES[0]+" - to dla iter=1");
+                                                                                        if(iter==2) console.log($scope.runners2[2][i].TIMES[0]+" - to dla iter=2");
+                                                                                        if(iter==3) console.log($scope.runners2[3][i].TIMES[0]+" - to dla iter=3");
 
                                                                                         //}
                                                                                        // }

@@ -3724,7 +3724,8 @@ var iter = 0;
                                                                 xd++;
                                                               });
                                                              // if(xd==($scope.types.length-1)){
-                                                              if(iter==$scope.types.length-1)
+                                                             }
+                                                                                      }
                                                               $timeout($scope.ogolneOdbierz,2000);
 
 //                                                                myDataPromise.then(function(data) {
@@ -3804,8 +3805,7 @@ var iter = 0;
 //                                     console.log('Błąd3!'+ data);
 //                                     });
 
-                         }
-                         }
+
 }
 
 $scope.ogolneOdbierz = function(){

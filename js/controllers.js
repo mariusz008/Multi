@@ -3713,8 +3713,8 @@ var iter = 0;
                                                              //$scope.getData
                                                               var myDataPromise = $scope.getData($scope.daneEtapow[iter].COMPETITION_ID);
                                                                  myDataPromise.then(function(data) {
-                                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
-                                                            .success(function(data){
+                                                            // $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
+                                                            //.success(function(data){
                                                              $scope.runners = data;
                                                              $scope.runners2[iter] = data;
                                                              //console.log($scope.runners);

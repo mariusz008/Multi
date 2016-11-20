@@ -3756,7 +3756,7 @@ var iter = 0;
                                                                                          $scope.runners2[iter][i].TIMES[0] = seconds;
                                                                                         console.log($scope.runners2[iter][i].TIMES[0]);
                                                                                         console.log($scope.runners2[iter][i].IMIE);
-                                                                                        $scope.runners[i].TIMES[0] = $scope.runners[i].TIMES[0] + 1;
+                                                                                        $scope.runners[i].TIMES[0] = $scope.runners[i].TIMES[0] + "+1";
                                                                                         if(iter>0){
                                                                                         //$scope.runners2[iter][i].TIMES[0]=$scope.runners2[iter][i].TIMES[0]+$scope.runners2[iter-1][i].TIMES[0];
 console.log(iter);

@@ -3317,15 +3317,6 @@ var ileZawodnikow = 0;
                                                   ];
                         var xd=0;
 
-    var getData = function(ID) {
-        return $http({method:"GET", url:"http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id="+ID}).then(function(result){
-            return result.data;
-        });
-    };
-
-
-    return { getData: getData };
-
         $scope.init = function() {
                 $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition?id=' + id)
                 .success(function(data1){
@@ -3689,7 +3680,7 @@ $scope.classification = [
 
             //wynikiOgolne
              $scope.wynikiOgolne = function(idKlasyfikacji) {
-            var iter = 0;
+var iter = 0;
             // console.log($scope.competition.type.name);
               if($scope.competition!=undefined && $scope.competition.type!=undefined){
               if($scope.competition.type.name==(cc +". Ogólne")){
@@ -3710,12 +3701,7 @@ $scope.classification = [
                                     $scope.runners2= new Array($scope.types.length-1);
                                     for(iter=0; iter<($scope.types.length-1); iter++){
                                     if($scope.classification!=undefined && $scope.classification.type!=undefined){
-//    var myDataPromise = resultListController.getData($scope.daneEtapow[iter].COMPETITION_ID);
-//    myDataPromise.then(function(result) {
-//         $scope.data = result;
-//         console.log("data.name "+$scope.data.name);
-//    });
-//    console.log("This will get printed before data.name inside then. And I don't want that.");
+
                                                              $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[iter].COMPETITION_ID)
                                                             .success(function(data){
                                                              $scope.runners = data;

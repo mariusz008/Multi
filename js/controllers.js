@@ -3736,14 +3736,15 @@ $scope.classification = [
                                                                                          $scope.runners[i].TIMES[0] = seconds;
 
                                                                                          //console.log(seconds);
-                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, zaw:$scope.runners[i].COMPETITION_ID, name:seconds});
-                                                                                         console.log($scope.ostatniWynikx)
+                                                                                         $scope.ostatniWynikx.push({id:$scope.runners[i].USER_ID, time:seconds});
+                                                                                        // console.log($scope.ostatniWynikx)
                                                                                    //  }
                                                                                   }
                                                                         }
                                                                  }
 
                                                              }
+                                                             console.log($scope.ostatniWynikx);
                                         })
                                      .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;
@@ -3752,7 +3753,7 @@ $scope.classification = [
 
                          }
                          }
-                         $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, [id, zaw]);
+                         $scope.ostatniWynikx = $filter('orderBy')($scope.ostatniWynikx, id);
                          console.log($scope.ostatniWynikx);
 
 }

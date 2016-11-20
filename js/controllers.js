@@ -3282,7 +3282,16 @@ if(id==2){
 
 app.controller('resultListController', ['$scope','$filter', '$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $filter, $http, $route, $sessionStorage, $log, $location){
 
+$scope.getData = function(ID) {
 
+        // Angular $http() and then() both return promises themselves
+        return $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+ID).then(function(result){
+
+            // What we return here is the data that will be accessible
+            // to us after the promise resolves
+            return result.data;
+        });
+    };
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
                     $scope.runners = [];

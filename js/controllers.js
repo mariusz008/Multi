@@ -3417,7 +3417,7 @@ $scope.classification = [
                                                              if($scope.runners[1] != null)
                                                              {
                                                              $scope.timesColumn = [];
-                                                                 for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
+                                                                 for(var a=0;a<=$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
                                                                       if($scope.runners[a].hasOwnProperty('NAZWISKO'))

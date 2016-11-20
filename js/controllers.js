@@ -3711,7 +3711,7 @@ var iter = 0;
                                                              //console.log("zacz");
                                                               myService.getData($scope.daneEtapow[iter].COMPETITION_ID).success(function(data){
                                                               $scope.x=data;
-                                                              console.log($scope.daneEtapow[iter].COMPETITION_ID);
+                                                              console.log(data);
                                                               });
 //                                                                myDataPromise.then(function(data) {
 //                                                            console.log("data.name "+iter);

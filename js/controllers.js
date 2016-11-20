@@ -3520,7 +3520,8 @@ $scope.classification = [
                                                                  //var n = $scope.runners[i].KLUB.indexOf("welcome");
                                                                 //$scope.runnersDruz[i] =
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
-                                                                console.log("index="+index+" klub="+$scope.runners[i].KLUB+"i="+i+"druzyna="+$scope.druzyny[i]);
+                                                                console.log("index="+index+" klub="+$scope.runners[i].KLUB+" i="+i+"druzyna="+$scope.druzyny[i]);
+                                                                console.log($scope.runnersDruz[index].TIMES1);
                                                                  }
                                                                   else {
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);

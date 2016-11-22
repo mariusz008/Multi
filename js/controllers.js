@@ -3748,9 +3748,10 @@ $scope.ogolneOdbierz = function(){
            }
         }
         }
-        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
+
     }
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
+        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
     for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
     if($scope.ostatniWynikx[i][j] != undefined){
                     if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
@@ -3760,7 +3761,8 @@ $scope.ogolneOdbierz = function(){
             }
     }
     console.log($scope.ostatniWynikx);
-
+    $scope.ostatniWynikx = [];
+    console.log("wyczyszczone");
 }
 
 //koniec generalki

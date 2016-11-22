@@ -3460,6 +3460,7 @@ $scope.classification = [
                                                                              }
                                                                         }
                                                                  }
+                                                                 console.log($scope.runners);
                                                              }
                                         })
                                      .error(function(data,status,headers,config){

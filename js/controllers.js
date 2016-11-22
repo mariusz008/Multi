@@ -3770,10 +3770,11 @@ $scope.ogolneOdbierz = function(){
                          var s = $scope.ostatniWynikx[i][j].TIMES[0];
                          //console.log(s);
                          //var ms = parseFloat(s % 1000);
-                         var czas1= (new Date).clearTime()
-                                                            .addSeconds(s)
-                                                            .toString('HH:mm:ss');
-                                                            console.log(czas1);
+//                         var czas1= (new Date).clearTime()
+//                                                            .addSeconds(s)
+//                                                            .toString('HH:mm:ss');
+//                                                            console.log(czas1);
+console.log(msToTime(s));
                          //console.log(parseFloat(ms));
                               //   s = parseFloat((s - ms) / 1000);
                                  //console.log(s);
@@ -3805,7 +3806,18 @@ $scope.ogolneOdbierz = function(){
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
     $scope.ostatniWynikx = [];
 }
+function msToTime(duration) {
+    var  seconds = parseInt((duration)%60)
+        , minutes = parseInt((duration/(60))%60)
+        , hours = parseInt((duration/(60*60))%24);
 
+    hours = (hours < 10) ? "0" + hours : hours;
+    minutes = (minutes < 10) ? "0" + minutes : minutes;
+    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds;
+
+}
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/competition/compRunnersList');

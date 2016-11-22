@@ -3724,7 +3724,7 @@ $scope.classification = [
                                                               });
                                              }
                                     }
-                                    $timeout($scope.ogolneOdbierz,4000);
+                                    $timeout($scope.ogolneOdbierz,2000);
 }
 
 

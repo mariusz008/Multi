@@ -3496,7 +3496,7 @@ $scope.classification = [
                                                                               $scope.runners[a].KLUB = $scope.zawodnicy[b].KLUB;
                                                                            }
                                                                           }
-}
+                                                                        }
                                                                  }
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                    $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
@@ -3670,7 +3670,7 @@ $scope.classification = [
                                                                   $scope.runners[(j)].SUMA = suma;
 }
                                                             }
-
+                                                        console.log($scope.runners);
 
                                                          })
                                                          .error(function(data,status,headers,config){
@@ -3774,7 +3774,6 @@ $scope.ogolneOdbierz = function(){
 
 
     $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
-    console.log($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)]);
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
 
     console.log($scope.runners);

@@ -3760,11 +3760,11 @@ $scope.ogolneOdbierz = function(){
                     }
             }
     }
+    } while($scope.ostatniWynikx.length==0);
 
     console.log($scope.ostatniWynikx);
     $scope.ostatniWynikx = [];
     console.log("wyczyszczone");
-    } while($scope.ostatniWynikx.length==0);
 }
 
 //koniec generalki

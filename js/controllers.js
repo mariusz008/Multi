@@ -3723,7 +3723,7 @@ $scope.classification = [
                                                               });
                                              }
                                     }
-                    $timeout($scope.ogolneOdbierz,500);
+                    $timeout($scope.ogolneOdbierz,2000);
 }
 
 $scope.ogolneOdbierz = function(){
@@ -3743,12 +3743,12 @@ $scope.ogolneOdbierz = function(){
                          var a = b.split(':');
                          seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                          $scope.ostatniWynikx[i][j].TIMES[0] = seconds;
-                        // console.log($scope.ostatniWynikx[i][j].NAZWISKO+" "+$scope.ostatniWynikx[i][j].TIMES);
+                        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
+                         console.log($scope.ostatniWynikx[i]);
            }
         }
         }
-        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
-        console.log($scope.ostatniWynikx[i]);
+
     }
 
     console.log($scope.ostatniWynikx);

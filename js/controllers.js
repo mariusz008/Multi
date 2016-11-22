@@ -3767,12 +3767,11 @@ $scope.ogolneOdbierz = function(){
                             $scope.ostatniWynikx[i][j].TIMES[0] = $scope.ostatniWynikx[i][j].TIMES[0] + $scope.ostatniWynikx[(i-1)][j].TIMES[0];
                          }
                          var s = $scope.ostatniWynikx[i][j].TIMES[0];
-                         var ms = s % 1000;
-                                 s = (s - ms) / 1000;
-                                 var secs = s % 60;
-                                 s = (s - secs) / 60;
-                                 var mins = s % 60;
-                                 var hrs = (s - mins) / 60;
+                                 s = parseInt((s - ms) / 1000);
+                                 var secs = parseInt(s % 60);
+                                 s = parseInt(s - secs) / 60;
+                                 var mins = parseInt(s % 60);
+                                 var hrs = parseInt((s - mins) / 60);
                          $scope.ostatniWynikx[i][j].TIMES[0] = hrs + ':' + mins + ':' + secs;
                          $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
                           if($scope.ostatniWynikx[i][j].hasOwnProperty('NAZWISKO'))

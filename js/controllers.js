@@ -3738,6 +3738,7 @@ $scope.classification = [
 $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);
+    $scope.timesColumn = [];
     $scope.timesColumn[0] = "META";
 
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
@@ -3765,7 +3766,7 @@ $scope.ogolneOdbierz = function(){
                          if(i>0){
                             $scope.ostatniWynikx[i][j].TIMES = $scope.ostatniWynikx[i][j].TIMES + $scope.ostatniWynikx[(i-1)][j].TIMES;
                          }
-                         console.log($scope.ostatniWynikx[i][j].NAZWISKO+" - "+$scope.ostatniWynikx[i][j].TIMES);
+                         $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
                          }
                     }
             }
@@ -3775,6 +3776,7 @@ $scope.ogolneOdbierz = function(){
     $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
     console.log($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)]);
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
+    
     console.log($scope.runners);
     $scope.ostatniWynikx = [];
     console.log("wyczyszczone");

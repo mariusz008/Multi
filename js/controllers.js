@@ -3752,7 +3752,7 @@ $scope.ogolneOdbierz = function(){
                          var b = eval(timeName).substring(0,8);
                          var a = b.split(':');
                          seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                         $scope.ostatniWynikx[i][j].TIMES = seconds;
+                         $scope.ostatniWynikx[i][j].TIMES[0] = seconds;
            }
         }
         }
@@ -3764,7 +3764,7 @@ $scope.ogolneOdbierz = function(){
     if($scope.ostatniWynikx[i][j] != undefined){
                     if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
                          if(i>0){
-                            $scope.ostatniWynikx[i][j].TIMES = $scope.ostatniWynikx[i][j].TIMES + $scope.ostatniWynikx[(i-1)][j].TIMES;
+                            $scope.ostatniWynikx[i][j].TIMES[0] = $scope.ostatniWynikx[i][j].TIMES[0] + $scope.ostatniWynikx[(i-1)][j].TIMES[0];
                          }
                          $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
                          }

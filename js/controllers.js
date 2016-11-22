@@ -3725,7 +3725,7 @@ $scope.classification = [
                                                               });
                                              }
                                     }
-                                    $timeout($scope.ogolneOdbierz,2000);
+                                    $timeout($scope.ogolneOdbierz,1000);
 }
 
 
@@ -3776,7 +3776,7 @@ $scope.ogolneOdbierz = function(){
     $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
     console.log($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)]);
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
-    
+
     console.log($scope.runners);
     $scope.ostatniWynikx = [];
     console.log("wyczyszczone");

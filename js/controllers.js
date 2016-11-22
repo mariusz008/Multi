@@ -3307,6 +3307,7 @@ app.controller('resultListController', ['$scope','$timeout', '$filter', '$http',
                     $scope.wynikiTimes = [];
                     $scope.timesColumn = [];
                     var zawody = new Array();
+                    $scope.wynikOgolnych = [];
                     var czyWypelnic = 0;
 $scope.listaWynikow1 = [];
 var suma = 0;
@@ -3726,9 +3727,17 @@ $scope.classification = [
                                     $timeout($scope.ogolneOdbierz,4000);
 }
 
+
+//koniec generalki
+                        }
+                   }
+             }
+
+
 $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);
+    $scope.timesColumn = "META";
     do{
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
         x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
@@ -3761,15 +3770,13 @@ $scope.ogolneOdbierz = function(){
     }
     } while($scope.ostatniWynikx.length==0);
 
+    $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
     console.log($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)]);
+    $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
     $scope.ostatniWynikx = [];
     console.log("wyczyszczone");
 }
 
-//koniec generalki
-                        }
-                   }
-             }
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/competition/compRunnersList');

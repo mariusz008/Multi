@@ -3768,26 +3768,8 @@ $scope.ogolneOdbierz = function(){
                          }
                          if(i==($scope.ostatniWynikx.length-1)){
                          var s = $scope.ostatniWynikx[i][j].TIMES[0];
-                         //console.log(s);
-                         //var ms = parseFloat(s % 1000);
-//                         var czas1= (new Date).clearTime()
-//                                                            .addSeconds(s)
-//                                                            .toString('HH:mm:ss');
-//                                                            console.log(czas1);
-console.log(msToTime(s));
-                         //console.log(parseFloat(ms));
-                              //   s = parseFloat((s - ms) / 1000);
-                                 //console.log(s);
-                               //  var secs = parseFloat(s % 60);
-                               //  s = parseFloat(s - secs) / 60;
-                                 //console.log(secs);
-                                 //console.log(s);
-                               //  var mins = parseFloat(s % 60);
-                                // var hrs = parseFloat((s - mins) / 60);
-                         //$scope.ostatniWynikx[i][j].TIMES[0] = ms+":"+s;// + ':' + mins + ':' + secs;
-
+                        $scope.ostatniWynikx[i][j].TIMES[0] = msToTime(s);
                          $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
-
                          }
                           if($scope.ostatniWynikx[i][j].hasOwnProperty('NAZWISKO'))
                          {

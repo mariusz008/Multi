@@ -3766,7 +3766,7 @@ $scope.ogolneOdbierz = function(){
                          if(i>0){
                             $scope.ostatniWynikx[i][j].TIMES[0] = $scope.ostatniWynikx[i][j].TIMES[0] + $scope.ostatniWynikx[(i-1)][j].TIMES[0];
                          }
-                         var czas = $scope.ostatniWynikx[i][j].TIMES[0];
+                         var s = $scope.ostatniWynikx[i][j].TIMES[0];
                          var ms = s % 1000;
                                  s = (s - ms) / 1000;
                                  var secs = s % 60;

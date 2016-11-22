@@ -3723,7 +3723,7 @@ $scope.classification = [
                             }
                      else if (idKlasyfikacji=="Klasyfikacja punktowa"){
                     $scope.timesColumn = [];
-
+console.log($scope.timesColumn);
 
 
                      }

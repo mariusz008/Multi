@@ -3339,7 +3339,7 @@ var ileZawodnikow = 0;
                                     })
                                 .error(function(data,status,headers,config){
                                  $scope.retInfo = 'Błąd!'+ data;
-                                  console.log('Błąd1!'+ data);
+                                 // console.log('Błąd1!'+ data);
                                   });
                  }
                 else if($scope.infoWielo==0){
@@ -3399,7 +3399,7 @@ $scope.classification = [
                                                          })
                                                          .error(function(data,status,headers,config){
                                                                                               $scope.retInfo = 'Błąd!'+ data;
-                                                                                              console.log('Błąd3!'+ data);
+                                                                                         //     console.log('Błąd3!'+ data);
                                                                                               });
                                                                         }
                                                                         }
@@ -3460,12 +3460,12 @@ $scope.classification = [
                                                                              }
                                                                         }
                                                                  }
-                                                                 console.log($scope.runners);
+                                                               //  console.log($scope.runners);
                                                              }
                                         })
                                      .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;
-                                     console.log('Błąd3!'+ data);
+                                  //   console.log('Błąd3!'+ data);
                                      });
                          }
                          }
@@ -3526,9 +3526,6 @@ $scope.classification = [
                                                                   {
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
-                                                                // console.log("juz jest"+i);
-                                                                 //var n = $scope.runners[i].KLUB.indexOf("welcome");
-                                                                //$scope.runnersDruz[i] =
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
                                                                // console.log("index="+index+" klub="+$scope.runners[i].KLUB+"i="+i+"druzy")
                                                                  }
@@ -3536,8 +3533,7 @@ $scope.classification = [
                                                                  //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
                                                                    $scope.druzyny.push($scope.runners[i].KLUB);
                                                                     $scope.runnersDruz[i] =  $scope.runners[i];
-                                                                 //  console.log($scope.druzyny);
-                                                                 //  console.log($scope.runnersDruz[i]);
+
                                                                    }
                                                                 }}
                                                               //  console.log($scope.runnersDruz);
@@ -3545,7 +3541,7 @@ $scope.classification = [
                                         })
                                      .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;
-                                     console.log('Błąd3!'+ data);
+                                   //  console.log('Błąd3!'+ data);
                                      });
                          }
                          }
@@ -3593,8 +3589,6 @@ $scope.classification = [
                                                                                     ileZawodnikow++;
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-
-
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
                                                                                      {
                                                                                          var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
@@ -3606,8 +3600,6 @@ $scope.classification = [
                                                                                         $scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
                                                                                      }
 
-
-                                                                                  //   console.log($scope.ostatniWynik);
                                                                                   }
                                                                              else {
                                                                              k--;
@@ -3670,27 +3662,29 @@ $scope.classification = [
                                                                   $scope.runners[(j)].SUMA = suma;
 }
                                                             }
-                                                        console.log($scope.runners);
+                                                      //  console.log($scope.runners);
 
                                                          })
                                                          .error(function(data,status,headers,config){
                                                              $scope.retInfo = 'Błąd!'+ data;
-                                                             console.log('Błąd2!'+ data);
+                                                           //  console.log('Błąd2!'+ data);
                                                          });
                                                              }
                                                     })
                                                  .error(function(data,status,headers,config){
                                                  $scope.retInfo = 'Błąd!'+ data;
-                                                 console.log('Błąd3!'+ data);
+                                                 //console.log('Błąd3!'+ data);
                                                  });
 
                                            }
                                            }
                                 }
 
-            //wynikiOgolne
+
             $scope.Timer = null;
             $scope.ostatniWynikx = [];
+
+            //wynikiOgolne
             $scope.wynikiOgolne = function(idKlasyfikacji) {
             var iter = 0;
             $scope.runners = [];
@@ -3710,7 +3704,7 @@ $scope.classification = [
                                       czyWypelnic = 0;
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
-
+                                    $scope.timesColumn = [];
                                     $scope.ostatniWynikx1 = [];
                                     $scope.runners2= new Array($scope.types.length-1);
                                     var xd = 0;
@@ -3726,11 +3720,14 @@ $scope.classification = [
                                              }
                                     }
                                     $timeout($scope.ogolneOdbierz,1000);
-}
+                            }
+                     else if (idKlasyfikacji=="Klasyfikacja punktowa"){
+                    $scope.timesColumn = [];
 
 
-//koniec generalki
-                        }
+
+                     }
+                     }
                    }
              }
 
@@ -3738,7 +3735,7 @@ $scope.classification = [
 $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);
-    $scope.timesColumn = [];
+
     $scope.timesColumn[0] = "META";
 
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
@@ -3788,6 +3785,8 @@ $scope.ogolneOdbierz = function(){
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
     $scope.ostatniWynikx = [];
 }
+
+
 function msToTime(duration) {
     var  seconds = parseInt((duration)%60)
         , minutes = parseInt((duration/(60))%60)
@@ -3800,6 +3799,8 @@ function msToTime(duration) {
     return hours + ":" + minutes + ":" + seconds;
 
 }
+
+
                     $scope.showRunnersList = function(){
                             sessionStorage.setItem('compID', id);
                             $location.path('/Multi/home/competition/compRunnersList');

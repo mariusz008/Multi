@@ -3746,7 +3746,6 @@ $scope.ogolneOdbierz = function(){
         }
         }
     }
-
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
     $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
     for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
@@ -3762,7 +3761,7 @@ $scope.ogolneOdbierz = function(){
     }
     } while($scope.ostatniWynikx.length==0);
 
-    console.log($scope.ostatniWynikx);
+    console.log($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)]);
     $scope.ostatniWynikx = [];
     console.log("wyczyszczone");
 }

@@ -3766,20 +3766,22 @@ $scope.ogolneOdbierz = function(){
                          if(i>0){
                             $scope.ostatniWynikx[i][j].TIMES[0] = $scope.ostatniWynikx[i][j].TIMES[0] + $scope.ostatniWynikx[(i-1)][j].TIMES[0];
                          }
+                         if(i==($scope.ostatniWynikx.length-1)){
                          var s = $scope.ostatniWynikx[i][j].TIMES[0];
                          console.log(s);
                          var ms = parseFloat(s % 1000);
-                         console.log(ms);
+                         console.log(parseFloat(ms));
                                  s = parseFloat((s - ms) / 1000);
-                                 console.log(s);
+                                 //console.log(s);
                                  var secs = parseFloat(s % 60);
                                  s = parseFloat(s - secs) / 60;
-                                 console.log(secs);
-                                 console.log(s);
+                                 //console.log(secs);
+                                 //console.log(s);
                                //  var mins = parseFloat(s % 60);
                                 // var hrs = parseFloat((s - mins) / 60);
                          //$scope.ostatniWynikx[i][j].TIMES[0] = ms+":"+s;// + ':' + mins + ':' + secs;
                          $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
+                         }
                           if($scope.ostatniWynikx[i][j].hasOwnProperty('NAZWISKO'))
                          {
                                for(var b=0; b<$scope.zawodnicy.length; b++){

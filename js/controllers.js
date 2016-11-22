@@ -3704,7 +3704,7 @@ $scope.classification = [
                                       czyWypelnic = 0;
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
-                                    $scope.timesColumn = [];
+                                    $scope.timesColumn.length = 0;
                                         $scope.timesColumn[0] = "META";
                                     $scope.ostatniWynikx1 = [];
                                     $scope.runners2= new Array($scope.types.length-1);
@@ -3723,7 +3723,7 @@ $scope.classification = [
                                     $timeout($scope.ogolneOdbierz,1000);
                             }
                      else if (idKlasyfikacji=="Klasyfikacja punktowa"){
-                    $scope.timesColumn = [];
+                        $scope.timesColumn.length = 0;
 
 
 

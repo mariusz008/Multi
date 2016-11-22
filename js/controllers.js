@@ -3581,6 +3581,7 @@ $scope.classification = [
                                                                           }
                                                                             }
                                                                  }
+                                                                 $scope.timesColumn[($scope.runners[0].POINTS_COUNT)] = "SUMA";
                                                                 for(var i=($scope.runners.length-1), k=1; i > 0, k<($scope.runners.length); i--, k++)
                                                                  {
                                                                      var seconds = 0;
@@ -3723,7 +3724,7 @@ $scope.classification = [
                             }
                      else if (idKlasyfikacji=="Klasyfikacja punktowa"){
                     $scope.timesColumn = [];
-console.log($scope.timesColumn);
+
 
 
                      }

@@ -3705,6 +3705,7 @@ $scope.classification = [
 
                     if(idKlasyfikacji=="Klasyfikacja generalna"){
                                     $scope.timesColumn = [];
+                                        $scope.timesColumn[0] = "META";
                                     $scope.ostatniWynikx1 = [];
                                     $scope.runners2= new Array($scope.types.length-1);
                                     var xd = 0;
@@ -3736,7 +3737,7 @@ $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);
 
-    $scope.timesColumn[0] = "META";
+
 
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
         x = $scope.ostatniWynikx[i][0].POINTS_COUNT;

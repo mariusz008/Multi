@@ -3754,6 +3754,7 @@ $scope.ogolneOdbierz = function(){
            }
         }
         }
+        
     }
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
     $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');

@@ -3737,8 +3737,8 @@ $scope.classification = [
 $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);
-    $scope.timesColumn = "META";
-    do{
+    $scope.timesColumn[0] = "META";
+
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
         x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
         $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
@@ -3754,7 +3754,7 @@ $scope.ogolneOdbierz = function(){
            }
         }
         }
-        
+
     }
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
     $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
@@ -3769,7 +3769,7 @@ $scope.ogolneOdbierz = function(){
                     }
             }
     }
-    } while($scope.ostatniWynikx.length==0);
+
 
     $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
     console.log($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)]);

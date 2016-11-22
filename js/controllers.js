@@ -3767,13 +3767,18 @@ $scope.ogolneOdbierz = function(){
                             $scope.ostatniWynikx[i][j].TIMES[0] = $scope.ostatniWynikx[i][j].TIMES[0] + $scope.ostatniWynikx[(i-1)][j].TIMES[0];
                          }
                          var s = $scope.ostatniWynikx[i][j].TIMES[0];
+                         console.log(s);
                          var ms = parseFloat(s % 1000);
+                         console.log(ms);
                                  s = parseFloat((s - ms) / 1000);
+                                 console.log(s);
                                  var secs = parseFloat(s % 60);
                                  s = parseFloat(s - secs) / 60;
-                                 var mins = parseFloat(s % 60);
-                                 var hrs = parseFloat((s - mins) / 60);
-                         $scope.ostatniWynikx[i][j].TIMES[0] = hrs + ':' + mins + ':' + secs;
+                                 console.log(secs);
+                                 console.log(s);
+                               //  var mins = parseFloat(s % 60);
+                                // var hrs = parseFloat((s - mins) / 60);
+                         //$scope.ostatniWynikx[i][j].TIMES[0] = ms+":"+s;// + ':' + mins + ':' + secs;
                          $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
                           if($scope.ostatniWynikx[i][j].hasOwnProperty('NAZWISKO'))
                          {
@@ -3788,14 +3793,9 @@ $scope.ogolneOdbierz = function(){
                     }
             }
     }
-
-
     $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
-
-    console.log($scope.runners);
     $scope.ostatniWynikx = [];
-    console.log("wyczyszczone");
 }
 
                     $scope.showRunnersList = function(){

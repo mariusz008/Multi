@@ -3727,42 +3727,44 @@ $scope.classification = [
 }
 
 $scope.ogolneOdbierz = function(){
-
     var x = null;
-
+    $scope.res = new Array($scope.ostatniWynikx.length);
+    do{
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
         x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
         $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
         for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
           if($scope.ostatniWynikx[i][j] != undefined){
                 if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
-
                          $scope.ostatniWynikx[i][j].TIMES = new Array(1);
                          var timeName = '$scope.ostatniWynikx[i][j].POINT'+(x)+'_TIME';
                          var b = eval(timeName).substring(0,8);
                          var a = b.split(':');
                          seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                          $scope.ostatniWynikx[i][j].TIMES = seconds;
-
-
            }
         }
         }
-
     }
+
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
-        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
+    $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
     for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
     if($scope.ostatniWynikx[i][j] != undefined){
                     if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
+                         if(i>0){
+                            $scope.ostatniWynikx[i][j].TIMES = $scope.ostatniWynikx[i][j].TIMES + $scope.ostatniWynikx[(i-1)][j].TIMES;
+                         }
                          console.log($scope.ostatniWynikx[i][j].NAZWISKO+" - "+$scope.ostatniWynikx[i][j].TIMES);
-                             }
+                         }
                     }
             }
     }
+
     console.log($scope.ostatniWynikx);
     $scope.ostatniWynikx = [];
     console.log("wyczyszczone");
+    } while($scope.ostatniWynikx.length==0);
 }
 
 //koniec generalki

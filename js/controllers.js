@@ -3385,13 +3385,13 @@ var ileZawodnikow = 0;
                                     });
             }
                                             //wypelnijKlasyfikacje
-                                            $scope.wypelnijKlasyfikacje = function(idZawodow) {
+                                       $scope.wypelnijKlasyfikacje = function(idZawodow) {
                                             if($scope.daneEtapow[idZawodow] != undefined && $scope.competition.type.name!=(cc +". Ogólne")){
                                             $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
                                                          .success(function(data){
-$scope.classification.length=0;
-$scope.classification = [
-                                                                            {name:'Klasyfikacja generalna' }
+                                                                            $scope.classification.length=0;
+                                                                            $scope.classification = [
+                                                                                            {name:'Klasyfikacja generalna' }
                                                                                                    ];
                                                         // $scope.classification[1] = [name:'Klasyfikacja generalna']
                                                          if(data.TYP != 'Klasyfikacja generalna') $scope.classification[1] = {name:data.TYP};
@@ -3404,7 +3404,7 @@ $scope.classification = [
                                                                         }
                                                                         }
 
-                                                 $scope.wypelnijEtapy = function() {
+                                      $scope.wypelnijEtapy = function() {
                                                             for(var dd =0; dd<$scope.daneEtapow.length; dd++)
                                                              {
                                                                           $scope.types[dd]={id: dd, name:dd+1 +". " + $scope.daneEtapow[dd].NAME + " - " + $scope.daneEtapow[dd].DATA_ROZP};
@@ -3724,7 +3724,7 @@ $scope.classification = [
                             }
                      else if (idKlasyfikacji=="Klasyfikacja punktowa"){
                         $scope.timesColumn.length = 0;
-
+                        console.log($scope.daneEtapow);
 
 
                      }

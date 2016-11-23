@@ -3856,11 +3856,14 @@ var ileZawodnikow = 0;
                                      $scope.retInfo = 'Błąd!'+ data;
                               });
                           }
-                        }
+                        }}
+                         .error(function(data,status,headers,config){
+                                                             $scope.retInfo = 'Błąd!'+ data;
+                                                      });
                      }
                    }
              }
-
+}
 
 $scope.ogolneOdbierz = function(){
     var x = null;

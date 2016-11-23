@@ -3737,7 +3737,7 @@ var ileZawodnikow = 0;
                                   //tutaj magia
                                   //console.log($scope.response11);
                                   }
-                                  else console.log(i);
+                                  else console.log($scope.idZawPunkt);
                                    })
                                     .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;

@@ -3732,7 +3732,7 @@ var ileZawodnikow = 0;
                                  .success(function(data){
                                   $scope.response11 = data;
                                   if($scope.response11.TYP=="Klasyfikacja punktowa"){
-                                    $scope.idZawPunkt = $scope.daneEtapow[i].COMPETITION_ID;
+                                    $scope.idZawPunkt = i;
                                     console.log($scope.idZawPunkt);
                                   //tutaj magia
                                   //console.log($scope.response11);

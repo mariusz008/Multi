@@ -3733,14 +3733,14 @@ var ileZawodnikow = 0;
                                   $scope.response11 = data;
                                   if($scope.response11.TYP=="Klasyfikacja punktowa"){
                                     $scope.idZawPunkt = i;
-                                    //console.log($scope.idZawPunkt);
+                                    console.log($scope.idZawPunkt);
                                 $scope.wyniki1 = [];
                         $scope.ostatniWynik = [];
                         $scope.ostatniWynik1 = [];
                         $scope.tablicaCzasu = [];
                                         $scope.runners = [];
 
-                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idZawPunkt].COMPETITION_ID)
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idZawPunkt-1].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null)
@@ -3790,7 +3790,7 @@ var ileZawodnikow = 0;
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
 
-                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[$scope.idZawPunkt].COMPETITION_ID)
+                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[$scope.idZawPunkt-1].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                                 $scope.listaWynikow1 = [];

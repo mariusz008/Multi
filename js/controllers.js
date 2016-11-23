@@ -3309,6 +3309,7 @@ app.controller('resultListController', ['$scope','$timeout', '$filter', '$http',
                     var zawody = new Array();
                     $scope.wynikOgolnych = [];
                     var czyWypelnic = 0;
+                    $scope.idZawPunkt = "";
 $scope.listaWynikow1 = [];
 var suma = 0;
             $scope.daneEtapow = [];
@@ -3724,16 +3725,19 @@ var ileZawodnikow = 0;
                             }
                      else if (idKlasyfikacji=="Klasyfikacja punktowa"){
                         $scope.timesColumn.length = 0;
-                        console.log($scope.daneEtapow);
+
+                        //console.log($scope.daneEtapow);
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
                                   if($scope.response11.TYP=="Klasyfikacja punktowa"){
-
+                                    $scope.idZawPunkt = $scope.daneEtapow[i].COMPETITION_ID;
+                                    console.log($scope.idZawPunkt);
                                   //tutaj magia
-                                  console.log($scope.response11);
+                                  //console.log($scope.response11);
                                   }
+                                  console.log($scope.idZawPunkt);
                                    })
                                     .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;

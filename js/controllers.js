@@ -3731,6 +3731,8 @@ var ileZawodnikow = 0;
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
+                                  console.log($scope.response11);
+                                  console.log($scope.daneEtapow.length);
                                   if($scope.response11.TYP=="Klasyfikacja punktowa"){
                                     $scope.idZawPunkt = i;
                                     console.log($scope.idZawPunkt);
@@ -3839,6 +3841,7 @@ var ileZawodnikow = 0;
                                                                     }
                                                                   }
                                                                   $scope.runners[(j)].SUMA = suma;
+                                                                  $scope.timesColumn.length = 0;
 }
                                                             }
                                                       //  console.log($scope.runners);

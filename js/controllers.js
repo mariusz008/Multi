@@ -3309,7 +3309,7 @@ app.controller('resultListController', ['$scope','$timeout', '$filter', '$http',
                     var zawody = new Array();
                     $scope.wynikOgolnych = [];
                     var czyWypelnic = 0;
-                    $scope.idZawPunkt = "";
+                    $scope.idZawPunkt = 0;
 $scope.listaWynikow1 = [];
 var suma = 0;
             $scope.daneEtapow = [];
@@ -3737,7 +3737,7 @@ var ileZawodnikow = 0;
                                   //tutaj magia
                                   //console.log($scope.response11);
                                   }
-                                  console.log($scope.idZawPunkt);
+                                  else console.log(i);
                                    })
                                     .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;

@@ -3728,6 +3728,7 @@ var ileZawodnikow = 0;
                      else if (idKlasyfikacji=="Klasyfikacja punktowa"){
                         $scope.timesColumn.length = 0;
                         $scope.idZawPunkt =0;
+                        $scope.zawodyKlasyfikacje = [];
                         //console.log($scope.daneEtapow);
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)

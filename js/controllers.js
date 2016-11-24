@@ -3761,7 +3761,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null){
                                                              $scope.timesColumn = [];
-                                                             //$scope.timesColumn[0] = "META";
+
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
                                                                      $scope.timesColumn[a] = a+1;
@@ -3782,6 +3782,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
+                                                                                    console.log("1");
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
@@ -3805,7 +3806,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
 
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
-
+                                                            console.log($scope.runners);
 //                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
 //                                                         .success(function(data){
                                                              $scope.response1 = $scope.zawodyKlasyfikacje[$scope.idid];
@@ -3816,12 +3817,12 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                 if($scope.runners[i] != undefined){
                                                                     if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                         $scope.listaWynikow1.push($scope.runners[i].TIMES);
-                                                                        //console.log("block1: v="+v+", i="+i);
+                                                                        console.log($scope.listaWynikow1);
                                                                     }
                                                                 }
                                                                 block2: { while (1) {
-                                                                if(v==$scope.timesColumn.length) var pointName = 'data.LINIAX_POINT_'+n;
-                                                                else var pointName = 'data.LINIA'+v+'_POINT_'+n;
+                                                                if(v==$scope.timesColumn.length) var pointName = '$scope.response1.LINIAX_POINT_'+n;
+                                                                else var pointName = '$scope.response1.LINIA'+v+'_POINT_'+n;
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {

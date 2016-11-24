@@ -3808,7 +3808,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
 //                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
 //                                                         .success(function(data){
                                                              $scope.response1 = $scope.zawodyKlasyfikacje[$scope.idid];
-                                                             console.log($scope.response1);
+                                                           //  console.log($scope.response1);
                                                                 $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=0;i >= 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
@@ -3853,7 +3853,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     }
                                                                   }
                                                                   $scope.runners[(j)].SUMA = suma;
-                                                                  $scope.timesColumn.length = 0;
+                                                                  //$scope.timesColumn.length = 0;
 }
                                                             }
                                                       //  console.log($scope.runners);

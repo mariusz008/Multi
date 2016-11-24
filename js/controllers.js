@@ -3744,17 +3744,18 @@ var ileZawodnikow = 0;
 }
 }
 
-
+$scope.idid;
 $scope.ogolneOdbierzPunkt = function() {
-var id;
-for(id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
- if($scope.zawodyKlasyfikacje[v].TYP=="Klasyfikacja punktowa"){
+$scope.idid = 0;
+for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
+ if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa"){
                                     $scope.wyniki1 = [];
                                     $scope.ostatniWynik = [];
                                     $scope.ostatniWynik1 = [];
                                     $scope.tablicaCzasu = [];
                                         $scope.runners = [];
-                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
+                                        $scope.idid = id;
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null){
@@ -3804,9 +3805,9 @@ for(id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
 
-                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
-                                                         .success(function(data){
-                                                             $scope.response1 = data;
+//                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
+//                                                         .success(function(data){
+                                                             $scope.response1 = $scope.zawodyKlasyfikacje[$scope.idid];
                                                                 $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=0;i >= 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
@@ -3829,10 +3830,8 @@ for(id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     else break block2;
                                                                 }
                                                                 }
-
                                                             }
                                                             }
-
                                                             for(var j=0;j<=$scope.listaWynikow1.length+1;j++)
                                                                   {
                                                                   if($scope.runners[(j)] != undefined){
@@ -3857,12 +3856,11 @@ for(id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
 }
                                                             }
                                                       //  console.log($scope.runners);
-
-                                                         })
-                                                         .error(function(data,status,headers,config){
-                                                             $scope.retInfo = 'Błąd!'+ data;
-                                                           //  console.log('Błąd2!'+ data);
-                                                         });
+//                                                         })
+//                                                         .error(function(data,status,headers,config){
+//                                                             $scope.retInfo = 'Błąd!'+ data;
+//                                                           //  console.log('Błąd2!'+ data);
+//                                                         });
                                     }
                                     })
                                     .error(function(data,status,headers,config){

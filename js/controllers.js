@@ -3324,7 +3324,7 @@ var ileZawodnikow = 0;
             $scope.classification = [
                            {name:'Klasyfikacja generalna' },
                            {name:'Klasyfikacja punktowa' },
-                           {name:'Klasyfikacja drużynowa generalna' }
+                           {name:'Klasyfikacja generalna drużynowa' }
                                                   ];
                         var xd=0;
 
@@ -3700,7 +3700,7 @@ var ileZawodnikow = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
                {name:'Klasyfikacja punktowa' },
-               {name:'Klasyfikacja drużynowa generalna' }
+               {name:'Klasyfikacja generalna drużynowa' }
                                       ];
                                       }
                                       czyWypelnic = 0;
@@ -3740,7 +3740,7 @@ var ileZawodnikow = 0;
                      }
                      $timeout($scope.ogolneOdbierzPunkt,1000);
                    }
-                   else if (idKlasyfikacji=="Klasyfikacja druzynowa generalna"){
+                   else if (idKlasyfikacji=="Klasyfikacja generalna drużynowa"){
                                     $scope.timesColumn.length = 0;
                                     $scope.timesColumn[0] = "META";
                                     $scope.ostatniWynikx1 = [];

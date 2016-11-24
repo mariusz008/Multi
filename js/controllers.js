@@ -3850,10 +3850,10 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     console.log(ob);
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
-                                                                    $scope.runners[(j)].TIMES1[i] = ob['name'];
+                                                                    //$scope.runners[(j)].TIMES1[i] = ob['name'];
                                                                     }
                                                                     else {
-                                                                    $scope.runners[(j)].TIMES1[i] = "-";
+                                                                    //$scope.runners[(j)].TIMES1[i] = "-";
                                                                     }
                                                                   }
                                                                   $scope.runners[(j)].SUMA = suma;

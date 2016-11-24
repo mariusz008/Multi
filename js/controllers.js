@@ -3747,6 +3747,7 @@ var ileZawodnikow = 0;
                         $scope.timesColumn.length = 0;
                         $scope.idZawPunkt =0;
                         $scope.timesColumn[0] = "META";
+                        $scope.runnersDruz = [];
                         $scope.zawodyKlasyfikacje1 = [];
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
@@ -3951,8 +3952,9 @@ $scope.ogolneOdbierzDruz = function(){
                                                               //  console.log($scope.runnersDruz);
                                                              }
 
-                                                             $scope.runners[j].TIMES1.length=0;
-                                                        $scope.timesColumn.length = 0;
+
+                                                        $scope.timesColumn.length = 1;
+                                                        $scope.timesColumn[0] = "META";
 
                                         })
                                      .error(function(data,status,headers,config){

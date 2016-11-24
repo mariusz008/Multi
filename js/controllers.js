@@ -3857,10 +3857,9 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     }
                                                                   }
                                                                   $scope.runners[(j)].SUMA = suma;
-                                                                  $scope.timesColumn.length = 0;
-}
+                                                                 }
                                                             }
-                                                      //  console.log($scope.runners);
+                                                      $scope.timesColumn.length = 0;
 //                                                         })
 //                                                         .error(function(data,status,headers,config){
 //                                                             $scope.retInfo = 'Błąd!'+ data;

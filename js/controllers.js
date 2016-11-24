@@ -3731,7 +3731,6 @@ var ileZawodnikow = 0;
                         $scope.timesColumn.length = 0;
                         $scope.idZawPunkt =0;
                         $scope.zawodyKlasyfikacje = [];
-                        //console.log($scope.daneEtapow);
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
@@ -3747,8 +3746,8 @@ var ileZawodnikow = 0;
                    else if (idKlasyfikacji=="Klasyfikacja generalna drużynowa"){
                         $scope.timesColumn.length = 0;
                         $scope.idZawPunkt =0;
+                        $scope.timesColumn[0] = "META";
                         $scope.zawodyKlasyfikacje1 = [];
-                        //console.log($scope.daneEtapow);
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
@@ -3924,38 +3923,37 @@ $scope.ogolneOdbierzDruz = function(){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
                                                                                     $scope.runners[i].MIEJSCE = i+1;
-                                                                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                    $scope.runners[i].TIMES1 = new Array($scope.runners[0].POINTS_COUNT);
-                                                                                    for(var j=0; j<$scope.timesColumn.length; j++)
-                                                                                     {
-                                                                                         var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                                                                         $scope.runners[i].TIMES[j] = eval(timeName).substring(0,8);
-                                                                                        var b = $scope.runners[i].TIMES[j];
+                                                                                    $scope.runners[i].TIMES = new Array(1);
+                                                                                    $scope.runners[i].TIMES1 = new Array(1);
+
+                                                                                         var timeName = '$scope.runners[i].POINT'+($scope.timesColumn.length)+'_TIME';
+                                                                                         $scope.runners[i].TIMES[0] = eval(timeName).substring(0,8);
+                                                                                        var b = $scope.runners[i].TIMES[0];
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
-                                                                                         $scope.runners[i].TIMES1[j] = seconds;
-                                                                                        //$scope.ostatniWynik.push({id: (j+1), id1: k, name:seconds});
-                                                                                     }
+                                                                                         $scope.runners[i].TIMES1[0] = seconds;
+
                                                                                   }
                                                                         }
                                                                  }
-
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
-                                                               // console.log("index="+index+" klub="+$scope.runners[i].KLUB+"i="+i+"druzy")
                                                                  }
                                                                   else {
-                                                                 //  console.log("nie ma"+i+" "+$scope.runners[i].KLUB);
                                                                    $scope.druzyny.push($scope.runners[i].KLUB);
                                                                     $scope.runnersDruz[i] =  $scope.runners[i];
-
                                                                    }
-                                                                }}
+                                                                }
+                                                                }
                                                               //  console.log($scope.runnersDruz);
                                                              }
+
+                                                             $scope.runners[j].TIMES1.length=0;
+                                                        $scope.timesColumn.length = 0;
+
                                         })
                                      .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;

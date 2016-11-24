@@ -3828,6 +3828,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     //console.log("["+v+","+(n-1)+"]="+eval(pointName));
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
                                                                     //console.log($scope.wyniki1);
+                                                                    console.log("jestem");
                                                                     }
                                                                     else break block2;
                                                                 }

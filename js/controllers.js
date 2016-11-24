@@ -3310,6 +3310,7 @@ app.controller('resultListController', ['$scope','$timeout', '$filter', '$http',
                     $scope.wynikOgolnych = [];
                     var czyWypelnic = 0;
                     $scope.idZawPunkt = 0;
+                    $scope.zawodyKlasyfikacje = [];
 $scope.listaWynikow1 = [];
 var suma = 0;
             $scope.daneEtapow = [];
@@ -3731,22 +3732,35 @@ var ileZawodnikow = 0;
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
-                                  console.log($scope.response11);
-                                  console.log($scope.daneEtapow.length);
-                                  if($scope.response11.TYP=="Klasyfikacja punktowa"){
+                                  $scope.zawodyKlasyfikacje.push($scope.response11);
+                        })
+                         .error(function(data,status,headers,config){
+                          $scope.retInfo = 'Błąd!'+ data;
+                        });
+                     }
+                     $timeout($scope.ogolneOdbierzPunkt,1000);
+                   }
+             }
+}
+}
+
+
+$scope.ogolneOdbierzPunkt = function() {
+
+
+for(var v = 0; v<$scope.zawodyKlasyfikacje.length; v++){
+ if($scope.zawodyKlasyfikacje[v].TYP=="Klasyfikacja punktowa"){
                                     $scope.idZawPunkt = i;
                                     console.log($scope.idZawPunkt);
-                                $scope.wyniki1 = [];
-                        $scope.ostatniWynik = [];
-                        $scope.ostatniWynik1 = [];
-                        $scope.tablicaCzasu = [];
+                                    $scope.wyniki1 = [];
+                                    $scope.ostatniWynik = [];
+                                    $scope.ostatniWynik1 = [];
+                                    $scope.tablicaCzasu = [];
                                         $scope.runners = [];
-
-                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idZawPunkt-1].COMPETITION_ID)
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[v].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
-                                                             if($scope.runners[1] != null)
-                                                             {
+                                                             if($scope.runners[1] != null){
                                                              $scope.timesColumn = [];
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
@@ -3834,10 +3848,10 @@ var ileZawodnikow = 0;
 
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
-                                                                    $scope.runners[(j)].TIMES1[i] = ob['name'];
+                                                                   // $scope.runners[(j)].TIMES1[i] = ob['name'];
                                                                     }
                                                                     else {
-                                                                    $scope.runners[(j)].TIMES1[i] = "-";
+                                                                   // $scope.runners[(j)].TIMES1[i] = "-";
                                                                     }
                                                                   }
                                                                   $scope.runners[(j)].SUMA = suma;
@@ -3851,22 +3865,13 @@ var ileZawodnikow = 0;
                                                              $scope.retInfo = 'Błąd!'+ data;
                                                            //  console.log('Błąd2!'+ data);
                                                          });
-
                                     }
-
-                                   })
+                                    })
                                     .error(function(data,status,headers,config){
                                      $scope.retInfo = 'Błąd!'+ data;
-                              });
-                          }
-                        })
-                         .error(function(data,status,headers,config){
-                                                             $scope.retInfo = 'Błąd!'+ data;
-                                                      });
-                     }
-                   }
-             }
-}
+                                     });
+                              }
+ }
 }
 
 $scope.ogolneOdbierz = function(){

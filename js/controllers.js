@@ -3843,7 +3843,8 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                for(var i=0;i<$scope.timesColumn.length;i++)
                                                                   {
                                                                     var ob = $filter('filter')($scope.wyniki1, {id:(i+1), id1:(j+1)})[0];
-
+                                                                    console.log($scope.wynik1);
+                                                                    console.log(ob);
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
                                                                     $scope.runners[(j)].TIMES1[i] = ob['name'];

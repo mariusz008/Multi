@@ -3747,11 +3747,8 @@ var ileZawodnikow = 0;
 
 $scope.ogolneOdbierzPunkt = function() {
 
-
 for(var v = 0; v<$scope.zawodyKlasyfikacje.length; v++){
  if($scope.zawodyKlasyfikacje[v].TYP=="Klasyfikacja punktowa"){
-                                    $scope.idZawPunkt = i;
-                                    console.log($scope.idZawPunkt);
                                     $scope.wyniki1 = [];
                                     $scope.ostatniWynik = [];
                                     $scope.ostatniWynik1 = [];
@@ -3806,7 +3803,7 @@ for(var v = 0; v<$scope.zawodyKlasyfikacje.length; v++){
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
 
-                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[$scope.idZawPunkt-1].COMPETITION_ID)
+                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[v].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                                 $scope.listaWynikow1 = [];

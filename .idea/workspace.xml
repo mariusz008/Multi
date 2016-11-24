@@ -37,21 +37,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="3934" column="30" selection-start-line="3934" selection-start-column="30" selection-end-line="3934" selection-end-column="30" />
+            <state relative-caret-position="-1613">
+              <caret line="3702" column="44" selection-start-line="3702" selection-start-column="44" selection-end-line="3702" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resultList.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="resultList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/resultList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
+            <state relative-caret-position="280">
+              <caret line="110" column="152" selection-start-line="110" selection-start-column="152" selection-end-line="110" selection-end-column="152" />
               <folding />
             </state>
           </provider>
@@ -296,8 +296,8 @@
         <option value="$PROJECT_DIR$/views/editCompetition.html" />
         <option value="$PROJECT_DIR$/views/makeClassification.html" />
         <option value="$PROJECT_DIR$/js/loginController.js" />
-        <option value="$PROJECT_DIR$/views/resultList.html" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
+        <option value="$PROJECT_DIR$/views/resultList.html" />
       </list>
     </option>
   </component>
@@ -1124,18 +1124,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/resultList.html">
+    <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
+        <state relative-caret-position="-1613">
+          <caret line="3702" column="44" selection-start-line="3702" selection-start-column="44" selection-end-line="3702" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/views/resultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="3934" column="30" selection-start-line="3934" selection-start-column="30" selection-end-line="3934" selection-end-column="30" />
+        <state relative-caret-position="280">
+          <caret line="110" column="152" selection-start-line="110" selection-start-column="152" selection-end-line="110" selection-end-column="152" />
           <folding />
         </state>
       </provider>

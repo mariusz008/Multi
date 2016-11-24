@@ -3324,7 +3324,7 @@ var ileZawodnikow = 0;
             $scope.classification = [
                            {name:'Klasyfikacja generalna' },
                            {name:'Klasyfikacja punktowa' },
-                           {name:'Klasyfikacja generalna' }
+                           {name:'Klasyfikacja drużynowa' }
                                                   ];
                         var xd=0;
 
@@ -3477,7 +3477,7 @@ var ileZawodnikow = 0;
                     $scope.wynikiDruzynowej = function(idZawodow) { czyWypelnic = 1;
                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
-                     if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
+                     if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja drużynowa"){
 
                      czyWypelnic = 1;
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
@@ -3700,7 +3700,7 @@ var ileZawodnikow = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
                {name:'Klasyfikacja punktowa' },
-               {name:'Klasyfikacja generalna' }
+               {name:'Klasyfikacja drużynowa' }
                                       ];
                                       }
                                       czyWypelnic = 0;

@@ -111,13 +111,13 @@
 								<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna drużynowa'" class="table" width="450"  >
 									<tr>
 										<th width="40" class="tg-zcxc">Miejsce </th>
-										<th width="100" class="tg-zcxc">Klub</th>
+										<th width="160" class="tg-zcxc">Klub</th>
 										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
 
 									</tr>
 									<tr  ng-repeat="runner in runnersDruz | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
 										<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
-										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+										<td width="160" class="tg-yw4l">{{runner.KLUB}}</td>
 										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
 									</tr>
 								</table>

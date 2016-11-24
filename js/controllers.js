@@ -3477,6 +3477,7 @@ var ileZawodnikow = 0;
                     $scope.wynikiDruzynowej = function(idZawodow) { czyWypelnic = 1;
                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
+                    console.log("druzynowe nie ogolne");
                      if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
 
                      czyWypelnic = 1;
@@ -3774,6 +3775,7 @@ $scope.ogolneOdbierzPunkt = function() {
         for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
          if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa" && $scope.daneEtapow!=undefined){
                                         $scope.idid = id;
+                                        console.log($scope.daneEtapow+" "+$scope.idid);
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3819,9 +3821,7 @@ $scope.ogolneOdbierzPunkt = function() {
                                                                              k--;
                                                                              }
                                                                         }
-
                                                                  }
-
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
                                                              $scope.response1 = $scope.zawodyKlasyfikacje[$scope.idid];
@@ -3931,7 +3931,9 @@ var x = null;
             }
     }
     $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
+
     $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
+
     $scope.ostatniWynikx = [];
 
 

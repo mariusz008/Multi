@@ -3747,13 +3747,14 @@ var ileZawodnikow = 0;
 $scope.idid;
 $scope.ogolneOdbierzPunkt = function() {
 $scope.idid = 0;
-for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
- if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa"){
                                     $scope.wyniki1 = [];
                                     $scope.ostatniWynik = [];
                                     $scope.ostatniWynik1 = [];
                                     $scope.tablicaCzasu = [];
                                         $scope.runners = [];
+for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
+ if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa"){
+
                                         $scope.idid = id;
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid].COMPETITION_ID)
                                                          .success(function(data){

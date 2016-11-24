@@ -3776,7 +3776,7 @@ $scope.ogolneOdbierzPunkt = function() {
         for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
          if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa" && $scope.daneEtapow!=undefined){
                                         $scope.idid = id;
-                                        //console.log($scope.daneEtapow+" "+$scope.idid);
+                                        console.log("ogolne punktowe");
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3896,6 +3896,7 @@ $scope.ogolneOdbierzDruz = function(){
          for(var id = 0; id<$scope.zawodyKlasyfikacje1.length; id++){
           if($scope.zawodyKlasyfikacje1[id].TYP=="Klasyfikacja generalna drużynowa" && $scope.daneEtapow!=undefined){
                         $scope.idid1 = id;
+                        console.log("ogolne druzynowe");
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid1].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
@@ -3967,6 +3968,7 @@ $scope.ogolneOdbierzDruz = function(){
 $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);
+    console.log("ogolne generalne");
     for(var i=0; i<($scope.ostatniWynikx.length); i++){
         x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
         $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');

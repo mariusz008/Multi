@@ -2918,7 +2918,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
                         $scope.types = [
                         {name:'Klasyfikacja generalna' },
-                        {name:'Klasyfikacja generalna drużynowa' },
+                        {name:'Klasyfikacja generalna' },
                         {name:'Klasyfikacja punktowa'}
                         ];
 
@@ -3324,7 +3324,7 @@ var ileZawodnikow = 0;
             $scope.classification = [
                            {name:'Klasyfikacja generalna' },
                            {name:'Klasyfikacja punktowa' },
-                           {name:'Klasyfikacja generalna drużynowa' }
+                           {name:'Klasyfikacja generalna' }
                                                   ];
                         var xd=0;
 
@@ -3477,7 +3477,7 @@ var ileZawodnikow = 0;
                     $scope.wynikiDruzynowej = function(idZawodow) { czyWypelnic = 1;
                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
-                     if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna drużynowa"){
+                     if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja generalna"){
 
                      czyWypelnic = 1;
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
@@ -3700,7 +3700,7 @@ var ileZawodnikow = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
                {name:'Klasyfikacja punktowa' },
-               {name:'Klasyfikacja generalna drużynowa' }
+               {name:'Klasyfikacja generalna' }
                                       ];
                                       }
                                       czyWypelnic = 0;
@@ -3740,21 +3740,39 @@ var ileZawodnikow = 0;
                      }
                      $timeout($scope.ogolneOdbierzPunkt,1000);
                    }
+                   else if (idKlasyfikacji=="Klasyfikacja druzynowa"){
+                                    $scope.timesColumn.length = 0;
+                                    $scope.timesColumn[0] = "META";
+                                    $scope.ostatniWynikx1 = [];
+                                    $scope.runners2= new Array($scope.types.length-1);
+                                    var xd = 0;
+                                    for(iter=0; iter<($scope.types.length-1); iter++){
+                                    if($scope.classification!=undefined && $scope.classification.type!=undefined){
+                                                             //console.log("zacz");
+                                                              var myDataPromise = myService.getData($scope.daneEtapow[iter].COMPETITION_ID);
+                                                              myDataPromise.then(function(data){
+                                                              $scope.runners = data;
+                                                                $scope.ostatniWynikx.push($scope.runners);
+                                                                xd++;
+                                                              });
+                                             }
+                                    }
+                                    $timeout($scope.ogolneOdbierzDruz,1000);
+                                      }
              }
 }
 }
 
 $scope.idid;
 $scope.ogolneOdbierzPunkt = function() {
-$scope.idid = 0;
-                                    $scope.wyniki1 = [];
-                                    $scope.ostatniWynik = [];
-                                    $scope.ostatniWynik1 = [];
-                                    $scope.tablicaCzasu = [];
-                                        $scope.runners = [];
-for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
- if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa"){
-
+    $scope.idid = 0;
+    $scope.wyniki1 = [];
+    $scope.ostatniWynik = [];
+    $scope.ostatniWynik1 = [];
+    $scope.tablicaCzasu = [];
+    $scope.runners = [];
+        for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
+         if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa" && $scope.daneEtapow!=undefined){
                                         $scope.idid = id;
                                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid].COMPETITION_ID)
                                                          .success(function(data){
@@ -3782,7 +3800,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                      if($scope.runners[i] != undefined){
                                                                             if($scope.runners[i].hasOwnProperty('POINT1_TIME')){
                                                                                     ileZawodnikow++;
-                                                                                    console.log("1");
+                                                                                    //console.log("1");
                                                                                     $scope.runners[i].MIEJSCE = k;
                                                                                     $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
                                                                                     for(var j=0; j<$scope.runners[0].POINTS_COUNT; j++)
@@ -3823,10 +3841,8 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                                     $scope.classPoints.push(eval(pointName));
                                                                     n++;
                                                                     if (eval(pointName) != undefined) {
-                                                                    //console.log("["+v+","+(n-1)+"]="+eval(pointName));
+
                                                                     $scope.wyniki1.push({id: v, id1: (n-1), name:eval(pointName)});
-                                                                    //console.log($scope.wyniki1);
-                                                                    console.log("jestem");
                                                                     }
                                                                     else break block2;
                                                                 }
@@ -3866,6 +3882,61 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
  }
 }
 
+
+
+$scope.ogolneOdbierzDruz = function(){
+var x = null;
+    $scope.res = new Array($scope.ostatniWynikx.length);
+    for(var i=0; i<($scope.ostatniWynikx.length); i++){
+        x = $scope.ostatniWynikx[i][0].POINTS_COUNT;
+        $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'POINT'+x+'_TIME');
+        for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
+          if($scope.ostatniWynikx[i][j] != undefined){
+                if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
+                         $scope.ostatniWynikx[i][j].TIMES = new Array(1);
+                         var timeName = '$scope.ostatniWynikx[i][j].POINT'+(x)+'_TIME';
+                         var b = eval(timeName).substring(0,8);
+                         var a = b.split(':');
+                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
+                         $scope.ostatniWynikx[i][j].TIMES[0] = seconds;
+           }
+        }
+        }
+
+    }
+    for(var i=0; i<($scope.ostatniWynikx.length); i++){
+    $scope.ostatniWynikx[i] = $filter('orderBy')($scope.ostatniWynikx[i], 'USER_ID');
+    for(var j=0; j<$scope.ostatniWynikx[i].length;j++) {
+    if($scope.ostatniWynikx[i][j] != undefined){
+                    if($scope.ostatniWynikx[i][j].hasOwnProperty('POINT1_TIME')){
+                         if(i>0){
+                            $scope.ostatniWynikx[i][j].TIMES[0] = $scope.ostatniWynikx[i][j].TIMES[0] + $scope.ostatniWynikx[(i-1)][j].TIMES[0];
+                         }
+                         if(i==($scope.ostatniWynikx.length-1)){
+                         var s = $scope.ostatniWynikx[i][j].TIMES[0];
+                        $scope.ostatniWynikx[i][j].TIMES[0] = msToTime(s);
+                         $scope.ostatniWynikx[i][j].MIEJSCE = i+1;
+                         }
+                          if($scope.ostatniWynikx[i][j].hasOwnProperty('NAZWISKO'))
+                         {
+                               for(var b=0; b<$scope.zawodnicy.length; b++){
+                                if($scope.ostatniWynikx[i][j].NAZWISKO == $scope.zawodnicy[b].NAZWISKO)
+                                      {
+                                      $scope.ostatniWynikx[i][j].KLUB = $scope.zawodnicy[b].KLUB;
+                                      }
+                                    }
+                               }
+                         }
+                    }
+            }
+    }
+    $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)] = $filter('orderBy')($scope.ostatniWynikx[($scope.ostatniWynikx.length-1)], 'TIMES');
+    $scope.runners = $scope.ostatniWynikx[($scope.ostatniWynikx.length-1)];
+    $scope.ostatniWynikx = [];
+
+
+
+}
 $scope.ogolneOdbierz = function(){
     var x = null;
     $scope.res = new Array($scope.ostatniWynikx.length);

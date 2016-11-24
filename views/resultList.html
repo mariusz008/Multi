@@ -26,9 +26,7 @@
 							<div class="container" ng-show="runners[1] == null && types.length==0"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
 
 							<div ng-hide="runners[1] == null && infoWielo==0" >
-								<!--<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>-->
 								<h4 class="text-center" >Lista wyników</h4>
-								<!--<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'true'">  Oficjalna lista wyników</h4>-->
 								<div ng-show="types.length>0" class="container">
 									<label class="col-lg-2">Etap</label>
 
@@ -110,7 +108,7 @@
 
 									</tr>
 								</table>
-								<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna drużynowa'" class="table" width="450"  >
+								<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna'" class="table" width="450"  >
 									<tr>
 										<th width="40" class="tg-zcxc">Miejsce </th>
 										<th width="100" class="tg-zcxc">Klub</th>

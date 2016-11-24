@@ -3324,7 +3324,7 @@ var ileZawodnikow = 0;
             $scope.classification = [
                            {name:'Klasyfikacja generalna' },
                            {name:'Klasyfikacja punktowa' },
-                           {name:'Klasyfikacja drużynowa' }
+                           {name:'Klasyfikacja drużynowa generalna' }
                                                   ];
                         var xd=0;
 
@@ -3477,7 +3477,7 @@ var ileZawodnikow = 0;
                     $scope.wynikiDruzynowej = function(idZawodow) { czyWypelnic = 1;
                     if($scope.classification!=undefined && $scope.classification.type!=undefined && $scope.classification.length<3){
                     $scope.druzyny = [];
-                     if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja drużynowa"){
+                     if(idZawodow!=undefined && $scope.classification.type.name=="Klasyfikacja drużynowa generalna"){
 
                      czyWypelnic = 1;
                                      $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[idZawodow].COMPETITION_ID)
@@ -3700,7 +3700,7 @@ var ileZawodnikow = 0;
               $scope.classification = [
                {name:'Klasyfikacja generalna' },
                {name:'Klasyfikacja punktowa' },
-               {name:'Klasyfikacja drużynowa' }
+               {name:'Klasyfikacja drużynowa generalna' }
                                       ];
                                       }
                                       czyWypelnic = 0;
@@ -3740,7 +3740,7 @@ var ileZawodnikow = 0;
                      }
                      $timeout($scope.ogolneOdbierzPunkt,1000);
                    }
-                   else if (idKlasyfikacji=="Klasyfikacja druzynowa"){
+                   else if (idKlasyfikacji=="Klasyfikacja druzynowa generalna"){
                                     $scope.timesColumn.length = 0;
                                     $scope.timesColumn[0] = "META";
                                     $scope.ostatniWynikx1 = [];

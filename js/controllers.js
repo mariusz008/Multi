@@ -3760,10 +3760,10 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null){
                                                              $scope.timesColumn = [];
-                                                             $scope.timesColumn[0] = "META";
+                                                             //$scope.timesColumn[0] = "META";
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                     //$scope.timesColumn[a] = a+1;
+                                                                     $scope.timesColumn[a] = a+1;
                                                                         if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {
 
@@ -3808,6 +3808,7 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
 //                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
 //                                                         .success(function(data){
                                                              $scope.response1 = $scope.zawodyKlasyfikacje[$scope.idid];
+                                                             console.log($scope.response1);
                                                                 $scope.listaWynikow1 = [];
                                                             block1: { for(var i=($scope.runners.length-1), v=0;i >= 0,v<=$scope.timesColumn.length;i--,v++){
                                                                 var n = 1;
@@ -3845,10 +3846,10 @@ for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
 
                                                                     if(ob != undefined) {
                                                                     suma = parseInt(suma) + parseInt(ob['name']);
-                                                                   // $scope.runners[(j)].TIMES1[i] = ob['name'];
+                                                                    $scope.runners[(j)].TIMES1[i] = ob['name'];
                                                                     }
                                                                     else {
-                                                                   // $scope.runners[(j)].TIMES1[i] = "-";
+                                                                    $scope.runners[(j)].TIMES1[i] = "-";
                                                                     }
                                                                   }
                                                                   $scope.runners[(j)].SUMA = suma;

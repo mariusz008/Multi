@@ -3746,22 +3746,23 @@ var ileZawodnikow = 0;
 
 
 $scope.ogolneOdbierzPunkt = function() {
-
-for(var v = 0; v<$scope.zawodyKlasyfikacje.length; v++){
+var id;
+for(id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
  if($scope.zawodyKlasyfikacje[v].TYP=="Klasyfikacja punktowa"){
                                     $scope.wyniki1 = [];
                                     $scope.ostatniWynik = [];
                                     $scope.ostatniWynik1 = [];
                                     $scope.tablicaCzasu = [];
                                         $scope.runners = [];
-                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[v].COMPETITION_ID)
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null){
                                                              $scope.timesColumn = [];
+                                                             $scope.timesColumn[0] = "META";
                                                                  for(var a=0;a<$scope.runners[0].POINTS_COUNT;a++)
                                                                  {
-                                                                     $scope.timesColumn[a] = a+1;
+                                                                     //$scope.timesColumn[a] = a+1;
                                                                         if($scope.runners[a].hasOwnProperty('NAZWISKO'))
                                                                           {
 
@@ -3803,7 +3804,7 @@ for(var v = 0; v<$scope.zawodyKlasyfikacje.length; v++){
                                                                     var x = $scope.runners[0].POINTS_COUNT;
                                                                     $scope.runners = $filter('orderBy')($scope.runners, 'POINT'+x+'_TIME');
 
-                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[v].COMPETITION_ID)
+                                                           $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[id].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.response1 = data;
                                                                 $scope.listaWynikow1 = [];

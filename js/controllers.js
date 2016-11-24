@@ -3885,6 +3885,7 @@ $scope.ogolneOdbierzPunkt = function() {
 
 
 $scope.idid1;
+$scope.druzyny = [];
 $scope.ogolneOdbierzDruz = function(){
  $scope.idid1 = 0;
      $scope.wyniki1 = [];

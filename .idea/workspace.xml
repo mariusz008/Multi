@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="" />
+    <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
+    </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -38,9 +40,9 @@
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="668">
-              <caret line="3760" column="61" selection-start-line="3760" selection-start-column="61" selection-end-line="3760" selection-end-column="61" />
+              <caret line="3895" column="45" selection-start-line="3895" selection-start-column="45" selection-end-line="3895" selection-end-column="45" />
               <folding>
-                <element signature="e#0#198159#0" expanded="false" />
+                <element signature="e#0#198238#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1134,9 +1136,9 @@
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="668">
-          <caret line="3760" column="61" selection-start-line="3760" selection-start-column="61" selection-end-line="3760" selection-end-column="61" />
+          <caret line="3895" column="45" selection-start-line="3895" selection-start-column="45" selection-end-line="3895" selection-end-column="45" />
           <folding>
-            <element signature="e#0#198159#0" expanded="false" />
+            <element signature="e#0#198238#0" expanded="false" />
           </folding>
         </state>
       </provider>

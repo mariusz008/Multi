@@ -72,64 +72,65 @@
 								<br>
 							</div>
 
-							<div ng-show="details.OFFICIAL == 'false'">
-								<div ng-hide="runners[0] == null " style="overflow-x:auto" >
-									<table class="table">
-									<thead>
-	  								<tr>
-	  									<th width="100" class="tg-zcxc">DSQ</th>
-	  									<th width="100" class="tg-zcxc">Miejsce</th>
-									    <th width="100" class="tg-zcxc">Imię</th>
-									    <th width="100" class="tg-zcxc">Nazwisko</th>
-									    <th width="100" class="tg-zcxc">Kategoria</th>
-									    <th width="100" class="tg-zcxc">Klub</th>
-									    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
-	  								</tr>
-	  								</thead>
-	  								<tbody ng-sortable="{animation:150}">
-									  <tr class="item" style="cursor: move;" ng-repeat="runner in runners" ng-if="$index >0">
-									    <td width="100" class="tg-yw4l" ><button ng-click="DSQ($index)" ><i class="icon-remove inline-block fright" ></i></button></td>
-									  	<td width="100" class="tg-yw4l" >{{$index+1 }}</td>
-									    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
-									    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
-									    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
-									    <td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
-									    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
-	  								</tr>
-	  								</tbody>
-									</table>
-								</div>
-								<div>
-									<br>
-									<div ng-show="banned[0] != null">
-									<h4> Dyskwalifikacja </h4>				
-									<div  style="overflow-x:auto" >
-									<table ng-show="types.length==0" class="table">
-									<tr>  									
-									    <th width="100" class="tg-zcxc">Imię</th>
-									    <th width="100" class="tg-zcxc">Nazwisko</th>
-									    <th width="100" class="tg-zcxc">Kategoria</th>
-									    <th width="100" class="tg-zcxc">Klub</th>
-									    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
-	  								</tr> 								
-									  <tr class="item" ng-repeat="ban in banned" >							  	
-									    <td width="100" class="tg-yw4l">{{ban.IMIE}}</td>
-									    <td width="100" class="tg-yw4l">{{ban.NAZWISKO}}</td>
-									    <td width="100" class="tg-yw4l">{{ban.CATEGORY}}</td>
-									    <td width="100" class="tg-yw4l">{{ban.KLUB}}</td>
-									    <td ng-repeat="t in ban.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
-	  								</tr>
-									</table>
-								</div>
-								</div>
-									
-							</div>
+							<!--<div ng-show="details.OFFICIAL == 'false'">-->
+								<!--<div ng-hide="runners[0] == null " style="overflow-x:auto" >-->
+									<!--<table class="table">-->
+									<!--<thead>-->
+	  								<!--<tr>-->
+	  									<!--<th width="100" class="tg-zcxc">DSQ</th>-->
+	  									<!--<th width="100" class="tg-zcxc">Miejsce</th>-->
+									    <!--<th width="100" class="tg-zcxc">Imię</th>-->
+									    <!--<th width="100" class="tg-zcxc">Nazwisko</th>-->
+									    <!--<th width="100" class="tg-zcxc">Kategoria</th>-->
+									    <!--<th width="100" class="tg-zcxc">Klub</th>-->
+									    <!--<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    -->
+	  								<!--</tr>-->
+	  								<!--</thead>-->
+	  								<!--<tbody ng-sortable="{animation:150}">-->
+									  <!--<tr class="item" style="cursor: move;" ng-repeat="runner in runners" ng-if="$index >0">-->
+									    <!--<td width="100" class="tg-yw4l" ><button ng-click="DSQ($index)" ><i class="icon-remove inline-block fright" ></i></button></td>-->
+									  	<!--<td width="100" class="tg-yw4l" >{{$index+1 }}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{runner.IMIE}}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>-->
+									    <!--<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>-->
+	  								<!--</tr>-->
+	  								<!--</tbody>-->
+									<!--</table>-->
+								<!--</div>-->
+								<!--<div>-->
+									<!--<br>-->
+									<!--<div ng-show="banned[0] != null">-->
+									<!--<h4> Dyskwalifikacja </h4>				-->
+									<!--<div  style="overflow-x:auto" >-->
+									<!--<table ng-show="types.length==0" class="table">-->
+									<!--<tr>  									-->
+									    <!--<th width="100" class="tg-zcxc">Imię</th>-->
+									    <!--<th width="100" class="tg-zcxc">Nazwisko</th>-->
+									    <!--<th width="100" class="tg-zcxc">Kategoria</th>-->
+									    <!--<th width="100" class="tg-zcxc">Klub</th>-->
+									    <!--<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    -->
+	  								<!--</tr> 								-->
+									  <!--<tr class="item" ng-repeat="ban in banned" >							  	-->
+									    <!--<td width="100" class="tg-yw4l">{{ban.IMIE}}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{ban.NAZWISKO}}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{ban.CATEGORY}}</td>-->
+									    <!--<td width="100" class="tg-yw4l">{{ban.KLUB}}</td>-->
+									    <!--<td ng-repeat="t in ban.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>-->
+	  								<!--</tr>-->
+									<!--</table>-->
+								<!--</div>-->
+								<!--</div>-->
+									<!---->
+							<!--</div>-->
 
-						<div class="text-center">
-						<button ng-show="banned[0] != null || runners[0] != null" class="btn btn-lg" ng-click="confirmResultList()">Opublikuj wyniki</button>
-						</div>
-						</div>
-						<div ng-show="details.OFFICIAL == 'true'">
+						<!--<div class="text-center">-->
+						<!--<button ng-show="banned[0] != null || runners[0] != null" class="btn btn-lg" ng-click="confirmResultList()">Opublikuj wyniki</button>-->
+						<!--</div>-->
+						<!--</div>-->
+						<!--<div ng-show="details.OFFICIAL == 'true'">-->
+							<div>
 						<h4 class="text-center">  Lista wyników została opublikowana</h4>
 								<table ng-show="types.length==0" class="table" width="400"  >
   								<tr>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myResultList.html" afterPath="$PROJECT_DIR$/views/myResultList.html" />
-    </list>
+    <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="" />
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -43,7 +40,7 @@
             <entry file="file://$PROJECT_DIR$/js/controllers.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="296">
-                  <caret line="4065" column="261" selection-start-line="4065" selection-start-column="261" selection-end-line="4065" selection-end-column="261" />
+                  <caret line="4502" column="92" selection-start-line="4502" selection-start-column="83" selection-end-line="4502" selection-end-column="92" />
                   <folding>
                     <element signature="e#0#253583#0" expanded="false" />
                     <element signature="e#0#253583#0" expanded="false" />
@@ -1200,7 +1197,7 @@
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
-          <caret line="4065" column="261" selection-start-line="4065" selection-start-column="261" selection-end-line="4065" selection-end-column="261" />
+          <caret line="4502" column="92" selection-start-line="4502" selection-start-column="83" selection-end-line="4502" selection-end-column="92" />
           <folding>
             <element signature="e#0#253583#0" expanded="false" />
             <element signature="e#0#253583#0" expanded="false" />

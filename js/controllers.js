@@ -4063,7 +4063,7 @@ app.service("PromiseUtils", function($q) {
            }
        }
    })
-app.controller('myResultListController', ['$scope','$http', '$route', '$sessionStorage', '$log', '$location', function($scope, $http, $route, $sessionStorage, $log, $location){
+app.controller('myResultListController', ['$scope','$timeout', '$filter','$http', '$route', '$sessionStorage', '$log', '$interval', 'myService','$location', function($scope,$timeout, $filter, $http, $route, $sessionStorage, $log, $interval, $location, myService){
 
              var id = sessionStorage.getItem('compID');
              var user_id = sessionStorage.getItem('ID');

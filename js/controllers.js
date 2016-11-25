@@ -3749,10 +3749,12 @@ var ileZawodnikow = 0;
                         $scope.timesColumn[0] = "META";
                         //$scope.runnersDruz = [];
                         $scope.zawodyKlasyfikacje1 = [];
+                        console.log("7");
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
+                                  console.log("8");
                                   $scope.zawodyKlasyfikacje1.push($scope.response11);
                         })
                          .error(function(data,status,headers,config){
@@ -3760,6 +3762,7 @@ var ileZawodnikow = 0;
                         });
                      }
                      $timeout($scope.ogolneOdbierzDruz,1000);
+                     console.log("9");
                  }
              }
 }
@@ -3901,6 +3904,7 @@ $scope.ogolneOdbierzDruz = function(){
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid1].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
+                                                             console.log("1");
                                                              if($scope.runners[1] != null)
                                                              {
                                                              $scope.timesColumn = [];
@@ -3935,18 +3939,22 @@ $scope.ogolneOdbierzDruz = function(){
                                                                                         var a = b.split(':');
                                                                                         seconds = (+a[0])*60*60+(+a[1])*60+(+a[2]);
                                                                                          $scope.runners[i].TIMES1[0] = seconds;
+                                                                                         console.log("2");
                                                                                   }
                                                                         }
                                                                  }
+
                                                                  for(var i=0; i<($scope.runners.length); i++)
                                                                   {
                                                                   if($scope.runners[i].KLUB != undefined){
                                                                 if($scope.druzyny.indexOf($scope.runners[i].KLUB)!= -1){
                                                                 var index = $scope.druzyny.indexOf($scope.runners[i].KLUB);
+                                                                console.log("3");
                                                                  }
                                                                   else {
                                                                    $scope.druzyny.push($scope.runners[i].KLUB);
                                                                     $scope.runnersDruz[i] =  $scope.runners[i];
+                                                                    console.log("4");
                                                                    }
                                                                 }
                                                                 }
@@ -3956,6 +3964,7 @@ $scope.ogolneOdbierzDruz = function(){
 
                                                         $scope.timesColumn.length = 1;
                                                         $scope.timesColumn[0] = "META";
+                                                        console.log("5");
 
                                         })
                                      .error(function(data,status,headers,config){

@@ -2918,7 +2918,7 @@ app.controller('showRunnerStagesController', ['$scope','$http', '$sessionStorage
 
                         $scope.types = [
                         {name:'Klasyfikacja generalna' },
-                        {name:'Klasyfikacja generalna' },
+                        {name:'Klasyfikacja generalna drużynowa' },
                         {name:'Klasyfikacja punktowa'}
                         ];
 
@@ -3688,7 +3688,10 @@ var ileZawodnikow = 0;
 
             $scope.Timer = null;
             $scope.ostatniWynikx = [];
-$scope.idZawodow1 = [];
+            $scope.idZawodow1 = [];
+
+
+            $scope.idiX;
             //wynikiOgolne
             $scope.wynikiOgolne = function(idKlasyfikacji) {
             var iter = 0;
@@ -3748,11 +3751,14 @@ $scope.idZawodow1 = [];
                         $scope.idZawPunkt =0;
                         $scope.timesColumn[0] = "META";
                         $scope.zawodyKlasyfikacje1 = [];
+                        $scope.idiX = 0;
                         for(var i = 0; i<$scope.daneEtapow.length;i++) {
+
+                        $scope.idiX = i;
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
-                                  $scope.zawodyKlasyfikacje1.push($scope.response11$scope.daneEtapow[i].COMPETITION_ID);
+                                  $scope.zawodyKlasyfikacje1.push($scope.response11+$scope.daneEtapow[i].COMPETITION_ID);
                         })
                          .error(function(data,status,headers,config){
                           $scope.retInfo = 'Błąd!'+ data;

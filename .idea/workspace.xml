@@ -39,10 +39,11 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="3737" column="118" selection-start-line="3737" selection-start-column="118" selection-end-line="3737" selection-end-column="118" />
+            <state relative-caret-position="551">
+              <caret line="2920" column="63" selection-start-line="2920" selection-start-column="63" selection-end-line="2920" selection-end-column="63" />
               <folding>
-                <element signature="e#0#198332#0" expanded="false" />
+                <element signature="e#0#198465#0" expanded="false" />
+                <element signature="e#0#198465#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -1135,10 +1136,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="3737" column="118" selection-start-line="3737" selection-start-column="118" selection-end-line="3737" selection-end-column="118" />
+        <state relative-caret-position="551">
+          <caret line="2920" column="63" selection-start-line="2920" selection-start-column="63" selection-end-line="2920" selection-end-column="63" />
           <folding>
-            <element signature="e#0#198332#0" expanded="false" />
+            <element signature="e#0#198465#0" expanded="false" />
+            <element signature="e#0#198465#0" expanded="false" />
           </folding>
         </state>
       </provider>

@@ -4827,40 +4827,40 @@ app.controller('myResultListController', ['$scope','$timeout', '$filter','$http'
 
  }
 
-                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
-                    .success(function(data){
-                        $scope.runners = data;
-                        if($scope.runners[1] != null){
-                            $scope.details = $scope.runners[0];
-                            $scope.runners.shift();
-
-                            if($scope.runners[0] != null)
-                            {
-                                $scope.timesColumn = [];
-
-                                for(var i=0;i<$scope.details.POINTS_COUNT;i++)
-                                {
-                                    $scope.timesColumn[i] = i+1;
-                                }
-
-                                for(var i=0; i < $scope.runners.length; i++)
-                                {
-
-                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
-                                    for(var j=0; j<$scope.details.POINTS_COUNT; j++)
-                                    {
-                                        var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
-                                        $scope.runners[i].TIMES[j] = eval(timeName);
-                                    }
-                                }
-                            }
-                        }
-
-                    })
-
-                    .error(function(data,status,headers,config){
-                        $scope.retInfo = 'Błąd!'+ data;
-                    });
+//                    $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+id)
+//                    .success(function(data){
+//                        $scope.runners = data;
+//                        if($scope.runners[1] != null){
+//                            $scope.details = $scope.runners[0];
+//                            $scope.runners.shift();
+//
+//                            if($scope.runners[0] != null)
+//                            {
+//                                $scope.timesColumn = [];
+//
+//                                for(var i=0;i<$scope.details.POINTS_COUNT;i++)
+//                                {
+//                                    $scope.timesColumn[i] = i+1;
+//                                }
+//
+//                                for(var i=0; i < $scope.runners.length; i++)
+//                                {
+//
+//                                    $scope.runners[i].TIMES = new Array($scope.runners[0].POINTS_COUNT);
+//                                    for(var j=0; j<$scope.details.POINTS_COUNT; j++)
+//                                    {
+//                                        var timeName = '$scope.runners[i].POINT'+(j+1)+'_TIME';
+//                                        $scope.runners[i].TIMES[j] = eval(timeName);
+//                                    }
+//                                }
+//                            }
+//                        }
+//
+//                    })
+//
+//                    .error(function(data,status,headers,config){
+//                        $scope.retInfo = 'Błąd!'+ data;
+//                    });
 
 
                     $scope.DSQ = function(i){

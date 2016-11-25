@@ -131,7 +131,7 @@
 						</div>
 						<div ng-show="details.OFFICIAL == 'true'">
 						<h4 class="text-center">  Lista wyników została opublikowana</h4>
-								<table class="table" width="400"  >
+								<table ng-show="types.length==0" class="table" width="400"  >
   								<tr>
   									<th width="100" class="tg-zcxc">Miejsce</th>
 								    <th width="100" class="tg-zcxc">Imię</th>
@@ -140,8 +140,8 @@
 								    <th width="100" class="tg-zcxc">Klub</th>
 								    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
   								</tr>
-								  <tr ng-repeat="runner in runners" >
-								  	<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+								  <tr ng-repeat="runner in runners" ng-if="$index >0">
+								  	<td width="100" class="tg-yw4l">{{$index+1 }}</td>
 								    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
 								    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
 								    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
@@ -149,6 +149,64 @@
 								    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
   								</tr>
 								</table>
+							<br>
+							<br>
+
+							<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna'" class="table" width="450"  >
+								<tr>
+									<th width="40" class="tg-zcxc">Miejsce </th>
+									<th width="70" class="tg-zcxc">Imię</th>
+									<th width="70" class="tg-zcxc">Nazwisko</th>
+									<th width="60" class="tg-zcxc">Kategoria</th>
+									<th width="100" class="tg-zcxc">Klub</th>
+									<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
+
+								</tr>
+								<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+									<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
+									<td width="70" class="tg-yw4l">{{runner.IMIE}}</td>
+									<td width="70" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+									<td width="60" class="tg-yw4l">{{runner.CATEGORY}}</td>
+									<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+									<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+
+								</tr>
+							</table>
+							<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna drużynowa'" class="table" width="450"  >
+								<tr>
+									<th width="40" class="tg-zcxc">Miejsce </th>
+									<th width="160" class="tg-zcxc">Klub</th>
+									<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
+
+								</tr>
+								<tr  ng-repeat="runner in runnersDruz | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+									<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
+									<td width="160" class="tg-yw4l">{{runner.KLUB}}</td>
+									<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+								</tr>
+							</table>
+							<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja punktowa'" class="table" width="450"  >
+								<tr>
+									<th width="40" class="tg-zcxc">Miejsce </th>
+									<th width="70" class="tg-zcxc">Imię</th>
+									<th width="70" class="tg-zcxc">Nazwisko</th>
+									<th width="60" class="tg-zcxc">Kategoria</th>
+									<th width="100" class="tg-zcxc">Klub</th>
+									<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Punkty {{times}}</th>
+									<th width="50" class="tg-zcxc">SUMA</th>
+								</tr>
+								<tr  ng-repeat="runner in runners" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+									<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
+									<td width="70" class="tg-yw4l">{{runner.IMIE}}</td>
+									<td width="70" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+									<td width="60" class="tg-yw4l">{{runner.CATEGORY}}</td>
+									<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+									<td ng-repeat="t in runner.TIMES1 track by $index" width="100" class="tg-yw4l">{{t}}</td>
+									<td width="50" class="tg-yw4l">{{runner.SUMA}}</td>
+
+								</tr>
+							</table>
+
 						</div>
 						</div>
 					</div>

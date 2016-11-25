@@ -66,8 +66,8 @@
           <file leaf-file-name="myResultList.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/myResultList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="477">
-                  <caret line="123" column="38" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
+                <state relative-caret-position="831">
+                  <caret line="207" column="36" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                   </folding>
@@ -92,8 +92,8 @@
           <file leaf-file-name="resultList.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/resultList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="78" column="85" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="85" />
+                <state relative-caret-position="657">
+                  <caret line="143" column="40" selection-start-line="87" selection-start-column="32" selection-end-line="143" selection-end-column="40" />
                   <folding>
                     <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                   </folding>
@@ -1201,8 +1201,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/myResultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="477">
-          <caret line="123" column="38" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
+        <state relative-caret-position="831">
+          <caret line="207" column="36" selection-start-line="207" selection-start-column="36" selection-end-line="207" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>

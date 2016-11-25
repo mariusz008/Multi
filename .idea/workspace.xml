@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controllers.js" afterPath="$PROJECT_DIR$/js/controllers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myResultList.html" afterPath="$PROJECT_DIR$/views/myResultList.html" />
     </list>
     <ignored path="web.iws" />
@@ -67,9 +66,11 @@
           <file leaf-file-name="myResultList.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/myResultList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="831">
-                  <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
-                  <folding />
+                <state relative-caret-position="477">
+                  <caret line="123" column="38" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -91,9 +92,11 @@
           <file leaf-file-name="resultList.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/resultList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="782">
-                  <caret line="67" column="34" selection-start-line="27" selection-start-column="28" selection-end-line="67" selection-end-column="34" />
-                  <folding />
+                <state relative-caret-position="357">
+                  <caret line="78" column="85" selection-start-line="78" selection-start-column="68" selection-end-line="78" selection-end-column="85" />
+                  <folding>
+                    <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -1198,9 +1201,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/myResultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="831">
-          <caret line="73" column="28" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="477">
+          <caret line="123" column="38" selection-start-line="123" selection-start-column="38" selection-end-line="123" selection-end-column="38" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

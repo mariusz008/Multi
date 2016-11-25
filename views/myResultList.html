@@ -71,7 +71,7 @@
 								</div>
 								<br>
 							</div>
-							
+
 							<div ng-show="details.OFFICIAL == 'false'">
 								<div ng-hide="runners[0] == null " style="overflow-x:auto" >
 									<table class="table">
@@ -87,7 +87,7 @@
 	  								</tr>
 	  								</thead>
 	  								<tbody ng-sortable="{animation:150}">
-									  <tr class="item" style="cursor: move;" ng-repeat="runner in runners" >
+									  <tr class="item" style="cursor: move;" ng-repeat="runner in runners" ng-if="$index >0">
 									    <td width="100" class="tg-yw4l" ><button ng-click="DSQ($index)" ><i class="icon-remove inline-block fright" ></i></button></td>
 									  	<td width="100" class="tg-yw4l" >{{$index+1 }}</td>
 									    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
@@ -104,7 +104,7 @@
 									<div ng-show="banned[0] != null">
 									<h4> Dyskwalifikacja </h4>				
 									<div  style="overflow-x:auto" >
-									<table class="table">
+									<table ng-show="types.length==0" class="table">
 									<tr>  									
 									    <th width="100" class="tg-zcxc">Imię</th>
 									    <th width="100" class="tg-zcxc">Nazwisko</th>

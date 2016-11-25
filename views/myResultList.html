@@ -1,4 +1,4 @@
-<section id="content" ng-controller="myResultListController">
+<section id="content" ng-controller="myResultListController" ng-init="init()">
 
 			<div class="content-wrap">
 					<div class="container clearfix">	
@@ -27,8 +27,51 @@
 						<div class="postcontent nobottommargin col_last">
 
 
-							<div class="well text-center" ng-hide="retInfo==''"> {{$scope.retInfo}} </div>
-							<div class="container" ng-show="runners[0] == null && banned[0] == null"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
+
+							<div class="container" ng-show="runners[0] == null && types.length==0"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
+
+							<div ng-hide="runners[1] == null && infoWielo==0" >
+								<h4 class="text-center" >Lista wyników</h4>
+								<div ng-show="types.length>0" class="container">
+									<label class="col-lg-2">Etap</label>
+
+									<div class="col-lg-6">
+										<select type="text"
+												id="type"
+												name="type"
+												class="form-control"
+												ng-model="competition.type"
+												ng-options="type.name for type in types"
+												ng-click="wypelnijKlasyfikacje(competition.type.id); wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(classification.type.name)"
+												required>
+
+											<option value=""> Wybierz etap </option>
+										</select>
+									</div>
+								</div>
+								<br>
+								<br>
+
+								<div ng-show="types.length>0" class="container">
+									<label class="col-lg-2">Klasyfikacja</label>
+
+									<div class="col-lg-6">
+										<select type="text"
+												id="classification"
+												name="classification"
+												class="form-control"
+												ng-model="classification.type"
+												ng-options="type.name for type in classification"
+												ng-click="wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(classification.type.name)"
+												required>
+
+											<option value=""> Wybierz klasyfikację </option>
+										</select>
+									</div>
+								</div>
+								<br>
+							</div>
+							
 							<div ng-show="details.OFFICIAL == 'false'">
 								<div ng-hide="runners[0] == null " style="overflow-x:auto" >
 									<table class="table">

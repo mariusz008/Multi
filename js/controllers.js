@@ -3735,7 +3735,7 @@ $scope.idZawodow1 = [];
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
-                                  $scope.zawodyKlasyfikacje.push($scope.response11+$scope.daneEtapow[i].COMPETITION_ID));
+                                  $scope.zawodyKlasyfikacje.push($scope.response11+$scope.daneEtapow[i].COMPETITION_ID);
                         })
                          .error(function(data,status,headers,config){
                           $scope.retInfo = 'Błąd!'+ data;
@@ -3752,7 +3752,7 @@ $scope.idZawodow1 = [];
                         $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/competition/classification?competition_id='+$scope.daneEtapow[i].COMPETITION_ID)
                                  .success(function(data){
                                   $scope.response11 = data;
-                                  $scope.zawodyKlasyfikacje1.push($scope.response11$scope.daneEtapow[i].COMPETITION_ID));
+                                  $scope.zawodyKlasyfikacje1.push($scope.response11$scope.daneEtapow[i].COMPETITION_ID);
                         })
                          .error(function(data,status,headers,config){
                           $scope.retInfo = 'Błąd!'+ data;

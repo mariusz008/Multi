@@ -3781,7 +3781,7 @@ $scope.ogolneOdbierzPunkt = function() {
         for(var id = 0; id<$scope.zawodyKlasyfikacje.length; id++){
          if($scope.zawodyKlasyfikacje[id].TYP=="Klasyfikacja punktowa" && $scope.daneEtapow!=undefined){
                                         $scope.idid = id;
-                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid].COMPETITION_ID)
+                                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.zawodyKlasyfikacje1[$scope.idid].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
                                                              if($scope.runners[1] != null){
@@ -3905,7 +3905,7 @@ $scope.ogolneOdbierzDruz = function(){
                         $scope.idid1 = id;
                         console.log($scope.idid1);
                         console.log($scope.zawodyKlasyfikacje1[id]);
-                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.daneEtapow[$scope.idid1].COMPETITION_ID)
+                        $http.get('http://209785serwer.iiar.pwr.edu.pl/Rest1/rest/result/list?competition_id='+$scope.zawodyKlasyfikacje1[$scope.idid1].COMPETITION_ID)
                                                          .success(function(data){
                                                              $scope.runners = data;
 

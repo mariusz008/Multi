@@ -231,7 +231,7 @@
 
 
 
-        $scope.showGuestCompetitionDetails = function(id){
+        $scope.openPage1 = function(id){
             sessionStorage.setItem('compID', id);
             window.location = '/Multi/guestCompetitionDetails.html';
         }

@@ -61,12 +61,14 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('compName', $scope.competition.NAME);
                 sessionStorage.setItem('compPay', $scope.competition.OPLATA);
+                sessionStorage.setItem('dlugosc', $scope.competition1.length);
                 window.location = '/Multi/guestRunnerList.html';
             }
 
             $scope.showGuestResultList = function(){
                 sessionStorage.setItem('compID', $scope.id);
                 sessionStorage.setItem('compName', $scope.competition.NAME);
+                sessionStorage.setItem('dlugosc', $scope.competition1.length);
                 sessionStorage.setItem('compPay', $scope.competition.OPLATA);
                 window.location = '/Multi/guestResultList.html';
             }

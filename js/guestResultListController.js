@@ -6,7 +6,7 @@
                     
                     var id = sessionStorage.getItem('compID');
                     $scope.runners = [];
-
+                    $scope.competition1.length = sessionStorage.getItem('dlugosc');
                     var id = sessionStorage.getItem('compID');
                                  var user_id = sessionStorage.getItem('ID');
                                  $scope.editActive = sessionStorage.getItem('editActive');
@@ -777,6 +777,10 @@
                         sessionStorage.setItem('compID', id);
                         window.location = '/Multi/guestRunnerList.html';
                     }
+                    $scope.showStage = function(){
+                                 sessionStorage.setItem('compID1', $scope.id);
+                                window.location = '/Multi/guestStages.html';
+                                 }
            
     }])
 

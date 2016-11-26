@@ -61,7 +61,7 @@
 
 
     app.controller('mainController', ['$scope', '$sessionStorage','$location', function($scope, $sessionStorage, $location){
-        console.log("tetetetet");
+
  }])
     app.controller('logoutController', ['$scope', '$sessionStorage','$location', function($scope, $sessionStorage, $location){
 
@@ -89,7 +89,7 @@
         $scope.init = function() {
              //window.location = 'Multi/home/main.html';
              $location.path('/Multi/home/main');
-             console.log("juz");
+
         }
 
     }])

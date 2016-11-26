@@ -85,6 +85,8 @@
 
         $scope.init = function() {
              window.location = 'Multi/home/main.html';
+             //$location.path('/Multi/home/competition');
+             console.log("juz");
         }
 
     }])

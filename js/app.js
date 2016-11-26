@@ -20,11 +20,11 @@
               templateUrl: 'views/competition.html',   
               label: 'MultiJustRace - Lista zawodów'
             })
-//            .when('/Multi/home/main', {
-//                          controller: 'competitionController',
-//                          templateUrl: 'views/competition.html',
-//                          label: 'MultiJustRace - Lista zawodów'
-//                        })
+            .when('/Multi/home/main', {
+             controller: 'mainController',
+              templateUrl: 'views/main.html',
+               label: 'MultiJustRace - Strona główna'
+              })
             .when('/Multi/home/myCompetition', {
               controller: 'myCompetitionController',
               templateUrl: 'views/myCompetition.html',   
@@ -112,11 +112,6 @@
              label: 'MultiJustRace - Lista etapów'
              })
 
-            .when('/Multi/home/main', {
-              controller: 'mainController',
-              templateUrl: 'views/main.html',   
-              label: 'MultiJustRace - Edycja zawodów'
-            })
             .when('/Multi/home/competition/compRunnersList', {
               controller: 'compRunnersListController',
               templateUrl: 'views/compRunnerList.html',   

@@ -50,6 +50,12 @@
             })
 
 
+            $scope.showCompetitionDetails = function(id, data, godzina) {
+                        	sessionStorage.setItem('compID', id);
+                        	sessionStorage.setItem('compData', data);
+                        	sessionStorage.setItem('compGodzina', godzina);
+                        	$location.path('/Multi/home/competition');
+                        };
     }])
 
 
@@ -3272,7 +3278,7 @@ app.factory('myService', function($http) {
     return { getData: _getData };
 });
 
-app.controller('resultListController', ['$scope','$timeout', '$filter', '$http', '$route', '$sessionStorage', '$log', '$location', '$interval', 'myService', function($scope,$timeout, $filter, $http, $route, $sessionStorage, $log,$interval, $location, myService){
+app.controller('resultListController', ['$scope','$timeout', '$filter', '$http', '$route', '$sessionStorage', '$log', '$location', 'myService', function($scope,$timeout, $filter, $http, $route, $sessionStorage, $log, $location, myService){
 
              var id = sessionStorage.getItem('compID');
              $scope.hasStage = sessionStorage.getItem('stage');
@@ -4062,7 +4068,7 @@ app.service("PromiseUtils", function($q) {
            }
        }
    })
-app.controller('myResultListController', ['$scope','$timeout', '$filter','$http', '$route', '$sessionStorage', '$log', '$interval', 'myService','$location', function($scope,$timeout, $filter, $http, $route, $sessionStorage, $log, $interval, $location, myService){
+app.controller('myResultListController', ['$scope','$timeout', '$filter','$http', '$route', '$sessionStorage', '$log','$location', function($scope,$timeout, $filter, $http, $route, $sessionStorage, $log, $location){
 
              var id = sessionStorage.getItem('compID');
              var user_id = sessionStorage.getItem('ID');

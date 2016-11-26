@@ -87,7 +87,7 @@
 	
 								<article class="portfolio-item pf-rowerowe pf-active pf-featured" ng-repeat="competition in competitions">
 									<div class="portfolio-image">
-										<a href ng-click="showCompetitionDetails(competition.COMPETITION_ID)">
+										<a href ng-click="showCompetitionDetails(competition.COMPETITION_ID, competition.DATA_ROZP, competition.CZAS_ROZP)">
 											<img ng-show="(competition.TYP == 'Bieg przełajowy' ||
 														  competition.TYP == 'Bieg maratoński' ||
 														  competition.TYP == 'Bieg uliczny' ||

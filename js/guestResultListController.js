@@ -778,7 +778,7 @@
                         window.location = '/Multi/guestRunnerList.html';
                     }
                     $scope.showStage = function(){
-                                 sessionStorage.setItem('compID1', $scope.id);
+                                 sessionStorage.setItem('compID1', id);
                                 window.location = '/Multi/guestStages.html';
                                  }
            

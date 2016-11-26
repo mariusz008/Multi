@@ -83,6 +83,10 @@
             window.location = '/Multi/index.html';
         };
 
+        $scope.init = function() {
+             window.location = 'Multi/home/main.html';
+        }
+
     }])
 
     app.controller('profileController', ['$scope', '$http', '$sessionStorage', '$location', function($scope, $http, $sessionStorage, $location){

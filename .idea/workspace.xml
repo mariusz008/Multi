@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guestResultList.html" afterPath="$PROJECT_DIR$/guestResultList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guestRunnerList.html" afterPath="$PROJECT_DIR$/guestRunnerList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/guestResultListController.js" afterPath="$PROJECT_DIR$/js/guestResultListController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/guestRunnerListController.js" afterPath="$PROJECT_DIR$/js/guestRunnerListController.js" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,8 +71,8 @@
       <file leaf-file-name="guestCompetitionDetailsController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/guestCompetitionDetailsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="77" selection-end-column="14" />
+            <state relative-caret-position="102">
+              <caret line="33" column="111" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="111" />
               <folding />
             </state>
           </provider>
@@ -84,8 +81,8 @@
       <file leaf-file-name="guestResultListController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/guestResultListController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="8" column="35" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="35" />
+            <state relative-caret-position="533">
+              <caret line="59" column="66" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -104,8 +101,8 @@
       <file leaf-file-name="guestResultList.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/guestResultList.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="107" column="56" selection-start-line="107" selection-start-column="56" selection-end-line="107" selection-end-column="56" />
+            <state relative-caret-position="584">
+              <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1223,18 +1220,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/guestCompetitionDetailsController.js">
+    <entry file="file://$PROJECT_DIR$/guestRunnerList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="74" column="12" selection-start-line="74" selection-start-column="12" selection-end-line="77" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/guestResultListController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="35" />
+        <state relative-caret-position="595">
+          <caret line="107" column="56" selection-start-line="107" selection-start-column="56" selection-end-line="107" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1247,18 +1236,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guestRunnerList.html">
+    <entry file="file://$PROJECT_DIR$/js/guestCompetitionDetailsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="107" column="56" selection-start-line="107" selection-start-column="56" selection-end-line="107" selection-end-column="56" />
+        <state relative-caret-position="102">
+          <caret line="33" column="111" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="111" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/guestResultListController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="533">
+          <caret line="59" column="66" selection-start-line="59" selection-start-column="57" selection-end-line="59" selection-end-column="66" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/guestResultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="107" column="56" selection-start-line="107" selection-start-column="56" selection-end-line="107" selection-end-column="56" />
+        <state relative-caret-position="584">
+          <caret line="109" column="0" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
         </state>
       </provider>

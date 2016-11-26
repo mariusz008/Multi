@@ -49,7 +49,7 @@
                     sessionStorage.setItem('WIEK', response.WIEK);
                     sessionStorage.setItem('RememberMe', $scope.user.login);
 
-                    window.location = 'views/main.html';
+                    window.location = 'Multi/home.html';
                 }
                 else
                 {

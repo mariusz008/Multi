@@ -104,7 +104,8 @@
 							<ul class="sidenav">
 								<li ><a href="guestCompetitionDetails.html">Opis<i class="icon-chevron-right"></i></a></li>
 								<li><a href ng-click="showGuestRunnersList()">Lista startowa<i class="icon-chevron-right"></i></a></li>
-								<li class="ui-tabs-active"><a href="#">Wyniki<i class="icon-chevron-right"></i></a></li>							
+								<li class="ui-tabs-active"><a href="#">Wyniki<i class="icon-chevron-right"></i></a></li>
+								<li><a ng-show="hasStage > 0" href ng-click="showStage()">Przeglądaj etapy<i class="icon-chevron-right"></i></a></li>
 							</ul>
 
 								
@@ -114,29 +115,126 @@
 						<!--content -->
 						<div class="postcontent nobottommargin col_last">
 
-							<div class="container" ng-show="runners[1] == null"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
-							<div ng-hide="runners[1] == null"  style="overflow-x:auto">
-								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'false'"> Lista wyników może ulec zmianie!</h4>
-								<h4 class="text-center" ng-show="runners[0].OFFICIAL == 'true'">  Oficjalna lista wyników</h4>
-								<table class="table" width="400" >
-  								<tr>
-  									<th width="100" class="tg-zcxc">Miejsce</th>
-								    <th width="100" class="tg-zcxc">Imię</th>
-								    <th width="100" class="tg-zcxc">Nazwisko</th>
-								    <th width="100" class="tg-zcxc">Kategoria</th>
-								    <th width="100" class="tg-zcxc">Klub</th>
-								    <th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas PK{{times}}</th>								    
-  								</tr>
-								  <tr ng-repeat="runner in runners" ng-if="$index >0">
-								  	<td width="100" class="tg-yw4l">{{runner.MIEJSCE }}</td>
-								    <td width="100" class="tg-yw4l">{{runner.IMIE}}</td>
-								    <td width="100" class="tg-yw4l">{{runner.NAZWISKO}}</td>
-								    <td width="100" class="tg-yw4l">{{runner.CATEGORY}}</td>
-								    <td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
-								    <td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
-  								</tr>
-								</table>
+							<div class="container" ng-show="runners[1] == null && types.length==0"><h4> Lista wyników nie jest jeszcze dostępna</h4></div>
+
+							<div ng-hide="runners[1] == null && infoWielo==0" >
+								<h4 class="text-center" >Lista wyników</h4>
+								<div ng-show="types.length>0" class="container">
+									<label class="col-lg-2">Etap</label>
+
+									<div class="col-lg-6">
+										<select type="text"
+												id="type"
+												name="type"
+												class="form-control"
+												ng-model="competition.type"
+												ng-options="type.name for type in types"
+												ng-click="wypelnijKlasyfikacje(competition.type.id); wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(classification.type.name)"
+												required>
+
+											<option value=""> Wybierz etap </option>
+										</select>
+									</div>
 								</div>
+								<br>
+								<br>
+
+								<div ng-show="types.length>0" class="container">
+									<label class="col-lg-2">Klasyfikacja</label>
+
+									<div class="col-lg-6">
+										<select type="text"
+												id="classification"
+												name="classification"
+												class="form-control"
+												ng-model="classification.type"
+												ng-options="type.name for type in classification"
+												ng-click="wynikiGeneralnej(competition.type.id); wynikiPunktowej(competition.type.id); wynikiDruzynowej(competition.type.id); wynikiOgolne(classification.type.name)"
+												required>
+
+											<option value=""> Wybierz klasyfikację </option>
+										</select>
+									</div>
+								</div>
+								<br>
+							</div>
+							<div style="overflow-x:auto">
+								<table ng-show="types.length==0" class="table" width="450"  >
+									<tr>
+										<th width="40" class="tg-zcxc">Miejsce</th>
+										<th width="70" class="tg-zcxc">Imię</th>
+										<th width="70" class="tg-zcxc">Nazwisko</th>
+										<th width="60" class="tg-zcxc">Kategoria</th>
+										<th width="100" class="tg-zcxc">Klub</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
+									</tr>
+									<tr ng-repeat="runner in runners" ng-if="$index >0">
+										<td width="40" class="tg-yw4l">{{runner.MIEJSCE }}</td>
+										<td width="70" class="tg-yw4l">{{runner.IMIE}}</td>
+										<td width="70" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+										<td width="60" class="tg-yw4l">{{runner.CATEGORY}}</td>
+										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+									</tr>
+								</table>
+								<br>
+								<br>
+
+								<table id="table1" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna'" class="table" width="450"  >
+									<tr>
+										<th width="40" class="tg-zcxc">Miejsce </th>
+										<th width="70" class="tg-zcxc">Imię</th>
+										<th width="70" class="tg-zcxc">Nazwisko</th>
+										<th width="60" class="tg-zcxc">Kategoria</th>
+										<th width="100" class="tg-zcxc">Klub</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
+
+									</tr>
+									<tr  ng-repeat="runner in runners | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
+										<td width="70" class="tg-yw4l">{{runner.IMIE}}</td>
+										<td width="70" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+										<td width="60" class="tg-yw4l">{{runner.CATEGORY}}</td>
+										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+
+									</tr>
+								</table>
+								<table id="table2" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja generalna drużynowa'" class="table" width="450"  >
+									<tr>
+										<th width="40" class="tg-zcxc">Miejsce </th>
+										<th width="160" class="tg-zcxc">Klub</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Czas {{times}}</th>
+
+									</tr>
+									<tr  ng-repeat="runner in runnersDruz | orderBy:'TIMES'" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
+										<td width="160" class="tg-yw4l">{{runner.KLUB}}</td>
+										<td ng-repeat="t in runner.TIMES track by $index" width="100" class="tg-yw4l">{{t}}</td>
+									</tr>
+								</table>
+								<table id="table3" ng-show="classification.type.name != undefined && classification.type.name == 'Klasyfikacja punktowa'" class="table" width="450"  >
+									<tr>
+										<th width="40" class="tg-zcxc">Miejsce </th>
+										<th width="70" class="tg-zcxc">Imię</th>
+										<th width="70" class="tg-zcxc">Nazwisko</th>
+										<th width="60" class="tg-zcxc">Kategoria</th>
+										<th width="100" class="tg-zcxc">Klub</th>
+										<th ng-repeat="times in timesColumn" width="100" class="tg-zcxc">Punkty {{times}}</th>
+										<th width="50" class="tg-zcxc">SUMA</th>
+									</tr>
+									<tr  ng-repeat="runner in runners" ng-if="$index >=0 && runner.MIEJSCE!=null"  >
+										<td width="40" class="tg-yw4l">{{ $index+1 }}</td>
+										<td width="70" class="tg-yw4l">{{runner.IMIE}}</td>
+										<td width="70" class="tg-yw4l">{{runner.NAZWISKO}}</td>
+										<td width="60" class="tg-yw4l">{{runner.CATEGORY}}</td>
+										<td width="100" class="tg-yw4l">{{runner.KLUB}}</td>
+										<td ng-repeat="t in runner.TIMES1 track by $index" width="100" class="tg-yw4l">{{t}}</td>
+										<td width="50" class="tg-yw4l">{{runner.SUMA}}</td>
+
+									</tr>
+								</table>
+							</div>
 						</div>
 					</div>
 

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="0b9055d6-068a-40b6-bd23-9a4d2f5ba1da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/guestResultList.html" afterPath="$PROJECT_DIR$/guestResultList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/guestResultListController.js" afterPath="$PROJECT_DIR$/js/guestResultListController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/myResultList.html" afterPath="$PROJECT_DIR$/views/myResultList.html" />
     </list>
     <ignored path="web.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,10 +36,10 @@
     <favorites_list name="web" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.44683465">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="controllers.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/controllers.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="506">
@@ -49,18 +49,6 @@
                     <element signature="e#0#253773#0" expanded="false" />
                     <element signature="e#0#253773#0" expanded="false" />
                     <element signature="e#0#253773#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="guestResultList.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/guestResultList.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1326">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding>
-                    <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -76,14 +64,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="myResultList.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="myResultList.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/views/myResultList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="782">
-                  <caret line="151" column="40" selection-start-line="151" selection-start-column="40" selection-end-line="151" selection-end-column="40" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="78" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="78" />
                   <folding>
-                    <marker date="1480117438166" expanded="false" signature="3665:3678" ph="..." />
-                    <marker date="1480117438166" expanded="false" signature="4623:4638" ph="..." />
+                    <marker date="1480119079671" expanded="false" signature="3665:3678" ph="..." />
+                    <marker date="1480119079671" expanded="false" signature="4623:4638" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -103,17 +91,17 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="guestResultList.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="guestResultList.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/guestResultList.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="440">
-                  <caret line="214" column="20" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="20" />
+                <state relative-caret-position="278">
+                  <caret line="91" column="81" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="guestResultListController.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="guestResultListController.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/js/guestResultListController.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
@@ -362,10 +350,10 @@
         <option value="$PROJECT_DIR$/views/makeClassification.html" />
         <option value="$PROJECT_DIR$/js/loginController.js" />
         <option value="$PROJECT_DIR$/views/resultList.html" />
-        <option value="$PROJECT_DIR$/views/myResultList.html" />
         <option value="$PROJECT_DIR$/js/controllers.js" />
-        <option value="$PROJECT_DIR$/guestResultList.html" />
         <option value="$PROJECT_DIR$/js/guestResultListController.js" />
+        <option value="$PROJECT_DIR$/views/myResultList.html" />
+        <option value="$PROJECT_DIR$/guestResultList.html" />
       </list>
     </option>
   </component>
@@ -1174,17 +1162,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/myResultList.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="151" column="40" selection-start-line="151" selection-start-column="40" selection-end-line="151" selection-end-column="40" />
-          <folding>
-            <marker date="1480117438166" expanded="false" signature="3665:3678" ph="..." />
-            <marker date="1480117438166" expanded="false" signature="4623:4638" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/resultList.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="691">
@@ -1193,10 +1170,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/guestResultList.html">
+    <entry file="file://$PROJECT_DIR$/js/guestResultListController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="214" column="20" selection-start-line="214" selection-start-column="20" selection-end-line="214" selection-end-column="20" />
+        <state relative-caret-position="153">
+          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
           <folding />
         </state>
       </provider>
@@ -1214,10 +1191,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/guestResultListController.js">
+    <entry file="file://$PROJECT_DIR$/views/myResultList.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+        <state relative-caret-position="0">
+          <caret line="0" column="78" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="78" />
+          <folding>
+            <marker date="1480119079671" expanded="false" signature="3665:3678" ph="..." />
+            <marker date="1480119079671" expanded="false" signature="4623:4638" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/guestResultList.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="91" column="81" selection-start-line="91" selection-start-column="81" selection-end-line="91" selection-end-column="81" />
           <folding />
         </state>
       </provider>

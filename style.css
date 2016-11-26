@@ -11201,6 +11201,8 @@ body:not(.device-touch) #gotoTop {
 -----------------------------------------------------------------*/
 
 
+.preloader,
+.preloader2,
 .form-process {
 	display: block;
 	width: 100%;

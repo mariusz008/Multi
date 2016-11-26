@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US" ng-app="guestStageDetailsApp">
+<head> 	<link rel="icon" type="image/png" href="/Multi/images/ic_launcher2.png" sizes=16x16">
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/swiper.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+
+	<link rel="stylesheet" href="custom.css" type="text/css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+	<!-- Document Title
+	============================================= -->
+	<title>MultiJustRace</title>
+
+</head>
+
+<body class="stretched">
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+	<!-- Header
+    ============================================= -->
+	<header id="header" class="sticky-style-2">
+
+		<div class="container clearfix">
+
+			<!-- Logo
+            ============================================= -->
+			<div id="logo" class="divcenter">
+				<a href="index.html" class="standard-logo" data-dark-logo="images/logo-dark.png"><img class="divcenter" src="images/logo.png" alt="Logo"></a>
+				<a href="index.html" class="retina-logo" data-dark-logo="images/logo-dark@2x.png"><img class="divcenter" src="images/logo@2x.png" alt="Logo"></a>
+			</div><!-- #logo end -->
+
+		</div>
+
+		<div id="header-wrap">
+
+			<!-- Primary Navigation
+            ============================================= -->
+			<nav id="primary-menu" class="style-2 center">
+
+				<div class="container clearfix">
+
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+					<ul>
+						<li><a href="index.html"><div>Strona główna</div></a></li>
+						<li class="current"><a href="guestCompetitions.html"><div>Zawody</div></a></li>
+						<li><a href="how.html"><div>Jak to działa</div></a></li>
+						<li><a href="application.html"><div>Aplikacja</div></a></li>
+						<li><a href="contact.html"><div>Kontakt</div></a></li>
+						<li><a href="login.html"><span class="login-menulink">Zaloguj się</span> </a></li>
+						<li><a href="registration.html"><span class="login-menulink">Zarejestruj się</span></a></li>
+					</ul>
+
+					<!-- Top Search
+                    =============================================
+                    <div id="top-search">
+                        <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                        <form action="search.html" method="get">
+                            <input type="text" name="q" class="form-control" value="" placeholder="Szukaj na stronie">
+                        </form>
+                    </div>#top-search end -->
+
+				</div>
+
+			</nav><!-- #primary-menu end -->
+
+		</div>
+
+	</header><!-- #header end -->
+
+	<section id="content" ng-controller="guestStageDetailsController">
+
+			<div class="content-wrap">
+
+
+					<!-- Challenge main nav + description container -->
+					<div class="container clearfix">
+						
+						<!-- Sidebar -->
+						<div class="sidebar nobottommargin">
+						
+
+							<ul class="sidenav">
+								<li class="ui-tabs-active"><a href="#">Opis<i class="icon-chevron-right"></i></a></li>
+
+								<br>
+
+							</ul>
+							<div class="side-box">
+								<div class="portfolio-desc-meta">
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-calendar2 inline-block fright"></i>
+										<span class="text ng-binding">{{competition.DATA_ROZP}}</span>
+									</div>
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-clock inline-block fright"></i>
+										<span class="text ng-binding">{{competition.CZAS_ROZP}}</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-pointer inline-block"></i>
+										<span class="text ng-binding"> {{competition.MIEJSCOWOSC}}</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-money inline-block"></i>
+										<span ng-show="competition.OPLATA!=''" class="text ng-binding"> {{competition.OPLATA}}</span>
+										<span ng-show="competition.OPLATA==''" class="text ng-binding"> Bezpłatne</span>
+									</div>											
+									<div class="col-sm-12 portfolio-desc-meta-text">
+										<i class="color icon-line2-users inline-block"></i>
+										<span ng-show="competition.LIMIT_UCZ==''" class="text ng-binding"> Brak limitu osób</span>
+										<span ng-show="competition.LIMIT_UCZ!=''" class="text ng-binding"> Limit osób: {{competition.LIMIT_UCZ}}</span>
+									</div>
+									<div class="clearfix"></div>
+								</div>											
+							</div>
+		
+		
+						</div><!-- .sidebar end -->
+	
+						<!-- Post -->
+						<div class="postcontent nobottommargin col_last">
+							
+								<div class="center"><h1 ng-show="check7 == 1">Odwołane!</h1></div>
+
+							<h2 ng-show="competition.WIELOETAPOWE==1">"{{competition.NAME}}" - Zawody wieloetapowe  </h2>
+							<h2 ng-show="competition.WIELOETAPOWE==0">"{{competition.NAME}}" - Zawody jednoetapowe  </h2>
+							<h2 ng-show="competition.WIELOETAPOWE.length>1">"{{competition.NAME}}" - Etap zawodów  </h2>
+							<h3 ng-show="competition.WIELOETAPOWE.length>1 && class.TYP.length>1">{{class.TYP}}</h3>
+							<h3 ng-show="competition.WIELOETAPOWE.length>1 && class.CODE==215">Brak klasyfikacji</h3>
+
+							<h5>{{competition.TYP}}</h5>
+												
+							<p ng-hide="competition.OPIS == ''">
+							<textarea class="editor" ng-hide="!competition.OPIS" name="editor" ckeditor="options" ng-model="competition.OPIS" ready="onReady()"></textarea>
+							</p>
+										
+						</div><!-- .postcontent end -->
+						
+				</div>
+			
+
+							
+			</div>
+
+
+		</section>
+
+
+
+	<!-- FOOTER -->
+	<footer id="footer" class="dark">
+
+		<div id="copyrights">
+
+			<div class="container clearfix">
+
+				<div class="col_half">
+					<img src="images/footer-logo.png" alt="" class="footer-logo">
+
+					<span class="copyright-text">Copyrights &copy; 2016 All Rights Reserved by MultiJustRace.</span>
+				</div>
+
+				<div class="col_half col_last tright">
+					<div class="copyrights-menu copyright-links clearfix">
+						<a href="aboutUs.html">O nas</a> <a href="#">Regulamin</a> <a href="contact.html">Kontakt</a>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</footer><!-- #footer end -->
+
+
+
+</div><!-- #wrapper end -->
+
+<!-- Go To Top
+============================================= -->
+<div id="gotoTop" class="icon-angle-up"></div>
+
+<!-- External JavaScripts
+============================================= -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/plugins.js"></script>
+
+<!-- Footer Scripts
+============================================= -->
+<script type="text/javascript" src="js/functions.js"></script>
+<script src="js/main.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-route.min.js"></script>
+<script type="text/javascript" src="js/ngStorage.min.js"></script>
+
+<script src="js/lodash.js"></script>
+<script src="js/angular-simple-logger.js"></script>
+<script src="js/angular-google-maps.min.js"></script>
+
+
+<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+<script src="js/angular-ckeditor.js"></script>
+<script src="js/guestStageDetailsController.js"></script>
+
+<script>
+
+           var app = angular.module('guestStageDetailsApp', ['guestStageDetailsController', 'uiGmapgoogle-maps']);
+
+       </script>
+
+</body>
+</html>

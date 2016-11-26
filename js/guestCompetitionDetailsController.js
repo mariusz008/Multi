@@ -72,7 +72,7 @@ $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
             }
             $scope.showStage = function(){
              sessionStorage.setItem('compID1', $scope.id);
-            $location.path('/Multi/guestStages.html');
+            window.location = '/Multi/guestStages.html';
              }
 
 

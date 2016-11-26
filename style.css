@@ -11197,30 +11197,6 @@ body:not(.device-touch) #gotoTop {
 
 
 /* ----------------------------------------------------------------
-	30. Preloaders
------------------------------------------------------------------*/
-
-
-.preloader,
-.preloader2,
-.form-process {
-	display: block;
-	width: 100%;
-	height: 100%;
-	background: url("images/preloader.gif") center center no-repeat #FFF;
-}
-
-.preloader2 { background-color: transparent; }
-
-.form-process {
-	display: none;
-	position: absolute;
-	z-index: 3;
-	background-color: rgba(255,255,255,0.7);
-}
-
-
-/* ----------------------------------------------------------------
 	31. Toastr Notifications
 -----------------------------------------------------------------*/
 

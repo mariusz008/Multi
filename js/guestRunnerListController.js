@@ -14,7 +14,7 @@
                             {USER_ID: ''},
                             {OPLACONE: ''}
                             ];
-                            $scope.competition1.length = sessionStorage.getItem('dlugosc');
+                            $scope.hasStage = sessionStorage.getItem('dlugosc');
         $scope.plci = [{nazwa: 'kobieta'}, {nazwa: 'mężczyzna'}];
         $scope.cat = [{NAME: ''}, {DESCRIPTION : ''}];
         

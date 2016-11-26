@@ -6,7 +6,7 @@
                     
                     var id = sessionStorage.getItem('compID');
                     $scope.runners = [];
-                    $scope.competition1.length = sessionStorage.getItem('dlugosc');
+                    $scope.hasStage = sessionStorage.getItem('dlugosc');
                     var id = sessionStorage.getItem('compID');
                                  var user_id = sessionStorage.getItem('ID');
                                  $scope.editActive = sessionStorage.getItem('editActive');
